@@ -1,0 +1,334 @@
+[Root]
+Most Recent Package=Setup do SisFF
+
+
+[Package|Setup do SisFF|RB Sistemas]
+Icon1=prFichas.exe
+Title1=RB Sistemas
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Setup do SisFF|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Sistemas\SisFFG (desenv)\SisFFG
+
+[Package|Setup do SisFF|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Setup do SisFF|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Setup do SisFF|Files Found]
+
+[Package|Setup do SisFF|Files Released]
+
+[Package|Setup do SisFF|Missing Dependency Information]
+D:\Sistemas\SisFF\OCX\Skin_Button.ocx=
+D:\Sistemas\SisFF\OCX\ACTIVETEXT.OCX=
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\FLEXWIZ.OCX=
+D:\Sistemas\SisItens\OCX\VBxPOLITEC.ocx=
+C:\Arquivos de programas\Microsoft Office\Office\EXCEL9.OLB=
+D:\Sistemas\SisFF\OCX\prRaf.ocx=
+C:\Arquivos de programas\Microsoft Office\Office\MSACC9.OLB=
+E:\Sistemas\SisFF\OCX\prRaf.ocx=
+C:\WINDOWS\system32\Skin_Button.ocx=
+C:\WINDOWS\system32\ACTIVETEXT.OCX=
+C:\WINDOWS\system32\VBxPOLITEC.ocx=
+C:\WINDOWS\system32\MSHFLXGD.OCX=
+C:\WINDOWS\system32\MSBIND.DLL=
+C:\WINDOWS\system32\MSDBRPTR.DLL=
+C:\Arquivos de programas\Arquivos comuns\Microsoft Shared\DAO\dao360.dll=
+C:\Arquivos de programas\Arquivos comuns\DESIGNER\MSDERUN.DLL=
+C:\WINDOWS\system32\MSSTDFMT.DLL=
+C:\Arquivos de programas\Arquivos comuns\System\ado\msado25.tlb=
+E:\sistemas\SisFF\OCX\Skin_Button.ocx=
+E:\sistemas\SisFF\OCX\ACTIVETEXT.OCX=
+E:\sistemas\SisFF\OCX\VBxPOLITEC.ocx=
+C:\Arquivos de programas\Microsoft Office\OFFICE11\MSACC.OLB=
+C:\Arquivos de programas\Microsoft Office\OFFICE11\EXCEL.EXE=
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\DATAFORM.OCX=
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\APPWIZ.OCX=
+C:\Windows\SysWOW64\prRaf.ocx=
+D:\Sistemas\vbalsgrid6.ocx=
+C:\Windows\SysWOW64\Skin_Button.ocx=
+C:\Windows\SysWOW64\ACTIVETEXT.OCX=
+C:\Windows\SysWOW64\FLEXWIZ.OCX=
+C:\Windows\SysWOW64\VBxPOLITEC.ocx=
+C:\Program Files (x86)\Common Files\System\ado\msado60_Backcompat.tlb=
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSACC.OLB=
+C:\Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE=
+
+[Package|Setup do SisFF|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\COMCTL32.OCX=
+C:\WINDOWS\system32\MCI32.OCX=
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+C:\WINDOWS\system32\MSADODC.OCX=
+C:\WINDOWS\system32\COMCT332.OCX=
+C:\WINDOWS\system32\MSDATLST.OCX=
+C:\WINDOWS\system32\MSDATGRD.OCX=
+C:\WINDOWS\system32\MSMASK32.OCX=
+C:\WINDOWS\system32\MSINET.OCX=
+C:\WINDOWS\system32\MSCOMCT2.OCX=
+C:\WINDOWS\system32\comdlg32.ocx=
+C:\WINDOWS\system32\MSFLXGRD.OCX=
+C:\WINDOWS\system32\TABCTL32.OCX=
+C:\WINDOWS\system32\MSRDO20.DLL=
+C:\Windows\SysWOW64\COMCTL32.OCX=
+C:\Windows\SysWOW64\MCI32.OCX=
+C:\Windows\SysWOW64\MSCOMCTL.OCX=
+
+[Package|Setup do SisFF|Files Added]
+
+[Package|Setup do SisFF|Files Removed]
+
+[Package|Setup do SisFF|Files In Project]
+C:\WINDOWS\system32\MSVBVM60.DLL=Yes
+C:\WINDOWS\system32\Vb6stkit.dll=Yes
+D:\Sistemas\SisFFG (desenv)\prFichasG.exe=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Windows\SysWOW64\MSSTDFMT.DLL=Yes
+C:\Program Files (x86)\Common Files\DESIGNER\MSDERUN.DLL=Yes
+C:\Program Files (x86)\Common Files\microsoft shared\DAO\dao360.dll=Yes
+C:\Windows\System32\msjet40.dll=Yes
+C:\Windows\System32\msjter40.dll=Yes
+C:\Windows\System32\msjint40.dll=Yes
+C:\Windows\System32\vbajet32.dll=Yes
+C:\Windows\System32\expsrv.dll=Yes
+C:\Windows\System32\mswstr10.dll=Yes
+C:\Windows\System32\mswdat10.dll=Yes
+C:\Windows\System32\msrd2x40.dll=Yes
+C:\Windows\System32\msrd3x40.dll=Yes
+C:\Windows\System32\msrepl40.dll=Yes
+C:\Windows\System32\msjtes40.dll=Yes
+C:\Windows\System32\VB5DB.DLL=Yes
+C:\Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE=Yes
+C:\Windows\SysWOW64\MSDBRPTR.DLL=Yes
+C:\Windows\SysWOW64\MSBIND.DLL=Yes
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSACC.OLB=Yes
+C:\Program Files (x86)\Common Files\System\ado\msado60_Backcompat.tlb=Yes
+C:\Windows\SysWOW64\MSRDC20.OCX=Yes
+C:\Windows\SysWOW64\MSRDO20.DLL=Yes
+C:\Windows\SysWOW64\RDOCURS.DLL=Yes
+C:\Windows\SysWOW64\TABCTL32.OCX=Yes
+C:\Windows\SysWOW64\MSFLXGRD.OCX=Yes
+C:\Windows\SysWOW64\comdlg32.ocx=Yes
+C:\Windows\SysWOW64\MSCOMCTL.OCX=Yes
+C:\Windows\SysWOW64\MSCOMCT2.OCX=Yes
+C:\Windows\SysWOW64\MSINET.OCX=Yes
+C:\Windows\SysWOW64\RICHTX32.OCX=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\Windows\SysWOW64\MSCHRT20.OCX=Yes
+C:\Windows\SysWOW64\MSWINSCK.OCX=Yes
+C:\Windows\SysWOW64\MSMAPI32.OCX=Yes
+C:\Windows\SysWOW64\MCI32.OCX=Yes
+C:\Windows\SysWOW64\PICCLP32.OCX=Yes
+C:\Windows\SysWOW64\SYSINFO.OCX=Yes
+C:\Windows\SysWOW64\MSCOMM32.OCX=Yes
+C:\Windows\SysWOW64\MSMASK32.OCX=Yes
+C:\Windows\SysWOW64\MSDATGRD.OCX=Yes
+C:\Windows\SysWOW64\MSDATLST.OCX=Yes
+C:\Windows\SysWOW64\COMCT332.OCX=Yes
+C:\Windows\SysWOW64\MSADODC.OCX=Yes
+C:\Windows\SysWOW64\MSHFLXGD.OCX=Yes
+C:\Windows\SysWOW64\VBxPOLITEC.ocx=Yes
+C:\Windows\SysWOW64\DBLIST32.OCX=Yes
+C:\Windows\SysWOW64\MSDATREP.OCX=Yes
+C:\Windows\SysWOW64\COMCTL32.OCX=Yes
+C:\Windows\SysWOW64\FLEXWIZ.OCX=Yes
+C:\Windows\SysWOW64\ACTIVETEXT.OCX=Yes
+C:\Windows\SysWOW64\Skin_Button.ocx=Yes
+D:\Sistemas\vbalsgrid6.ocx=Yes
+C:\Windows\SysWOW64\DBGRID32.OCX=Yes
+C:\Windows\SysWOW64\prRaf.ocx=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\APPWIZ.OCX=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\DATAFORM.OCX=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Setup do SisFF|Configure Registry Files]
+Applicable=No
+
+[Package|Setup do SisFF|Configure Remote Servers]
+Applicable=No
+
+[Package|Setup do SisFF|Install Locations]
+D:\Sistemas\SisFF\prFichas.exe=$(AppPath)
+C:\WINDOWS\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Arquivos de programas\Arquivos comuns\Designer\MSDERUN.DLL=$(CommonFiles)\designer
+C:\WINDOWS\system\DAO360.DLL=$(MSDAOPath)
+C:\WINDOWS\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Office\Office\EXCEL9.OLB=$(WinSysPath)
+C:\WINDOWS\system32\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSRDC20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\system32\RICHTX32.OCX=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\MSCHRT20.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSWINSCK.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMAPI32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MCI32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\PICCLP32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\SYSINFO.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSMASK32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATLST.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMCT332.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSHFLXGD.OCX=$(WinSysPath)
+D:\Sistemas\SisItens\OCX\VBxPOLITEC.ocx=$(WinSysPath)
+C:\WINDOWS\system32\DBLIST32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSDATREP.OCX=$(WinSysPath)
+C:\WINDOWS\system32\COMCTL32.OCX=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\FLEXWIZ.OCX=$(WinSysPath)
+D:\Sistemas\SisFF\OCX\ACTIVETEXT.OCX=$(WinSysPath)
+D:\Sistemas\SisFF\OCX\Skin_Button.ocx=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\Vb6stkit.dll=$(WinSysPathSysFile)
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\Sistemas\SisFF\OCX\prRaf.ocx=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Office\Office\MSACC9.OLB=$(WinSysPath)
+D:\Sistemas\SisFF\OCX\VBxPOLITEC.ocx=$(WinSysPath)
+C:\Arquivos de programas\Arquivos comuns\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+D:\Sistemas\SisCentral\OCX\VBxPOLITEC.ocx=$(WinSysPath)
+D:\Sistemas\SisCentral\OCX\ACTIVETEXT.OCX=$(WinSysPath)
+D:\Sistemas\SisCentral\OCX\Skin_Button.ocx=$(WinSysPath)
+E:\Sistemas\SisFF\prFichas.exe=$(AppPath)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Arquivos de programas\Arquivos comuns\System\ado\msado25.tlb=$(WinSysPath)
+C:\WINDOWS\system32\VBxPOLITEC.ocx=$(WinSysPath)
+C:\WINDOWS\system32\ACTIVETEXT.OCX=$(WinSysPath)
+C:\WINDOWS\system32\Skin_Button.ocx=$(WinSysPath)
+E:\Sistemas\SisFF\OCX\prRaf.ocx=$(WinSysPath)
+C:\Arquivos de programas\Microsoft Office\OFFICE11\EXCEL.EXE=$(AppPath)
+C:\Arquivos de programas\Microsoft Office\OFFICE11\MSACC.OLB=$(WinSysPath)
+E:\sistemas\SisFF\OCX\VBxPOLITEC.ocx=$(WinSysPath)
+E:\sistemas\SisFF\OCX\ACTIVETEXT.OCX=$(WinSysPath)
+E:\sistemas\SisFF\OCX\Skin_Button.ocx=$(WinSysPath)
+D:\Sistemas\SisFFG (desenv)\prFichasG.exe=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files (x86)\Common Files\DESIGNER\MSDERUN.DLL=$(CommonFiles)\designer
+C:\Program Files (x86)\Common Files\microsoft shared\DAO\dao360.dll=$(MSDAOPath)
+C:\Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE=$(AppPath)
+C:\Windows\SysWOW64\MSDBRPTR.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\MSBIND.DLL=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Office\OFFICE11\MSACC.OLB=$(WinSysPath)
+C:\Program Files (x86)\Common Files\System\ado\msado60_Backcompat.tlb=$(WinSysPath)
+C:\Windows\SysWOW64\MSRDC20.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSRDO20.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\RDOCURS.DLL=$(WinSysPath)
+C:\Windows\SysWOW64\TABCTL32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSFLXGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\comdlg32.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCTL.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMCT2.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSINET.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\RICHTX32.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\Windows\SysWOW64\MSCHRT20.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSWINSCK.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSMAPI32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MCI32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\PICCLP32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\SYSINFO.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSCOMM32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSMASK32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATGRD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATLST.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMCT332.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSADODC.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSHFLXGD.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\VBxPOLITEC.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\DBLIST32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\MSDATREP.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\COMCTL32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\FLEXWIZ.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\ACTIVETEXT.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\Skin_Button.ocx=$(WinSysPath)
+D:\Sistemas\vbalsgrid6.ocx=$(WinSysPath)
+C:\Windows\SysWOW64\DBGRID32.OCX=$(WinSysPath)
+C:\Windows\SysWOW64\prRaf.ocx=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\APPWIZ.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\DATAFORM.OCX=$(WinSysPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Setup do SisFF|Configure Shared Files]
+Applicable=Yes
+D:\Sistemas\SisFF\prFichas.exe=Yes
+C:\Arquivos de programas\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+E:\Sistemas\SisFF\prFichas.exe=Yes
+C:\Arquivos de programas\Microsoft Office\OFFICE11\EXCEL.EXE=Yes
+D:\Sistemas\SisFFG (desenv)\prFichasG.exe=No
+C:\Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE=No
+C:\Program Files (x86)\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+
+[Package|Setup do SisFF|Distribution]
+Type=single
+Size=
+Title=SisFFG
+
+[Package|Setup do SisFF|IconGroups]
+Group0=SisFF
+PrivateGroup0=0
+Parent0=$(Programs)
+
+[Package|Setup do SisFF|SisFF]
+Icon1=prFichas.exe
+Title1=SisFF
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Setup do SisFF|Package]
+PackageFolder=D:\Sistemas\SisFFG (desenv)\SisFFG
+ProjectFolder=D:\Sistemas\SisFFG (desenv)
+ServerSideCab=
+File1=D:\Sistemas\SisFFG (desenv)\SisFFG\setup.exe
+File2=D:\Sistemas\SisFFG (desenv)\SisFFG\Setup.Lst
+File3=D:\Sistemas\SisFFG (desenv)\SisFFG\prFichasG.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
