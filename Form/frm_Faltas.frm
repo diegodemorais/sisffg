@@ -47,7 +47,7 @@ Begin VB.Form frm_Faltas
       MaxSelCount     =   31
       MultiSelect     =   -1  'True
       ShowToday       =   0   'False
-      StartOfWeek     =   70385665
+      StartOfWeek     =   215547905
       CurrentDate     =   41408
       MaxDate         =   73050
       MinDate         =   2
@@ -263,10 +263,10 @@ Private Sub ExibirCelula()
     Select Case LastCol
     Case Else
         Text1.Move flexGRID_L.CellLeft - Screen.TwipsPerPixelX, flexGRID_L.CellTop - 3 - Screen.TwipsPerPixelY, flexGRID_L.CellWidth + Screen.TwipsPerPixelX * 2, flexGRID_L.CellHeight + Screen.TwipsPerPixelY * 2
-        Text1.Text = flexGRID_L.Text
-        If Len(flexGRID_L.Text) = 0 Then
+        Text1.text = flexGRID_L.text
+        If Len(flexGRID_L.text) = 0 Then
             If LastRow > 1 Then
-                Text1.Text = flexGRID_L.TextMatrix(LastRow - 1, LastCol)
+                Text1.text = flexGRID_L.TextMatrix(LastRow - 1, LastCol)
             End If
         End If
         Text1.Visible = True
@@ -279,7 +279,7 @@ Private Sub ExibirCelula()
     ControlVisible = True
     OK = False
     
-    wTxtOld = Text1.Text
+    wTxtOld = Text1.text
 
 End Sub
 Private Sub ProximaCelula()
@@ -295,7 +295,7 @@ End Sub
 Private Sub AtribuiValorCelula()
     Dim texto As String
     Dim Op As String
-    texto = Text1.Text
+    texto = Text1.text
     
     If texto <> flexGRID_L.TextMatrix(flexGRID_L.RowSel, flexGRID_L.ColSel) Then 'Se houve alteração
     
@@ -351,7 +351,7 @@ Private Sub AtribuiValorCelula()
 End Sub
 Private Sub OcultarControles()
     ' Ocultar o controle textbox
-    Text1.Text = ""
+    Text1.text = ""
     Text1.Visible = False
 End Sub
 
@@ -359,7 +359,7 @@ Private Sub Text1_GotFocus()
     With Text1
          'Seleciona tudo
          .SelStart = 0
-         .SelLength = Len(Text1.Text)
+         .SelLength = Len(Text1.text)
          .SetFocus
          
         ' Posiciona o cursor no fim do texto
