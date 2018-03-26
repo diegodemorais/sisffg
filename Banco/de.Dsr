@@ -1,11 +1,11 @@
 VERSION 5.00
 Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de 
-   ClientHeight    =   10785
+   ClientHeight    =   11730
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   20520
-   _ExtentX        =   36195
-   _ExtentY        =   19024
+   ClientWidth     =   18270
+   _ExtentX        =   32226
+   _ExtentY        =   20690
    FolderFlags     =   7
    TypeLibGuid     =   "{736B3B8B-AF06-4A16-9146-4FE54F190DC1}"
    TypeInfoGuid    =   "{19CF94E8-00B2-43A6-9004-EB73BF385E72}"
@@ -17,7 +17,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   1001
       SourceOfData    =   3
       ConnectionSource=   $"de.dsx":0000
-      Expanded        =   -1  'True
       QuoteChar       =   96
       SeparatorChar   =   46
    EndProperty
