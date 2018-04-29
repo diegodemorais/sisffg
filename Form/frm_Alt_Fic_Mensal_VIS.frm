@@ -6335,15 +6335,15 @@ Private Sub cmdComisCx_Click()
             If ADOREG.Recordset.Fields("M_MES") <= 12 Then
                 
                 If vrVenda >= (vrMeta) Then
-                    wFixoMeta = 100
-                    If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        'vrMetaBonus = vrSalario * 0.05
+                    wFixoMeta = 0
+                    'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
+                        vrMetaBonus = vrSalario * 0.05
                         wPercMeta = 5
-                    Else
+                    'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                         wPercMeta = ((vrVenda / vrMeta) - 1) * 100
-                    End If
-                    vrMetaBonus = 0
+                    'End If
+                    'vrMetaBonus = 0
                    descMeta = " + Bonus Meta(" & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00") & ") "
                 Else
                    descMeta = ""
@@ -6454,11 +6454,11 @@ Dim w_ado_venda As ADODB.Recordset
     If de.rscmdComiss_Grouping.State = 1 Then de.rscmdComiss_Grouping.Close
     
     'On Error Resume Next
-    'de.cmdDROPtmpComis1
-    'de.cmdDROPtmpComis2
+    de.cmdDROPtmpComis1
+    de.cmdDROPtmpComis2
     
-    'de.cmdCREATEtmpComis1
-    'de.cmdCREATEtmpComis2
+    de.cmdCREATEtmpComis1
+    de.cmdCREATEtmpComis2
     
     de.cmdDELETEtmpComis1
     de.cmdDELETEtmpComis2
@@ -6706,15 +6706,15 @@ Dim w_ado_venda As ADODB.Recordset
                         End If
                     End If
                 
-                    wFixoMeta = 100
-                    If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                    '    vrMetaBonus = vrSalario * 0.05
+                    wFixoMeta = 0
+                    'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
+                        vrMetaBonus = vrSalario * 0.05
                         wPercMeta = 5
-                    Else
+                    'Else
                     '    vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
-                        wPercMeta = ((vrVenda / vrMeta) - 1) * 100
-                    End If
-                    vrMetaBonus = 0
+                    '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
+                    'End If
+                    'vrMetaBonus = 0
 
                     de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
                     'Bonus de % do Salário
@@ -7038,38 +7038,44 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta
                  vrMetaBonus = 0
                 
                 If ADOREG.Recordset.Fields("m_mes") <= 12 Then
-                    wPercMeta = 0
-                    If vrVenda >= (vrMeta * 1.1) Then
-                        vrMetaBonus = vrSalario * 0.1
-                        wPercMeta = 10
-                    ElseIf vrVenda >= (vrMeta * 1.08) Then
-                        vrMetaBonus = vrSalario * 0.08
-                        wPercMeta = 8
-                    ElseIf vrVenda >= (vrMeta * 1.05) Then
+                    'wPercMeta = 0
+                    'If vrVenda >= (vrMeta * 1.1) Then
+                    '    vrMetaBonus = vrSalario * 0.1
+                    '    wPercMeta = 10
+                    'ElseIf vrVenda >= (vrMeta * 1.08) Then
+                    '    vrMetaBonus = vrSalario * 0.08
+                    '    wPercMeta = 8
+                    'ElseIf vrVenda >= (vrMeta * 1.05) Then
+                    '    vrMetaBonus = vrSalario * 0.05
+                    '    wPercMeta = 5
+                    'End If
+                    
+                    If vrVenda >= (vrMeta) Then
                         vrMetaBonus = vrSalario * 0.05
                         wPercMeta = 5
+                        descMeta = " + Bonus Meta(" & Format(w_Piso, "0.00") & " * " & wPercMeta & "% = " & Format(vrMetaBonus, "0.00") & ") "
                     End If
                     
-                    If vrVenda >= (vrMeta * 1.05) Then
-                        descMeta = " + Bonus Meta(" & Format(w_Piso, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & ") "
-                        vrPisoMeta = w_Piso + vrMetaBonus
-                     Else
-                        vrPisoMeta = w_Piso
-                        descMeta = ""
-                     End If
+                    'If vrVenda >= (vrMeta * 1.05) Then
+                    '    descMeta = " + Bonus Meta(" & Format(w_Piso, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & ") "
+                    '    vrPisoMeta = w_Piso + vrMetaBonus
+                    ' Else
+                    '    vrPisoMeta = w_Piso
+                    '    descMeta = ""
+                    ' End If
                  
                 Else
                  
-                     If vrVenda >= vrMeta Then
-                        'Bonus de 15% do Salario
-                        vrMetaBonus = w_Piso * 0.15
-                        'descMeta = " + Bonus Meta(" & vrSalario & " * 15% = " & vrMetaBonus & ") "
-                        descMeta = " + Bonus Meta(" & Format(w_Piso, "0.00") & " * 15% = " & Format(vrMetaBonus, "0.00") & ") "
-                        vrPisoMeta = w_Piso + vrMetaBonus
-                     Else
-                        vrPisoMeta = w_Piso
-                        descMeta = ""
-                     End If
+                     'If vrVenda >= vrMeta Then
+                     '   'Bonus de 15% do Salario
+                     '   vrMetaBonus = w_Piso * 0.15
+                     '   'descMeta = " + Bonus Meta(" & vrSalario & " * 15% = " & vrMetaBonus & ") "
+                     '   descMeta = " + Bonus Meta(" & Format(w_Piso, "0.00") & " * 15% = " & Format(vrMetaBonus, "0.00") & ") "
+                     '   vrPisoMeta = w_Piso + vrMetaBonus
+                     'Else
+                     '   vrPisoMeta = w_Piso
+                     '   descMeta = ""
+                     'End If
                     '*****
                 
                 End If
@@ -7930,15 +7936,15 @@ On Error Resume Next
               If ADOREG.Recordset.Fields("m_mes") <= 12 Then
                    
                 If vrVenda >= (vrMeta) Then
-                    wFixoMeta = vrSalario * 0.1
-                    If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        'vrMetaBonus = vrSalario * 0.05
+                    'wFixoMeta = vrSalario * 0.1
+                    'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
+                        vrMetaBonus = vrSalario * 0.05
                         wPercMeta = 5
-                    Else
+                    'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
-                        wPercMeta = ((vrVenda / vrMeta) - 1) * 100
-                    End If
-                    vrMetaBonus = 0
+                    '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
+                    'End If
+                    'vrMetaBonus = 0
                     descMeta = " + Bonus Meta(" & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00") & ") "
                 Else
                    descMeta = ""
