@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
@@ -6337,8 +6337,8 @@ Private Sub cmdComisCx_Click()
                 If vrVenda >= (vrMeta) Then
                     wFixoMeta = 0
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.1
-                        wPercMeta = 10
+                        vrMetaBonus = vrSalario * 0.05
+                        wPercMeta = 5
                     'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                         'wPercMeta = ((vrVenda / vrMeta) - 1) * 100
@@ -9860,6 +9860,7 @@ End Sub
 Private Sub txt_FERIAS_KeyUp(KeyCode As Integer, Shift As Integer)
     Keys KeyCode, Shift
 End Sub
+
 
 
 

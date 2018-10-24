@@ -12,7 +12,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
    _ExtentX        =   26882
    _ExtentY        =   19420
    _Version        =   393216
-   _DesignerVersion=   100688210
+   _DesignerVersion=   100688423
    ReportWidth     =   11337
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
@@ -153,7 +153,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label5"
-         Object.Left            =   9510
+         Object.Left            =   10020
          Object.Top             =   420
          Object.Width           =   1200
          Object.Height          =   285
@@ -173,7 +173,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item3 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   8130
+         Object.Left            =   8640
          Object.Top             =   405
          Object.Width           =   1215
          Object.Height          =   315
@@ -193,7 +193,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item4 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
-         Object.Left            =   6825
+         Object.Left            =   7335
          Object.Top             =   420
          Object.Width           =   1170
          Object.Height          =   285
@@ -449,15 +449,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Section1"
-      Object.Height          =   375
+      Object.Height          =   330
       KeepTogether    =   -1  'True
-      NumControls     =   9
+      NumControls     =   8
       ItemType0       =   4
       BeginProperty Item0 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text1"
-         Object.Left            =   870
-         Object.Width           =   3705
+         Object.Left            =   75
+         Object.Width           =   3615
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
@@ -484,7 +484,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text2"
-         Object.Left            =   9525
+         Object.Left            =   10035
          Object.Width           =   1200
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -513,7 +513,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text5"
-         Object.Left            =   8160
+         Object.Left            =   8790
          Object.Width           =   1200
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -542,7 +542,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text6"
-         Object.Left            =   6840
+         Object.Left            =   7530
          Object.Width           =   1200
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -571,7 +571,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item4 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text7"
-         Object.Left            =   5775
+         Object.Left            =   6435
          Object.Width           =   1020
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -604,7 +604,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
       BeginProperty Item5 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text8"
-         Object.Left            =   4635
+         Object.Left            =   5370
          Object.Width           =   1005
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -639,17 +639,16 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
          Name            =   "Shape2"
          Object.Left            =   75
          Object.Top             =   330
-         Object.Width           =   10650
+         Object.Width           =   11175
          BackColor       =   0
          BackStyle       =   1
       EndProperty
       ItemType7       =   4
       BeginProperty Item7 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
-         Name            =   "Text10"
-         Object.Left            =   45
-         Object.Top             =   15
-         Object.Width           =   705
+         Name            =   "Text4"
+         Object.Left            =   3735
+         Object.Width           =   1575
          Object.Height          =   300
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
@@ -660,8 +659,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         DataField       =   "NUM"
-         Alignment       =   2
+         ForeColor       =   255
+         DataField       =   "M_TIPO"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
@@ -672,24 +671,6 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
             SubFormatType   =   0
          EndProperty
          DataMember      =   "cmdSqlFichaMensalDem"
-      EndProperty
-      ItemType8       =   3
-      BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label1"
-         Object.Left            =   630
-         Object.Width           =   195
-         Object.Height          =   300
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   11.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "-"
       EndProperty
    EndProperty
    SectionCode4    =   5
@@ -703,7 +684,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptFichaMensalDem
          _Version        =   393216
          Name            =   "Shape1"
          Object.Top             =   45
-         Object.Width           =   10770
+         Object.Width           =   11295
          Object.Height          =   15
          BackColor       =   0
          BackStyle       =   1
