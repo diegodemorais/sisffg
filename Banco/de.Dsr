@@ -33,7 +33,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnectionName  =   "cncMwts"
       ConnDispId      =   2202
       SourceOfData    =   3
-      ConnectionSource=   "Provider=ibole.Provider.v4;Password=masterkey;Persist Security Info=True;Data Source=201.55.77.18:D:\base\MILLENIUM"
+      ConnectionSource=   "Provider=ibole.Provider.v4;Password=masterkey;Persist Security Info=True;Data Source=201.55.77.18:C:\sys\Base\MILLENIUM"
       QuoteChar       =   34
       SeparatorChar   =   46
    EndProperty
@@ -41,7 +41,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnectionName  =   "cncMwts2"
       ConnDispId      =   2930
       SourceOfData    =   3
-      ConnectionSource=   "Provider=ibole.Provider.v4;Password=masterkey;Persist Security Info=True;Data Source=201.55.77.18:D:\base\MILLENIUM"
+      ConnectionSource=   "Provider=ibole.Provider.v4;Password=masterkey;Persist Security Info=True;Data Source=201.55.77.18:C:\sys\Base\MILLENIUM"
       Expanded        =   -1  'True
       QuoteChar       =   34
       SeparatorChar   =   46
