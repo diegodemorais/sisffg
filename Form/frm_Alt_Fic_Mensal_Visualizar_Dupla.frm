@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
@@ -2847,13 +2847,13 @@ On Error GoTo err1
      
     
     If FRM_IMP_F.ckTodas.value = 0 Then
-        FRM_IMP_F.TXT_LOGO = TXTLOGO
+        FRM_IMP_F.TXT_LOGO = txtLogo
     Else
         FRM_IMP_F.TXT_LOGO = "%"
     End If
     
-    FRM_IMP_F.txt_Mes = txt_Mes
-    FRM_IMP_F.txt_Ano = txt_Ano
+    FRM_IMP_F.TXT_MES = TXT_MES
+    FRM_IMP_F.TXT_ANO = TXT_ANO
     
     If FRM_IMP_F.ck_Nome.value = 0 Then
         FRM_IMP_F.dbNome = TXT_FUNC
@@ -2865,8 +2865,8 @@ On Error GoTo err1
     
 
     FRM_IMP_F.TXT_LOGO = TXT_CAMPOS(0)
-    FRM_IMP_F.txt_Mes = Format(adoReg.Recordset.Fields("DATA"), "MM")
-    FRM_IMP_F.txt_Ano = txt_Ano
+    FRM_IMP_F.TXT_MES = Format(adoReg.Recordset.Fields("DATA"), "MM")
+    FRM_IMP_F.TXT_ANO = TXT_ANO
     FRM_IMP_F.dbNome = TXT_CAMPOS(1)
 
     FRM_IMP_F.Show 1
@@ -2948,8 +2948,8 @@ On Error GoTo err1
                 & "Format('01/'+Mid(Str(TAB_FICHA_MENS.M_MES),2)+'/'+Mid(Str(TAB_FICHA_MENS.M_ANO),2),'DD/MM/YYYY') AS Data," _
                 & "TAB_FUNCIONARIO.F_Cod_L AS Logo2, LOJB010.NUM as Logo, TAB_FICHA_MENS.M_TOTAL, Mid(TAB_FUNCIONARIO.F_COD_CENTRAL,3) AS COD_CENTRAL," _
                 & " TAB_FICHA_MENS.M_TIPO AS TIPO, TAB_FUNCIONARIO.F_CX_QT_VND AS Cx_Qt_VND FROM TAB_FICHA_MENS, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ " _
-                & " WHERE (((TAB_FICHA_MENS.M_F_COD)=[TAB_FUNCIONARIO].[F_Codigo]) AND ((TAB_FICHA_MENS.M_MES)=" & FRM_IMP_F.txt_Mes & ") AND" _
-                & " ((TAB_FICHA_MENS.M_ANO)=" & FRM_IMP_F.txt_Ano & ") AND ((TAB_FUNCIONARIO.F_NOME) Like '" & FRM_IMP_F.dbNome & "' and TAB_FUNCIONARIO.F_NOME <> '10 - Func'" _
+                & " WHERE (((TAB_FICHA_MENS.M_F_COD)=[TAB_FUNCIONARIO].[F_Codigo]) AND ((TAB_FICHA_MENS.M_MES)=" & FRM_IMP_F.TXT_MES & ") AND" _
+                & " ((TAB_FICHA_MENS.M_ANO)=" & FRM_IMP_F.TXT_ANO & ") AND ((TAB_FUNCIONARIO.F_NOME) Like '" & FRM_IMP_F.dbNome & "' and TAB_FUNCIONARIO.F_NOME <> '10 - Func'" _
                 & " AND TAB_FUNCIONARIO.F_NOME <> '99 - Presence') AND   (" _
                 & w_sqlTiposTripa _
                 & ") AND (" _
@@ -2970,8 +2970,8 @@ On Error GoTo err1
                 If de.rscmdSqlTotalVND.State = 1 Then de.rscmdSqlTotalVND.Close
                 
             
-                w_DtI = CVDate("01/" & Format(FRM_IMP_F.txt_Mes, "00") & "/" & Format(FRM_IMP_F.txt_Ano, "0000"))
-                w_DtF = UltDiaMes(FRM_IMP_F.txt_Mes, FRM_IMP_F.txt_Ano)
+                w_DtI = CVDate("01/" & Format(FRM_IMP_F.TXT_MES, "00") & "/" & Format(FRM_IMP_F.TXT_ANO, "0000"))
+                w_DtF = UltDiaMes(FRM_IMP_F.TXT_MES, FRM_IMP_F.TXT_ANO)
                 de.cmdSqlTotalVND w_DtI, w_DtF, IIf(FRM_IMP_F.TXT_LOGO = "", "%", FRM_IMP_F.TXT_LOGO)
                 
                 
@@ -3070,7 +3070,7 @@ On Error GoTo err1
         'de.rsTAB_FICHA_MENS.Requery
     'End If
     
-    frm_Alt_Fic_Mensal_VIS.Timer1 = True
+    'frm_Alt_Fic_Mensal_VIS.Timer1 = True
     
     W_FILTRO = 0
     'ADOREG.Recordset.Filter = 0
@@ -3104,7 +3104,7 @@ If adoReg.Recordset.Fields("BLOQ") = 0 Then
 
     frm_Alt_Desc_Calc.lb_form = "visualizar"
     frm_Alt_Desc_Calc.TXT_NFICHA_CAD = adoReg.Recordset.Fields("M_Nficha")
-    frm_Alt_Desc_Calc.LB_FUNC.Caption = TXT_CAMPOS(1).Text
+    frm_Alt_Desc_Calc.LB_FUNC.Caption = TXT_CAMPOS(1).text
     frm_Alt_Desc_Calc.Show 1
 
 Else
@@ -3162,7 +3162,7 @@ If adoReg2.Recordset.Fields("BLOQ") = 0 Then
 
     frm_Alt_Desc_Calc.lb_form = "visualizar"
     frm_Alt_Desc_Calc.TXT_NFICHA_CAD = adoReg.Recordset.Fields("M_Nficha")
-    frm_Alt_Desc_Calc.LB_FUNC.Caption = TXT_CAMPOS(15).Text
+    frm_Alt_Desc_Calc.LB_FUNC.Caption = TXT_CAMPOS(15).text
     frm_Alt_Desc_Calc.Show 1
 
 Else
@@ -3210,13 +3210,13 @@ Private Sub Text6_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub txt_Ano1_KeyDown(KeyCode As Integer, Shift As Integer)
-If KeyCode = 13 Then SendKeys "{tab}"
+If KeyCode = 13 Then Sendkeys "{tab}"
     Keys KeyCode, Shift
 
 End Sub
 
 Private Sub txt_Ano2_KeyDown(KeyCode As Integer, Shift As Integer)
-If KeyCode = 13 Then SendKeys "{tab}"
+If KeyCode = 13 Then Sendkeys "{tab}"
     Keys KeyCode, Shift
 End Sub
 
@@ -3224,8 +3224,8 @@ Private Sub TXT_CAMPOS_KeyDown(Index As Integer, KeyCode As Integer, Shift As In
     Keys KeyCode, Shift
     If KeyCode = 13 And Shift = 0 Then
         KeyCode = 0
-        If Not Index = 2 And Not Index = 3 And Not Index = 9 And Not Index = 10 Then SendKeys "{backspace}"
-        SendKeys "{tab}"
+        If Not Index = 2 And Not Index = 3 And Not Index = 9 And Not Index = 10 Then Sendkeys "{backspace}"
+        Sendkeys "{tab}"
     End If
 End Sub
 
@@ -3278,13 +3278,13 @@ err1:
 End Sub
 
 Private Sub txt_Mes1_KeyDown(KeyCode As Integer, Shift As Integer)
-If KeyCode = 13 Then SendKeys "{tab}"
+If KeyCode = 13 Then Sendkeys "{tab}"
     Keys KeyCode, Shift
 
 End Sub
 
 Private Sub txt_Mes2_KeyDown(KeyCode As Integer, Shift As Integer)
-If KeyCode = 13 Then SendKeys "{tab}"
+If KeyCode = 13 Then Sendkeys "{tab}"
     Keys KeyCode, Shift
 End Sub
 

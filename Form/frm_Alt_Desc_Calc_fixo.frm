@@ -1,10 +1,10 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
 Begin VB.Form frm_Alt_Desc_Calc_fixo 
    BackColor       =   &H80000001&
@@ -102,45 +102,45 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       TabCaption(1)   =   "Cadastrar"
       TabPicture(1)   =   "frm_Alt_Desc_Calc_fixo.frx":105E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Shape2"
-      Tab(1).Control(1)=   "Label6"
-      Tab(1).Control(2)=   "Label7"
-      Tab(1).Control(3)=   "Label10"
-      Tab(1).Control(4)=   "Label11"
-      Tab(1).Control(5)=   "Label12"
-      Tab(1).Control(6)=   "Label8"
-      Tab(1).Control(7)=   "lblogo_cad"
-      Tab(1).Control(8)=   "lbncred_cad"
-      Tab(1).Control(9)=   "lbEmp(2)"
-      Tab(1).Control(10)=   "lbEmp(1)"
-      Tab(1).Control(11)=   "lbEmp(0)"
-      Tab(1).Control(12)=   "LB_EMP_D(0)"
-      Tab(1).Control(13)=   "LB_EMP_D(1)"
-      Tab(1).Control(14)=   "LB_EMP_D(2)"
-      Tab(1).Control(15)=   "lbEmp(3)"
-      Tab(1).Control(16)=   "LB_EMP_D(3)"
-      Tab(1).Control(17)=   "LB_DT_EXTRA"
-      Tab(1).Control(18)=   "LB_DESC_EXTRA"
-      Tab(1).Control(19)=   "TXT_E_JUROS"
-      Tab(1).Control(20)=   "TXT_VALOR_CAD"
-      Tab(1).Control(21)=   "TXT_CONTA_Cod_CAD"
-      Tab(1).Control(22)=   "TXT_OP_CAD"
-      Tab(1).Control(22).Enabled=   0   'False
-      Tab(1).Control(23)=   "TXT_DESC_CAD"
-      Tab(1).Control(24)=   "TXT_CONTA_CAD"
-      Tab(1).Control(25)=   "TXT_DT_CAD"
-      Tab(1).Control(26)=   "TXT_NFICHA_CAD"
-      Tab(1).Control(27)=   "TXT_CONTA_CAD_op"
-      Tab(1).Control(28)=   "txt_Logo_Cad"
-      Tab(1).Control(29)=   "txt_NCred_Cad"
-      Tab(1).Control(30)=   "txt_Emp(1)"
-      Tab(1).Control(31)=   "TXT_E_COD"
-      Tab(1).Control(32)=   "TXT_E_VALOR"
-      Tab(1).Control(33)=   "TXT_E_SALDO"
-      Tab(1).Control(34)=   "txt_Emp(2)"
-      Tab(1).Control(35)=   "txt_Emp(0)"
-      Tab(1).Control(36)=   "TXT_DT_EXTRA"
-      Tab(1).Control(37)=   "TXT_DESC_EXTRA"
+      Tab(1).Control(0)=   "TXT_DESC_EXTRA"
+      Tab(1).Control(1)=   "TXT_DT_EXTRA"
+      Tab(1).Control(2)=   "txt_Emp(0)"
+      Tab(1).Control(3)=   "txt_Emp(2)"
+      Tab(1).Control(4)=   "TXT_E_SALDO"
+      Tab(1).Control(5)=   "TXT_E_VALOR"
+      Tab(1).Control(6)=   "TXT_E_COD"
+      Tab(1).Control(7)=   "txt_Emp(1)"
+      Tab(1).Control(8)=   "txt_NCred_Cad"
+      Tab(1).Control(9)=   "txt_Logo_Cad"
+      Tab(1).Control(10)=   "TXT_CONTA_CAD_op"
+      Tab(1).Control(11)=   "TXT_NFICHA_CAD"
+      Tab(1).Control(12)=   "TXT_DT_CAD"
+      Tab(1).Control(13)=   "TXT_CONTA_CAD"
+      Tab(1).Control(14)=   "TXT_DESC_CAD"
+      Tab(1).Control(15)=   "TXT_OP_CAD"
+      Tab(1).Control(15).Enabled=   0   'False
+      Tab(1).Control(16)=   "TXT_CONTA_Cod_CAD"
+      Tab(1).Control(17)=   "TXT_VALOR_CAD"
+      Tab(1).Control(18)=   "TXT_E_JUROS"
+      Tab(1).Control(19)=   "LB_DESC_EXTRA"
+      Tab(1).Control(20)=   "LB_DT_EXTRA"
+      Tab(1).Control(21)=   "LB_EMP_D(3)"
+      Tab(1).Control(22)=   "lbEmp(3)"
+      Tab(1).Control(23)=   "LB_EMP_D(2)"
+      Tab(1).Control(24)=   "LB_EMP_D(1)"
+      Tab(1).Control(25)=   "LB_EMP_D(0)"
+      Tab(1).Control(26)=   "lbEmp(0)"
+      Tab(1).Control(27)=   "lbEmp(1)"
+      Tab(1).Control(28)=   "lbEmp(2)"
+      Tab(1).Control(29)=   "lbncred_cad"
+      Tab(1).Control(30)=   "lblogo_cad"
+      Tab(1).Control(31)=   "Label8"
+      Tab(1).Control(32)=   "Label12"
+      Tab(1).Control(33)=   "Label11"
+      Tab(1).Control(34)=   "Label10"
+      Tab(1).Control(35)=   "Label7"
+      Tab(1).Control(36)=   "Label6"
+      Tab(1).Control(37)=   "Shape2"
       Tab(1).ControlCount=   38
       Begin VB.CheckBox chkVisto 
          Caption         =   "VISTO"
@@ -770,7 +770,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   72744961
+         Format          =   110428161
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -791,7 +791,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   72744961
+         Format          =   110428161
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
@@ -2652,8 +2652,8 @@ Else    '**** CADASTRAR ****
         
         End If
         
-    
-        incluirFixo = True
+        'para não atualizar o mês atual
+        'incluirFixo = True
                 
         MsgBox "Registro salvo com sucesso!", vbInformation
         
@@ -2667,7 +2667,7 @@ Else    '**** CADASTRAR ****
         
         
     ElseIf Not (CDbl(Format(TXT_DT_CAD, "mm")) = CDbl(frm_Alt_Fic_Mensal_VIS.TXT_MES) Or CDbl(Format(TXT_DT_CAD, "mm")) = CDbl(frm_Alt_Fic_Mensal_VIS.TXT_MES) - 1) Then
-        MsgBox "Só é permitido data do mês passado ou do mês atual!", vbExclamation
+        MsgBox "Só é permitido data do mês anterior ou do mês atual!", vbExclamation
     Else
         MsgBox "Preencha os Campos!", vbCritical
     End If
@@ -2675,7 +2675,7 @@ Else    '**** CADASTRAR ****
 
 End If
 
-   If TXT_NFICHA <> "" Then
+   If TXT_NFICHA <> "" And incluirFixo = True Then
         
         de.rsTAB_DESC_CALC_FIXO.Close
         de.TAB_DESC_CALC_FIXO
@@ -2686,7 +2686,7 @@ End If
         
         W_TOTAL = IIf(IsNull(W_MAIS), 0, W_MAIS) - IIf(IsNull(W_MENOS), 0, W_MENOS)
 
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & TXT_NFICHA & ")"
+        de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & TXT_NFICHA & ")"
             
   End If
   
@@ -2879,7 +2879,7 @@ On Error GoTo err1
        w_At = True
         TXT_CONTA_CAD_op.BoundText = TXT_CONTA_CAD.BoundText
         TXT_CONTA_Cod_CAD.BoundText = TXT_CONTA_CAD.BoundText
-        TXT_OP_CAD = TXT_CONTA_CAD_op.Text
+        TXT_OP_CAD = TXT_CONTA_CAD_op.text
        w_At = False
    End If
 
@@ -2921,7 +2921,7 @@ On Error GoTo err1
         
     End If
     
-    If UCase(TXT_CONTA_CAD.Text) = "DESC. CRED." Then
+    If UCase(TXT_CONTA_CAD.text) = "DESC. CRED." Then
         
         CREDIARIO
         
@@ -2955,7 +2955,7 @@ End Sub
 
 
 Private Sub TXT_CONTA_CAD_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = 13 Then SendKeys "{tab}"
+    If KeyCode = 13 Then Sendkeys "{tab}"
 End Sub
 
 Private Sub TXT_CONTA_CAD_Validate(Cancel As Boolean)
@@ -2981,7 +2981,7 @@ On Error GoTo err1
                 txt_conta_Op.BoundText = TXT_CONTA.BoundText
                 
                 TXT_CONTA_cod.BoundText = TXT_CONTA.BoundText
-                TXT_OP = txt_conta_Op.Text
+                TXT_OP = txt_conta_Op.text
            End If
    End If
     
@@ -3077,7 +3077,7 @@ End Sub
 
 
 Private Sub TXT_CONTA_Cod_CAD_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = 13 Then SendKeys "{tab}"
+    If KeyCode = 13 Then Sendkeys "{tab}"
 
 End Sub
 
@@ -3146,14 +3146,14 @@ End Sub
 
 Private Sub TXT_CONTA_COD_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
     Else
         KeyEnter KeyCode
     End If
 End Sub
 
 Private Sub TXT_CONTA_KeyDown(KeyCode As Integer, Shift As Integer)
-If KeyCode = 13 Then SendKeys "{tab}"
+If KeyCode = 13 Then Sendkeys "{tab}"
 
 End Sub
 
@@ -3164,7 +3164,7 @@ Private Sub TXT_DESC_CAD_KeyDown(KeyCode As Integer, Shift As Integer)
     ElseIf LB_DT_EXTRA.Visible = True And KeyCode = 13 Then
         TXT_DT_EXTRA.SetFocus
     ElseIf KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
     End If
 End Sub
 
@@ -3175,7 +3175,7 @@ End Sub
 
 Private Sub TXT_DESC_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
         Pause 0.5
         If vbYes = MsgBox("Deseja Salvar?", vbQuestion + vbYesNo + vbDefaultButton1) Then Salvar
     Else
@@ -3224,7 +3224,7 @@ Private Sub txt_Emp_KeyDown(Index As Integer, KeyCode As Integer, Shift As Integ
 
        If KeyCode = 13 And Index = 1 Then If vbYes = MsgBox("Deseja Salvar?", vbQuestion + vbYesNo + vbDefaultButton1) Then Salvar
          Pause 0.3
-       If KeyCode = 13 Then SendKeys "{TAB}"
+       If KeyCode = 13 Then Sendkeys "{TAB}"
 
 
 End Sub
@@ -3279,7 +3279,7 @@ Private Sub TXT_FUNC_CAD_KeyUp(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub TXT_VALOR_CAD_GotFocus()
-    SendKeys "{home}+{end}"
+    Sendkeys "{home}+{end}"
 End Sub
 
 
