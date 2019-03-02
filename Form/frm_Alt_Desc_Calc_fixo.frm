@@ -102,45 +102,45 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       TabCaption(1)   =   "Cadastrar"
       TabPicture(1)   =   "frm_Alt_Desc_Calc_fixo.frx":105E
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "TXT_DESC_EXTRA"
-      Tab(1).Control(1)=   "TXT_DT_EXTRA"
-      Tab(1).Control(2)=   "txt_Emp(0)"
-      Tab(1).Control(3)=   "txt_Emp(2)"
-      Tab(1).Control(4)=   "TXT_E_SALDO"
-      Tab(1).Control(5)=   "TXT_E_VALOR"
-      Tab(1).Control(6)=   "TXT_E_COD"
-      Tab(1).Control(7)=   "txt_Emp(1)"
-      Tab(1).Control(8)=   "txt_NCred_Cad"
-      Tab(1).Control(9)=   "txt_Logo_Cad"
-      Tab(1).Control(10)=   "TXT_CONTA_CAD_op"
-      Tab(1).Control(11)=   "TXT_NFICHA_CAD"
-      Tab(1).Control(12)=   "TXT_DT_CAD"
-      Tab(1).Control(13)=   "TXT_CONTA_CAD"
-      Tab(1).Control(14)=   "TXT_DESC_CAD"
-      Tab(1).Control(15)=   "TXT_OP_CAD"
-      Tab(1).Control(15).Enabled=   0   'False
-      Tab(1).Control(16)=   "TXT_CONTA_Cod_CAD"
-      Tab(1).Control(17)=   "TXT_VALOR_CAD"
-      Tab(1).Control(18)=   "TXT_E_JUROS"
-      Tab(1).Control(19)=   "LB_DESC_EXTRA"
-      Tab(1).Control(20)=   "LB_DT_EXTRA"
-      Tab(1).Control(21)=   "LB_EMP_D(3)"
-      Tab(1).Control(22)=   "lbEmp(3)"
-      Tab(1).Control(23)=   "LB_EMP_D(2)"
-      Tab(1).Control(24)=   "LB_EMP_D(1)"
-      Tab(1).Control(25)=   "LB_EMP_D(0)"
-      Tab(1).Control(26)=   "lbEmp(0)"
-      Tab(1).Control(27)=   "lbEmp(1)"
-      Tab(1).Control(28)=   "lbEmp(2)"
-      Tab(1).Control(29)=   "lbncred_cad"
-      Tab(1).Control(30)=   "lblogo_cad"
-      Tab(1).Control(31)=   "Label8"
-      Tab(1).Control(32)=   "Label12"
-      Tab(1).Control(33)=   "Label11"
-      Tab(1).Control(34)=   "Label10"
-      Tab(1).Control(35)=   "Label7"
-      Tab(1).Control(36)=   "Label6"
-      Tab(1).Control(37)=   "Shape2"
+      Tab(1).Control(0)=   "Shape2"
+      Tab(1).Control(1)=   "Label6"
+      Tab(1).Control(2)=   "Label7"
+      Tab(1).Control(3)=   "Label10"
+      Tab(1).Control(4)=   "Label11"
+      Tab(1).Control(5)=   "Label12"
+      Tab(1).Control(6)=   "Label8"
+      Tab(1).Control(7)=   "lblogo_cad"
+      Tab(1).Control(8)=   "lbncred_cad"
+      Tab(1).Control(9)=   "lbEmp(2)"
+      Tab(1).Control(10)=   "lbEmp(1)"
+      Tab(1).Control(11)=   "lbEmp(0)"
+      Tab(1).Control(12)=   "LB_EMP_D(0)"
+      Tab(1).Control(13)=   "LB_EMP_D(1)"
+      Tab(1).Control(14)=   "LB_EMP_D(2)"
+      Tab(1).Control(15)=   "lbEmp(3)"
+      Tab(1).Control(16)=   "LB_EMP_D(3)"
+      Tab(1).Control(17)=   "LB_DT_EXTRA"
+      Tab(1).Control(18)=   "LB_DESC_EXTRA"
+      Tab(1).Control(19)=   "TXT_E_JUROS"
+      Tab(1).Control(20)=   "TXT_VALOR_CAD"
+      Tab(1).Control(21)=   "TXT_CONTA_Cod_CAD"
+      Tab(1).Control(22)=   "TXT_OP_CAD"
+      Tab(1).Control(22).Enabled=   0   'False
+      Tab(1).Control(23)=   "TXT_DESC_CAD"
+      Tab(1).Control(24)=   "TXT_CONTA_CAD"
+      Tab(1).Control(25)=   "TXT_DT_CAD"
+      Tab(1).Control(26)=   "TXT_NFICHA_CAD"
+      Tab(1).Control(27)=   "TXT_CONTA_CAD_op"
+      Tab(1).Control(28)=   "txt_Logo_Cad"
+      Tab(1).Control(29)=   "txt_NCred_Cad"
+      Tab(1).Control(30)=   "txt_Emp(1)"
+      Tab(1).Control(31)=   "TXT_E_COD"
+      Tab(1).Control(32)=   "TXT_E_VALOR"
+      Tab(1).Control(33)=   "TXT_E_SALDO"
+      Tab(1).Control(34)=   "txt_Emp(2)"
+      Tab(1).Control(35)=   "txt_Emp(0)"
+      Tab(1).Control(36)=   "TXT_DT_EXTRA"
+      Tab(1).Control(37)=   "TXT_DESC_EXTRA"
       Tab(1).ControlCount=   38
       Begin VB.CheckBox chkVisto 
          Caption         =   "VISTO"
@@ -770,7 +770,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   110428161
+         Format          =   226557953
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -791,7 +791,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   110428161
+         Format          =   226557953
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
@@ -2011,7 +2011,7 @@ err1:
 End Sub
 
 Private Sub Form_Activate()
-If w_At = True Then adoReg.Refresh
+If w_At = True Then ADOREG.Refresh
     
 End Sub
 
@@ -2063,14 +2063,14 @@ w_unload = False
         de.rscmdBase.Open "SELECT * FROM TAB_DESC_CALC_FIXO  WHERE (((TAB_DESC_CALC_FIXO.CF_EMP_COD)=" & TXT_NFICHA_CAD & ") AND ((TAB_DESC_CALC_FIXO.CF_TP_CONTA)<>20)) ORDER BY TAB_DESC_CALC_FIXO.CF_VALOR, TAB_DESC_CALC_FIXO.CF_DT", , adOpenStatic, adLockOptimistic
     End If
 
-    Set adoReg.Recordset = de.rscmdBase.Clone
+    Set ADOREG.Recordset = de.rscmdBase.Clone
     de.rscmdBase.Close
     
     v_filtro = "VCTO <= #" & Format(CVDate(w_Dt), "mm/dd/YYYY") & "#"
     v_filtro_puro = ""
 
         
-    If Not adoReg.Recordset.EOF Then
+    If Not ADOREG.Recordset.EOF Then
  If acessoTotal() Then
         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE (TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & TXT_NFICHA_CAD & " ) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
     Else
@@ -2093,15 +2093,15 @@ End Sub
 '*** Caption no navegador ***
 Private Sub adoReg_MoveComplete(ByVal adReason As ADODB.EventReasonEnum, ByVal pError As ADODB.Error, adStatus As ADODB.EventStatusEnum, ByVal pRecordset As ADODB.Recordset)
 On Error GoTo err1
-    If Not adoReg.Recordset.EOF Then adoReg.Caption = "REGISTRO : " & adoReg.Recordset.AbsolutePosition & " / " & adoReg.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
+    If Not ADOREG.Recordset.EOF Then ADOREG.Caption = "REGISTRO : " & ADOREG.Recordset.AbsolutePosition & " / " & ADOREG.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
     
    If V_MOVE = True Then
         On Error Resume Next
         
        For I = 3 To 7
           
-          If I > 3 And I <= 7 Then lbEmp(I).Visible = adoReg.Recordset.Fields("CF_TP_CONTA") = 31
-          If I >= 3 Then txt_Emp(I).Visible = adoReg.Recordset.Fields("CF_TP_CONTA") = 31
+          If I > 3 And I <= 7 Then lbEmp(I).Visible = ADOREG.Recordset.Fields("CF_TP_CONTA") = 31
+          If I >= 3 Then txt_Emp(I).Visible = ADOREG.Recordset.Fields("CF_TP_CONTA") = 31
        Next I
         
         V_MOVE = False
@@ -2137,8 +2137,8 @@ On Error GoTo err1
 
         V_MOVE = False
 '        ADOREG.Recordset.Requery
-        adoReg.Refresh
-        adoReg.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
+        ADOREG.Refresh
+        ADOREG.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
 
         V_MOVE = True
     End If
@@ -2200,12 +2200,12 @@ Private Sub Cancelar()
 On Error GoTo err1
     
 If GUIA.TabVisible(0) = True Then   '*** alteração
-    If adoReg.Recordset.RecordCount > 0 Then
+    If ADOREG.Recordset.RecordCount > 0 Then
     
-        pos = adoReg.Recordset.AbsolutePosition - 1
-        adoReg.Recordset.CancelBatch adAffectCurrent
-        adoReg.Refresh
-        adoReg.Recordset.Move pos
+        pos = ADOREG.Recordset.AbsolutePosition - 1
+        ADOREG.Recordset.CancelBatch adAffectCurrent
+        ADOREG.Refresh
+        ADOREG.Recordset.Move pos
     
     End If
     Editar
@@ -2354,15 +2354,15 @@ If w_PSS = w_PassWordLib Then
         
         
         '*** Exclui o registro
-        adoReg.Recordset.Find "CF_CODIGO = " & ADO_GRID.Recordset.Fields("CF_CODIGO") & ""
-        W_POS = adoReg.Recordset.AbsolutePosition - 1
-        adoReg.Recordset.Delete
-        w_adoFiltro = adoReg.Recordset.Filter
+        ADOREG.Recordset.Find "CF_CODIGO = " & ADO_GRID.Recordset.Fields("CF_CODIGO") & ""
+        W_POS = ADOREG.Recordset.AbsolutePosition - 1
+        ADOREG.Recordset.Delete
+        w_adoFiltro = ADOREG.Recordset.Filter
         Form_Load
         ADO_GRID.Refresh
-        adoReg.Refresh
+        ADOREG.Refresh
       
-        adoReg.Recordset.Filter = w_adoFiltro
+        ADOREG.Recordset.Filter = w_adoFiltro
         ADO_GRID.Recordset.Filter = w_adoFiltro
       
         Grid.Refresh
@@ -2424,7 +2424,7 @@ err1:
     Else
         MsgBox Err.Number & " : " & Err.Description, vbCritical
         'MsgBox "NÃO É POSSÍVEL EXCLUIR ESTA FICHA MENSAL, DEVIDO A CÁLCULOS RELACIONADAS A ELA!", vbCritical
-        adoReg.Refresh
+        ADOREG.Refresh
     End If
     Resume sair
 End Sub
@@ -2505,10 +2505,10 @@ On Error GoTo err1
             
         '*** REMOVE O FILTRO ****
         Case 4:
-            If Not adoReg.Recordset.Filter = 0 Then
+            If Not ADOREG.Recordset.Filter = 0 Then
                 W_LD_FILTRO = False
-                adoReg.Recordset.Filter = 0
-                adoReg.Refresh
+                ADOREG.Recordset.Filter = 0
+                ADOREG.Refresh
             End If
         End Select
         
@@ -2526,7 +2526,7 @@ On Error GoTo err1
                 If Not W_FILTRO = "" And IsNumeric(W_FILTRO) And IsNumeric(W_FILTRO1) And Len(W_FILTRO1) = 4 Then
                     W_FILTRO = "M_MES = " & W_FILTRO & " AND M_ANO = " & W_FILTRO1
                     W_LD_FILTRO = True
-                    adoReg.Recordset.Filter = W_FILTRO
+                    ADOREG.Recordset.Filter = W_FILTRO
                     ADO_GRID.Recordset.MoveFirst
                 End If
                                 
@@ -2535,14 +2535,14 @@ On Error GoTo err1
                 If Not W_FILTRO = "" And IsNumeric(W_FILTRO) Then
                     W_FILTRO = W_CAMPO & " = " & W_FILTRO
                     W_LD_FILTRO = True
-                    adoReg.Recordset.Filter = W_FILTRO
+                    ADOREG.Recordset.Filter = W_FILTRO
                 End If
         
         End If
     End If
     
     ADO_GRID.Refresh
-    ADO_GRID.Recordset.Filter = adoReg.Recordset.Filter
+    ADO_GRID.Recordset.Filter = ADOREG.Recordset.Filter
     
     
 sair:
@@ -2568,8 +2568,8 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
     
         If (txt_valor < 0 And (TXT_OP = "+" Or TXT_OP = "=")) Or (txt_valor > 0 And TXT_OP = "-") Then txt_valor = txt_valor * -1
         'If (txt_valor < 0 And TXT_OP = "+") Or (txt_valor > 0 And TXT_OP = "-") Then txt_valor = txt_valor * -1
-        AtualizarFicha
-        adoReg.Recordset.UpdateBatch adAffectCurrent
+        'AtualizarFicha
+        ADOREG.Recordset.UpdateBatch adAffectCurrent
         
         'If TXT_CONTA.BoundText = 32 Then
             'frm_Alt_Fic_Mensal_VIS.TXT_13_OBS = TXT_OBS
@@ -2585,7 +2585,7 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
         w_At = True
             
         'Pause 1
-        adoReg.Refresh
+        ADOREG.Refresh
         
         de.rsTAB_DESC_CALC_FIXO.Requery
         If de.rscmdBase.State = 1 Then de.rscmdBase.Close
@@ -2598,7 +2598,7 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
      End If
     
     
-     Set adoReg.Recordset = de.rscmdBase.Clone
+     Set ADOREG.Recordset = de.rscmdBase.Clone
         
         
         'AtualizarFicha
@@ -2606,19 +2606,19 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
         'AtualizarFicha
         
         
-        adoReg.Refresh
+        ADOREG.Refresh
         
      If acessoTotal() Then
-         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & adoReg.Recordset.Fields("CF_EMP_COD") & " ) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
+         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & ADOREG.Recordset.Fields("CF_EMP_COD") & " ) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
      Else
-         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & adoReg.Recordset.Fields("CF_EMP_COD") & " ) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 20) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 78) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
+         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & ADOREG.Recordset.Fields("CF_EMP_COD") & " ) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 20) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 78) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
      End If
 
         ADO_GRID.Refresh
         'Pause 1
         Grid.ReBind
     
-        W_FICHA = TXT_NFICHA
+        W_FICHA = txt_nficha
         w_PSS = ""
         
         'AtualizarFicha
@@ -2675,7 +2675,7 @@ Else    '**** CADASTRAR ****
 
 End If
 
-   If TXT_NFICHA <> "" And incluirFixo = True Then
+   If txt_nficha <> "" And incluirFixo = True Then
         
         de.rsTAB_DESC_CALC_FIXO.Close
         de.TAB_DESC_CALC_FIXO
@@ -2686,7 +2686,7 @@ End If
         
         W_TOTAL = IIf(IsNull(W_MAIS), 0, W_MAIS) - IIf(IsNull(W_MENOS), 0, W_MENOS)
 
-        de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & TXT_NFICHA & ")"
+        de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & txt_nficha & ")"
             
   End If
   
@@ -2860,7 +2860,7 @@ End Sub
 Private Sub Timer1_Timer()
 On Error Resume Next
 
-    If adoReg.Recordset.State = 1 Then If adoReg.Recordset.EOF Then Adicionar
+    If ADOREG.Recordset.State = 1 Then If ADOREG.Recordset.EOF Then Adicionar
     Timer1.Enabled = False
 
 End Sub
@@ -2977,7 +2977,7 @@ Private Sub TXT_CONTA_Change()
 On Error GoTo err1
    If w_At = False And BarraF.Buttons("cancelar").Enabled = True Then
             
-           If adoReg.Recordset.Fields("CF_TP_CONTA") <> TXT_CONTA.BoundText Then
+           If ADOREG.Recordset.Fields("CF_TP_CONTA") <> TXT_CONTA.BoundText Then
                 txt_conta_Op.BoundText = TXT_CONTA.BoundText
                 
                 TXT_CONTA_cod.BoundText = TXT_CONTA.BoundText
@@ -3118,7 +3118,7 @@ Private Sub TXT_CONTA_COD_Change()
        lb_dt_13.Visible = True
        lb_OBS.Visible = True
        txt_13.Visible = True
-       TXT_OBS.Visible = True
+       txt_Obs.Visible = True
     ElseIf TXT_CONTA_cod.BoundText = "32" Then
        lb_dt_13 = "DT. (13º)"
        lb_OBS = "OBS 13º"
@@ -3126,13 +3126,13 @@ Private Sub TXT_CONTA_COD_Change()
        lb_OBS.Visible = True
        txt_13.Visible = True
        txt_13 = frm_Alt_Fic_Mensal_VIS.TXT_13_PG
-       TXT_OBS = frm_Alt_Fic_Mensal_VIS.TXT_13_OBS
-       TXT_OBS.Visible = True
+       txt_Obs = frm_Alt_Fic_Mensal_VIS.TXT_13_OBS
+       txt_Obs.Visible = True
     Else
        'lb_dt_13.Visible = False
        lb_OBS.Visible = False
        'txt_13.Visible = False
-       TXT_OBS.Visible = False
+       txt_Obs.Visible = False
         
     End If
 
@@ -3348,8 +3348,8 @@ Dim wPARC As dao.Recordset
 
 
 On Error GoTo loaderror
-   W_LJ = Mid(frm_Alt_Fic_Mensal_VIS.TXT_CRED, 1, 2)
-   w_cod = Int(Mid(frm_Alt_Fic_Mensal_VIS.TXT_CRED, 3))
+   W_LJ = Mid(frm_Alt_Fic_Mensal_VIS.txt_Cred, 1, 2)
+   w_cod = Int(Mid(frm_Alt_Fic_Mensal_VIS.txt_Cred, 3))
 
     If Not IsNumeric(w_cod) Then
         MsgBox "Código de Crediário não cadastrado!", vbCritical
