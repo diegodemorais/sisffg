@@ -1,9 +1,9 @@
 VERSION 5.00
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
-Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
 Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_Alt_Fic_Mensal_VIS 
@@ -6337,8 +6337,8 @@ Private Sub cmdComisCx_Click()
                 If vrVenda >= (vrMeta) Then
                     wFixoMeta = 0
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.1
-                        wPercMeta = 10
+                        vrMetaBonus = vrSalario * 0.15
+                        wPercMeta = 15
                     'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                         'wPercMeta = ((vrVenda / vrMeta) - 1) * 100
@@ -6708,9 +6708,9 @@ Dim w_ado_venda As ADODB.Recordset
                 
                     wFixoMeta = 0
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        'vrMetaBonus = vrSalario * 0.2
-                        vrMetaBonus = w_Comis * 0.2
-                        wPercMeta = 20
+                        vrMetaBonus = vrSalario * 0.05
+                        'vrMetaBonus = w_Comis * 0.2
+                        wPercMeta = 5
                     'Else
                     '    vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                     '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
@@ -6719,8 +6719,8 @@ Dim w_ado_venda As ADODB.Recordset
 
                     de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
                     'Bonus de % do Salário
-                    'de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                    'de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
                     vrSalario = vrSalario + vrMetaBonus + wFixoMeta
                 Else
                    descMeta = ""
@@ -7940,8 +7940,8 @@ On Error Resume Next
                 If vrVenda >= (vrMeta) Then
                     'wFixoMeta = vrSalario * 0.1
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.1
-                        wPercMeta = 10
+                        vrMetaBonus = vrSalario * 0.15
+                        wPercMeta = 15
                     'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                     '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
