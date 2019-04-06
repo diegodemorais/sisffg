@@ -77,7 +77,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   17
          TabStop         =   0   'False
-         Top             =   960
+         Top             =   1440
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -116,7 +116,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   18
          TabStop         =   0   'False
-         Top             =   1560
+         Top             =   2040
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -155,7 +155,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   19
          TabStop         =   0   'False
-         Top             =   2040
+         Top             =   2520
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -194,7 +194,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   20
          TabStop         =   0   'False
-         Top             =   2520
+         Top             =   3000
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -233,7 +233,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   21
          TabStop         =   0   'False
-         Top             =   3120
+         Top             =   3600
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -272,7 +272,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   22
          TabStop         =   0   'False
-         Top             =   3600
+         Top             =   4080
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -311,7 +311,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   23
          TabStop         =   0   'False
-         Top             =   5760
+         Top             =   6120
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -350,7 +350,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   24
          TabStop         =   0   'False
-         Top             =   4200
+         Top             =   4680
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -389,7 +389,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   27
          TabStop         =   0   'False
-         Top             =   5280
+         Top             =   5640
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -428,7 +428,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   28
          TabStop         =   0   'False
-         Top             =   6960
+         Top             =   7080
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -467,7 +467,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   29
          TabStop         =   0   'False
-         Top             =   4680
+         Top             =   5160
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -506,7 +506,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   31
          TabStop         =   0   'False
-         Top             =   6360
+         Top             =   6600
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -584,7 +584,7 @@ Begin VB.Form frmMenu
          Left            =   240
          TabIndex        =   39
          TabStop         =   0   'False
-         Top             =   7440
+         Top             =   7560
          Width           =   2700
          _ExtentX        =   4763
          _ExtentY        =   714
@@ -609,6 +609,45 @@ Begin VB.Form frmMenu
          MCOL            =   12632256
          MPTR            =   1
          MICON           =   "frmMenu.frx":0188
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
+      Begin Skin_Button.ctr_Button btnQtdEmpLogoLimite 
+         Height          =   405
+         Left            =   240
+         TabIndex        =   41
+         TabStop         =   0   'False
+         Top             =   840
+         Width           =   2700
+         _ExtentX        =   4763
+         _ExtentY        =   714
+         BTYPE           =   3
+         TX              =   "Qtde de Emp. por Logo c/ Limite"
+         ENAB            =   -1  'True
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         COLTYPE         =   4
+         FOCUSR          =   -1  'True
+         BCOL            =   14215660
+         BCOLO           =   14215660
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frmMenu.frx":01A4
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -665,8 +704,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":01A4
-         PICN            =   "frmMenu.frx":01C0
+         MICON           =   "frmMenu.frx":01C0
+         PICN            =   "frmMenu.frx":01DC
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -705,8 +744,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":0A9A
-         PICN            =   "frmMenu.frx":0AB6
+         MICON           =   "frmMenu.frx":0AB6
+         PICN            =   "frmMenu.frx":0AD2
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -745,8 +784,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":26D8
-         PICN            =   "frmMenu.frx":26F4
+         MICON           =   "frmMenu.frx":26F4
+         PICN            =   "frmMenu.frx":2710
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -785,8 +824,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":2B46
-         PICN            =   "frmMenu.frx":2B62
+         MICON           =   "frmMenu.frx":2B62
+         PICN            =   "frmMenu.frx":2B7E
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -825,8 +864,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":2E7C
-         PICN            =   "frmMenu.frx":2E98
+         MICON           =   "frmMenu.frx":2E98
+         PICN            =   "frmMenu.frx":2EB4
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -865,8 +904,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":32EA
-         PICN            =   "frmMenu.frx":3306
+         MICON           =   "frmMenu.frx":3306
+         PICN            =   "frmMenu.frx":3322
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -905,8 +944,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":3620
-         PICN            =   "frmMenu.frx":363C
+         MICON           =   "frmMenu.frx":363C
+         PICN            =   "frmMenu.frx":3658
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -945,8 +984,8 @@ Begin VB.Form frmMenu
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frmMenu.frx":3A8E
-         PICN            =   "frmMenu.frx":3AAA
+         MICON           =   "frmMenu.frx":3AAA
+         PICN            =   "frmMenu.frx":3AC6
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1020,8 +1059,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":3DC4
-            PICN            =   "frmMenu.frx":3DE0
+            MICON           =   "frmMenu.frx":3DE0
+            PICN            =   "frmMenu.frx":3DFC
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1060,8 +1099,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":6592
-            PICN            =   "frmMenu.frx":65AE
+            MICON           =   "frmMenu.frx":65AE
+            PICN            =   "frmMenu.frx":65CA
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1100,8 +1139,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":8D60
-            PICN            =   "frmMenu.frx":8D7C
+            MICON           =   "frmMenu.frx":8D7C
+            PICN            =   "frmMenu.frx":8D98
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1140,8 +1179,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":B52E
-            PICN            =   "frmMenu.frx":B54A
+            MICON           =   "frmMenu.frx":B54A
+            PICN            =   "frmMenu.frx":B566
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1180,8 +1219,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":DCFC
-            PICN            =   "frmMenu.frx":DD18
+            MICON           =   "frmMenu.frx":DD18
+            PICN            =   "frmMenu.frx":DD34
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1238,8 +1277,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":104CA
-            PICN            =   "frmMenu.frx":104E6
+            MICON           =   "frmMenu.frx":104E6
+            PICN            =   "frmMenu.frx":10502
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1278,8 +1317,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":121F0
-            PICN            =   "frmMenu.frx":1220C
+            MICON           =   "frmMenu.frx":1220C
+            PICN            =   "frmMenu.frx":12228
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1336,8 +1375,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":12526
-            PICN            =   "frmMenu.frx":12542
+            MICON           =   "frmMenu.frx":12542
+            PICN            =   "frmMenu.frx":1255E
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1376,8 +1415,8 @@ Begin VB.Form frmMenu
             FCOLO           =   0
             MCOL            =   12632256
             MPTR            =   1
-            MICON           =   "frmMenu.frx":1424C
-            PICN            =   "frmMenu.frx":14268
+            MICON           =   "frmMenu.frx":14268
+            PICN            =   "frmMenu.frx":14284
             UMCOL           =   -1  'True
             SOFT            =   0   'False
             PICPOS          =   0
@@ -1418,8 +1457,8 @@ Begin VB.Form frmMenu
       FCOLO           =   0
       MCOL            =   14737632
       MPTR            =   1
-      MICON           =   "frmMenu.frx":14582
-      PICN            =   "frmMenu.frx":1459E
+      MICON           =   "frmMenu.frx":1459E
+      PICN            =   "frmMenu.frx":145BA
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -1458,8 +1497,8 @@ Begin VB.Form frmMenu
       FCOLO           =   0
       MCOL            =   12632256
       MPTR            =   1
-      MICON           =   "frmMenu.frx":148B8
-      PICN            =   "frmMenu.frx":148D4
+      MICON           =   "frmMenu.frx":148D4
+      PICN            =   "frmMenu.frx":148F0
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -1498,8 +1537,8 @@ Begin VB.Form frmMenu
       FCOLO           =   0
       MCOL            =   12632256
       MPTR            =   1
-      MICON           =   "frmMenu.frx":14BEE
-      PICN            =   "frmMenu.frx":14C0A
+      MICON           =   "frmMenu.frx":14C0A
+      PICN            =   "frmMenu.frx":14C26
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -1515,6 +1554,30 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub btnQtdEmpLogoLimite_Click()
+On Error GoTo err1
+
+     If de.rscmdQtde_Func_Logo_Limite_Grouping.State = 1 Then de.rscmdQtde_Func_Logo_Limite_Grouping.Close
+     
+ini:
+     w_mes = InputBox("Entre com o Mês:", , Format(Date, "MM"))
+     w_ano = InputBox("Entre com o Ano:", , Format(Date, "YYYY"))
+     If IsNumeric(w_mes) And IsNumeric(w_ano) Then
+         de.cmdQtde_Func_Logo_Limite_Grouping w_ano, w_mes
+         rptRelQtdeEmpLimite.Sections("SecCab").Controls.Item("LbPer").Caption = "Período : " & w_mes & "/" & w_ano
+         rptRelQtdeEmpLimite.Show
+     Else
+        MsgBox "Redigite o Mês e Ano Desejado!", vbExclamation
+        GoTo ini
+     End If
+
+sair:
+    Exit Sub
+err1:
+    MsgBox Err.Number & ":" & Err.Description, vbCritical
+    Resume sair
+End Sub
+
 Private Sub cmdAtualizar_Click()
     Shell (CurDir & "\atualizar.bat")
     End

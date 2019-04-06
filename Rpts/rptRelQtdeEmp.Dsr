@@ -12,7 +12,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmp
    _ExtentX        =   26882
    _ExtentY        =   19420
    _Version        =   393216
-   _DesignerVersion=   100688210
+   _DesignerVersion=   100688423
    ReportWidth     =   10875
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
@@ -373,7 +373,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmp
       BeginProperty Item7 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Shape3"
-         Object.Left            =   9930
+         Object.Left            =   9867
          Object.Width           =   825
          Object.Height          =   315
       EndProperty
