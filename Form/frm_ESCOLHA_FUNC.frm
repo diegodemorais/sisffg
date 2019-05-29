@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
 Begin VB.Form frm_ESCOLHA_FUNC 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ESCOLHA DE EMP"
@@ -18,15 +18,15 @@ Begin VB.Form frm_ESCOLHA_FUNC
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar BarraF 
       Align           =   1  'Align Top
-      Height          =   810
+      Height          =   840
       Left            =   0
       TabIndex        =   4
       Top             =   0
       Width           =   5310
       _ExtentX        =   9366
-      _ExtentY        =   1429
-      ButtonWidth     =   1244
-      ButtonHeight    =   1376
+      _ExtentY        =   1482
+      ButtonWidth     =   1376
+      ButtonHeight    =   1429
       Appearance      =   1
       Style           =   1
       ImageList       =   "ImageList1"
@@ -248,14 +248,14 @@ err1:
 End Sub
 
 Private Sub TXT_FUNC_COD_KeyDown(KeyCode As Integer, Shift As Integer)
-      If KeyCode = 13 Then SendKeys "{tab}"
+      If KeyCode = 13 Then Sendkeys "{tab}"
 
 End Sub
 
 Private Sub TXT_FUNC_GotFocus()
 On Error GoTo err1
     
-    SendKeys "{F4}"
+    Sendkeys "{F4}"
     
 sair:
     Exit Sub
@@ -268,7 +268,7 @@ End Sub
 
 
 Private Sub TXT_FUNC_KeyDown(KeyCode As Integer, Shift As Integer)
-      If KeyCode = 13 Then SendKeys "{tab}"
+      If KeyCode = 13 Then Sendkeys "{tab}"
 
 End Sub
 
