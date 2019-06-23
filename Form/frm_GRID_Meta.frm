@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_GRID_Meta 
    Caption         =   "Cadastro de Metas"
    ClientHeight    =   11190
@@ -372,10 +372,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdPesq_Click()
 
-    If de.rscmdSqlGridMeta.State = 1 Then de.rscmdSqlGridMeta.Close
-    de.cmdSqlGridMeta
+    If de.rscmdSqlGridMeta2.State = 1 Then de.rscmdSqlGridMeta2.Close
+    de.cmdSqlGridMeta2
     
-    Set adoReg.Recordset = de.rscmdSqlGridMeta.Clone
+    Set adoReg.Recordset = de.rscmdSqlGridMeta2.Clone
 
     If TXT_ANO = "" Then TXT_ANO = Year(Now())
     If TXT_MES < 1 Or TXT_MES > 12 Then TXT_MES = Month(Now())
@@ -415,10 +415,10 @@ Private Sub Form_Load()
 TXT_MES = Month(Now())
 TXT_ANO = Year(Now())
 
-    If de.rscmdSqlGridMeta.State = 1 Then de.rscmdSqlGridMeta.Close
-    de.cmdSqlGridMeta
+    If de.rscmdSqlGridMeta2.State = 1 Then de.rscmdSqlGridMeta2.Close
+    de.cmdSqlGridMeta2
     
-    Set adoReg.Recordset = de.rscmdSqlGridMeta.Clone
+    Set adoReg.Recordset = de.rscmdSqlGridMeta2.Clone
     
     adoReg.Recordset.Filter = "MT_MES = '" & TXT_MES & "' AND MT_ANO = '" & TXT_ANO & "'"
     
@@ -432,7 +432,7 @@ End Sub
 
 Private Sub Grid_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
     End If
 End Sub
 

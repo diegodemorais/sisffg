@@ -4699,13 +4699,13 @@ Private LastCol As Long               ' ultima coluna em que se editou
 
 Sub Lancamentos()
     
-    If (ADOREG.Recordset.Fields("M_TIPO") = "V" Or ADOREG.Recordset.Fields("M_TIPO") = "C" Or ADOREG.Recordset.Fields("M_TIPO") = "X" Or ADOREG.Recordset.Fields("M_TIPO") = "2") Or acessoTotal() Then
+    If (adoReg.Recordset.Fields("M_TIPO") = "V" Or adoReg.Recordset.Fields("M_TIPO") = "C" Or adoReg.Recordset.Fields("M_TIPO") = "X" Or adoReg.Recordset.Fields("M_TIPO") = "2") Or acessoTotal() Then
         If de.rscmdSqlVisAltContas3.State = 1 Then de.rscmdSqlVisAltContas3.Close
-        de.cmdSqlVisAltContas3 ADOREG.Recordset.Fields("M_NFICHA")
+        de.cmdSqlVisAltContas3 adoReg.Recordset.Fields("M_NFICHA")
         Set ADO_LANC.Recordset = de.rscmdSqlVisAltContas3.Clone
     Else
         If de.rscmdSqlVisAltContas2.State = 1 Then de.rscmdSqlVisAltContas2.Close
-        de.cmdSqlVisAltContas2 ADOREG.Recordset.Fields("M_NFICHA")
+        de.cmdSqlVisAltContas2 adoReg.Recordset.Fields("M_NFICHA")
         Set ADO_LANC.Recordset = de.rscmdSqlVisAltContas2.Clone
     End If
 
@@ -4770,15 +4770,15 @@ On Error Resume Next
     
     If vbYes = MsgBox("Deseja inserir Ac. Final p/ todos os registros demitidos?", vbQuestion + vbYesNo) Then
     w_SN_Total = False
-            ADOREG.Recordset.MoveFirst
-            Do While Not ADOREG.Recordset.EOF
-                ADOREG.Recordset.Fields("M_DT_ACF") = TXT_AC_F_Modelo
-                ADOREG.Recordset.Fields("M_BLOQ") = True
-                ADOREG.Recordset.Fields("M_DEM_OK") = True
+            adoReg.Recordset.MoveFirst
+            Do While Not adoReg.Recordset.EOF
+                adoReg.Recordset.Fields("M_DT_ACF") = TXT_AC_F_Modelo
+                adoReg.Recordset.Fields("M_BLOQ") = True
+                adoReg.Recordset.Fields("M_DEM_OK") = True
                 'ADOREG.Recordset.UpdateBatch adAffectCurrent
-                ADOREG.Recordset.MoveNext
+                adoReg.Recordset.MoveNext
             Loop
-            ADOREG.Recordset.MoveFirst
+            adoReg.Recordset.MoveFirst
     w_SN_Total = True
     End If
 End Sub
@@ -4807,19 +4807,19 @@ On Error Resume Next
     
     Op(2).Caption = Format(CDbl(txt_PMes), "00") & "/" & txt_PAno
     
-    If Not (ADOREG.Recordset.EOF) Then
+    If Not (adoReg.Recordset.EOF) Then
     
-        If optLoja.value Then ADOREG.Recordset.Sort = "F_LOJA" Else ADOREG.Recordset.Sort = "F_NOME"
+        If optLoja.value Then adoReg.Recordset.Sort = "F_LOJA" Else adoReg.Recordset.Sort = "F_NOME"
         
-        ADOREG.Recordset.MoveFirst
-        ADOREG.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
+        adoReg.Recordset.MoveFirst
+        adoReg.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
         
-        If ADOREG.Recordset.EOF Then
+        If adoReg.Recordset.EOF Then
             Op_Click 5
-            ADOREG.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
-            If ADOREG.Recordset.EOF Then
+            adoReg.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
+            If adoReg.Recordset.EOF Then
                 MsgBox "Não existe ficha desse funcionário no Mês " & txt_PMes & " em nenhuma loja!", vbCritical, "Ficha não encontrada"
-                ADOREG.Recordset.MoveFirst
+                adoReg.Recordset.MoveFirst
                 w_Op = w_Op = -Op(1).value * 1 - Op(2).value * 2 - Op(3).value * 3 - Op(4).value * 4 - Op(5).value * 5 - Op(6).value * 6 - Op(7).value * 7
                 Op_Click (5)
                 Op_Click (w_Op)
@@ -4859,17 +4859,17 @@ On Error Resume Next
     
     Op(2).Caption = Format(CDbl(txt_PMes), "00") & "/" & txt_PAno
     
-    If optLoja.value Then ADOREG.Recordset.Sort = "F_LOJA" Else ADOREG.Recordset.Sort = "F_NOME"
+    If optLoja.value Then adoReg.Recordset.Sort = "F_LOJA" Else adoReg.Recordset.Sort = "F_NOME"
     
-    ADOREG.Recordset.MoveFirst
-    ADOREG.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
+    adoReg.Recordset.MoveFirst
+    adoReg.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
     
-    If ADOREG.Recordset.EOF Then
+    If adoReg.Recordset.EOF Then
         Op_Click 5
-        ADOREG.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
-        If ADOREG.Recordset.EOF Then
+        adoReg.Recordset.Find "m_f_cod = " & w_cod_atual, , adSearchForward
+        If adoReg.Recordset.EOF Then
             MsgBox "Não existe ficha desse funcionário no Mês " & txt_PMes & " em nenhuma loja!", vbCritical, "Ficha não encontrada"
-            ADOREG.Recordset.MoveFirst
+            adoReg.Recordset.MoveFirst
             w_Op = -Op(1).value * 1 - Op(2).value * 2 - Op(3).value * 3 - Op(4).value * 4 - Op(5).value * 5 - Op(6).value * 6 - Op(7).value * 7
             Op_Click (5)
             Op_Click (w_Op)
@@ -5044,8 +5044,8 @@ Private Sub cbMostrar_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Sub CK_ACF_Click()
-If Not ADOREG.Recordset.EOF Then
-    If (CK_ACF.Enabled = True And TXT_NFICHA = ADOREG.Recordset.Fields("M_NFICHA")) Or w_bloq Then
+If Not adoReg.Recordset.EOF Then
+    If (CK_ACF.Enabled = True And TXT_NFICHA = adoReg.Recordset.Fields("M_NFICHA")) Or w_bloq Then
         If BarraF.Buttons("salvar").Enabled = False Then Editar 0
 
         If CK_ACF.value = 0 Then
@@ -5076,11 +5076,11 @@ Private Sub CK_DEM_Click()
 
     If (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) Then
         
-     If Not ADOREG.Recordset.EOF Then
-        If IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) And CK_DEM.value = 1 Then
+     If Not adoReg.Recordset.EOF Then
+        If IsNull(adoReg.Recordset.Fields("M_DT_DEM")) And CK_DEM.value = 1 Then
             'MsgBox "VOCÊ NÃO PODE VISTAR ,  SEM DATA DE DEMISSÃO!", vbCritical
             CK_DEM.value = 0
-        ElseIf ADOREG.Recordset.Fields("M_F_COD") = txt_F_COD Then
+        ElseIf adoReg.Recordset.Fields("M_F_COD") = txt_F_COD Then
             If BarraF.Buttons("salvar").Enabled = False Then Editar 0
             '*** OK DT_DEM
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DEM_OK = " & CK_DEM.value * -1 & "  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
@@ -5104,9 +5104,9 @@ On Error Resume Next
     Dim w_Vr13, w_Piso13 As Double
     Dim w_Desc13, w_obs13, w_dt13fim As String
     
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
-        If IsNull(ADOREG.Recordset.Fields("m_dt_acf")) Then
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
+        If IsNull(adoReg.Recordset.Fields("m_dt_acf")) Then
             w_Dt13 = "01/01/2000"
             w_DtDif = "0"
             w_Vr13 = 0
@@ -5115,10 +5115,10 @@ On Error Resume Next
             w_obs13 = ""
             w_dt13fim = ""
             
-            If ADOREG.Recordset.Fields("m_dt_reg") = "" Or IsNull(ADOREG.Recordset.Fields("m_dt_reg")) Then
-                w_Dt13 = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+            If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
+                w_Dt13 = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
             Else
-                w_Dt13 = CVDate(ADOREG.Recordset.Fields("m_dt_reg"))
+                w_Dt13 = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
             End If
                 
             w_DtDif = DateDiff("m", w_Dt13, CVDate("31/12/" & Year(Date)))
@@ -5130,9 +5130,9 @@ On Error Resume Next
             If w_DtDif >= 12 Then w_DtDif = 12
             
             w_Piso13 = 0
-            w_Piso13 = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            w_Piso13 = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             If w_Piso13 = 0 Then
-                w_Piso13 = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                w_Piso13 = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             End If
                   
             If w_Piso13 > 0 Then
@@ -5143,7 +5143,7 @@ On Error Resume Next
             
             
             
-            If ADOREG.Recordset.Fields("M_TIPO") = "G" Then
+            If adoReg.Recordset.Fields("M_TIPO") = "G" Then
                 w_Desc13 = w_DtDif & "/12 13º"
             Else
                 w_Desc13 = w_DtDif & "/12 13º   |   (" & Format(w_Piso13, "####0.00") & " / 12 = " & Format(w_Piso13 / 12, "####0.00") & ") * " & w_DtDif & " = " & Format(w_Vr13, "####0.00")
@@ -5153,15 +5153,15 @@ On Error Resume Next
             w_obs13 = "13º/" & Year(Date) & " OK   |   " & w_DtDif & "/12"
             w_dt13fim = CVDate("31/12/" & Year(Date))
             
-            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 32) And (C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFicha") & ")")
-            de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("m_nficha"), 32, "+", w_Vr13, w_Desc13, ADOREG.Recordset.Fields("m_logo"), 0, 0, 0, ADOREG.Recordset.Fields("m_f_cod")
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_ULT_PG = F_13_PG, F_13_PG = '" & w_dt13fim & "' , F_13_OBS = '" & w_obs13 & "' WHERE (F_Codigo = " & ADOREG.Recordset.Fields("M_F_COD") & ")"
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_ULT_PG = M_13_PG, M_13_PG = '" & w_dt13fim & "', M_13_OBS = '" & w_obs13 & "'  WHERE (M_F_Cod = " & ADOREG.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 32) And (C_N_FICHA = " & adoReg.Recordset.Fields("M_NFicha") & ")")
+            de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("m_nficha"), 32, "+", w_Vr13, w_Desc13, adoReg.Recordset.Fields("m_logo"), 0, 0, 0, adoReg.Recordset.Fields("m_f_cod")
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_ULT_PG = F_13_PG, F_13_PG = '" & w_dt13fim & "' , F_13_OBS = '" & w_obs13 & "' WHERE (F_Codigo = " & adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_ULT_PG = M_13_PG, M_13_PG = '" & w_dt13fim & "', M_13_OBS = '" & w_obs13 & "'  WHERE (M_F_Cod = " & adoReg.Recordset.Fields("M_F_COD") & ")"
         End If
-        ADOREG.Recordset.MoveNext
+        adoReg.Recordset.MoveNext
     Loop
     
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
         
         
     'Dados Contas
@@ -5185,10 +5185,10 @@ On Error GoTo err1
     wSalFam = de.cnc.Execute("Select Sal_Familia from tab_config").Fields(0)
     
     wValor = 0
-    wValor = Format(ADOREG.Recordset.Fields("m_num_filhos") * wSalFam, "0.00")  'Calcula Salario
-    wDesc = "(" & Format(wSalFam, "0.00") & " x " & ADOREG.Recordset.Fields("m_num_filhos") & ") = " & Format(wValor, "0.00")
-    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 26) And (C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFicha") & ")")
-    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFicha"), 26, "+", wValor, wDesc, "", "0", "0", "0", "0"
+    wValor = Format(adoReg.Recordset.Fields("m_num_filhos") * wSalFam, "0.00")  'Calcula Salario
+    wDesc = "(" & Format(wSalFam, "0.00") & " x " & adoReg.Recordset.Fields("m_num_filhos") & ") = " & Format(wValor, "0.00")
+    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 26) And (C_N_FICHA = " & adoReg.Recordset.Fields("M_NFicha") & ")")
+    de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFicha"), 26, "+", wValor, wDesc, "", "0", "0", "0", "0"
     
     'Dados Contas
     Lancamentos
@@ -5206,24 +5206,24 @@ Private Sub cmdAddLanç_SalFTodos_Click()
 On Error GoTo err1
     Dim wSalFam
     
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
         
         wSalFam = de.cnc.Execute("Select Sal_Familia from tab_config").Fields(0)
         
         wValor = 0
         
-        If ADOREG.Recordset.Fields("m_num_filhos") > 0 Then
-            wValor = Format(ADOREG.Recordset.Fields("m_num_filhos") * wSalFam, "0.00")  'Calcula Salario
-            wDesc = "(" & Format(wSalFam, "0.00") & " x " & ADOREG.Recordset.Fields("m_num_filhos") & ") = " & Format(wValor, "0.00")
-            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 26) And (C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFicha") & ")")
-            de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFicha"), 26, "+", wValor, wDesc, "", "0", "0", "0", "0"
+        If adoReg.Recordset.Fields("m_num_filhos") > 0 Then
+            wValor = Format(adoReg.Recordset.Fields("m_num_filhos") * wSalFam, "0.00")  'Calcula Salario
+            wDesc = "(" & Format(wSalFam, "0.00") & " x " & adoReg.Recordset.Fields("m_num_filhos") & ") = " & Format(wValor, "0.00")
+            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 26) And (C_N_FICHA = " & adoReg.Recordset.Fields("M_NFicha") & ")")
+            de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFicha"), 26, "+", wValor, wDesc, "", "0", "0", "0", "0"
         End If
         
-        ADOREG.Recordset.MoveNext
+        adoReg.Recordset.MoveNext
     Loop
     
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
         
     'Dados Contas
     Lancamentos
@@ -5243,7 +5243,7 @@ Private Sub cmdAddSalario_Click()
         If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
             Exit Sub
         End If
-        If ADOREG.Recordset.Fields("M_BLOQ") Then
+        If adoReg.Recordset.Fields("M_BLOQ") Then
             MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
             Exit Sub
         End If
@@ -5254,7 +5254,7 @@ Private Sub cmdAddSalario_Click()
     End If
     
     
-    Select Case ADOREG.Recordset.Fields("M_TIPO")
+    Select Case adoReg.Recordset.Fields("M_TIPO")
         
     Case "V": 'VENDEDOR
          Dim dtIni, dtFim As Date
@@ -5262,7 +5262,7 @@ Private Sub cmdAddSalario_Click()
         Dim adoComisTMP As ADODB.Recordset
         Dim adoComisDump As ADODB.Recordset
         Dim sqlComissTMP As String
-        Dim vrMeta, vrMetaBonus, descMeta, vrSalario, wFixoMeta
+        Dim vrMeta, vrMetaBonus, descMeta, vrSalario, wFixoMeta, numLoja
         Dim w_ado_venda As ADODB.Recordset
         
             frm_ESCOLHA_DATA.Show 1
@@ -5316,7 +5316,7 @@ Private Sub cmdAddSalario_Click()
                     '**** BONUS DE META
                     'COD da loja do cx do ANO atual
                     'Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
-                    Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR FROM TAB_VENDA, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE (((TAB_FUNCIONARIO.F_DT_DEM) Is Null) AND ((Right(Left([TAB_VENDA].[V_DATA],5),2))=" & Format(ADOREG.Recordset.Fields("M_MES"), "00") & ") AND ((Right([TAB_VENDA].[V_DATA],4))=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_venda].[v_f_loja],2)));").Clone
+                    Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR FROM TAB_VENDA, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE (((TAB_FUNCIONARIO.F_DT_DEM) Is Null) AND ((Right(Left([TAB_VENDA].[V_DATA],5),2))=" & Format(adoReg.Recordset.Fields("M_MES"), "00") & ") AND ((Right([TAB_VENDA].[V_DATA],4))=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_venda].[v_f_loja],2)));").Clone
                     If Not w_ado_venda.EOF Then
                         vrVenda = w_ado_venda.Fields(0)
                     Else
@@ -5325,21 +5325,24 @@ Private Sub cmdAddSalario_Click()
                     End If
             
                     vrMeta = 999
-                    If ADOREG.Recordset.Fields("M_LOGO") <> "XX" And ADOREG.Recordset.Fields("M_LOGO") <> "99" Then
-                        vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                    If adoReg.Recordset.Fields("M_LOGO") <> "XX" And adoReg.Recordset.Fields("M_LOGO") <> "99" Then
+                        'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                        numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                        If de.cncSisInt.State = 0 Then de.cncSisInt.Open
+                        vrMeta = de.cncSisInt.Execute("SELECT MT_VALOR FROM TAB_META WHERE (MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & ")").Fields(0)
                     End If
                     
                     '****
                     
-                    If ADOREG.Recordset.Fields("F_COD_CENTRAL") <> "" And IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+                    If adoReg.Recordset.Fields("F_COD_CENTRAL") <> "" And IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
         
                         
-                        adoComis.Filter = "F_4023717930 = " & ADOREG.Recordset.Fields("F_COD_CENTRAL")
+                        adoComis.Filter = "F_4023717930 = " & adoReg.Recordset.Fields("F_COD_CENTRAL")
                         If Not adoComis.EOF Then
                             w_Piso = 0
-                            w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                            w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                             If w_Piso = 0 Then
-                                w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                                w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                             End If
                             
                             w_Comis = 0
@@ -5347,7 +5350,7 @@ Private Sub cmdAddSalario_Click()
                             w_Comis = CDbl(adoComis.Fields("COMTOTAL"))
                             w_Premio = CDbl(adoComis.Fields("F_1373503546"))
                             
-                            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23 OR C_TP_CONTA = 102 OR C_TP_CONTA = 101)")
+                            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23 OR C_TP_CONTA = 102 OR C_TP_CONTA = 101)")
                             
                         'If adoReg.Recordset.Fields("M_MES") > "12" Then
                         '        w_Fixo = de.cnc.Execute("SELECT IIf(IsNull(Lojb010.FixoVend),0,Lojb010.FixoVend) AS Fixo, TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO FROM TAB_FICHA_MENS INNER JOIN Lojb010 ON TAB_FICHA_MENS.M_LOGO = Lojb010.COD_LOJ " & _
@@ -5359,20 +5362,20 @@ Private Sub cmdAddSalario_Click()
                             
                           If (w_Comis + w_Premio + w_Fixo) <= w_Piso Then
                              'w_ultDiaMes = 30
-                             w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                             w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                              If w_ultDiaMes < 30 Then w_ultDiaMes = 30
                          
                              'If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
-                                 w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+                                 w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
                              'Else
                              '    w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
                              'End If
                              
                              
-                             If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                                 w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+                             If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                                 w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
                              Else
-                                 w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                                 w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                                  'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                                  If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                                  If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -5397,41 +5400,41 @@ Private Sub cmdAddSalario_Click()
                                  
                                  If w_FixoOriginal > 0 Then
                                     If (w_Comis + w_Premio + w_Fixo) <= w_Piso Then
-                                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                     Else
-                                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                     End If
                                  Else
                                     If (w_Comis + w_Premio) <= w_Piso Then
-                                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                     Else
-                                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#COMISSÃO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#COMISSÃO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                     End If
                                  End If
                 
                              Else
                                 If w_FixoOriginal > 0 Then
-                                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                    de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                 Else
-                                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                    de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                 End If
                              End If
                              
                          Else
                             If w_Fixo > 0 Then
-                               de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE] Comissão: " & Format(w_Comis, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                               de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "FIXO [GERADO AUTOMATICAMENTE] Fixo: " & Format(w_Fixo, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                               de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                               de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE] Comissão: " & Format(w_Comis, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                               de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "FIXO [GERADO AUTOMATICAMENTE] Fixo: " & Format(w_Fixo, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                               de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                             Else
-                               de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                               de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                               de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                               de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                             End If
                          End If
                     End If
-                   ElseIf IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+                   ElseIf IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
                    
                     'Dim w_Dt, w_dtUlt As Date
                     'Dim w_DtDiff, w_ultDiaMes As Integer
@@ -5439,9 +5442,9 @@ Private Sub cmdAddSalario_Click()
                         
                         If Not adoComis.EOF Then
                             w_Piso = 0
-                            w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                            w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                             If w_Piso = 0 Then
-                                w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                                w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                             End If
                             
                             'If adoReg.Recordset.Fields("M_MES") = "1" Or adoReg.Recordset.Fields("M_MES") = "2" Or adoReg.Recordset.Fields("M_MES") = "3" Then
@@ -5452,23 +5455,23 @@ Private Sub cmdAddSalario_Click()
                                 w_Fixo = 0
                             'End If
                             
-                            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23  OR C_TP_CONTA = 102)")
+                            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23  OR C_TP_CONTA = 102)")
                             
                              'w_ultDiaMes = 30
-                             w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                             w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                              If w_ultDiaMes < 30 Then w_ultDiaMes = 30
                          
                              'If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
-                                 w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+                                 w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
                             ' Else
                              '    w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
                             ' End If
                              
                              
-                             If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                                 w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+                             If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                                 w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
                              Else
-                                 w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                                 w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                                  'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                                  If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                                  If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -5490,16 +5493,16 @@ Private Sub cmdAddSalario_Click()
                                     w_ultDiaMes = 30
                                  End If
                                 If w_FixoOriginal > 0 Then
-                                   de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                   de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                 Else
-                                   de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                   de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                 End If
                              
                              Else
                                 If w_FixoOriginal > 0 Then
-                                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                    de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                 Else
-                                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                    de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                                 End If
                              End If
                     End If
@@ -5511,11 +5514,11 @@ Private Sub cmdAddSalario_Click()
                      wFixoMeta = 0
                      wPercMeta = 0
                         
-                    If IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+                    If IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
                      
                         If vrVenda >= (vrMeta) Then
                         
-                            If ADOREG.Recordset.Fields("m_mes") = 1 Then
+                            If adoReg.Recordset.Fields("m_mes") = 1 Then
         
                                 If w_Piso > vrSalario Then
                                    vrSalario = w_Piso
@@ -5531,9 +5534,9 @@ Private Sub cmdAddSalario_Click()
                                 wPercMeta = ((vrVenda / vrMeta) - 1) * 100
                             End If
         
-                            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
+                            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
                             'Bonus de % do Salário
-                            de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                            de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                             vrSalario = vrSalario + vrMetaBonus + wFixoMeta
                         Else
                            descMeta = ""
@@ -5565,36 +5568,39 @@ Private Sub cmdAddSalario_Click()
             
  
              'COD da loja do gerente do ANO anterior
-            Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Clone
+            Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
             If Not w_ado_vendaAnt.EOF Then
                 vrVendaAnt = w_ado_vendaAnt.Fields(0)
             Else
-                MsgBox "Não há lançamentos do logo " & ADOREG.Recordset.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
+                MsgBox "Não há lançamentos do logo " & adoReg.Recordset.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
             End If
             
-            If IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+            If IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
                 
                 'COD da loja do cx do ANO atual
-                Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Clone
+                Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
                 If Not w_ado_venda.EOF Then
                     vrVenda = w_ado_venda.Fields(0)
                 Else
-                    MsgBox "Não há lançamentos do logo " & ADOREG.Recordset.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & ADOREG.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
+                    MsgBox "Não há lançamentos do logo " & adoReg.Recordset.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & adoReg.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
                 End If
       
                 'vrVenda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DEM_OK = 0 AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
             
                 'If vrVenda <> "" Then
                 If Not w_ado_vendaAnt.EOF And Not w_ado_venda.EOF Then
-                    vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
-                    vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
-                    percComis = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
+                    vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
+                    vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
+                    percComis = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
                     
                     '**** BONUS DE META
                     vrMeta = 999
                     'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
-                    If ADOREG.Recordset.Fields("M_LOGO") <> "XX" Then
-                        vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                    If adoReg.Recordset.Fields("M_LOGO") <> "XX" Then
+                        'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                        numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                        If de.cncSisInt.State = 0 Then de.cncSisInt.Open
+                        vrMeta = de.cncSisInt.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND Right(mt_f_loja, 2)= " & numLoja & "))").Fields(0)
                     End If
                     '****
                     
@@ -5605,12 +5611,12 @@ Private Sub cmdAddSalario_Click()
                     
                 If percVenda > 0 Then
                     'Lojas em promoção ganham metade do bonus
-                    If ADOREG.Recordset.Fields("M_LOGO") = "AC" Or ADOREG.Recordset.Fields("M_LOGO") = "IJ" Or ADOREG.Recordset.Fields("M_LOGO") = "FH" Then
+                    If adoReg.Recordset.Fields("M_LOGO") = "AC" Or adoReg.Recordset.Fields("M_LOGO") = "IJ" Or adoReg.Recordset.Fields("M_LOGO") = "FH" Then
                         percVenda = percVenda / 2
                     End If
     
                     'If percVenda >= 40 Then percVenda = percVenda / 2
-                    If ADOREG.Recordset.Fields("M_MES") = "12" Then
+                    If adoReg.Recordset.Fields("M_MES") = "12" Then
                         'vrBonus = percVenda * 10
                         vrBonus = 0
                     Else
@@ -5618,9 +5624,9 @@ Private Sub cmdAddSalario_Click()
                     End If
                     
                     'Algumas gerentes em algumas lojas não ganham bonus
-                    If (ADOREG.Recordset.Fields("M_LOGO") = "SV" And ADOREG.Recordset.Fields("M_NOME") Like "JANAINA%") _
-                        Or (ADOREG.Recordset.Fields("M_LOGO") = "LP") _
-                        Or (ADOREG.Recordset.Fields("M_LOGO") = "RR") Then
+                    If (adoReg.Recordset.Fields("M_LOGO") = "SV" And adoReg.Recordset.Fields("M_NOME") Like "JANAINA%") _
+                        Or (adoReg.Recordset.Fields("M_LOGO") = "LP") _
+                        Or (adoReg.Recordset.Fields("M_LOGO") = "RR") Then
                             vrBonus = 0
                     End If
                     
@@ -5642,7 +5648,7 @@ Private Sub cmdAddSalario_Click()
                  vrMetaBonus = 0
                  
                 'DEZEMBRO
-                If ADOREG.Recordset.Fields("m_mes") <= 12 Then
+                If adoReg.Recordset.Fields("m_mes") <= 12 Then
                     wPercMeta = 0
                     
                     If vrVenda >= (vrMeta * 1.1) Then
@@ -5680,8 +5686,8 @@ Private Sub cmdAddSalario_Click()
                     wDesc = "(" & Format(vrVenda, "0.00") & " x " & percComis & "% = " & Format(vrComis, "0.00") & ") + " & Format(vrFixo, "0.00") & " = " & Format(vrSalario, "0.00") & " + Bônus(" & percVenda & "%=" & Format(vrBonus, "0.00") & ") " & descMeta & " = " & Format(vrSalarioBonus, "0.00")
                 End If
                 
-                de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 20) And (C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFicha") & ")")
-                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFicha"), 20, "+", vrSalarioBonus, wDesc, "", "0", "0", "0", "0"
+                de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 20) And (C_N_FICHA = " & adoReg.Recordset.Fields("M_NFicha") & ")")
+                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFicha"), 20, "+", vrSalarioBonus, wDesc, "", "0", "0", "0", "0"
                 
                 
                 End If
@@ -5699,32 +5705,32 @@ Private Sub cmdAddSalario_Click()
             'Dim w_Piso, w_Comis, w_Premio, w_PisoOriginal As Double 'Ja declarado cm cima (no CAIXA)
         
             w_Piso = 0
-            w_Piso = de.cnc.Execute("SELECT F_VR_FIXO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            w_Piso = de.cnc.Execute("SELECT F_VR_FIXO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             If w_Piso = 0 Then
-                w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                 If w_Piso = 0 Then
-                    w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                    w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                 End If
             End If
             
             
-            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
+            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
             
             'w_ultDiaMes = 30
-            w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+            w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
             If w_ultDiaMes < 30 Then w_ultDiaMes = 30
          
-            If ADOREG.Recordset.Fields("m_dt_reg") = "" Or IsNull(ADOREG.Recordset.Fields("m_dt_reg")) Then
-                w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+            If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
+                w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
             Else
-                w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_reg"))
+                w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
             End If
              
              
-            If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+            If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
             Else
-                w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                 'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                 If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                 If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -5744,10 +5750,10 @@ Private Sub cmdAddSalario_Click()
                     w_ultDiaMes = 30
                 End If
                  
-                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO PROPORCIONAL# Fixo: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO PROPORCIONAL# Fixo: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
 
             Else
-                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO# Fixo: " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO# Fixo: " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
             End If
      
             Lancamentos
@@ -5761,32 +5767,32 @@ Private Sub cmdAddSalario_Click()
             'Dim w_Piso, w_Comis, w_Premio, w_PisoOriginal As Double 'Ja declarado cm cima (no CAIXA)
         
             w_Piso = 0
-            w_Piso = de.cnc.Execute("SELECT F_VR_FIXO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            w_Piso = de.cnc.Execute("SELECT F_VR_FIXO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             If w_Piso = 0 Then
-                w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                 If w_Piso = 0 Then
-                    w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                    w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                 End If
             End If
             
             
-            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
+            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
             
             'w_ultDiaMes = 30
-            w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+            w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
             If w_ultDiaMes < 30 Then w_ultDiaMes = 30
          
-            If ADOREG.Recordset.Fields("m_dt_reg") = "" Or IsNull(ADOREG.Recordset.Fields("m_dt_reg")) Then
-                w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+            If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
+                w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
             Else
-                w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_reg"))
+                w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
             End If
              
              
-            If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+            If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
             Else
-                w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                 'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                 If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                 If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -5806,10 +5812,10 @@ Private Sub cmdAddSalario_Click()
                     w_ultDiaMes = 30
                 End If
                  
-                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO PROPORCIONAL# Fixo: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO PROPORCIONAL# Fixo: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
 
             Else
-                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO# Fixo: " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 22, "+", Format(w_Piso, "0.00"), "#FIXO# Fixo: " & Format(w_Piso, "0.00") & " [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
             End If
      
             Lancamentos
@@ -5819,7 +5825,7 @@ Private Sub cmdAddSalario_Click()
         
         'Dim vrMeta, vrMetaBonus, descMeta
         
-            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
+            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
              'If de.rscmdTotalVend.State = 1 Then de.rscmdTotalVend.Close
              'de.cmdTotalVend TXT_MES, TXT_ANO, W_ADO_FICHA.Fields("M_LOGO")
              
@@ -5843,30 +5849,30 @@ Private Sub cmdAddSalario_Click()
         'Exit Sub
         
         'COD da loja do cx do ANO anterior
-        Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Clone
+        Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
         If Not w_ado_vendaAnt.EOF Then
             vrVendaAnt = w_ado_vendaAnt.Fields(0)
         Else
-            MsgBox "Não há lançamentos do logo " & ADOREG.Recordset.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
+            MsgBox "Não há lançamentos do logo " & adoReg.Recordset.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
         End If
         
         'COD da loja do cx do ANO atual
-        Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Clone
+        Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
         If Not w_ado_venda.EOF Then
             vrVenda = w_ado_venda.Fields(0)
         Else
             vrVenda = 0
-            MsgBox "Não há lançamentos do logo " & ADOREG.Recordset.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & ADOREG.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
+            MsgBox "Não há lançamentos do logo " & adoReg.Recordset.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & adoReg.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
         End If
     
         If Not w_ado_vendaAnt.EOF And Not w_ado_venda.EOF Then
-            vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
-            vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
+            vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
+            vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
             'perc1 = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
             'perc2 = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS2 From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
             'perc3 = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS3 From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
-            If ADOREG.Recordset.Fields("M_MES") = 12 Then
-                percDez = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_PERC_FIXO_DEZ From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
+            If adoReg.Recordset.Fields("M_MES") = 12 Then
+                percDez = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_PERC_FIXO_DEZ From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
                 vrDez = vrFixo * percDez
                 descDez = " + " & (percDez * 100) & "% (" & vrDez & ") "
             Else
@@ -5880,8 +5886,11 @@ Private Sub cmdAddSalario_Click()
             '**** BONUS DE META
              vrMeta = 999
              'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
-            If ADOREG.Recordset.Fields("M_LOGO") <> "XX" And ADOREG.Recordset.Fields("M_LOGO") <> "99" Then
-                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+            If adoReg.Recordset.Fields("M_LOGO") <> "XX" And adoReg.Recordset.Fields("M_LOGO") <> "99" Then
+                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                If de.cncSisInt.State = 0 Then de.cncSisInt.Open
+                vrMeta = de.cncSisInt.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND Right(mt_f_loja, 2)= " & numLoja & "))").Fields(0)
             End If
             '****
             
@@ -5917,7 +5926,7 @@ Private Sub cmdAddSalario_Click()
              vrMetaBonus = 0
              wFixoMeta = 0
              wPercMeta = 0
-            If ADOREG.Recordset.Fields("M_MES") <= 12 Then
+            If adoReg.Recordset.Fields("M_MES") <= 12 Then
                 
                 If vrVenda >= (vrMeta) Then
                     wFixoMeta = 100
@@ -5944,11 +5953,11 @@ Private Sub cmdAddSalario_Click()
             End If
                                            
              '*** Pega o Piso referente se for com ou sem registro
-             If IsNull(ADOREG.Recordset.Fields("m_Dt_Reg")) Then
-                 w_Piso = ADOREG.Recordset.Fields("F_vpiso")
+             If IsNull(adoReg.Recordset.Fields("m_Dt_Reg")) Then
+                 w_Piso = adoReg.Recordset.Fields("F_vpiso")
                  w_Pdesc = "Ps. B"
              Else
-                 w_Piso = ADOREG.Recordset.Fields("F_vpiso_R")
+                 w_Piso = adoReg.Recordset.Fields("F_vpiso_R")
                  w_Pdesc = "Ps. L"
              End If
              w_Piso = IIf(IsNull(w_Piso), 0, w_Piso)
@@ -5956,7 +5965,7 @@ Private Sub cmdAddSalario_Click()
              '*** paga comissão *** da média
              If vrSalario >= w_Piso Then
                  'w_desc = "CX - " & w_Pdesc & " : " & IIf(IsNull(w_Piso), "R$ 0,00", Format(w_Piso, "R$ 0.00")) & "   " & w_DESCR
-                 de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), "22", "+", vrSalario, wDesc, 0, 0, 0, 0, 0
+                 de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), "22", "+", vrSalario, wDesc, 0, 0, 0, 0, 0
                  W_REG_CX = W_REG_CX + 1
              '*** paga piso ***
              Else
@@ -5964,12 +5973,12 @@ Private Sub cmdAddSalario_Click()
                     W_DT_INI_MES = CVDate("01/" & TXT_MES & "/" & TXT_ANO)
                     W_DT_FIM_MES = CVDate("01/" & Format(W_DT_INI_MES + 35, "MM/YYYY"))
                     'sE DT DE ADM. FOR MAIOR Q/ A DT DO PRIMEIRO DIA DO MES ***
-                    If CVDate(ADOREG.Recordset.Fields("M_DT_ADM")) >= CVDate(W_DT_INI_MES) Then
-                         W_DT_INI_MES = CVDate(ADOREG.Recordset.Fields("M_DT_ADM"))
+                    If CVDate(adoReg.Recordset.Fields("M_DT_ADM")) >= CVDate(W_DT_INI_MES) Then
+                         W_DT_INI_MES = CVDate(adoReg.Recordset.Fields("M_DT_ADM"))
                     End If
                     
-                    If Not IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                          W_QT_DIAS_TRAB = (CVDate(ADOREG.Recordset.Fields("M_DT_DEM")) + 1) - CVDate(W_DT_INI_MES)
+                    If Not IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                          W_QT_DIAS_TRAB = (CVDate(adoReg.Recordset.Fields("M_DT_DEM")) + 1) - CVDate(W_DT_INI_MES)
                     ElseIf W_DT_INI_MES = CVDate("01/" & TXT_MES & "/" & TXT_ANO) Then
                           W_QT_DIAS_TRAB = "-30"
                     Else
@@ -5979,31 +5988,31 @@ Private Sub cmdAddSalario_Click()
                     
                     
                     '*** INCLUI PISO S/ REGISTRO ***
-                    If IsNull(ADOREG.Recordset.Fields("M_DT_REG")) Then
+                    If IsNull(adoReg.Recordset.Fields("M_DT_REG")) Then
                         If W_QT_DIAS_TRAB = "-30" Then
-                            W_VALOR_PISO = ADOREG.Recordset.Fields("F_vpiso")
+                            W_VALOR_PISO = adoReg.Recordset.Fields("F_vpiso")
                             w_desc = "CX - " & w_Pdesc & " : " & IIf(IsNull(W_VALOR_PISO), "R$ 0,00", Format(W_VALOR_PISO, "R$ 0.00")) & "   " & w_DESCR
                         Else
-                            W_VALOR_PISO = W_QT_DIAS_TRAB * (ADOREG.Recordset.Fields("F_vpiso") / 30)
-                            w_desc = "CX - " & W_QT_DIAS_TRAB & " dias ref. ao " & w_Pdesc & " " & IIf(IsNull(W_VALOR_PISO), "R$ 0,00", Format(ADOREG.Recordset.Fields("F_vpiso"), "R$ 0.00")) & " :  (" & Format(ADOREG.Recordset.Fields("F_vpiso"), "R$ 0.00") & " / 30 = " & Format(ADOREG.Recordset.Fields("F_vpiso") / 30, "R$ 0.00") & " x " & W_QT_DIAS_TRAB & ")"
+                            W_VALOR_PISO = W_QT_DIAS_TRAB * (adoReg.Recordset.Fields("F_vpiso") / 30)
+                            w_desc = "CX - " & W_QT_DIAS_TRAB & " dias ref. ao " & w_Pdesc & " " & IIf(IsNull(W_VALOR_PISO), "R$ 0,00", Format(adoReg.Recordset.Fields("F_vpiso"), "R$ 0.00")) & " :  (" & Format(adoReg.Recordset.Fields("F_vpiso"), "R$ 0.00") & " / 30 = " & Format(adoReg.Recordset.Fields("F_vpiso") / 30, "R$ 0.00") & " x " & W_QT_DIAS_TRAB & ")"
                         End If
                             
-                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), "22", "+", CDbl(W_VALOR_PISO), w_desc, 0, 0, 0, 0, 0
+                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), "22", "+", CDbl(W_VALOR_PISO), w_desc, 0, 0, 0, 0, 0
                         W_REG_CX = W_REG_CX + 1
                         
                     '*** INCLUI PISO C/ REGISTRO ***
                     Else
                         If W_QT_DIAS_TRAB = "-30" Then
-                            W_VALOR_PISO = ADOREG.Recordset.Fields("F_vpiso_R")
+                            W_VALOR_PISO = adoReg.Recordset.Fields("F_vpiso_R")
                             w_desc = "CX - " & w_Pdesc & " : " & IIf(IsNull(W_VALOR_PISO), "R$ 0,00", Format(W_VALOR_PISO, "R$ 0.00")) & "   " & w_DESCR
                         Else
-                            W_VALOR_PISO = W_QT_DIAS_TRAB * (ADOREG.Recordset.Fields("F_vpiso_R") / 30)
-                            w_desc = "CX - " & W_QT_DIAS_TRAB & " dias ref. ao " & w_Pdesc & " " & IIf(IsNull(W_VALOR_PISO), "R$ 0,00", Format(ADOREG.Recordset.Fields("F_vpiso_R"), "R$ 0.00")) & " :  (" & Format(ADOREG.Recordset.Fields("F_vpiso_R"), "R$ 0.00") & " / 30) = " & Format(ADOREG.Recordset.Fields("F_vpiso_R") / 30, "R$ 0.00") & " x " & W_QT_DIAS_TRAB & ")"
+                            W_VALOR_PISO = W_QT_DIAS_TRAB * (adoReg.Recordset.Fields("F_vpiso_R") / 30)
+                            w_desc = "CX - " & W_QT_DIAS_TRAB & " dias ref. ao " & w_Pdesc & " " & IIf(IsNull(W_VALOR_PISO), "R$ 0,00", Format(adoReg.Recordset.Fields("F_vpiso_R"), "R$ 0.00")) & " :  (" & Format(adoReg.Recordset.Fields("F_vpiso_R"), "R$ 0.00") & " / 30) = " & Format(adoReg.Recordset.Fields("F_vpiso_R") / 30, "R$ 0.00") & " x " & W_QT_DIAS_TRAB & ")"
                         End If
                         
                         If IsNull(W_VALOR_PISO) Then W_VALOR_PISO = 0
                         
-                        de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), "22", "+", CDbl(W_VALOR_PISO), w_desc, 0, 0, 0, 0, 0
+                        de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), "22", "+", CDbl(W_VALOR_PISO), w_desc, 0, 0, 0, 0, 0
                         
                         W_REG_CX = W_REG_CX + 1
                     End If
@@ -6194,7 +6203,7 @@ Private Sub cmdComerciario_Click()
             adoFuncs.MoveNext
         Loop
 
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
         
     'Dados Contas
     Lancamentos
@@ -6262,30 +6271,30 @@ Private Sub cmdComisCx_Click()
         'Exit Sub
         
         'COD da loja do cx do ANO anterior
-        Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Clone
+        Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Clone
         If Not w_ado_vendaAnt.EOF Then
             vrVendaAnt = w_ado_vendaAnt.Fields(0)
         Else
-            MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
+            MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
         End If
         
         'COD da loja do cx do ANO atual
-        Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Clone
+        Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Clone
         If Not w_ado_venda.EOF Then
             vrVenda = w_ado_venda.Fields(0)
         Else
             vrVenda = 0
-            MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & ADOREG.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
+            MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & adoReg.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
         End If
     
         If Not w_ado_vendaAnt.EOF And Not w_ado_venda.EOF Then
-            vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
-            vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
+            vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
+            vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
             'perc1 = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
             'perc2 = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS2 From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
             'perc3 = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS3 From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
-            If ADOREG.Recordset.Fields("M_MES") = 12 Then
-                percDez = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_PERC_FIXO_DEZ From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
+            If adoReg.Recordset.Fields("M_MES") = 12 Then
+                percDez = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_PERC_FIXO_DEZ From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
                 vrDez = vrFixo * percDez
                 descDez = " + " & (percDez * 100) & "% (" & vrDez & ") "
             Else
@@ -6300,7 +6309,10 @@ Private Sub cmdComisCx_Click()
              vrMeta = 999
              'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
             If W_ADO_FICHA.Fields("M_LOGO") <> "XX" And W_ADO_FICHA.Fields("M_LOGO") <> "99" Then
-                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & W_ADO_FICHA.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & W_ADO_FICHA.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & W_ADO_FICHA.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & W_ADO_FICHA.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ")").Fields(0)
+                If de.cncSisInt.State = 0 Then de.cncSisInt.Open
+                vrMeta = de.cncSisInt.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE (((TAB_META.MT_MES)=" & W_ADO_FICHA.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & W_ADO_FICHA.Fields("M_ANO") & ") AND Right(mt_f_loja, 2)= " & numLoja & "))").Fields(0)
             End If
             '****
             
@@ -6332,13 +6344,13 @@ Private Sub cmdComisCx_Click()
              vrMetaBonus = 0
              wFixoMeta = 0
              wPercMeta = 0
-            If ADOREG.Recordset.Fields("M_MES") <= 12 Then
+            If adoReg.Recordset.Fields("M_MES") <= 12 Then
                 
                 If vrVenda >= (vrMeta) Then
                     wFixoMeta = 0
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.2
-                        wPercMeta = 20
+                        vrMetaBonus = vrSalario * 0.15
+                        wPercMeta = 15
                     'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                         'wPercMeta = ((vrVenda / vrMeta) - 1) * 100
@@ -6443,7 +6455,7 @@ Dim adoComis As ADODB.Recordset
 Dim adoComisTMP As ADODB.Recordset
 Dim adoComisDump As ADODB.Recordset
 Dim sqlComissTMP As String
-Dim vrMeta, vrMetaBonus, descMeta, vrSalario, wFixoMeta
+Dim vrMeta, vrMetaBonus, descMeta, vrSalario, wFixoMeta, numLoja
 Dim w_ado_venda As ADODB.Recordset
 
     frm_ESCOLHA_DATA.Show 1
@@ -6480,10 +6492,10 @@ Dim w_ado_venda As ADODB.Recordset
         Dim w_DtDiff, w_ultDiaMes As Integer
         Dim w_Piso, w_Comis, w_Premio, w_PisoOriginal, w_FixoOriginal, w_Fixo As Double
             
-        ADOREG.Recordset.MoveFirst
-        Do While Not ADOREG.Recordset.EOF
+        adoReg.Recordset.MoveFirst
+        Do While Not adoReg.Recordset.EOF
         
-           If ADOREG.Recordset.Fields("M_TIPO") = "V" Then
+           If adoReg.Recordset.Fields("M_TIPO") = "V" Then
         
             'If adoReg.Recordset.Fields("M_TIPO") = "V" And ( _
             '        adoReg.Recordset.Fields("M_LOGO") = "FH") Then
@@ -6500,7 +6512,7 @@ Dim w_ado_venda As ADODB.Recordset
             '**** BONUS DE META
             'COD da loja do cx do ANO atual
             'Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
-            Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR FROM TAB_VENDA, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE (((TAB_FUNCIONARIO.F_DT_DEM) Is Null) AND ((Right(Left([TAB_VENDA].[V_DATA],5),2))=" & Format(ADOREG.Recordset.Fields("M_MES"), "00") & ") AND ((Right([TAB_VENDA].[V_DATA],4))=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_venda].[v_f_loja],2)));").Clone
+            Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR FROM TAB_VENDA, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE (((TAB_FUNCIONARIO.F_DT_DEM) Is Null) AND ((Right(Left([TAB_VENDA].[V_DATA],5),2))=" & Format(adoReg.Recordset.Fields("M_MES"), "00") & ") AND ((Right([TAB_VENDA].[V_DATA],4))=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_venda].[v_f_loja],2)));").Clone
             If Not w_ado_venda.EOF Then
                 vrVenda = w_ado_venda.Fields(0)
             Else
@@ -6509,21 +6521,24 @@ Dim w_ado_venda As ADODB.Recordset
             End If
     
             vrMeta = 999
-            If ADOREG.Recordset.Fields("M_LOGO") <> "XX" And ADOREG.Recordset.Fields("M_LOGO") <> "99" Then
-                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+            If adoReg.Recordset.Fields("M_LOGO") <> "XX" And adoReg.Recordset.Fields("M_LOGO") <> "99" Then
+                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                If de.cncSisInt.State = 0 Then de.cncSisInt.Open
+                vrMeta = de.cncSisInt.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND Right(mt_f_loja, 2)= " & numLoja & "))").Fields(0)
             End If
             
             '****
             
-            If ADOREG.Recordset.Fields("F_COD_CENTRAL") <> "" And IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+            If adoReg.Recordset.Fields("F_COD_CENTRAL") <> "" And IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
 
                 
-                adoComis.Filter = "F_4023717930 = " & ADOREG.Recordset.Fields("F_COD_CENTRAL")
+                adoComis.Filter = "F_4023717930 = " & adoReg.Recordset.Fields("F_COD_CENTRAL")
                 If Not adoComis.EOF Then
                     w_Piso = 0
-                    w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                    w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                     If w_Piso = 0 Then
-                        w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                        w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                     End If
                     
                     w_Comis = 0
@@ -6531,7 +6546,7 @@ Dim w_ado_venda As ADODB.Recordset
                     w_Comis = CDbl(adoComis.Fields("COMTOTAL"))
                     w_Premio = CDbl(adoComis.Fields("F_1373503546"))
                     
-                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23 OR C_TP_CONTA = 102 OR C_TP_CONTA = 101)")
+                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23 OR C_TP_CONTA = 102 OR C_TP_CONTA = 101)")
                     
                 'If adoReg.Recordset.Fields("M_MES") > "12" Then
                 '        w_Fixo = de.cnc.Execute("SELECT IIf(IsNull(Lojb010.FixoVend),0,Lojb010.FixoVend) AS Fixo, TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO FROM TAB_FICHA_MENS INNER JOIN Lojb010 ON TAB_FICHA_MENS.M_LOGO = Lojb010.COD_LOJ " & _
@@ -6543,20 +6558,20 @@ Dim w_ado_venda As ADODB.Recordset
                     
                   If (w_Comis + w_Premio + w_Fixo) <= w_Piso Then
                      'w_ultDiaMes = 30
-                     w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                     w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                      If w_ultDiaMes < 30 Then w_ultDiaMes = 30
                  
                      'If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
-                         w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+                         w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
                      'Else
                      '    w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
                      'End If
                      
                      
-                     If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                         w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+                     If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                         w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
                      Else
-                         w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                         w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                          'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                          If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                          If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -6581,41 +6596,41 @@ Dim w_ado_venda As ADODB.Recordset
                          
                          If w_FixoOriginal > 0 Then
                             If (w_Comis + w_Premio + w_Fixo) <= w_Piso Then
-                                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                             Else
-                                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "#SALÁRIO MAIOR QUE PISO PROPORCIONAL# Fixo: " & Format(w_FixoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_FixoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Fixo, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                             End If
                          Else
                             If (w_Comis + w_Premio) <= w_Piso Then
-                                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                             Else
-                                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#COMISSÃO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#COMISSÃO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                             End If
                          End If
         
                      Else
                         If w_FixoOriginal > 0 Then
-                            de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                            de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Fixo + w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                         Else
-                            de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                            de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                         End If
                      End If
                      
                  Else
                     If w_Fixo > 0 Then
-                       de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE] Comissão: " & Format(w_Comis, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                       de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "FIXO [GERADO AUTOMATICAMENTE] Fixo: " & Format(w_Fixo, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                       de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                       de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE] Comissão: " & Format(w_Comis, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                       de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 102, "+", Format(w_Fixo, "0.00"), "FIXO [GERADO AUTOMATICAMENTE] Fixo: " & Format(w_Fixo, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                       de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                     Else
-                       de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                       de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                       de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                       de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                     End If
                  End If
             End If
-           ElseIf IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+           ElseIf IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
            
             'Dim w_Dt, w_dtUlt As Date
             'Dim w_DtDiff, w_ultDiaMes As Integer
@@ -6623,9 +6638,9 @@ Dim w_ado_venda As ADODB.Recordset
                 
                 If Not adoComis.EOF Then
                     w_Piso = 0
-                    w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                    w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                     If w_Piso = 0 Then
-                        w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                        w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                     End If
                     
                     'If adoReg.Recordset.Fields("M_MES") = "1" Or adoReg.Recordset.Fields("M_MES") = "2" Or adoReg.Recordset.Fields("M_MES") = "3" Then
@@ -6636,23 +6651,23 @@ Dim w_ado_venda As ADODB.Recordset
                         w_Fixo = 0
                     'End If
                     
-                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23  OR C_TP_CONTA = 102)")
+                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23  OR C_TP_CONTA = 102)")
                     
                      'w_ultDiaMes = 30
-                     w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                     w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                      If w_ultDiaMes < 30 Then w_ultDiaMes = 30
                  
                      'If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
-                         w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+                         w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
                     ' Else
                      '    w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
                     ' End If
                      
                      
-                     If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                         w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+                     If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                         w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
                      Else
-                         w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                         w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                          'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                          If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                          If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -6674,16 +6689,16 @@ Dim w_ado_venda As ADODB.Recordset
                             w_ultDiaMes = 30
                          End If
                         If w_FixoOriginal > 0 Then
-                           de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                           de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                         Else
-                           de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                           de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO PROPORCIONAL# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                         End If
                      
                      Else
                         If w_FixoOriginal > 0 Then
-                            de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                            de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Fixo: " & Format(w_Fixo, "0.00") & " + Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                         Else
-                            de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                            de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(0, "0.00") & " + Prêmio: " & Format(0, "0.00") & " = " & Format(0 + 0, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                         End If
                      End If
             End If
@@ -6695,11 +6710,11 @@ Dim w_ado_venda As ADODB.Recordset
              wFixoMeta = 0
              wPercMeta = 0
                 
-            If IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+            If IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
              
                 If vrVenda >= (vrMeta) Then
                 
-                    If ADOREG.Recordset.Fields("m_mes") = 1 Then
+                    If adoReg.Recordset.Fields("m_mes") = 1 Then
 
                         If w_Piso > vrSalario Then
                            vrSalario = w_Piso
@@ -6717,9 +6732,9 @@ Dim w_ado_venda As ADODB.Recordset
                     'End If
                     'vrMetaBonus = 0
 
-                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
+                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
                     'Bonus de % do Salário
-                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                    de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                     'de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
                     vrSalario = vrSalario + vrMetaBonus + wFixoMeta
                 Else
@@ -6734,12 +6749,12 @@ Dim w_ado_venda As ADODB.Recordset
            
            'End If
 
-           ADOREG.Recordset.MoveNext
+           adoReg.Recordset.MoveNext
            
             
         Loop
         
-        ADOREG.Recordset.MoveFirst
+        adoReg.Recordset.MoveFirst
         Lancamentos
         
         adoComis.Clone
@@ -6858,40 +6873,40 @@ Dim adoComis As ADODB.Recordset
      de.cmdComissGerar
      Set adoComis = de.rscmdComissGerar.Clone
          
-     If ADOREG.Recordset.Fields("M_TIPO") = "V" And ADOREG.Recordset.Fields("F_COD_CENTRAL") <> "" And IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+     If adoReg.Recordset.Fields("M_TIPO") = "V" And adoReg.Recordset.Fields("F_COD_CENTRAL") <> "" And IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
          Dim w_Dt, w_dtUlt As Date
          Dim w_DtDiff, w_ultDiaMes As Integer
          Dim w_Piso, w_Comis, w_Premio, w_PisoOriginal As Double
          
-         adoComis.Filter = "F_4023717930 = " & ADOREG.Recordset.Fields("F_COD_CENTRAL")
+         adoComis.Filter = "F_4023717930 = " & adoReg.Recordset.Fields("F_COD_CENTRAL")
          If Not adoComis.EOF Then
              w_Piso = 0
-             w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+             w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
              If w_Piso = 0 Then
-                 w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                 w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
              End If
              
              w_Comis = CDbl(adoComis.Fields("COMTOTAL"))
              w_Premio = CDbl(adoComis.Fields("F_1373503546"))
              
-             de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23)")
+             de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 20 OR C_TP_CONTA = 21 OR C_TP_CONTA = 23)")
              
              If (adoComis.Fields("COMTOTAL") + adoComis.Fields("F_1373503546")) <= w_Piso Then
                  'w_ultDiaMes = 30
-                 w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                 w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                  If w_ultDiaMes < 30 Then w_ultDiaMes = 30
              
-                 If ADOREG.Recordset.Fields("m_dt_reg") = "" Or IsNull(ADOREG.Recordset.Fields("m_dt_reg")) Then
-                     w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+                 If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
+                     w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
                  Else
-                     w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_reg"))
+                     w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
                  End If
                  
                  
-                 If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                     w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+                 If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                     w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
                  Else
-                     w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                     w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                      'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                      If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                      If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -6912,19 +6927,19 @@ Dim adoComis As ADODB.Recordset
                      End If
                      
                      If (adoComis.Fields("COMTOTAL") + adoComis.Fields("F_1373503546")) <= w_Piso Then
-                         de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                         de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                      Else
-                         de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#COMISSÃO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                         de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                         de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "#COMISSÃO MAIOR QUE PISO PROPORCIONAL# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                         de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                      End If
     
                  Else
-                     de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                     de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 23, "+", Format(w_Piso, "0.00"), "#NÃO ATINGIU O PISO# Comissão: " & Format(w_Comis, "0.00") & " + Prêmio: " & Format(w_Premio, "0.00") & " = " & Format(w_Comis + w_Premio, "0.00") & ". Piso: " & Format(w_Piso, "0.00"), adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
                  End If
                  
              Else
-                 de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                 de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                 de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 20, "+", Format(w_Comis, "0.00"), "COMISSÃO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
+                 de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 21, "+", Format(w_Premio, "0.00"), "PRÊMIO [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
              End If
          End If
      End If
@@ -6952,7 +6967,7 @@ End Sub
 
 Private Sub cmdComixCxEXT_Click()
 Dim dtIni, dtFim As Date
-Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta
+Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta, numLoja
    
     If de.rscmdComissGerar.State = 1 Then de.rscmdComissGerar.Close
     de.cmdComissGerar
@@ -6961,40 +6976,40 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta
     cbMostrar.text = "CX EXTRA"
     cmdMostrar_Click
         
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
-        If (ADOREG.Recordset.Fields("M_TIPO") = "X" Or ADOREG.Recordset.Fields("M_TIPO") = "2") And IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
+        If (adoReg.Recordset.Fields("M_TIPO") = "X" Or adoReg.Recordset.Fields("M_TIPO") = "2") And IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
             Dim w_Dt, w_dtUlt As Date
             Dim w_DtDiff, w_ultDiaMes As Integer
             Dim w_Piso, w_Comis, w_Premio, w_PisoOriginal As Double
             
             w_Piso = 0
-            w_Piso = de.cnc.Execute("SELECT F_VR_FIXO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            w_Piso = de.cnc.Execute("SELECT F_VR_FIXO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             If IsNull(w_Piso) Or (w_Piso = 0) Then
             
-                w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                w_Piso = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                 If w_Piso = 0 Then
-                    w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+                    w_Piso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
                 End If
             End If
                 
-            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
+            de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 22)")
             
              'w_ultDiaMes = 30
-             w_ultDiaMes = Day(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+             w_ultDiaMes = Day(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
              If w_ultDiaMes < 30 Then w_ultDiaMes = 30
          
-             If ADOREG.Recordset.Fields("m_dt_reg") = "" Or IsNull(ADOREG.Recordset.Fields("m_dt_reg")) Then
-                 w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_adm"))
+             If adoReg.Recordset.Fields("m_dt_reg") = "" Or IsNull(adoReg.Recordset.Fields("m_dt_reg")) Then
+                 w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_adm"))
              Else
-                 w_Dt = CVDate(ADOREG.Recordset.Fields("m_dt_reg"))
+                 w_Dt = CVDate(adoReg.Recordset.Fields("m_dt_reg"))
              End If
              
              
-             If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-                 w_dtUlt = CVDate(ADOREG.Recordset.Fields("M_DT_DEM"))
+             If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+                 w_dtUlt = CVDate(adoReg.Recordset.Fields("M_DT_DEM"))
              Else
-                 w_dtUlt = CVDate(UltDiaMes(ADOREG.Recordset.Fields("m_mes"), ADOREG.Recordset.Fields("m_ano")))
+                 w_dtUlt = CVDate(UltDiaMes(adoReg.Recordset.Fields("m_mes"), adoReg.Recordset.Fields("m_ano")))
                  'If Day(w_dtUlt) = 31 Then w_dtUlt = w_dtUlt - 1
                  If Day(w_dtUlt) = 28 Then w_dtUlt = w_dtUlt + 2
                  If Day(w_dtUlt) = 29 Then w_dtUlt = w_dtUlt + 1
@@ -7019,12 +7034,12 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta
              
              vrPisoMeta = w_Piso
              
-             If (ADOREG.Recordset.Fields("M_TIPO") = "2") Then
+             If (adoReg.Recordset.Fields("M_TIPO") = "2") Then
              
                 '**** BONUS DE META
                 'COD da loja do cx do ANO atual
                 'Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
-                Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR FROM TAB_VENDA, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE (((TAB_FUNCIONARIO.F_DT_DEM) Is Null) AND ((Right(Left([TAB_VENDA].[V_DATA],5),2))=" & Format(ADOREG.Recordset.Fields("M_MES"), "00") & ") AND ((Right([TAB_VENDA].[V_DATA],4))=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_venda].[v_f_loja],2)));").Clone
+                Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR FROM TAB_VENDA, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE (((TAB_FUNCIONARIO.F_DT_DEM) Is Null) AND ((Right(Left([TAB_VENDA].[V_DATA],5),2))=" & Format(adoReg.Recordset.Fields("M_MES"), "00") & ") AND ((Right([TAB_VENDA].[V_DATA],4))=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_venda].[v_f_loja],2)));").Clone
                 If Not w_ado_venda.EOF Then
                     vrVenda = w_ado_venda.Fields(0)
                 Else
@@ -7033,13 +7048,16 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta
                 End If
         
                 vrMeta = 999
-                If ADOREG.Recordset.Fields("M_LOGO") <> "XX" Then
-                    vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                If adoReg.Recordset.Fields("M_LOGO") <> "XX" Then
+                    'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                    numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                    If de.cncSisInt.State = 0 Then de.cncSisInt.Open
+                    vrMeta = de.cncSisInt.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND Right(mt_f_loja, 2)= " & numLoja & "))").Fields(0)
                 End If
                 
                  vrMetaBonus = 0
                 
-                If ADOREG.Recordset.Fields("m_mes") <= 12 Then
+                If adoReg.Recordset.Fields("m_mes") <= 12 Then
                     'wPercMeta = 0
                     'If vrVenda >= (vrMeta * 1.1) Then
                     '    vrMetaBonus = vrSalario * 0.1
@@ -7086,24 +7104,24 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta
 
                  
              If (w_DtDiff < w_ultDiaMes) And (w_DtDiff < 30) Then
-                 de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 22, "+", Format(vrPisoMeta, "0.00"), "#FIXO PROPORCIONAL# Fixo: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00") & descMeta & " [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                 de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 22, "+", Format(vrPisoMeta, "0.00"), "#FIXO PROPORCIONAL# Fixo: " & Format(w_PisoOriginal, "0.00") & " / " & CInt(w_ultDiaMes) & " = " & Format(w_PisoOriginal / w_ultDiaMes, "0.00") & " * " & w_DtDiff & " dias = " & Format(w_Piso, "0.00") & descMeta & " [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
              Else
-                 de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 22, "+", Format(vrPisoMeta, "0.00"), "#FIXO# Fixo: " & Format(w_Piso, "0.00") & descMeta & " [GERADO AUTOMATICAMENTE]", ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                 de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFICHA"), 22, "+", Format(vrPisoMeta, "0.00"), "#FIXO# Fixo: " & Format(w_Piso, "0.00") & descMeta & " [GERADO AUTOMATICAMENTE]", adoReg.Recordset.Fields("M_LOGO"), "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
              End If
                  
               
        End If
-       ADOREG.Recordset.MoveNext
+       adoReg.Recordset.MoveNext
        
-       If ADOREG.Recordset.EOF And cbMostrar.text = "CX EXTRA" Then
+       If adoReg.Recordset.EOF And cbMostrar.text = "CX EXTRA" Then
             cbMostrar.text = "2º CAIXA"
             cmdMostrar_Click
-            ADOREG.Recordset.MoveFirst
+            adoReg.Recordset.MoveFirst
        End If
             
     Loop
     
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
     adoComis.Close
     de.rscmdComissGerar.Close
     Lancamentos
@@ -7115,8 +7133,8 @@ On Error GoTo err1
 
    Op_Click 5
     
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
     
        'PEGA DT DE DEMISSÃO
         w_dt_DEM = IIf(TXT_DT_DEM = "", Format(txt_DT_ADM, "DD/MM/YYYY"), Format(TXT_DT_DEM, "DD/MM/YYYY"))
@@ -7143,7 +7161,7 @@ On Error GoTo err1
            
        End If
     
-       ADOREG.Recordset.MoveNext
+       adoReg.Recordset.MoveNext
        
     Loop
     
@@ -7167,11 +7185,11 @@ Private Sub cmdDesbloquear_Click()
     
     If Trim(TXT_AC_F) = "" Then
         de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_DT_ACF = NULL WHERE (M_NFICHA = " & TXT_NFICHA & " )", w_reg
-        ADOREG.Recordset.Fields("M_DT_ACF") = Null
+        adoReg.Recordset.Fields("M_DT_ACF") = Null
     End If
     
-    If IsNull(ADOREG.Recordset.Fields("M_DT_ACF")) Then
-        If ADOREG.Recordset.Fields("M_BLOQ") Then
+    If IsNull(adoReg.Recordset.Fields("M_DT_ACF")) Then
+        If adoReg.Recordset.Fields("M_BLOQ") Then
             de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_BLOQ = " & 0 & " Where (M_nficha = " & TXT_NFICHA & ")"
             de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "FICHA", "FICHA: " & TXT_NFICHA & " | FUNCIONÁRIO: " & TXT_FUNC & " | ## LIBERANDO ##"
         Else
@@ -7182,7 +7200,7 @@ Private Sub cmdDesbloquear_Click()
         Cancelar
         Editar 0
         
-        If ADOREG.Recordset.Fields("M_BLOQ") = False Then BarraF.Buttons("editar").Enabled = True
+        If adoReg.Recordset.Fields("M_BLOQ") = False Then BarraF.Buttons("editar").Enabled = True
         
     Else
           MsgBox "Não é possível desbloquear uma ficha com CARIMBO!", vbCritical
@@ -7198,8 +7216,8 @@ Dim adoFixos As ADODB.Recordset
 Set adoFixos = de.cnc.Execute("SELECT * FROM TAB_DESC_CALC_FIXO WHERE CF_EMP_COD = " & txt_F_COD).Clone
 
 Do While Not adoFixos.EOF
-    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFicha") & " AND C_NCRED = " & adoFixos.Fields("CF_CODIGO"))
-    de.cmdIncluirDescCalc2 Date, ADOREG.Recordset.Fields("M_NFicha"), adoFixos.Fields("CF_TP_CONTA"), adoFixos.Fields("CF_TP_OP"), adoFixos.Fields("CF_VALOR"), adoFixos.Fields("CF_DESC"), "0", adoFixos.Fields("CF_CODIGO"), "0", "0", adoFixos.Fields("CF_EMP_COD"), 0
+    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where C_N_FICHA = " & adoReg.Recordset.Fields("M_NFicha") & " AND C_NCRED = " & adoFixos.Fields("CF_CODIGO"))
+    de.cmdIncluirDescCalc2 Date, adoReg.Recordset.Fields("M_NFicha"), adoFixos.Fields("CF_TP_CONTA"), adoFixos.Fields("CF_TP_OP"), adoFixos.Fields("CF_VALOR"), adoFixos.Fields("CF_DESC"), "0", adoFixos.Fields("CF_CODIGO"), "0", "0", adoFixos.Fields("CF_EMP_COD"), 0
     adoFixos.MoveNext
 Loop
 
@@ -7283,8 +7301,8 @@ On Error GoTo err1
 
     Op_Click 5
     
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
     
        'ATUALIZA DATA DE DEMISSÃO DO CADASTRO
         w_dt_DEM = IIf(TXT_DT_DEM = "", Null, Format(TXT_DT_DEM, "DD/MM/YYYY"))
@@ -7297,14 +7315,14 @@ On Error GoTo err1
         
         
         'REMOVE VISTO SE NÃO TIVER DATA DE DEMISSÃO
-        If ADOREG.Recordset.Fields("M_DEM_OK") Then
+        If adoReg.Recordset.Fields("M_DEM_OK") Then
             If TXT_DT_DEM = "" Then
                 de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DEM_OK = 0  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
-                de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_DEM_OK = 0  WHERE (M_NFICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " )", w_reg
+                de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_DEM_OK = 0  WHERE (M_NFICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " )", w_reg
             End If
         End If
         
-         ADOREG.Recordset.MoveNext
+         adoReg.Recordset.MoveNext
     Loop
 
     w_Op = -Op(1).value * 1 - Op(2).value * 2 - Op(3).value * 3 - Op(4).value * 4 - Op(5).value * 5 - Op(6).value * 6 - Op(7).value * 7
@@ -7773,7 +7791,7 @@ On Error GoTo err1
             adoFuncs.MoveNext
         Loop
 
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
         
     'Dados Contas
     Lancamentos
@@ -7815,13 +7833,13 @@ Private Sub cmdComissGerente_Click()
 On Error Resume Next
     Dim vrVenda, vrFixo, vrMinimo, percComis, vrSalario, vrComis
     Dim vrVendaAnt, percVenda, vrBonus, vrSalarioBonus
-    Dim vrMeta, vrMetaBonus, descMeta, wFixoMeta
+    Dim vrMeta, vrMetaBonus, descMeta, wFixoMeta, numLoja
     
     If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
         If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de fichas") = vbNo Then
             Exit Sub
         End If
-        If ADOREG.Recordset.Fields("M_BLOQ") Then
+        If adoReg.Recordset.Fields("M_BLOQ") Then
             MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
             Exit Sub
         End If
@@ -7835,28 +7853,28 @@ On Error Resume Next
     cbMostrar.text = "GERENTE"
     cmdMostrar_Click
     
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
     
         'If IsNull(adoReg.Recordset.Fields("M_DT_DEM")) And adoReg.Recordset.Fields("M_LOGO") = "FH" Then
         'Or (adoReg.Recordset.Fields("M_LOGO") = "SV"))) Then
-        If IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+        If IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
     
             'COD da loja do gerente do ANO anterior
-            Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Clone
+            Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
             If Not w_ado_vendaAnt.EOF Then
                 vrVendaAnt = w_ado_vendaAnt.Fields(0)
             Else
-                MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
+                MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & CInt(adoReg.Recordset.Fields("M_ANO")) - 1 & "! Ignorando...", vbCritical
             End If
             
             'COD da loja do cx do ANO atual
-            Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Clone
+            Set w_ado_venda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Clone
             If Not w_ado_venda.EOF Then
                 vrVenda = w_ado_venda.Fields(0)
             Else
                 vrVenda = 0
-                MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " / " & ADOREG.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
+                MsgBox "Não há lançamentos do logo " & W_ADO_FICHA.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & adoReg.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
             End If
         
             If Not w_ado_vendaAnt.EOF And Not w_ado_venda.EOF Then
@@ -7865,16 +7883,19 @@ On Error Resume Next
             'vrVenda = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DEM_OK = 0 AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
         
             'If vrVenda <> "" Then
-                vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
-                vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
-                percComis = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & ADOREG.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & ADOREG.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
+                vrFixo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_FIXO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
+                vrMinimo = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_VR_MINIMO From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
+                percComis = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_COMIS From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
                 
                 
                  '**** BONUS DE META
                  vrMeta = 999
                  'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
-                 If ADOREG.Recordset.Fields("M_LOGO") <> "XX" Then
-                     vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                 If adoReg.Recordset.Fields("M_LOGO") <> "XX" Then
+                     'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                    numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                    If de.cncSisInt.State = 0 Then de.cncSisInt.Open
+                    vrMeta = de.cncSisInt.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND Right(mt_f_loja, 2)= " & numLoja & "))").Fields(0)
                  End If
                  '****
                 
@@ -7935,13 +7956,13 @@ On Error Resume Next
              wFixoMeta = 0
              wPercMeta = 0
                  
-              If ADOREG.Recordset.Fields("m_mes") <= 12 Then
+              If adoReg.Recordset.Fields("m_mes") <= 12 Then
                    
                 If vrVenda >= (vrMeta) Then
                     'wFixoMeta = vrSalario * 0.1
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.2
-                        wPercMeta = 20
+                        vrMetaBonus = vrSalario * 0.15
+                        wPercMeta = 15
                     'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                     '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
@@ -7966,15 +7987,15 @@ On Error Resume Next
                     wDesc = "(" & Format(vrVenda, "0.00") & " x " & percComis & "% = " & Format(vrComis, "0.00") & ") + " & Format(vrFixo, "0.00") & " = " & Format(vrSalario, "0.00") & descMeta & " = " & Format(vrSalarioBonus, "0.00")
                 End If
                 
-                de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 20) And (C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFicha") & ")")
-                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFicha"), 20, "+", vrSalarioBonus, wDesc, "", "0", "0", "0", "0"
+                de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 20) And (C_N_FICHA = " & adoReg.Recordset.Fields("M_NFicha") & ")")
+                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFicha"), 20, "+", vrSalarioBonus, wDesc, "", "0", "0", "0", "0"
                 
             End If
         End If
-        ADOREG.Recordset.MoveNext
+        adoReg.Recordset.MoveNext
     Loop
     
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
     'Dados Contas
     Lancamentos
     
@@ -8011,7 +8032,7 @@ On Error GoTo err1
             adoFuncs.MoveNext
         Loop
 
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
 
     'Dados Contas
     Lancamentos
@@ -8143,8 +8164,8 @@ End Sub
 
 
 Private Sub Command1_Click()
-    ADOREG.Recordset.MoveFirst
-    ADOREG.Recordset.Find "m_f_cod = " & InputBox("COD FUNC:"), , adSearchForward
+    adoReg.Recordset.MoveFirst
+    adoReg.Recordset.Find "m_f_cod = " & InputBox("COD FUNC:"), , adSearchForward
 End Sub
 
 Private Sub ctr_Button1_Click()
@@ -8163,7 +8184,7 @@ Dim ww_mes, ww_ano, qtdeSaldoAdded
 On Error Resume Next
 
     
-    If Not isMesValido(txt_F_COD, ADOREG.Recordset.Fields("M_MES"), ADOREG.Recordset.Fields("M_ANO")) Then 'Verifica se é mês atual ou passado
+    If Not isMesValido(txt_F_COD, adoReg.Recordset.Fields("M_MES"), adoReg.Recordset.Fields("M_ANO")) Then 'Verifica se é mês atual ou passado
         If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de fichas") = vbNo Then
             Exit Sub
         End If
@@ -8174,7 +8195,7 @@ On Error Resume Next
     End If
     
     
-    If MsgBox("Deseja regerar o Saldo Devedor de todos do mês " & ADOREG.Recordset.Fields("M_MES") & "?", vbYesNo, "Gerar saldo") = vbNo Then
+    If MsgBox("Deseja regerar o Saldo Devedor de todos do mês " & adoReg.Recordset.Fields("M_MES") & "?", vbYesNo, "Gerar saldo") = vbNo Then
         Exit Sub
     End If
     
@@ -8184,16 +8205,16 @@ On Error Resume Next
     bt_VoltarDT_Click
 
 
-    ww_mes = ADOREG.Recordset.Fields("M_MES") + 1
+    ww_mes = adoReg.Recordset.Fields("M_MES") + 1
     If ww_mes = 13 Then
         ww_mes = 1
-        ww_ano = ADOREG.Recordset.Fields("M_ANO") + 1
+        ww_ano = adoReg.Recordset.Fields("M_ANO") + 1
     Else
-        ww_ano = ADOREG.Recordset.Fields("M_ANO")
+        ww_ano = adoReg.Recordset.Fields("M_ANO")
     End If
     
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
     Dim ADO_TOTAL As ADODB.Recordset
     Dim wTXT_MAIS
     Dim wTXT_MENOS
@@ -8222,16 +8243,16 @@ On Error Resume Next
         Dim proxFicha
         Dim w_desc
  
-        proxFicha = de.cnc.Execute("SELECT M_NFICHA From TAB_FICHA_MENS WHERE M_ANO = " & ww_ano & " AND M_MES = " & ww_mes & " AND M_F_COD = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0)
+        proxFicha = de.cnc.Execute("SELECT M_NFICHA From TAB_FICHA_MENS WHERE M_ANO = " & ww_ano & " AND M_MES = " & ww_mes & " AND M_F_COD = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
         de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 14) And (C_N_FICHA = " & proxFicha & ")")
         'If wTXT_TOTAL < 0 And ADOREG.Recordset.Fields("M_LOGO") <> "RP" And (IsNull(ADOREG.Recordset.Fields("M_DT_ACF")) Or ADOREG.Recordset.Fields("M_DT_ACF") = "") Then
-        If wTXT_TOTAL < 0 And ADOREG.Recordset.Fields("M_LOGO") <> "RP" And Not (IsEmpty(proxFicha)) Then
+        If wTXT_TOTAL < 0 And adoReg.Recordset.Fields("M_LOGO") <> "RP" And Not (IsEmpty(proxFicha)) Then
             w_desc = "Pg. Saldo Dev.: " & Format(wTXT_TOTAL, "R$ 0.00")
-            de.cmdIncluirDescCalcVistado Date, proxFicha, 14, "-", wTXT_TOTAL, w_desc, "", "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+            de.cmdIncluirDescCalcVistado Date, proxFicha, 14, "-", wTXT_TOTAL, w_desc, "", "0", "0", "0", adoReg.Recordset.Fields("M_F_COD")
             qtdeSaldoAdded = qtdeSaldoAdded + 1
         End If
 
-        ADOREG.Recordset.MoveNext
+        adoReg.Recordset.MoveNext
     Loop
     
     'Retornando para o mês atual
@@ -8255,18 +8276,18 @@ On Error GoTo err1
     Dim wValorSindical
     Dim wDesc
     
-    ADOREG.Recordset.MoveFirst
-    Do While Not ADOREG.Recordset.EOF
+    adoReg.Recordset.MoveFirst
+    Do While Not adoReg.Recordset.EOF
         
-        If ADOREG.Recordset.Fields("M_LOGO").value <> "RP" Then
+        If adoReg.Recordset.Fields("M_LOGO").value <> "RP" Then
             
-            wValorSindical = ADOREG.Recordset.Fields("f_vpiso").value
+            wValorSindical = adoReg.Recordset.Fields("f_vpiso").value
             
             If wValorSindical > 0 Then
                 wValorSindical = Format((wValorSindical / 30) * -1, "0.00") 'Calcula Contribuição Sindical
-                wDesc = Format(ADOREG.Recordset.Fields("f_vpiso").value, "0.00") & " / 30 =  " & Format(wValorSindical, "0.00")
-                de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 70) And (C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFicha") & ")")
-                de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFicha"), 70, "-", wValorSindical, wDesc, "", "0", "0", "0", "0"
+                wDesc = Format(adoReg.Recordset.Fields("f_vpiso").value, "0.00") & " / 30 =  " & Format(wValorSindical, "0.00")
+                de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where (C_TP_CONTA = 70) And (C_N_FICHA = " & adoReg.Recordset.Fields("M_NFicha") & ")")
+                de.cmdIncluirDescCalc Date, adoReg.Recordset.Fields("M_NFicha"), 70, "-", wValorSindical, wDesc, "", "0", "0", "0", "0"
             End If
             
         End If
@@ -8274,10 +8295,10 @@ On Error GoTo err1
         wValorSindical = 0
         wDesc = ""
 
-        ADOREG.Recordset.MoveNext
+        adoReg.Recordset.MoveNext
     Loop
     
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
         
     'Dados Contas
     Lancamentos
@@ -8324,20 +8345,20 @@ Private Sub flexGRID_L_KeyPress(KeyAscii As Integer)
         Select Case KeyAscii
         ' Editar ao teclar ENTER
         Case vbKeyReturn
-            If ADOREG.Recordset.Fields("M_BLOQ") = False Then
+            If adoReg.Recordset.Fields("M_BLOQ") = False Then
             
                 If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
                     If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
                         Exit Sub
                     End If
-                    If ADOREG.Recordset.Fields("M_BLOQ") Then
+                    If adoReg.Recordset.Fields("M_BLOQ") Then
                         MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
                         Exit Sub
                     End If
                 End If
                 
                 If flexGRID_L.TextMatrix(flexGRID_L.RowSel, 6) <> "Não" Then
-                    If ADOREG.Recordset.Fields("M_BLOQ") Then
+                    If adoReg.Recordset.Fields("M_BLOQ") Then
                         MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
                         Exit Sub
                     End If
@@ -8368,7 +8389,7 @@ Private Sub flexGRID_L_MouseDown(Button As Integer, Shift As Integer, x As Singl
                 If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
                     Exit Sub
                 End If
-                If ADOREG.Recordset.Fields("M_BLOQ") Then
+                If adoReg.Recordset.Fields("M_BLOQ") Then
                     MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
                     Exit Sub
                 End If
@@ -8493,19 +8514,19 @@ On Error GoTo err1
     'If UCase(frmLogin.txtUserName) = UCase(NomeMestre) Then BarraF.Buttons("dupla").Visible = True
    
     '*** CALCULA O TOTAL - APÓS O NOVO VALOR ***
-    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE C_Tp_Op = '+' and C_VALOR > 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_NFICHA") & ")").Fields("MAIS")
-    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE C_Tp_Op = '-' and C_VALOR < 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_NFICHA") & ")").Fields("MENOS")
+    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE C_Tp_Op = '+' and C_VALOR > 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")").Fields("MAIS")
+    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE C_Tp_Op = '-' and C_VALOR < 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")").Fields("MENOS")
     
     W_TOTAL = IIf(IsNull(W_MENOS), 0, W_MENOS) + IIf(IsNull(W_MAIS), 0, W_MAIS)
  
-    If ADOREG.Recordset.Fields("m_TOTAL") <> CDbl(W_TOTAL) Then
+    If adoReg.Recordset.Fields("m_TOTAL") <> CDbl(W_TOTAL) Then
         TXT_TOTAL = Format(W_TOTAL, "R$ 0.00")
 '        adoReg.Recordset.Fields("m_TOTAL") = TXT_TOTAL
-        ADOREG.Recordset.UpdateBatch 'adAffectCurrent
+        adoReg.Recordset.UpdateBatch 'adAffectCurrent
     End If
 
     
-    If ADOREG.Recordset.Fields("m_TOTAL") < 0 Then
+    If adoReg.Recordset.Fields("m_TOTAL") < 0 Then
         TXT_TOTAL.ForeColor = vbRed
     Else
         TXT_TOTAL.ForeColor = vbWhite
@@ -8608,9 +8629,9 @@ On Error GoTo err1
         
     Loop
     
-    Set ADOREG.Recordset = de.rscmdSqlVisAltFichas.Clone
+    Set adoReg.Recordset = de.rscmdSqlVisAltFichas.Clone
     
-    ADOREG.Recordset.MoveFirst
+    adoReg.Recordset.MoveFirst
     
     If w_umaVez = 0 Then
         frmSplash.PB.value = 100
@@ -8623,12 +8644,12 @@ On Error GoTo err1
     
     V_MOVE = False
 
-    If TXT_FILTRO <> "" Then ADOREG.Recordset.Filter = TXT_FILTRO
+    If TXT_FILTRO <> "" Then adoReg.Recordset.Filter = TXT_FILTRO
     
     V_MOVE = True
     
     'Saldo restante da ficha
-    W_SALDO = de.cnc.Execute("Select F_SALDO_ANT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+    W_SALDO = de.cnc.Execute("Select F_SALDO_ANT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
     txt_SaldoAnt = IIf(IsNull(W_SALDO), Format(0, "R$ 0.00"), Format(W_SALDO, "R$ 0.00"))
     'Saldo DO EMPRESTIMO
 '    w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
@@ -8640,7 +8661,7 @@ On Error GoTo err1
         txt_SaldoAnt.ForeColor = vbBlue
     End If
         
-    If de.rscmdBase.State = 1 Then ADOREG.Refresh
+    If de.rscmdBase.State = 1 Then adoReg.Refresh
     'Editar
 
     '**** HABILITA P/ PL ***
@@ -8672,33 +8693,33 @@ Private Sub adoReg_MoveComplete(ByVal adReason As ADODB.EventReasonEnum, ByVal p
 On Error Resume Next
 
             txt_VPiso = 0
-            txt_VPiso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            txt_VPiso = de.cnc.Execute("SELECT F_VPISO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             txt_VPiso = Format(txt_VPiso, "0.00")
             txt_VPiso_R = 0
-            txt_VPiso_R = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            txt_VPiso_R = de.cnc.Execute("SELECT F_VPISO_R FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             txt_VPiso_R = Format(txt_VPiso_R, "0.00")
  
 
 On Error GoTo err1
 
     'Hab e desab. o botão de add lanç. sal. fam.
-    cmdAddLanç_SalF.Enabled = ADOREG.Recordset.Fields("M_PG_SAL_FAM")
+    cmdAddLanç_SalF.Enabled = adoReg.Recordset.Fields("M_PG_SAL_FAM")
     
     'If w_SN_Total = True And (Not adoReg.Recordset.EOF And Not adoReg.Recordset.BOF) And (Op(5).value = False And adReason <> 7) Then
-    If w_SN_Total = True And (Not ADOREG.Recordset.EOF And Not ADOREG.Recordset.BOF) And (adReason <> 7) Then
+    If w_SN_Total = True And (Not adoReg.Recordset.EOF And Not adoReg.Recordset.BOF) And (adReason <> 7) Then
         
-        ADOREG.Caption = "REGISTRO : " & ADOREG.Recordset.AbsolutePosition & " / " & ADOREG.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
+        adoReg.Caption = "REGISTRO : " & adoReg.Recordset.AbsolutePosition & " / " & adoReg.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
             
             
             '*** DESABILITA O EDITAR ****
             
-            If ADOREG.Recordset.Fields("M_BLOQ") = True And Not (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) Then
+            If adoReg.Recordset.Fields("M_BLOQ") = True And Not (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) Then
                  BarraF.Buttons("editar").Enabled = False
             Else
                  BarraF.Buttons("editar").Enabled = True
             End If
             
-            If ADOREG.Recordset.Fields("m_TOTAL") < 0 Then
+            If adoReg.Recordset.Fields("m_TOTAL") < 0 Then
                 TXT_TOTAL.ForeColor = vbRed
             Else
                 TXT_TOTAL.ForeColor = vbWhite
@@ -8738,16 +8759,16 @@ On Error GoTo err1
     
         End If
             
-         If Not ADOREG.Recordset.EOF Then
+         If Not adoReg.Recordset.EOF Then
             '***Carimbo***
-            If (Len(ADOREG.Recordset.Fields("M_DT_ACF")) > 4) And (ADOREG.Recordset.Fields("M_BLOQ") = -1) Then
+            If (Len(adoReg.Recordset.Fields("M_DT_ACF")) > 4) And (adoReg.Recordset.Fields("M_BLOQ") = -1) Then
                 CARIMBO.Visible = True
             Else
                 CARIMBO.Visible = False
             End If
                     
             
-            If ADOREG.Recordset.Fields("M_BLOQ") = True And IsNull(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+            If adoReg.Recordset.Fields("M_BLOQ") = True And IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
                 frmBloq.Visible = True
                 Shape1.BackColor = &HFFC0C0
             Else
@@ -8757,7 +8778,7 @@ On Error GoTo err1
             
             
             '*** SÓ EDITA SE AINDA NÃO FOI CHECADO   ***
-            If (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And ADOREG.Recordset.Fields("M_DEM_OK") = 0 Then
+            If (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And adoReg.Recordset.Fields("M_DEM_OK") = 0 Then
                 CK_ACF.Enabled = True
                 'TXT_AC_F.Enabled = True
             Else
@@ -8770,19 +8791,19 @@ On Error GoTo err1
             
             TXT_SIT_EMP = ""
             On Error Resume Next
-            TXT_SIT_EMP = de.cnc.Execute("SELECT F_EMPRESTIMO_ANOT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            TXT_SIT_EMP = de.cnc.Execute("SELECT F_EMPRESTIMO_ANOT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
 
         If adReason <> 7 Then
             'Saldo DO EMPRESTIMO
             If de.rsTAB_FUNCIONARIO.State = 1 Then de.rsTAB_FUNCIONARIO.Requery
-            w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+            w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
             txt_SaldoEmp = IIf(IsNull(w_Emprest), Format(0, "R$ 0.00"), Format(w_Emprest, "R$ 0.00"))
             
             'Dados Contas
             Lancamentos
         End If
 
-    Select Case ADOREG.Recordset.Fields("M_TIPO")
+    Select Case adoReg.Recordset.Fields("M_TIPO")
         Case "V": TXT_FTIPO.Caption = "VENDEDOR"
                   TXT_FTIPO.FontSize = 14
         Case "C": TXT_FTIPO.Caption = "CAIXA"
@@ -8813,7 +8834,7 @@ On Error GoTo err1
         
     Dim w_Nasc, w_Idade, w_TempoServico As Double
     
-    w_Nasc = de.cnc.Execute("SELECT F_DT_NASC FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD")).Fields(0).value
+    w_Nasc = de.cnc.Execute("SELECT F_DT_NASC FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD")).Fields(0).value
     w_Idade = DateDiff("yyyy", w_Nasc, Date)
     If w_Idade > 1 Then
         txtIdade = FormatNumber(w_Idade, 0) & " anos"
@@ -8821,10 +8842,10 @@ On Error GoTo err1
         txtIdade = "???"
     End If
     
-    If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
-        w_TempoServico = DateDiff("m", ADOREG.Recordset.Fields("M_DT_ADM"), ADOREG.Recordset.Fields("M_DT_DEM"))
+    If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
+        w_TempoServico = DateDiff("m", adoReg.Recordset.Fields("M_DT_ADM"), adoReg.Recordset.Fields("M_DT_DEM"))
     Else
-        w_TempoServico = DateDiff("m", ADOREG.Recordset.Fields("M_DT_ADM"), Date)
+        w_TempoServico = DateDiff("m", adoReg.Recordset.Fields("M_DT_ADM"), Date)
     End If
     If w_TempoServico >= 12 Then
         w_TempoServico = w_TempoServico / 12
@@ -8840,7 +8861,7 @@ On Error GoTo err1
     Else
         Select Case w_TempoServico
             Case 0:
-                If IsDate(ADOREG.Recordset.Fields("M_DT_DEM")) Then
+                If IsDate(adoReg.Recordset.Fields("M_DT_DEM")) Then
                     txtTempoServico = "< 1 mês"
                 Else
                     txtTempoServico = "NOVA"
@@ -8871,13 +8892,13 @@ On Error GoTo err1
 
     If V_MOVE = True Then
         V_MOVE = False
-        ADOREG.Recordset.UpdateBatch ' adAffectCurrent
-        ADOREG.Refresh
+        adoReg.Recordset.UpdateBatch ' adAffectCurrent
+        adoReg.Refresh
         'adoReg.Recordset.Requery
-        ADOREG.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
+        adoReg.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
         V_MOVE = True
 
-    If (ADOREG.Recordset.Fields("M_TIPO") = "V" Or ADOREG.Recordset.Fields("M_TIPO") = "C") Or acessoTotal() Then
+    If (adoReg.Recordset.Fields("M_TIPO") = "V" Or adoReg.Recordset.Fields("M_TIPO") = "C") Or acessoTotal() Then
             Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DATA_INTERNA AS DT_LCTO, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & ADO_GRID.Recordset.Fields("M_NFICHA") & ")").Clone
         Else
             Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DATA_INTERNA AS DT_LCTO, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_TP_CONTA.TP_COD <> 20  AND TAB_TP_CONTA.TP_COD <> 78 AND (TAB_DESC_CALC.C_N_FICHA = " & ADO_GRID.Recordset.Fields("M_NFICHA") & ")").Clone
@@ -8907,7 +8928,7 @@ On Error GoTo err1
                         On Error GoTo err1
                         de.rscmdSqlConEmprestimo.Close
                     End If
-                    de.cmdSqlConEmprestimo ADOREG.Recordset.Fields("m_f_cod")
+                    de.cmdSqlConEmprestimo adoReg.Recordset.Fields("m_f_cod")
                     
                     If de.rscmdSqlConEmprestimo.RecordCount > 0 Then
                         frm_Emprestimos_Cons.Show 1
@@ -8942,10 +8963,10 @@ On Error GoTo err1
                         frm_Alt_Visto_Vale.Show 1
         Case "gcomissao":
                         frm_Gerar_Comissao.ck_Nome.value = 0
-                        frm_Gerar_Comissao.TXT_LOGO = ADOREG.Recordset.Fields("M_LOGO")
-                        frm_Gerar_Comissao.TXT_MES = ADOREG.Recordset.Fields("M_MES")
-                        frm_Gerar_Comissao.TXT_ANO = ADOREG.Recordset.Fields("M_ANO")
-                        frm_Gerar_Comissao.dbNome.BoundText = ADOREG.Recordset.Fields("M_F_COD")
+                        frm_Gerar_Comissao.TXT_LOGO = adoReg.Recordset.Fields("M_LOGO")
+                        frm_Gerar_Comissao.TXT_MES = adoReg.Recordset.Fields("M_MES")
+                        frm_Gerar_Comissao.TXT_ANO = adoReg.Recordset.Fields("M_ANO")
+                        frm_Gerar_Comissao.dbNome.BoundText = adoReg.Recordset.Fields("M_F_COD")
                        
                         frm_Gerar_Comissao.Show 1
         Case "programados":
@@ -9117,7 +9138,7 @@ Private Sub CONTA()
         End If
     End If
      
-    If ADOREG.Recordset.Fields("M_BLOQ") Then
+    If adoReg.Recordset.Fields("M_BLOQ") Then
         MsgBox "Esta ficha não é do mês atual e está BLOQUEADA! Não será permitido alterações!", vbInformation
         w_leitura = 1
     End If
@@ -9131,25 +9152,25 @@ End Sub
 Private Sub Cancelar()
 On Error Resume Next
 
-    W_FILTRO = ADOREG.Recordset.Filter
-    pos = ADOREG.Recordset.Fields("m_nficha")
+    W_FILTRO = adoReg.Recordset.Filter
+    pos = adoReg.Recordset.Fields("m_nficha")
 
 
-    ADOREG.Recordset.CancelBatch adAffectCurrent
+    adoReg.Recordset.CancelBatch adAffectCurrent
     de.rscmdSqlVisAltFichas.Resync
 On Error GoTo err1
     If de.rscmdSqlVisAltFichas.State = 1 Then de.rscmdSqlVisAltFichas.Close
     de.cmdSqlVisAltFichas txt_PMes, txt_PAno
-    Set ADOREG.Recordset = de.rscmdSqlVisAltFichas.Clone
+    Set adoReg.Recordset = de.rscmdSqlVisAltFichas.Clone
     
     
     Lancamentos
 '    Set ADO_LANC.Recordset = ADOREG.Recordset.Fields("cmdSqlVisAltContas").UnderlyingValue
     
     
-    If W_FILTRO <> "0" Then ADOREG.Recordset.Filter = W_FILTRO
-    ADOREG.Recordset.MoveFirst
-    If W_FILTRO <> "BLOQ <> '###'" Then ADOREG.Recordset.Find "m_nficha = " & pos & ""
+    If W_FILTRO <> "0" Then adoReg.Recordset.Filter = W_FILTRO
+    adoReg.Recordset.MoveFirst
+    If W_FILTRO <> "BLOQ <> '###'" Then adoReg.Recordset.Find "m_nficha = " & pos & ""
 
     Pause 0.3
     
@@ -9159,7 +9180,7 @@ On Error GoTo err1
    Editar 0
     
        '*** DESABILITA O EDITAR ****
-   If ADOREG.Recordset.Fields("M_BLOQ") = True Then
+   If adoReg.Recordset.Fields("M_BLOQ") = True Then
         BarraF.Buttons("editar").Enabled = False
    Else
         BarraF.Buttons("editar").Enabled = True
@@ -9197,7 +9218,7 @@ If mesvalido Then
         If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
             Exit Sub
         End If
-    If ADOREG.Recordset.Fields("M_BLOQ") Then
+    If adoReg.Recordset.Fields("M_BLOQ") Then
         MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
         Exit Sub
     End If
@@ -9277,7 +9298,7 @@ End If
         If edicao = 0 Then
             On Error Resume Next
         Else
-            If ADOREG.Recordset.Fields("M_BLOQ") = True Then
+            If adoReg.Recordset.Fields("M_BLOQ") = True Then
                 If TXT_AC_F = "" Then
                     MsgBox "Não é possível alterar uma ficha anterior ao mês passado!", vbExclamation
                 Else
@@ -9312,7 +9333,7 @@ If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou
     If MsgBox("Você está excluindo uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Exclusão de ficha") = vbNo Then
         Exit Sub
     End If
-    If ADOREG.Recordset.Fields("M_BLOQ") Then
+    If adoReg.Recordset.Fields("M_BLOQ") Then
         MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
         Exit Sub
     End If
@@ -9320,7 +9341,7 @@ End If
 
 
 
-        W_POS = ADOREG.Recordset.AbsolutePosition - 1
+        W_POS = adoReg.Recordset.AbsolutePosition - 1
         de.cnc.Execute "DELETE * FROM TAB_FICHA_MENS WHERE M_NFICHA = " & TXT_NFICHA & "", REG_AF
         If REG_AF = 1 Then
             MsgBox "Registro excluído com sucesso!", vbInformation
@@ -9339,12 +9360,12 @@ End If
     
     de.rscmdSqlVisAltFichas.Close
     de.cmdSqlVisAltFichas TXT_MES, TXT_ANO
-    Set ADOREG.Recordset = de.rscmdSqlVisAltFichas.Clone
+    Set adoReg.Recordset = de.rscmdSqlVisAltFichas.Clone
     
-    If (ADOREG.Recordset.Fields("M_TIPO") = "V" Or ADOREG.Recordset.Fields("M_TIPO") = "C") Or acessoTotal() Then
-        Set ADO_LANC.Recordset = ADOREG.Recordset.Fields("cmdSqlVisAltContas3").value
+    If (adoReg.Recordset.Fields("M_TIPO") = "V" Or adoReg.Recordset.Fields("M_TIPO") = "C") Or acessoTotal() Then
+        Set ADO_LANC.Recordset = adoReg.Recordset.Fields("cmdSqlVisAltContas3").value
     Else
-        Set ADO_LANC.Recordset = ADOREG.Recordset.Fields("cmdSqlVisAltContas2").value
+        Set ADO_LANC.Recordset = adoReg.Recordset.Fields("cmdSqlVisAltContas2").value
     End If
     
     Cancelar
@@ -9368,7 +9389,7 @@ err1:
         MsgBox Err.Number & " : " & Err.Description, vbCritical
     Else
         MsgBox "NÃO É POSSÍVEL EXCLUIR ESTA FICHA MENSAL, DEVIDO A CÁLCULOS RELACIONADAS A ELA!", vbCritical
-        ADOREG.Refresh
+        adoReg.Refresh
     End If
     Resume sair
 End Sub
@@ -9398,7 +9419,7 @@ Private Sub Salvar()
 On Error GoTo err1
     
     If w_SN_Total = False Then GoTo sair
-    ADOREG.Recordset.UpdateBatch adAffectCurrent
+    adoReg.Recordset.UpdateBatch adAffectCurrent
         
     '*** Atualiza o Funcionário ****
     
@@ -9436,11 +9457,11 @@ On Error GoTo err1
 
         w_reg = 0
         '*** OK F_FERIAS_OK  , 13_OK, DT_DEM_OK
-        de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS_OK = " & CInt(ADOREG.Recordset.Fields("M_FERIAS_OK")) & _
-                                                ", F_13_OK = " & CInt(ADOREG.Recordset.Fields("M_13_OK")) & _
-                                                ", F_NUM_FILHOS = " & ADOREG.Recordset.Fields("M_NUM_FILHOS") & _
-                                                ", F_DEM_OK = " & CInt(ADOREG.Recordset.Fields("M_DEM_OK")) & _
-                                                ", F_PG_SAL_FAM = " & CInt(ADOREG.Recordset.Fields("M_PG_SAL_FAM")) & _
+        de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS_OK = " & CInt(adoReg.Recordset.Fields("M_FERIAS_OK")) & _
+                                                ", F_13_OK = " & CInt(adoReg.Recordset.Fields("M_13_OK")) & _
+                                                ", F_NUM_FILHOS = " & adoReg.Recordset.Fields("M_NUM_FILHOS") & _
+                                                ", F_DEM_OK = " & CInt(adoReg.Recordset.Fields("M_DEM_OK")) & _
+                                                ", F_PG_SAL_FAM = " & CInt(adoReg.Recordset.Fields("M_PG_SAL_FAM")) & _
         "  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
         
         'e 13_OK ***
@@ -9484,10 +9505,10 @@ On Error GoTo err1
             
             If ck_pg_vt Then
             
-                If (de.cnc.Execute("SELECT * FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 109 OR C_TP_CONTA = 110 OR C_TP_CONTA = 111)").EOF) Then
+                If (de.cnc.Execute("SELECT * FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 109 OR C_TP_CONTA = 110 OR C_TP_CONTA = 111)").EOF) Then
             
                     de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_PG_VT = 1 WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
-                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 109 OR C_TP_CONTA = 110 OR C_TP_CONTA = 111)")
+                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 109 OR C_TP_CONTA = 110 OR C_TP_CONTA = 111)")
                     de.cnc.Execute ("DELETE FROM TAB_DESC_CALC_FIXO WHERE CF_EMP_COD = " & txt_F_COD & " AND (CF_TP_CONTA = 109 OR CF_TP_CONTA = 110 OR CF_TP_CONTA = 111)")
                         
                     Dim adoFixos As ADODB.Recordset
@@ -9495,7 +9516,7 @@ On Error GoTo err1
                     Dim fichaAtual As String
                     Dim ultimoFixo As String
                 
-                    fichaAtual = ADOREG.Recordset.Fields("M_NFICHA")
+                    fichaAtual = adoReg.Recordset.Fields("M_NFICHA")
                     
                     de.cmdIncluirDescCalcFixo Now(), txt_F_COD, "109", "-", "0", "INSS 8% do piso [GERADO AUTOMATICAMENTE]"
                     ultimoFixo = de.cnc.Execute("SELECT Max([CF_CODIGO]) FROM TAB_DESC_CALC_FIXO").Fields(0)
@@ -9530,7 +9551,7 @@ On Error GoTo err1
                 '    Exit Sub
                 'Else
                     de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_PG_VT = 0 WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
-                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & ADOREG.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 109 OR C_TP_CONTA = 110 OR C_TP_CONTA = 111)")
+                    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 109 OR C_TP_CONTA = 110 OR C_TP_CONTA = 111)")
                     de.cnc.Execute ("DELETE FROM TAB_DESC_CALC_FIXO WHERE CF_EMP_COD  = " & txt_F_COD & " AND (CF_TP_CONTA = 109 OR CF_TP_CONTA = 110 OR CF_TP_CONTA = 111)")
                     
                     de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "VALE TRANSPORTE", "FICHA: " & TXT_NFICHA & " | FUNCIONÁRIO: " & txt_F_COD & " - " & TXT_FUNC
@@ -9548,7 +9569,7 @@ On Error GoTo err1
     Editar 0
     
     'Carimbo
-    If ADOREG.Recordset.Fields("M_DT_ACF") <> "" Then
+    If adoReg.Recordset.Fields("M_DT_ACF") <> "" Then
         CARIMBO.Visible = True
     Else
         CARIMBO.Visible = False
@@ -9650,7 +9671,7 @@ On Error Resume Next
      p_MA.Visible = False
      
      W_LD_FILTRO = False
-     ADOREG.Recordset.Filter = 0
+     adoReg.Recordset.Filter = 0
      cbMostrar.ListIndex = 0
 
      Grid.Height = 6915
@@ -9691,7 +9712,7 @@ On Error Resume Next
 
      If Index <> 4 And Index <> 6 And Index <> 7 Then
         W_CK_DEM = False
-        Set ADOREG.Recordset = de.rscmdSqlVisAltFichas.Clone
+        Set adoReg.Recordset = de.rscmdSqlVisAltFichas.Clone
         
         W_CK_DEM = True
      End If
@@ -9707,7 +9728,7 @@ Private Sub optLoja_Click()
     
     w_cod_atual = txt_F_COD
         
-    ADOREG.Recordset.Sort = "B"
+    adoReg.Recordset.Sort = "B"
     cmdFiltrar_Click
         
     'ADOREG.Recordset.MoveFirst
@@ -9719,7 +9740,7 @@ Private Sub optNome_Click()
     
     w_cod_atual = txt_F_COD
     
-    ADOREG.Recordset.Sort = "M_NOME"
+    adoReg.Recordset.Sort = "M_NOME"
     cmdFiltrar_Click
         
     'ADOREG.Recordset.MoveFirst
@@ -9732,7 +9753,7 @@ Private Sub optTipo_Click()
     
     w_cod_atual = txt_F_COD
     
-    ADOREG.Recordset.Sort = "M_TIPO"
+    adoReg.Recordset.Sort = "M_TIPO"
     cmdFiltrar_Click
         
     'ADOREG.Recordset.MoveFirst
@@ -9783,9 +9804,9 @@ Private Sub TXT_13_OBS_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub TXT_AC_F_Change()
-    If Not ADOREG.Recordset.EOF Then
+    If Not adoReg.Recordset.EOF Then
         If TXT_AC_F <> w_ac_f Then
-           If w_SN_Total = True And txt_F_COD = ADOREG.Recordset.Fields("M_F_COD") And (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And TXT_NFICHA = ADOREG.Recordset.Fields("M_NFICHA") And BarraF.Buttons("salvar").Enabled = False Then
+           If w_SN_Total = True And txt_F_COD = adoReg.Recordset.Fields("M_F_COD") And (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And TXT_NFICHA = adoReg.Recordset.Fields("M_NFICHA") And BarraF.Buttons("salvar").Enabled = False Then
                 Editar 0
                 If TXT_AC_F = Null Or Trim(TXT_AC_F) = "" Then
                     'TXT_AC_F = Format(Date, "DD/MM/YYYY") & "  : "
@@ -10041,14 +10062,14 @@ On Error GoTo err1
             '*** filtrar ***
             W_LD_FILTRO = True
             
-            ADOREG.Recordset.Filter = W_FILTRO
+            adoReg.Recordset.Filter = W_FILTRO
             If W_FILTRO = "" Then MsgBox "NÃO EXISTE FICHA COM EMPRÉSTIMOS!", vbInformation
         Case 7:
 
             Dim w_Ado1 As ADODB.Recordset
             
             'Set w_Ado1 = de.cnc.Execute("SELECT M_NFICHA, M_DT_DEM FROM TAB_FICHA_MENS WHERE NOT (M_DT_DEM IS NULL) AND M_MES = " & ADOREG.Recordset.Fields("M_MES") & " AND M_ANO = " & ADOREG.Recordset.Fields("M_ANO") & "").Clone
-            Set w_Ado1 = de.cnc.Execute("SELECT M_NFICHA, M_DT_DEM FROM TAB_FICHA_MENS WHERE NOT (M_DT_DEM IS NULL) AND M_ANO = " & ADOREG.Recordset.Fields("M_ANO") & "").Clone
+            Set w_Ado1 = de.cnc.Execute("SELECT M_NFICHA, M_DT_DEM FROM TAB_FICHA_MENS WHERE NOT (M_DT_DEM IS NULL) AND M_ANO = " & adoReg.Recordset.Fields("M_ANO") & "").Clone
           
             W_FILTRO = ""
             Do While Not w_Ado1.EOF
@@ -10059,7 +10080,7 @@ On Error GoTo err1
             '*** filtrar ***
             W_LD_FILTRO = True
             
-            ADOREG.Recordset.Filter = W_FILTRO
+            adoReg.Recordset.Filter = W_FILTRO
             If W_FILTRO = "" Then MsgBox "NÃO EXISTE NENHUM EMP. (D)!", vbInformation
         
         Case 8: 'VCTO DE FERIAS
@@ -10068,7 +10089,7 @@ On Error GoTo err1
             Dim w_Ado2 As ADODB.Recordset
             Dim W_INCLUIR_FILTRO As Boolean
             
-            Set w_Ado2 = de.cnc.Execute("SELECT M_NFICHA, M_FERIAS_PG, M_DT_REG, M_DT_ADM FROM TAB_FICHA_MENS WHERE (M_DT_DEM IS NULL) AND M_MES = " & ADOREG.Recordset.Fields("M_MES") & " AND M_ANO = " & ADOREG.Recordset.Fields("M_ANO") & " AND M_VCTO_FERIAS = " & TXT_MES & "").Clone
+            Set w_Ado2 = de.cnc.Execute("SELECT M_NFICHA, M_FERIAS_PG, M_DT_REG, M_DT_ADM FROM TAB_FICHA_MENS WHERE (M_DT_DEM IS NULL) AND M_MES = " & adoReg.Recordset.Fields("M_MES") & " AND M_ANO = " & adoReg.Recordset.Fields("M_ANO") & " AND M_VCTO_FERIAS = " & TXT_MES & "").Clone
           
             W_FILTRO = ""
             Do While Not w_Ado2.EOF
@@ -10121,16 +10142,16 @@ On Error GoTo err1
             '*** filtrar ***
             W_LD_FILTRO = True
             
-            ADOREG.Recordset.Filter = W_FILTRO
+            adoReg.Recordset.Filter = W_FILTRO
             'If W_FILTRO = "" Then
             '    Op(5).Value = True
             '    MsgBox "NÃO EXISTE NENHUM EMP. COM (F) VENCIDA, QUE AINDA NÃO FOI PAGA!", vbInformation
             'End If
         '*** REMOVE O FILTRO ****
         Case 6:
-            If Not ADOREG.Recordset.Filter = 0 Then
+            If Not adoReg.Recordset.Filter = 0 Then
                 W_LD_FILTRO = False
-                ADOREG.Recordset.Filter = 0
+                adoReg.Recordset.Filter = 0
                 de.rscmdSqlVisAltFichas.Requery
                 'Set ADOREG.Recordset = de.rscmdSqlVisAltFichas.Clone
                 
@@ -10155,22 +10176,22 @@ On Error GoTo err1
             If w_resp = "Nº" Then
                 W_FILTRO = W_CAMPO & " = " & txt_Pesq
                 W_LD_FILTRO = True
-                ADOREG.Recordset.Filter = W_FILTRO
+                adoReg.Recordset.Filter = W_FILTRO
                 
             ElseIf w_resp = "TIPO_GERENTE" Then
                 W_FILTRO = W_CAMPO & " = " & txt_Pesq
                 W_LD_FILTRO = True
-                ADOREG.Recordset.Filter = W_FILTRO
+                adoReg.Recordset.Filter = W_FILTRO
                 
             ElseIf w_resp = "TIPO_OUTROS" Or w_resp = "NAO_BLOQUEADOS" Then
                 W_FILTRO = W_CAMPO & " <> " & txt_Pesq
                 W_LD_FILTRO = True
-                ADOREG.Recordset.Filter = W_FILTRO
+                adoReg.Recordset.Filter = W_FILTRO
                 
             ElseIf w_resp = "LOGO" Or w_resp = "EMP." Then
                 W_FILTRO = W_CAMPO & " LIKE '%" & txt_Pesq & "%'"
                 W_LD_FILTRO = True
-                ADOREG.Recordset.Filter = W_FILTRO
+                adoReg.Recordset.Filter = W_FILTRO
             
             Lancamentos
            
@@ -10183,7 +10204,7 @@ On Error GoTo err1
                     de.rscmdSqlVisAltFichas.CancelBatch
                     If de.rscmdSqlVisAltFichas.State = 1 Then de.rscmdSqlVisAltFichas.Close
                     de.cmdSqlVisAltFichas W_FILTRO, W_FILTRO1
-                    Set ADOREG.Recordset = de.rscmdSqlVisAltFichas.Clone
+                    Set adoReg.Recordset = de.rscmdSqlVisAltFichas.Clone
                     
                 Lancamentos
                     
@@ -10192,17 +10213,17 @@ On Error GoTo err1
                                    
             End If
         End If
-        If ADOREG.Recordset.RecordCount <= 0 Then
+        If adoReg.Recordset.RecordCount <= 0 Then
             MsgBox "Não existe ficha com a descrição solicitada!", vbExclamation
                 W_LD_FILTRO = False
-                ADOREG.Recordset.Filter = 0
-                Set ADOREG.Recordset = de.rscmdSqlVisAltFichas.Clone
+                adoReg.Recordset.Filter = 0
+                Set adoReg.Recordset = de.rscmdSqlVisAltFichas.Clone
                 
         End If
             
         'Saldo DO EMPRESTIMO
         If de.rsTAB_FUNCIONARIO.State = 1 Then de.rsTAB_FUNCIONARIO.Requery
-        w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+        w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
         txt_SaldoEmp = IIf(IsNull(w_Emprest), Format(0, "R$ 0.00"), Format(w_Emprest, "R$ 0.00"))
              
     End If
@@ -10212,7 +10233,7 @@ On Error GoTo err1
         frmQtde.Visible = True
         Dim adoQtde As ADODB.Recordset
         
-        Set adoQtde = ADOREG.Recordset.Clone
+        Set adoQtde = adoReg.Recordset.Clone
         
         txtQtdeG = 0
         txtQtdeV = 0
@@ -10271,7 +10292,7 @@ Private Sub cmdFiltrar_Click()
     On Error Resume Next
     
       'Dados Contas
-    If (ADOREG.Recordset.Fields("M_TIPO") = "V" Or ADOREG.Recordset.Fields("M_TIPO") = "C") Or acessoTotal() Then
+    If (adoReg.Recordset.Fields("M_TIPO") = "V" Or adoReg.Recordset.Fields("M_TIPO") = "C") Or acessoTotal() Then
         If de.rscmdSqlVisAltContas.State = 1 Then de.rscmdSqlVisAltContas.Close
     Else
         If de.rscmdSqlVisAltContas2.State = 1 Then de.rscmdSqlVisAltContas2.Close
@@ -10335,7 +10356,7 @@ On Error GoTo err1
     End If
     
     
-    W_SALDO = de.cnc.Execute("Select F_SALDO_ANT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
+    W_SALDO = de.cnc.Execute("Select F_SALDO_ANT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
     'Saldo restante da ficha
     txt_SaldoAnt = IIf(IsNull(W_SALDO), 0, W_SALDO)
     If txt_SaldoAnt < 0 Then
@@ -10643,8 +10664,8 @@ End Sub
 
 Private Sub Refresh_dados()
 On Error Resume Next
-    W_FILTRO = ADOREG.Recordset.Filter
-    pos = ADOREG.Recordset.Fields("m_nficha")
+    W_FILTRO = adoReg.Recordset.Filter
+    pos = adoReg.Recordset.Fields("m_nficha")
 
 
 '    ADOREG.Recordset.CancelBatch adAffectCurrent
@@ -10657,16 +10678,16 @@ On Error GoTo err1
 '    Set ADO_LANC.Recordset = ADOREG.Recordset.Fields("cmdSqlVisAltContas").UnderlyingValue
     
     
-    If W_FILTRO <> "0" Then ADOREG.Recordset.Filter = W_FILTRO
-    ADOREG.Recordset.MoveFirst
+    If W_FILTRO <> "0" Then adoReg.Recordset.Filter = W_FILTRO
+    adoReg.Recordset.MoveFirst
     If pos <> Empty Then
-        Do While Not ADOREG.Recordset.EOF
-          If ADOREG.Recordset.Fields("m_nficha") = pos Then Exit Do
-          ADOREG.Recordset.Find "m_nficha = " & pos & ""
+        Do While Not adoReg.Recordset.EOF
+          If adoReg.Recordset.Fields("m_nficha") = pos Then Exit Do
+          adoReg.Recordset.Find "m_nficha = " & pos & ""
         Loop
     End If
        '*** DESABILITA O EDITAR ****
-   If ADOREG.Recordset.Fields("M_BLOQ") = True Then
+   If adoReg.Recordset.Fields("M_BLOQ") = True Then
         BarraF.Buttons("editar").Enabled = False
    Else
         BarraF.Buttons("editar").Enabled = True
@@ -10721,7 +10742,7 @@ If BarraF.Buttons("editar").Enabled = True Then
         'If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
         '    Exit Sub
         'End If
-        If ADOREG.Recordset.Fields("M_BLOQ") Then
+        If adoReg.Recordset.Fields("M_BLOQ") Then
             MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
             Exit Sub
         End If
@@ -10783,7 +10804,7 @@ If BarraF.Buttons("editar").Enabled = True Then
         'If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
         '    Exit Sub
         'End If
-        If ADOREG.Recordset.Fields("M_BLOQ") Then
+        If adoReg.Recordset.Fields("M_BLOQ") Then
             MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
             Exit Sub
         End If
@@ -10843,7 +10864,7 @@ On erro GoTo err1
         'If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
         '    Exit Sub
         'End If
-        If ADOREG.Recordset.Fields("M_BLOQ") Then
+        If adoReg.Recordset.Fields("M_BLOQ") Then
             MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
             Exit Sub
         End If
@@ -10902,7 +10923,7 @@ If BarraF.Buttons("editar").Enabled = True Then
         'If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
         '    Exit Sub
         'End If
-        If ADOREG.Recordset.Fields("M_BLOQ") Then
+        If adoReg.Recordset.Fields("M_BLOQ") Then
             MsgBox "Esta ficha não é do mês atual e está BLOQUEADA!", vbCritical
             Exit Sub
         End If
@@ -11105,7 +11126,7 @@ Private Sub txtQtdeLimiteV_KeyDown(KeyCode As Integer, Shift As Integer)
   If KeyCode = 13 Then
     If CInt(txtQtdeLimiteV) <> CInt(wTxtOld) Then
        If (MsgBox("Deseja salvar as alterações?", vbYesNo, "Gravar alterações") = vbYes) Then
-           de.cnc.Execute ("UPDATE lojb010 SET QtdeLimiteVend = " & txtQtdeLimiteV & " WHERE COD_LOJ = '" & ADOREG.Recordset.Fields("M_LOGO") & "'")
+           de.cnc.Execute ("UPDATE lojb010 SET QtdeLimiteVend = " & txtQtdeLimiteV & " WHERE COD_LOJ = '" & adoReg.Recordset.Fields("M_LOGO") & "'")
            wTxtOld = txtQtdeLimiteV
            Sendkeys "{tab}"
        Else
@@ -11123,7 +11144,7 @@ End Sub
 Private Sub txtQtdeLimiteV_LostFocus()
     If CInt(txtQtdeLimiteV) <> CInt(wTxtOld) Then
        If (MsgBox("Deseja salvar as alterações?", vbYesNo, "Gravar alterações") = vbYes) Then
-           de.cnc.Execute ("UPDATE lojb010 SET QtdeLimiteVend = " & txtQtdeLimiteV & " WHERE COD_LOJ = '" & ADOREG.Recordset.Fields("M_LOGO") & "'")
+           de.cnc.Execute ("UPDATE lojb010 SET QtdeLimiteVend = " & txtQtdeLimiteV & " WHERE COD_LOJ = '" & adoReg.Recordset.Fields("M_LOGO") & "'")
        Else
            txtQtdeLimiteV = wTxtOld
        End If
