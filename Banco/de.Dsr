@@ -59,6 +59,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   4929
       SourceOfData    =   3
       ConnectionSource=   "Provider=MSDASQL.1;Password=poter12poter12;Persist Security Info=True;User ID=rpaps_2;Data Source=Sistema Integrado"
+      Expanded        =   -1  'True
       QuoteChar       =   96
       SeparatorChar   =   46
    EndProperty

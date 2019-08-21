@@ -6337,8 +6337,8 @@ Private Sub cmdComisCx_Click()
                 If vrVenda >= (vrMeta) Then
                     wFixoMeta = 0
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.2
-                        wPercMeta = 20
+                        vrMetaBonus = vrSalario * 0.1
+                        wPercMeta = 10
                     'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                         'wPercMeta = ((vrVenda / vrMeta) - 1) * 100
@@ -6708,9 +6708,9 @@ Dim w_ado_venda As ADODB.Recordset
                 
                     wFixoMeta = 0
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.1
+                        vrMetaBonus = vrSalario * 0.05
                         'vrMetaBonus = w_Comis * 0.2
-                        wPercMeta = 10
+                        wPercMeta = 5
                     'Else
                     '    vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                     '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
@@ -7053,8 +7053,8 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta
                     'End If
                     
                     If vrVenda >= (vrMeta) Then
-                        vrMetaBonus = vrSalario * 0.05
-                        wPercMeta = 5
+                        vrMetaBonus = vrSalario * 0.1
+                        wPercMeta = 10
                         descMeta = " + Bonus Meta(" & Format(w_Piso, "0.00") & " * " & wPercMeta & "% = " & Format(vrMetaBonus, "0.00") & ") "
                     End If
                     
@@ -7940,8 +7940,8 @@ On Error Resume Next
                 If vrVenda >= (vrMeta) Then
                     'wFixoMeta = vrSalario * 0.1
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                        vrMetaBonus = vrSalario * 0.2
-                        wPercMeta = 20
+                        vrMetaBonus = vrSalario * 0.1
+                        wPercMeta = 10
                     'Else
                         'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
                     '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
