@@ -5326,9 +5326,9 @@ Private Sub cmdAddSalario_Click()
             
                     vrMeta = 999
                     If ADOREG.Recordset.Fields("M_LOGO") <> "XX" And ADOREG.Recordset.Fields("M_LOGO") <> "99" Then
-                        'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
-                        numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
-                        vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META WHERE (MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & ")").Fields(0)
+                        vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                        'numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                        'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META WHERE (MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & ")").Fields(0)
                     End If
                     
                     '****
@@ -5596,9 +5596,9 @@ Private Sub cmdAddSalario_Click()
                     vrMeta = 999
                     'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
                     If ADOREG.Recordset.Fields("M_LOGO") <> "XX" Then
-                        'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
-                        numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
-                        vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
+                        vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                        'numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                        'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
                     End If
                     '****
                     
@@ -5885,10 +5885,10 @@ Private Sub cmdAddSalario_Click()
              vrMeta = 999
              'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & adoReg.Recordset.Fields("M_F_COD")).Fields(0)
             If ADOREG.Recordset.Fields("M_LOGO") <> "XX" And ADOREG.Recordset.Fields("M_LOGO") <> "99" Then
-                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
-                numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
-                If de.cnc.State = 0 Then de.cnc.Open
-                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
+                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                'numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                'If de.cnc.State = 0 Then de.cnc.Open
+                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
             End If
             '****
             
@@ -6307,10 +6307,10 @@ Private Sub cmdComisCx_Click()
              vrMeta = 999
              'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
             If W_ADO_FICHA.Fields("M_LOGO") <> "XX" And W_ADO_FICHA.Fields("M_LOGO") <> "99" Then
-                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & W_ADO_FICHA.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & W_ADO_FICHA.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
-                numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ")").Fields(0)
-                If de.cnc.State = 0 Then de.cnc.Open
-                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & W_ADO_FICHA.Fields("M_MES") & " AND TAB_META.MT_ANO=" & W_ADO_FICHA.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
+                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & W_ADO_FICHA.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & W_ADO_FICHA.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                'numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ")").Fields(0)
+                'If de.cnc.State = 0 Then de.cnc.Open
+                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & W_ADO_FICHA.Fields("M_MES") & " AND TAB_META.MT_ANO=" & W_ADO_FICHA.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
             End If
             '****
             
@@ -6520,10 +6520,10 @@ Dim w_ado_venda As ADODB.Recordset
     
             vrMeta = 999
             If ADOREG.Recordset.Fields("M_LOGO") <> "XX" And ADOREG.Recordset.Fields("M_LOGO") <> "99" Then
-                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
-                numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
-                If de.cnc.State = 0 Then de.cnc.Open
-                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
+                vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                'numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                'If de.cnc.State = 0 Then de.cnc.Open
+                'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
             End If
             
             '****
@@ -7044,9 +7044,9 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta, numLoja
         
                 vrMeta = 999
                 If ADOREG.Recordset.Fields("M_LOGO") <> "XX" Then
-                    'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
-                    numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
-                    vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
+                    vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                    'numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                    'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
                 End If
                 
                  vrMetaBonus = 0
@@ -7884,9 +7884,9 @@ On Error Resume Next
                  vrMeta = 999
                  'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
                  If ADOREG.Recordset.Fields("M_LOGO") <> "XX" Then
-                     'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & adoReg.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & adoReg.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & adoReg.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
-                    numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
-                    vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
+                    vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & ADOREG.Recordset.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & ADOREG.Recordset.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
+                    'numLoja = de.cnc.Execute("SELECT Lojb010.NUM FROM Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ")").Fields(0)
+                    'vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META WHERE TAB_META.MT_MES=" & ADOREG.Recordset.Fields("M_MES") & " AND TAB_META.MT_ANO=" & ADOREG.Recordset.Fields("M_ANO") & " AND Right(mt_f_loja, 2)= " & numLoja & "").Fields(0)
                  End If
                  '****
                 
