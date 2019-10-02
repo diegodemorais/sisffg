@@ -372,10 +372,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdPesq_Click()
 
-    If de.rscmdSqlGridMeta2.State = 1 Then de.rscmdSqlGridMeta2.Close
-    de.cmdSqlGridMeta2
+    If de.rscmdSqlGridMeta.State = 1 Then de.rscmdSqlGridMeta.Close
+    de.cmdSqlGridMeta
     
-    Set adoReg.Recordset = de.rscmdSqlGridMeta2.Clone
+    Set adoReg.Recordset = de.rscmdSqlGridMeta.Clone
 
     If TXT_ANO = "" Then TXT_ANO = Year(Now())
     If TXT_MES < 1 Or TXT_MES > 12 Then TXT_MES = Month(Now())
@@ -415,10 +415,10 @@ Private Sub Form_Load()
 TXT_MES = Month(Now())
 TXT_ANO = Year(Now())
 
-    If de.rscmdSqlGridMeta2.State = 1 Then de.rscmdSqlGridMeta2.Close
-    de.cmdSqlGridMeta2
+    If de.rscmdSqlGridMeta.State = 1 Then de.rscmdSqlGridMeta.Close
+    de.cmdSqlGridMeta
     
-    Set adoReg.Recordset = de.rscmdSqlGridMeta2.Clone
+    Set adoReg.Recordset = de.rscmdSqlGridMeta.Clone
     
     adoReg.Recordset.Filter = "MT_MES = '" & TXT_MES & "' AND MT_ANO = '" & TXT_ANO & "'"
     

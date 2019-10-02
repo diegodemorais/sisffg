@@ -15236,7 +15236,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       AggregateCount  =   0
    EndProperty
    BeginProperty Recordset147 
-      CommandName     =   "TAB_META_OLD"
+      CommandName     =   "TAB_META"
       CommDispId      =   5217
       RsDispId        =   5222
       CommandText     =   "TAB_META"
@@ -15286,7 +15286,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       AggregateCount  =   0
    EndProperty
    BeginProperty Recordset148 
-      CommandName     =   "cmdSqlGridMeta_OLD"
+      CommandName     =   "cmdSqlGridMeta"
       CommDispId      =   5223
       RsDispId        =   5230
       CommandText     =   $"de.dsx":18898
