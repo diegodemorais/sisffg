@@ -1031,7 +1031,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   167378945
+         Format          =   249233409
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -1052,7 +1052,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   167378945
+         Format          =   249233409
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
@@ -3230,7 +3230,11 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
             '*** Atualiza Dt 13º ***  TAB_FUNCIONARIO
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_PG = '" & txt_13 & "' , F_13_OBS = '" & TXT_OBS & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
             '*** Atualiza Dt 13º***   TAB_FICHA_MENS
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_PG = '" & txt_13 & "', M_13_OBS = '" & TXT_OBS & "'  WHERE (M_F_Cod = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_PG = '" & txt_13 & "', M_13_OBS = '" & TXT_OBS & "'  WHERE (M_F_Cod = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OK") = 0
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_PG") = txt_13
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OBS") = TXT_OBS
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
         End If
         
        'Atualiza no cadastro dos fixos
@@ -3338,23 +3342,30 @@ Else    '**** CADASTRAR ****
         Select Case TXT_CONTA_CAD.BoundText
         '*** atualiza Data de PG de Férias
         Case 24:
-
-            '*** Atualiza Dt 13º ***  TAB_FUNCIONARIO
+            '*** Atualiza Dt FERIASº ***  TAB_FUNCIONARIO
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS_OK = 0 , F_FERIAS_ULT_PG = F_FERIAS_PG, F_FERIAS_PG = '" & TXT_DT_EXTRA & "', F_FERIAS = '" & TXT_DESC_EXTRA & "'  WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
-            '*** Atualiza Dt 13º***   TAB_FICHA_MENS
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_FERIAS_OK = 0 , M_FERIAS_ULT_PG = M_FERIAS_PG, M_FERIAS_PG = '" & TXT_DT_EXTRA & "',M_FERIAS = '" & TXT_DESC_EXTRA & "'  WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")"
-            
-            de.rsTAB_FICHA_MENS.Requery
-        
+            '*** Atualiza Dt FERIAS***   TAB_FICHA_MENS
+            'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_FERIAS_OK = 0 , M_FERIAS_ULT_PG = M_FERIAS_PG, M_FERIAS_PG = '" & TXT_DT_EXTRA & "',M_FERIAS = '" & TXT_DESC_EXTRA & "'  WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")"
+            'de.rsTAB_FICHA_MENS.Requery
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_OK") = 0
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_ULT_PG") = frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_PG")
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_PG") = TXT_DT_EXTRA
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS") = TXT_DESC_EXTRA
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
         
         '*** atualiza Data de PG de 13º
         Case 32:
             '*** Atualiza Dt 13º ***  TAB_FUNCIONARIO
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_ULT_PG = F_13_PG, F_13_PG = '" & TXT_DT_EXTRA & "' , F_13_OBS = '" & TXT_DESC_EXTRA & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
             '*** Atualiza Dt 13º***   TAB_FICHA_MENS
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_ULT_PG = M_13_PG, M_13_PG = '" & TXT_DT_EXTRA & "', M_13_OBS = '" & TXT_DESC_EXTRA & "'  WHERE (M_F_Cod = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
-                
-            de.rsTAB_FICHA_MENS.Requery
+            'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_ULT_PG = M_13_PG, M_13_PG = '" & TXT_DT_EXTRA & "', M_13_OBS = '" & TXT_DESC_EXTRA & "'  WHERE (M_F_Cod = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            'de.rsTAB_FICHA_MENS.Requery
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OK") = 0
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_ULT_PG") = frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_PG")
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_PG") = TXT_DT_EXTRA
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OBS") = TXT_DESC_EXTRA
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
+            
         
         '*** Desconto Saldo Mês Anterior
         Case 14:
@@ -3408,7 +3419,10 @@ Else    '**** CADASTRAR ****
             
             '*** UPDATE NO FUNCIONARIO ATUALIZANDO A ANOTAÇÃO DO EMPRESTIMO ***
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")"
+            'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")"
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_EMPRESTIMO_ANOT") = W_EMP_ANOT
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
+            
         End If
      
      
@@ -3452,7 +3466,9 @@ End If
         
         W_TOTAL = IIf(IsNull(W_MAIS), 0, W_MAIS) - IIf(IsNull(W_MENOS), 0, W_MENOS)
 
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & TXT_NFICHA & ")"
+            'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & TXT_NFICHA & ")"
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_TOTAL") = CDbl(W_TOTAL)
+            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
                    
   End If
 
@@ -3483,7 +3499,7 @@ Private Sub GRID_CRED_DblClick()
     mnuSelSel_Click
 End Sub
 
-Private Sub GRID_CRED_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub GRID_CRED_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
 On Error GoTo err1
     
     If Button = 2 Then PopupMenu mnuSel
@@ -3932,7 +3948,7 @@ End Sub
 
 
 
-Private Sub TXT_DESC_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub TXT_DESC_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
   If Button = 2 Then PopupMenu mnu
 End Sub
 

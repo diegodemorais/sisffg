@@ -199,31 +199,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Visible         =   0   'False
       Width           =   2000
    End
-   Begin VB.CommandButton cmdFaltas 
-      Height          =   435
-      Left            =   4680
-      Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":1042
-      Style           =   1  'Graphical
-      TabIndex        =   149
-      Top             =   3720
-      Visible         =   0   'False
-      Width           =   480
-   End
-   Begin VB.CheckBox ck_pg_vt 
-      Caption         =   "Check1"
-      DataField       =   "M_PG_VT"
-      DataSource      =   "ADOREG"
-      Enabled         =   0   'False
-      Height          =   255
-      Left            =   4320
-      TabIndex        =   147
-      TabStop         =   0   'False
-      Top             =   3840
-      Width           =   195
-   End
-   Begin VB.CommandButton cmdFixos 
+   Begin VB.CommandButton cmdComissGerente 
       BackColor       =   &H8000000D&
-      Caption         =   "Gerar Fixos"
+      Caption         =   "Comiss. Gerente"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9
@@ -236,51 +214,10 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Height          =   375
       Left            =   8640
       MaskColor       =   &H00FF0000&
-      TabIndex        =   146
+      TabIndex        =   120
       Top             =   4920
       Visible         =   0   'False
       Width           =   2000
-   End
-   Begin Skin_Button.ctr_Button cmdSalarioCX 
-      Height          =   285
-      Left            =   6120
-      TabIndex        =   145
-      TabStop         =   0   'False
-      ToolTipText     =   "Salários CXs"
-      Top             =   1320
-      Width           =   345
-      _ExtentX        =   609
-      _ExtentY        =   503
-      BTYPE           =   2
-      TX              =   ""
-      ENAB            =   -1  'True
-      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      COLTYPE         =   1
-      FOCUSR          =   -1  'True
-      BCOL            =   14737632
-      BCOLO           =   12632319
-      FCOL            =   0
-      FCOLO           =   0
-      MCOL            =   12632256
-      MPTR            =   1
-      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":134C
-      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":1368
-      UMCOL           =   -1  'True
-      SOFT            =   0   'False
-      PICPOS          =   0
-      NGREY           =   0   'False
-      FX              =   0
-      HAND            =   0   'False
-      CHECK           =   0   'False
-      VALUE           =   0   'False
    End
    Begin VB.CommandButton cmdEmprestimo 
       BackColor       =   &H8000000D&
@@ -362,9 +299,31 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Visible         =   0   'False
       Width           =   2000
    End
-   Begin VB.CommandButton cmdComissGerente 
+   Begin VB.CommandButton cmdFaltas 
+      Height          =   435
+      Left            =   4680
+      Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":1042
+      Style           =   1  'Graphical
+      TabIndex        =   149
+      Top             =   3720
+      Visible         =   0   'False
+      Width           =   480
+   End
+   Begin VB.CheckBox ck_pg_vt 
+      Caption         =   "Check1"
+      DataField       =   "M_PG_VT"
+      DataSource      =   "ADOREG"
+      Enabled         =   0   'False
+      Height          =   255
+      Left            =   4320
+      TabIndex        =   147
+      TabStop         =   0   'False
+      Top             =   3840
+      Width           =   195
+   End
+   Begin VB.CommandButton cmdFixos 
       BackColor       =   &H8000000D&
-      Caption         =   "Comiss. Gerente"
+      Caption         =   "Gerar Fixos"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9
@@ -377,10 +336,51 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Height          =   375
       Left            =   8640
       MaskColor       =   &H00FF0000&
-      TabIndex        =   120
+      TabIndex        =   146
       Top             =   3120
       Visible         =   0   'False
       Width           =   2000
+   End
+   Begin Skin_Button.ctr_Button cmdSalarioCX 
+      Height          =   285
+      Left            =   6120
+      TabIndex        =   145
+      TabStop         =   0   'False
+      ToolTipText     =   "Salários CXs"
+      Top             =   1320
+      Width           =   345
+      _ExtentX        =   609
+      _ExtentY        =   503
+      BTYPE           =   2
+      TX              =   ""
+      ENAB            =   -1  'True
+      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      COLTYPE         =   1
+      FOCUSR          =   -1  'True
+      BCOL            =   14737632
+      BCOLO           =   12632319
+      FCOL            =   0
+      FCOLO           =   0
+      MCOL            =   12632256
+      MPTR            =   1
+      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":134C
+      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":1368
+      UMCOL           =   -1  'True
+      SOFT            =   0   'False
+      PICPOS          =   0
+      NGREY           =   0   'False
+      FX              =   0
+      HAND            =   0   'False
+      CHECK           =   0   'False
+      VALUE           =   0   'False
    End
    Begin VB.CommandButton cmdComixCxEXT 
       BackColor       =   &H8000000D&
@@ -5050,7 +5050,7 @@ End Sub
 
 
 
-Private Sub CK_ACF_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub CK_ACF_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
 If Not adoReg.Recordset.EOF Then
     If (CK_ACF.Enabled = True And TXT_NFICHA = adoReg.Recordset.Fields("M_NFICHA")) Or w_bloq Then
         If BarraF.Buttons("salvar").Enabled = False Then Editar 0
@@ -5074,7 +5074,7 @@ If Not adoReg.Recordset.EOF Then
 End If
 End Sub
 
-Private Sub CK_DEM_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub CK_DEM_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
 '    If W_CK_DEM = True And adoReg.Recordset.Fields("M_BLOQ") = False And CK_DEM.Enabled = True And UCase(frmLogin.txtUserName) = UCase(NomeMestre) Then
 
 
@@ -5168,7 +5168,7 @@ On Error Resume Next
         
         
     'Dados Contas
-    Lancamentos
+    'Lancamentos
     
     
 sair:
@@ -8077,7 +8077,7 @@ Private Sub cmdMostrar_Click()
     End Select
     
     txt_Pesq = ""
-    Lancamentos
+    'Lancamentos
 End Sub
 
 Private Sub cmdRelAdmin_Click()
@@ -8376,7 +8376,7 @@ Private Sub flexGRID_L_KeyPress(KeyAscii As Integer)
         
 End Sub
 
-Private Sub flexGRID_L_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub flexGRID_L_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
     If flexGRID_L.RowSel <> 0 Then
         If Button = 2 And (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And CK_ACF = 0 Then
            If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
@@ -8491,7 +8491,7 @@ Private Sub Form_Activate2()
 On Error Resume Next
     clickMenu = False
 
-    Lancamentos
+    'Lancamentos
     
 On Error GoTo err1
     
@@ -8678,6 +8678,8 @@ err1:
     If Not Err.Number = 3705 Then MsgBox Err.Number & " : " & Err.Description, vbCritical
     Resume sair
 End Sub
+
+
 
 '*** Caption no navegador ***
 Private Sub adoReg_MoveComplete(ByVal adReason As ADODB.EventReasonEnum, ByVal pError As ADODB.Error, adStatus As ADODB.EventStatusEnum, ByVal pRecordset As ADODB.Recordset)
@@ -9633,7 +9635,7 @@ End Sub
 
 
 
-Private Sub GRID_L_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub GRID_L_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
     If Button = 2 And (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And CK_ACF = 0 Then
         PopupMenu mnu
     End If
@@ -10899,11 +10901,15 @@ On erro GoTo err1
     '   de.cnc.Execute "Update TAB_DESC_CALC_FIXO Set CF_VISTO = -1 Where (CF_CODIGO = " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7) & ")"
     'End If
     
-    Lancamentos
+    
     'GRID_L.ReBind
     'GRID_L.Refresh
     flexGRID_L.Refresh
+    
     ADO_LANC.Recordset.Find "C_Codigo = " & w_cod
+    Lancamentos
+    Form_Activate
+    
     
  End If
 sair:
@@ -10965,6 +10971,7 @@ If BarraF.Buttons("editar").Enabled = True Then
     flexGRID_L.Refresh
     
     ADO_LANC.Recordset.Find "C_Codigo = " & w_cod
+    Form_Activate
     
 
 End If
