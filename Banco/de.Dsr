@@ -33,6 +33,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   2202
       SourceOfData    =   3
       ConnectionSource=   "Provider=ibole.Provider.v4;Password=masterkey;Persist Security Info=True;Data Source=177.85.162.166/3050:C:\sys\Base\MILLENNIUM"
+      Expanded        =   -1  'True
       QuoteChar       =   34
       SeparatorChar   =   46
    EndProperty
