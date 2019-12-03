@@ -17,6 +17,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   1001
       SourceOfData    =   3
       ConnectionSource=   $"de.dsx":0000
+      Expanded        =   -1  'True
       QuoteChar       =   96
       SeparatorChar   =   46
    EndProperty
@@ -33,7 +34,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   2202
       SourceOfData    =   3
       ConnectionSource=   "Provider=ibole.Provider.v4;Password=masterkey;Persist Security Info=True;Data Source=177.85.162.166/3050:C:\sys\Base\MILLENNIUM"
-      Expanded        =   -1  'True
       QuoteChar       =   34
       SeparatorChar   =   46
    EndProperty
@@ -6817,7 +6817,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandType     =   1
       Grouping        =   -1  'True
       GroupingName    =   "cmdQtde_Func_Logo_Grouping"
-      Expanded        =   -1  'True
       SummaryExpanded =   -1  'True
       DetailExpanded  =   -1  'True
       IsRSReturning   =   -1  'True
@@ -15245,7 +15244,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       dbObjectType    =   1
       Locktype        =   3
       CommandCursorLocation=   2
-      Expanded        =   -1  'True
       IsRSReturning   =   -1  'True
       NumFields       =   4
       BeginProperty Field1 
@@ -15294,7 +15292,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandType     =   1
       Locktype        =   3
       CommandCursorLocation=   2
-      Expanded        =   -1  'True
       IsRSReturning   =   -1  'True
       NumFields       =   4
       BeginProperty Field1 
