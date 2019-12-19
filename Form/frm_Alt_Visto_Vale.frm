@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_Alt_Visto_Vale 
    AutoRedraw      =   -1  'True
    Caption         =   "Vistar Contas"
@@ -16,6 +16,23 @@ Begin VB.Form frm_Alt_Visto_Vale
    ScaleHeight     =   8175
    ScaleWidth      =   14445
    StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton cmdNome 
+      Caption         =   ">"
+      Enabled         =   0   'False
+      Height          =   310
+      Left            =   3840
+      TabIndex        =   52
+      Top             =   2160
+      Width           =   255
+   End
+   Begin VB.TextBox txtNome 
+      Enabled         =   0   'False
+      Height          =   310
+      Left            =   240
+      TabIndex        =   51
+      Top             =   2160
+      Width           =   3495
+   End
    Begin VB.CheckBox ckZerados 
       BackColor       =   &H00E0E0E0&
       Caption         =   "Mostrar Zerados"
@@ -31,20 +48,10 @@ Begin VB.Form frm_Alt_Visto_Vale
       ForeColor       =   &H000000FF&
       Height          =   495
       Left            =   7680
-      TabIndex        =   51
+      TabIndex        =   50
       TabStop         =   0   'False
       Top             =   1440
       Width           =   2175
-   End
-   Begin VB.TextBox txt111 
-      Height          =   735
-      Left            =   3240
-      MultiLine       =   -1  'True
-      TabIndex        =   50
-      Text            =   "frm_Alt_Visto_Vale.frx":030A
-      Top             =   1080
-      Visible         =   0   'False
-      Width           =   1815
    End
    Begin VB.CheckBox ckFixos 
       BackColor       =   &H00E0E0E0&
@@ -357,9 +364,9 @@ Begin VB.Form frm_Alt_Visto_Vale
    End
    Begin VB.ListBox txt_tipo 
       Height          =   1815
-      ItemData        =   "frm_Alt_Visto_Vale.frx":0310
+      ItemData        =   "frm_Alt_Visto_Vale.frx":030A
       Left            =   10800
-      List            =   "frm_Alt_Visto_Vale.frx":032F
+      List            =   "frm_Alt_Visto_Vale.frx":0329
       MultiSelect     =   1  'Simple
       TabIndex        =   24
       Top             =   960
@@ -432,8 +439,8 @@ Begin VB.Form frm_Alt_Visto_Vale
    End
    Begin MSAdodcLib.Adodc ADO_FUNC 
       Height          =   375
-      Left            =   720
-      Top             =   2160
+      Left            =   2760
+      Top             =   1560
       Visible         =   0   'False
       Width           =   1575
       _ExtentX        =   2778
@@ -570,10 +577,10 @@ Begin VB.Form frm_Alt_Visto_Vale
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   4080
+      Left            =   4200
       TabIndex        =   5
       TabStop         =   0   'False
-      Top             =   2085
+      Top             =   2400
       Value           =   1  'Checked
       Width           =   1095
    End
@@ -581,7 +588,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Caption         =   "&Buscar"
       Height          =   855
       Left            =   12840
-      Picture         =   "frm_Alt_Visto_Vale.frx":0386
+      Picture         =   "frm_Alt_Visto_Vale.frx":0380
       Style           =   1  'Graphical
       TabIndex        =   9
       TabStop         =   0   'False
@@ -636,9 +643,9 @@ Begin VB.Form frm_Alt_Visto_Vale
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      ItemData        =   "frm_Alt_Visto_Vale.frx":3200
+      ItemData        =   "frm_Alt_Visto_Vale.frx":31FA
       Left            =   5520
-      List            =   "frm_Alt_Visto_Vale.frx":3228
+      List            =   "frm_Alt_Visto_Vale.frx":3222
       TabIndex        =   2
       Text            =   "TXT_MES"
       Top             =   1200
@@ -687,31 +694,31 @@ Begin VB.Form frm_Alt_Visto_Vale
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   7
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3253
+            Picture         =   "frm_Alt_Visto_Vale.frx":324D
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":356D
+            Picture         =   "frm_Alt_Visto_Vale.frx":3567
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3887
+            Picture         =   "frm_Alt_Visto_Vale.frx":3881
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3BA1
+            Picture         =   "frm_Alt_Visto_Vale.frx":3B9B
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3EBB
+            Picture         =   "frm_Alt_Visto_Vale.frx":3EB5
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":41D5
+            Picture         =   "frm_Alt_Visto_Vale.frx":41CF
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":44EF
+            Picture         =   "frm_Alt_Visto_Vale.frx":44E9
             Key             =   ""
          EndProperty
       EndProperty
@@ -752,15 +759,15 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
    End
    Begin MSDataGridLib.DataGrid grid_Conta 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":4941
-      Height          =   3930
+      Bindings        =   "frm_Alt_Visto_Vale.frx":493B
+      Height          =   3810
       Left            =   120
       TabIndex        =   10
       TabStop         =   0   'False
       Top             =   3000
       Width           =   14250
       _ExtentX        =   25135
-      _ExtentY        =   6932
+      _ExtentY        =   6720
       _Version        =   393216
       AllowUpdate     =   0   'False
       AllowArrows     =   -1  'True
@@ -940,11 +947,11 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
    End
    Begin MSDataListLib.DataCombo dbNome 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":4958
+      Bindings        =   "frm_Alt_Visto_Vale.frx":4952
       Height          =   315
       Left            =   240
       TabIndex        =   4
-      Top             =   2040
+      Top             =   2520
       Width           =   3855
       _ExtentX        =   6800
       _ExtentY        =   556
@@ -958,7 +965,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Object.DataMember      =   ""
    End
    Begin MSDataListLib.DataCombo TXT_LOGO 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":496F
+      Bindings        =   "frm_Alt_Visto_Vale.frx":4969
       DataField       =   "F_COD_L"
       DataSource      =   "ADOREG"
       Height          =   360
@@ -988,7 +995,7 @@ Begin VB.Form frm_Alt_Visto_Vale
    End
    Begin MSAdodcLib.Adodc ADO_CENTRAL 
       Height          =   330
-      Left            =   1320
+      Left            =   4080
       Top             =   1800
       Visible         =   0   'False
       Width           =   1260
@@ -1034,7 +1041,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       _Version        =   393216
    End
    Begin MSDataListLib.DataCombo TXT_CONTA 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":4980
+      Bindings        =   "frm_Alt_Visto_Vale.frx":497A
       Height          =   360
       Left            =   6360
       TabIndex        =   7
@@ -1061,7 +1068,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
    End
    Begin MSDataListLib.DataCombo TXT_LOGO2 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":4991
+      Bindings        =   "frm_Alt_Visto_Vale.frx":498B
       DataField       =   "F_COD_L"
       DataSource      =   "ADOREG"
       Height          =   360
@@ -1518,7 +1525,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   255
       Left            =   240
       TabIndex        =   14
-      Top             =   1680
+      Top             =   1800
       Width           =   855
    End
    Begin VB.Shape Shape1 
@@ -1617,6 +1624,63 @@ Dim W_FILTRO As String
 Dim wStrSql As String  'SQL  da Consulta
 Dim w_load As Boolean
 
+'Flag para la tecla BackSpace
+Private bKeyBack As Boolean
+
+
+Public Function AutoCompletar_TextBox()
+    Dim I As Integer
+    Dim posSelect As Integer
+    
+        Select Case (bKeyBack Or Len(txtNome.text) = 0)
+            Case True
+                bKeyBack = False
+                Exit Function
+        End Select
+            ADO_FUNC.Recordset.MoveFirst
+            Do Until (ADO_FUNC.Recordset.EOF)
+                If InStr(1, ADO_FUNC.Recordset.Fields("F_NOME"), txtNome.text, vbTextCompare) = 1 Then
+                    ' asignar el texto de array al textbox
+                    dbNome.text = ADO_FUNC.Recordset.Fields("F_NOME")
+                    Exit Function
+                End If
+                ADO_FUNC.Recordset.MoveNext
+            Loop
+End Function
+
+
+Private Sub cmdNome_Click()
+    If txtNome.Enabled And dbNome.Enabled Then
+        AutoCompletar_TextBox
+    End If
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    Unload Me
+End Sub
+
+Private Sub txtNome_Change()
+    Dim selSt As Long
+    selSt = txtNome.SelStart
+    txtNome.text = UCase(txtNome.text)
+    txtNome.SelStart = selSt
+End Sub
+
+Private Sub txtNome_KeyDown(KeyCode As Integer, Shift As Integer)
+    Select Case KeyCode
+        Case vbKeyBack, vbKeyDelete
+            Select Case Len(txtNome.text)
+                Case Is <> 0
+                    bKeyBack = True
+            End Select
+        Case 13
+            Call AutoCompletar_TextBox
+            txtNome.SetFocus
+    End Select
+End Sub
+
+
+
 Private Sub Total()
 Dim ADO_TOTAL As ADODB.Recordset
 
@@ -1663,16 +1727,20 @@ End Sub
 Private Sub ck_Nome_Click()
     If ck_Nome.value = 1 Then
         dbNome = "%"
+        txtNome = ""
+        txtNome.Enabled = False
         dbNome.Enabled = False
+        cmdNome.Enabled = False
         
         txt_tipo.Enabled = True
         ckTipo.Enabled = True
         
     Else
-        dbNome = ""
+        txtNome.Enabled = True
         dbNome.Enabled = True
+        cmdNome.Enabled = True
         On Error Resume Next
-        dbNome.SetFocus
+        txtNome.SetFocus
         Sendkeys "{f4}"
         
         txt_tipo.Enabled = False
@@ -1691,12 +1759,13 @@ Private Sub ckConta_Click()
     If ckConta.value = 1 Then
         TXT_CONTA = "%"
         TXT_CONTA.Enabled = False
-        TXT_CONTA_cod.Enabled = False
+        TXT_CONTA_COD.Enabled = False
        
     Else
         TXT_CONTA = ""
         TXT_CONTA.Enabled = True
-        TXT_CONTA_cod.Enabled = True
+        TXT_CONTA_COD.Enabled = True
+        On Error Resume Next
         TXT_CONTA.SetFocus
         Sendkeys "{f4}"
       
@@ -1731,13 +1800,6 @@ Private Sub ckTodas_Click()
         TXT_LOGO.Enabled = False
         TXT_LOGO2 = "%"
         TXT_LOGO2.Enabled = False
-        
-        If w_load Then 'Se não for no LOAD do form
-            If ck_Nome.value <> 1 Then
-                ck_Nome.value = 1
-                ck_Nome_Click
-            End If
-        End If
     Else
         TXT_LOGO = ""
         TXT_LOGO.Enabled = True
@@ -1765,12 +1827,12 @@ Dim w_Conta As String
 Dim w_tp_conta
 
 On Error GoTo err1
-If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_cod.text) + 4))
+If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_COD.text) + 4))
     
-    If TXT_CONTA_cod = "" Then
+    If TXT_CONTA_COD = "" Then
         w_tp_conta = "%"
     Else
-        w_tp_conta = TXT_CONTA_cod
+        w_tp_conta = TXT_CONTA_COD
     End If
 
     'Verifica se é programado novo (começando a partir do mês)
@@ -2160,7 +2222,7 @@ End Sub
 Private Sub cmdPesq_Click()
 Dim w_FirtTipo As Boolean
 Dim w_Tipos
-Dim w_tipo
+Dim w_tipo, J
 Dim nenhumTipo As Boolean
 Dim w_MaisVist, w_MaisNVist, w_MaisT As Double
 Dim w_MenosVist, w_MenosNVist, w_MenosT As Double
@@ -2168,7 +2230,7 @@ Dim w_IgualVist, w_IgualNVist, w_IgualT As Double
 Dim w_TotVist, w_TotNVist, w_TotT As Double
 
 
-On erro GoTo err1
+On Error GoTo err1
 
     If txt_tipo.Enabled = True Then
         nenhumTipo = True
@@ -2342,8 +2404,14 @@ End Sub
 
 
 Private Sub dbNome_Change()
-    If dbNome <> "" Then ckTodas.value = 1
-    If TXT_CONTA_cod.text <> "" Then cmdPesq_Click
+    If dbNome.text = "%" Then
+        ckTodas.value = 0
+        ckConta.value = 0
+    Else
+        If w_load Then ckTodas.value = 1
+        ckConta.value = 1
+        cmdPesq_Click
+    End If
 End Sub
 
 Private Sub dbNome_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -2353,7 +2421,6 @@ End Sub
 
 Private Sub Form_Activate()
     w_load = False
-    If ck_Nome.value = 0 Then cmdPesq_Click
     
     For J = 0 To txt_tipo.ListCount - 1
         If txt_tipo.list(J) = frm_Alt_Fic_Mensal_VIS.TXT_FTIPO.Caption Then
@@ -2368,25 +2435,21 @@ Private Sub Form_Activate()
         txt_tipo.Enabled = False
         ckTipo.Enabled = False
     End If
-    w_load = True
-    
     
     ckTipo.value = 1
     ckTipo_Click
-    ckConta.value = 0
+    ckConta.value = 1
     ckConta_Click
     ck_Nome.value = 1
     ck_Nome_Click
-
     
-    TXT_CONTA_cod.SetFocus
+    w_load = True
     
-    
-    
+    cmdPesq_Click
 End Sub
 
 Private Sub Form_Load()
-On erro GoTo err1
+On Error GoTo err1
     
     TXT_MES = Format(Date, "mm")
     TXT_ANO = Format(Date, "yyyy")
@@ -2396,6 +2459,8 @@ On erro GoTo err1
         mnu.Visible = True
         'Height = 8355
     End If
+    
+    
 sair:
     Exit Sub
     
@@ -2624,7 +2689,7 @@ End Sub
 
 
 Private Sub TXT_CONTA_Change()
-    TXT_CONTA_cod = TXT_CONTA.BoundText
+    TXT_CONTA_COD = TXT_CONTA.BoundText
 End Sub
 
 Private Sub TXT_CONTA_COD_Change()
@@ -2646,9 +2711,9 @@ Private Sub TXT_CONTA_COD_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Sub TXT_CONTA_cod_LostFocus()
-    If TXT_CONTA_cod <> "" Then
-        If TXT_CONTA_cod <> "" Then
-            TXT_CONTA.BoundText = Int(TXT_CONTA_cod)
+    If TXT_CONTA_COD <> "" Then
+        If TXT_CONTA_COD <> "" Then
+            TXT_CONTA.BoundText = Int(TXT_CONTA_COD)
         Else
             ckConta_Click
             Exit Sub
@@ -2684,7 +2749,7 @@ Private Sub TXT_LOGO_KeyDown(KeyCode As Integer, Shift As Integer)
          If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-         If TXT_CONTA_cod.text <> "" Then
+         If TXT_CONTA_COD.text <> "" Then
             Sendkeys "{tab}"
             cmdPesq_Click
         End If
@@ -2696,7 +2761,7 @@ Private Sub TXT_LOGO_Validate(Cancel As Boolean)
     If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-    If TXT_CONTA_cod.text <> "" Then
+    If TXT_CONTA_COD.text <> "" Then
         Sendkeys "{tab}"
         cmdPesq_Click
     End If
@@ -2751,4 +2816,3 @@ If Shift = 4 Then
     End Select
 End If
 End Sub
-
