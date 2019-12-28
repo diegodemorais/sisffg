@@ -6515,6 +6515,9 @@ Dim w_ado_vendaAnt As ADODB.Recordset
         
            If ADOREG.Recordset.Fields("M_TIPO") = "V" Then
         
+            'If ADOREG.Recordset.Fields("M_F_COD") = 95501 Then
+            '    MsgBox "95501", vbCritical
+            'End If
             'If adoReg.Recordset.Fields("M_TIPO") = "V" And ( _
             '        adoReg.Recordset.Fields("M_LOGO") = "FH") Then
             '        adoReg.Recordset.Fields("M_LOGO") = "BA" Or _
@@ -6538,8 +6541,11 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                 'MsgBox "Não há lançamentos do logo " & adoReg.Recordset.Fields("M_LOGO") & " para o período: " & Format(adoReg.Recordset.Fields("M_MES"), "00") & " / " & adoReg.Recordset.Fields("M_ANO") & "! Ignorando...", vbCritical
             End If
             
+            
+ 
+ 
             'COD da loja do cx do ANO anterior
-            Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND TAB_FUNCIONARIO.F_DT_DEM IS NULL AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & Format(ADOREG.Recordset.Fields("M_MES"), "00") & " AND Right(TAB_VENDA.V_DATA,4) = " & CInt(ADOREG.Recordset.Fields("M_ANO")) - 1 & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Clone
+            Set w_ado_vendaAnt = de.cnc.Execute("SELECT TAB_VENDA.V_VR FROM TAB_VENDA, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE (((TAB_FUNCIONARIO.F_DT_DEM) Is Null) AND ((Right(Left([TAB_VENDA].[V_DATA],5),2))=" & Format(ADOREG.Recordset.Fields("M_MES"), "00") & ") AND ((Right([TAB_VENDA].[V_DATA],4))=" & (ADOREG.Recordset.Fields("M_ANO") - 1) & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & ADOREG.Recordset.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_venda].[v_f_loja],2)));").Clone
             If Not w_ado_vendaAnt.EOF Then
                 vrVendaAnt = w_ado_vendaAnt.Fields(0)
             Else
@@ -6772,8 +6778,6 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'Bonus de % do Salário
                     de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
                     'de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                Else
-                   descMeta = ""
                 End If
                 
                 If (vrVenda >= vrVendaAnt) Then
@@ -6791,9 +6795,6 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'Bonus de % do Salário
                     de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrBonusAnt + wFixoMeta, "0.00"), "#BONUS DE META ANO ANTERIOR# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercBonusAnt, "0.0") & "% = " & Format(vrBonusAnt, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrBonusAnt + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
                     'de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
-                    vrSalario = vrSalario + vrMetaBonus + wFixoMeta
-                Else
-                   descMeta = ""
                 End If
                 
                 vrSalario = vrSalario + vrMetaBonus + vrBonusAnt + wFixoMeta
