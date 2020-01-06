@@ -62,7 +62,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       QuoteChar       =   96
       SeparatorChar   =   46
    EndProperty
-   NumRecordsets   =   153
+   NumRecordsets   =   154
    BeginProperty Recordset1 
       CommandName     =   "TAB_DESC_CALC"
       CommDispId      =   1002
@@ -15767,6 +15767,157 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       dbObjectType    =   1
       IsRSReturning   =   -1  'True
       NumFields       =   0
+      NumGroups       =   0
+      ParamCount      =   0
+      RelationCount   =   0
+      AggregateCount  =   0
+   EndProperty
+   BeginProperty Recordset154 
+      CommandName     =   "cmdTemp"
+      CommDispId      =   5856
+      RsDispId        =   5862
+      CommandText     =   $"de.dsx":195C9
+      ActiveConnectionName=   "cnc"
+      CommandType     =   1
+      Expanded        =   -1  'True
+      IsRSReturning   =   -1  'True
+      NumFields       =   17
+      BeginProperty Field1 
+         Precision       =   0
+         Size            =   255
+         Scale           =   0
+         Type            =   202
+         Name            =   "LOGO"
+         Caption         =   "LOGO"
+      EndProperty
+      BeginProperty Field2 
+         Precision       =   0
+         Size            =   50
+         Scale           =   0
+         Type            =   202
+         Name            =   "NOME"
+         Caption         =   "NOME"
+      EndProperty
+      BeginProperty Field3 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "C_TP_CONTA"
+         Caption         =   "C_TP_CONTA"
+      EndProperty
+      BeginProperty Field4 
+         Precision       =   0
+         Size            =   50
+         Scale           =   0
+         Type            =   202
+         Name            =   "CONTA"
+         Caption         =   "CONTA"
+      EndProperty
+      BeginProperty Field5 
+         Precision       =   0
+         Size            =   8
+         Scale           =   0
+         Type            =   7
+         Name            =   "DATA"
+         Caption         =   "DATA"
+      EndProperty
+      BeginProperty Field6 
+         Precision       =   0
+         Size            =   536870910
+         Scale           =   0
+         Type            =   203
+         Name            =   "DESCR"
+         Caption         =   "DESCR"
+      EndProperty
+      BeginProperty Field7 
+         Precision       =   19
+         Size            =   8
+         Scale           =   0
+         Type            =   6
+         Name            =   "VALOR"
+         Caption         =   "VALOR"
+      EndProperty
+      BeginProperty Field8 
+         Precision       =   0
+         Size            =   1
+         Scale           =   0
+         Type            =   202
+         Name            =   "OP"
+         Caption         =   "OP"
+      EndProperty
+      BeginProperty Field9 
+         Precision       =   0
+         Size            =   2
+         Scale           =   0
+         Type            =   11
+         Name            =   "VISTO"
+         Caption         =   "VISTO"
+      EndProperty
+      BeginProperty Field10 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "C_NCRED"
+         Caption         =   "C_NCRED"
+      EndProperty
+      BeginProperty Field11 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "codigo"
+         Caption         =   "codigo"
+      EndProperty
+      BeginProperty Field12 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "Ficha"
+         Caption         =   "Ficha"
+      EndProperty
+      BeginProperty Field13 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "M_MES"
+         Caption         =   "M_MES"
+      EndProperty
+      BeginProperty Field14 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "M_ANO"
+         Caption         =   "M_ANO"
+      EndProperty
+      BeginProperty Field15 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "FUNC"
+         Caption         =   "FUNC"
+      EndProperty
+      BeginProperty Field16 
+         Precision       =   0
+         Size            =   8
+         Scale           =   0
+         Type            =   7
+         Name            =   "C_DATA_INTERNA"
+         Caption         =   "C_DATA_INTERNA"
+      EndProperty
+      BeginProperty Field17 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "TP_COD"
+         Caption         =   "TP_COD"
+      EndProperty
       NumGroups       =   0
       ParamCount      =   0
       RelationCount   =   0

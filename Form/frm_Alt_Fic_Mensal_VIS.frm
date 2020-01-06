@@ -9041,9 +9041,11 @@ On Error GoTo err1
                         frm_Alt_Visto_Vale.TXT_ANO = Me.TXT_ANO
                         frm_Alt_Visto_Vale.TXT_MES = Me.TXT_MES
                         frm_Alt_Visto_Vale.TXT_LOGO = Me.txtLogo
-                        frm_Alt_Visto_Vale.ck_Nome.value = 0
+                        frm_Alt_Visto_Vale.TXT_LOGO2.BoundText = frm_Alt_Visto_Vale.TXT_LOGO.BoundText
+                        frm_Alt_Visto_Vale.ck_Nome.value = 1
                         frm_Alt_Visto_Vale.ckConta.value = 1
-                        frm_Alt_Visto_Vale.txt_tipo = TXT_FTIPO
+                        frm_Alt_Visto_Vale.ckTipo.value = 1
+                        'frm_Alt_Visto_Vale.txt_tipo = TXT_FTIPO
                         frm_Alt_Visto_Vale.Show 1
         Case "gcomissao":
                         frm_Gerar_Comissao.ck_Nome.value = 0

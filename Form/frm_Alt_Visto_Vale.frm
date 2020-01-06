@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
@@ -16,62 +16,528 @@ Begin VB.Form frm_Alt_Visto_Vale
    ScaleHeight     =   8175
    ScaleWidth      =   14445
    StartUpPosition =   1  'CenterOwner
-   Begin VB.CommandButton cmdNome 
-      Caption         =   ">"
-      Enabled         =   0   'False
-      Height          =   310
-      Left            =   3840
-      TabIndex        =   52
-      Top             =   2160
-      Width           =   255
-   End
-   Begin VB.TextBox txtNome 
-      Enabled         =   0   'False
-      Height          =   310
-      Left            =   240
+   Begin VB.Frame frmCargos 
+      BackColor       =   &H80000003&
+      Caption         =   " Cargo "
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   2175
+      Left            =   10320
       TabIndex        =   51
-      Top             =   2160
-      Width           =   3495
-   End
-   Begin VB.CheckBox ckZerados 
-      BackColor       =   &H00E0E0E0&
-      Caption         =   "Mostrar Zerados"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   495
-      Left            =   7680
-      TabIndex        =   50
-      TabStop         =   0   'False
-      Top             =   1440
-      Width           =   2175
-   End
-   Begin VB.CheckBox ckFixos 
-      BackColor       =   &H00E0E0E0&
-      Caption         =   "Programados dentro do mês informado"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   495
-      Left            =   7680
-      TabIndex        =   49
-      TabStop         =   0   'False
       Top             =   960
-      Width           =   2175
+      Width           =   3015
+      Begin VB.CheckBox ckTipo 
+         BackColor       =   &H80000002&
+         Caption         =   "Todos"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   1920
+         TabIndex        =   53
+         TabStop         =   0   'False
+         Top             =   480
+         Width           =   975
+      End
+      Begin VB.ListBox txt_tipo 
+         Height          =   1815
+         ItemData        =   "frm_Alt_Visto_Vale.frx":030A
+         Left            =   120
+         List            =   "frm_Alt_Visto_Vale.frx":0329
+         MultiSelect     =   1  'Simple
+         TabIndex        =   52
+         Top             =   240
+         Width           =   1575
+      End
+   End
+   Begin VB.Frame frmGeral 
+      BackColor       =   &H80000003&
+      Caption         =   " Geral "
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1095
+      Left            =   5400
+      TabIndex        =   44
+      Top             =   960
+      Width           =   4695
+      Begin VB.CheckBox ckZerados 
+         BackColor       =   &H80000003&
+         Caption         =   "Mostrar Zerados"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   255
+         Left            =   2400
+         TabIndex        =   50
+         TabStop         =   0   'False
+         Top             =   720
+         Width           =   2175
+      End
+      Begin VB.CheckBox ckFixos 
+         BackColor       =   &H80000003&
+         Caption         =   "Programados dentro do mês informado"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   495
+         Left            =   2400
+         TabIndex        =   49
+         TabStop         =   0   'False
+         Top             =   120
+         Width           =   2055
+      End
+      Begin VB.TextBox TXT_ANO 
+         Alignment       =   1  'Right Justify
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         Left            =   1200
+         TabIndex        =   48
+         Top             =   600
+         Width           =   810
+      End
+      Begin VB.ComboBox TXT_MES 
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   360
+         ItemData        =   "frm_Alt_Visto_Vale.frx":0380
+         Left            =   240
+         List            =   "frm_Alt_Visto_Vale.frx":03A8
+         TabIndex        =   46
+         Text            =   "TXT_MES"
+         Top             =   600
+         Width           =   780
+      End
+      Begin VB.Label Label4 
+         BackStyle       =   0  'Transparent
+         Caption         =   "ANO"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   1200
+         TabIndex        =   47
+         Top             =   360
+         Width           =   495
+      End
+      Begin VB.Label Label9 
+         BackStyle       =   0  'Transparent
+         Caption         =   "MÊS"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   240
+         TabIndex        =   45
+         Top             =   360
+         Width           =   495
+      End
+   End
+   Begin VB.Frame frmContas 
+      BackColor       =   &H80000003&
+      Caption         =   " Conta "
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   975
+      Left            =   5400
+      TabIndex        =   40
+      Top             =   2160
+      Width           =   4695
+      Begin VB.CheckBox ckConta 
+         BackColor       =   &H80000002&
+         Caption         =   "Todas"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3720
+         TabIndex        =   43
+         TabStop         =   0   'False
+         Top             =   600
+         Value           =   1  'Checked
+         Width           =   855
+      End
+      Begin VB.TextBox TXT_CONTA_COD 
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   120
+         TabIndex        =   41
+         TabStop         =   0   'False
+         Top             =   240
+         Width           =   855
+      End
+      Begin MSDataListLib.DataCombo TXT_CONTA 
+         Bindings        =   "frm_Alt_Visto_Vale.frx":03D3
+         Height          =   360
+         Left            =   1080
+         TabIndex        =   42
+         Top             =   240
+         Width           =   3495
+         _ExtentX        =   6165
+         _ExtentY        =   635
+         _Version        =   393216
+         Enabled         =   0   'False
+         MatchEntry      =   -1  'True
+         Style           =   2
+         ListField       =   "TP_DESC"
+         BoundColumn     =   "TP_COD"
+         Text            =   "%"
+         Object.DataMember      =   "SQL_TP_CONTA"
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
+   End
+   Begin VB.Frame frmFuncionario 
+      BackColor       =   &H80000003&
+      Caption         =   " Funcionário "
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1335
+      Left            =   240
+      TabIndex        =   35
+      Top             =   1800
+      Width           =   4935
+      Begin VB.CheckBox ck_Nome 
+         BackColor       =   &H80000002&
+         Caption         =   "Todos"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Left            =   3840
+         TabIndex        =   39
+         TabStop         =   0   'False
+         Top             =   960
+         Value           =   1  'Checked
+         Width           =   975
+      End
+      Begin VB.CommandButton cmdNome 
+         Caption         =   ">"
+         Enabled         =   0   'False
+         Height          =   310
+         Left            =   4560
+         TabIndex        =   38
+         Top             =   240
+         Width           =   255
+      End
+      Begin VB.TextBox txtNome 
+         Enabled         =   0   'False
+         Height          =   310
+         Left            =   120
+         TabIndex        =   36
+         Top             =   240
+         Width           =   4335
+      End
+      Begin MSDataListLib.DataCombo dbNome 
+         Bindings        =   "frm_Alt_Visto_Vale.frx":03E4
+         Height          =   315
+         Left            =   120
+         TabIndex        =   37
+         Top             =   600
+         Width           =   4695
+         _ExtentX        =   8281
+         _ExtentY        =   556
+         _Version        =   393216
+         Enabled         =   0   'False
+         MatchEntry      =   -1  'True
+         Style           =   2
+         ListField       =   "F_NOME"
+         BoundColumn     =   "F_Codigo"
+         Text            =   "%"
+         Object.DataMember      =   ""
+      End
+      Begin MSAdodcLib.Adodc ADO_CENTRAL 
+         Height          =   330
+         Left            =   1440
+         Top             =   960
+         Visible         =   0   'False
+         Width           =   1260
+         _ExtentX        =   2223
+         _ExtentY        =   582
+         ConnectMode     =   0
+         CursorLocation  =   3
+         IsolationLevel  =   -1
+         ConnectionTimeout=   15
+         CommandTimeout  =   30
+         CursorType      =   3
+         LockType        =   3
+         CommandType     =   8
+         CursorOptions   =   0
+         CacheSize       =   50
+         MaxRecords      =   0
+         BOFAction       =   0
+         EOFAction       =   0
+         ConnectStringType=   1
+         Appearance      =   1
+         BackColor       =   -2147483643
+         ForeColor       =   -2147483640
+         Orientation     =   0
+         Enabled         =   -1
+         Connect         =   ""
+         OLEDBString     =   ""
+         OLEDBFile       =   ""
+         DataSourceName  =   ""
+         OtherAttributes =   ""
+         UserName        =   ""
+         Password        =   ""
+         RecordSource    =   ""
+         Caption         =   "CENTRAL"
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         _Version        =   393216
+      End
+   End
+   Begin MSAdodcLib.Adodc ADO_FUNC 
+      Height          =   375
+      Left            =   3360
+      Top             =   1200
+      Visible         =   0   'False
+      Width           =   1200
+      _ExtentX        =   2117
+      _ExtentY        =   661
+      ConnectMode     =   0
+      CursorLocation  =   3
+      IsolationLevel  =   -1
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      CursorType      =   3
+      LockType        =   3
+      CommandType     =   8
+      CursorOptions   =   0
+      CacheSize       =   50
+      MaxRecords      =   0
+      BOFAction       =   0
+      EOFAction       =   0
+      ConnectStringType=   1
+      Appearance      =   1
+      BackColor       =   -2147483643
+      ForeColor       =   -2147483640
+      Orientation     =   0
+      Enabled         =   -1
+      Connect         =   ""
+      OLEDBString     =   ""
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      RecordSource    =   ""
+      Caption         =   "Adodc1"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      _Version        =   393216
+   End
+   Begin VB.Frame frmLojas 
+      BackColor       =   &H80000003&
+      Caption         =   " (B) "
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   240
+      TabIndex        =   31
+      Top             =   960
+      Width           =   3015
+      Begin VB.CheckBox ckTodas 
+         BackColor       =   &H80000002&
+         Caption         =   "Todas"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   2040
+         TabIndex        =   34
+         TabStop         =   0   'False
+         Top             =   240
+         Value           =   1  'Checked
+         Width           =   855
+      End
+      Begin MSDataListLib.DataCombo TXT_LOGO 
+         Bindings        =   "frm_Alt_Visto_Vale.frx":03FB
+         DataField       =   "F_COD_L"
+         DataSource      =   "ADOREG"
+         Height          =   360
+         Left            =   240
+         TabIndex        =   32
+         Top             =   240
+         Width           =   780
+         _ExtentX        =   1376
+         _ExtentY        =   635
+         _Version        =   393216
+         Enabled         =   0   'False
+         MatchEntry      =   -1  'True
+         Style           =   2
+         ListField       =   "COD_LOJ"
+         BoundColumn     =   "COD_LOJ"
+         Text            =   "%"
+         Object.DataMember      =   "TAB_L"
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
+      Begin MSDataListLib.DataCombo TXT_LOGO2 
+         Bindings        =   "frm_Alt_Visto_Vale.frx":040C
+         DataField       =   "F_COD_L"
+         DataSource      =   "ADOREG"
+         Height          =   360
+         Left            =   1080
+         TabIndex        =   33
+         Top             =   240
+         Width           =   780
+         _ExtentX        =   1376
+         _ExtentY        =   635
+         _Version        =   393216
+         Enabled         =   0   'False
+         MatchEntry      =   -1  'True
+         Style           =   2
+         ListField       =   "NUM"
+         BoundColumn     =   "COD_LOJ"
+         Text            =   "%"
+         Object.DataMember      =   "TAB_L_NUM"
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+      End
    End
    Begin VB.TextBox txt_NVistT 
       Alignment       =   1  'Right Justify
@@ -97,7 +563,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   12645
       Locked          =   -1  'True
-      TabIndex        =   40
+      TabIndex        =   23
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7440
@@ -127,7 +593,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   12645
       Locked          =   -1  'True
-      TabIndex        =   39
+      TabIndex        =   22
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7080
@@ -157,7 +623,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   12645
       Locked          =   -1  'True
-      TabIndex        =   38
+      TabIndex        =   21
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7800
@@ -187,7 +653,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   9045
       Locked          =   -1  'True
-      TabIndex        =   34
+      TabIndex        =   17
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7800
@@ -217,7 +683,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   9045
       Locked          =   -1  'True
-      TabIndex        =   33
+      TabIndex        =   16
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7080
@@ -247,7 +713,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   9045
       Locked          =   -1  'True
-      TabIndex        =   32
+      TabIndex        =   15
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7440
@@ -277,7 +743,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   5445
       Locked          =   -1  'True
-      TabIndex        =   28
+      TabIndex        =   11
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7800
@@ -307,7 +773,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   5445
       Locked          =   -1  'True
-      TabIndex        =   27
+      TabIndex        =   10
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7080
@@ -337,63 +803,16 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   5445
       Locked          =   -1  'True
-      TabIndex        =   26
+      TabIndex        =   9
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7440
       Width           =   1620
    End
-   Begin VB.CheckBox ckTipo 
-      BackColor       =   &H00E0E0E0&
-      Caption         =   "Todos"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   12480
-      TabIndex        =   25
-      TabStop         =   0   'False
-      Top             =   960
-      Width           =   975
-   End
-   Begin VB.ListBox txt_tipo 
-      Height          =   1815
-      ItemData        =   "frm_Alt_Visto_Vale.frx":030A
-      Left            =   10800
-      List            =   "frm_Alt_Visto_Vale.frx":0329
-      MultiSelect     =   1  'Simple
-      TabIndex        =   24
-      Top             =   960
-      Width           =   1575
-   End
-   Begin VB.TextBox TXT_CONTA_COD 
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   5520
-      TabIndex        =   6
-      TabStop         =   0   'False
-      Top             =   2040
-      Width           =   855
-   End
    Begin MSAdodcLib.Adodc adoConta 
       Height          =   330
-      Left            =   360
-      Top             =   6480
+      Left            =   120
+      Top             =   6600
       Visible         =   0   'False
       Width           =   2850
       _ExtentX        =   5027
@@ -437,73 +856,6 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
       _Version        =   393216
    End
-   Begin MSAdodcLib.Adodc ADO_FUNC 
-      Height          =   375
-      Left            =   2760
-      Top             =   1560
-      Visible         =   0   'False
-      Width           =   1575
-      _ExtentX        =   2778
-      _ExtentY        =   661
-      ConnectMode     =   0
-      CursorLocation  =   3
-      IsolationLevel  =   -1
-      ConnectionTimeout=   15
-      CommandTimeout  =   30
-      CursorType      =   3
-      LockType        =   3
-      CommandType     =   8
-      CursorOptions   =   0
-      CacheSize       =   50
-      MaxRecords      =   0
-      BOFAction       =   0
-      EOFAction       =   0
-      ConnectStringType=   1
-      Appearance      =   1
-      BackColor       =   -2147483643
-      ForeColor       =   -2147483640
-      Orientation     =   0
-      Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
-      OLEDBFile       =   ""
-      DataSourceName  =   ""
-      OtherAttributes =   ""
-      UserName        =   ""
-      Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "Adodc1"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      _Version        =   393216
-   End
-   Begin VB.CheckBox ckConta 
-      BackColor       =   &H00E0E0E0&
-      Caption         =   "Todos"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   9480
-      TabIndex        =   8
-      TabStop         =   0   'False
-      Top             =   2040
-      Value           =   1  'Checked
-      Width           =   975
-   End
    Begin VB.TextBox txt_NVistMais 
       Alignment       =   1  'Right Justify
       BackColor       =   &H00C0C0FF&
@@ -528,7 +880,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   1845
       Locked          =   -1  'True
-      TabIndex        =   21
+      TabIndex        =   7
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7440
@@ -558,46 +910,15 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   1845
       Locked          =   -1  'True
-      TabIndex        =   19
+      TabIndex        =   5
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7080
       Width           =   1620
    End
-   Begin VB.CheckBox ck_Nome 
-      BackColor       =   &H00E0E0E0&
-      Caption         =   "Todos"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   4200
-      TabIndex        =   5
-      TabStop         =   0   'False
-      Top             =   2400
-      Value           =   1  'Checked
-      Width           =   1095
-   End
    Begin VB.CommandButton cmdPesq 
+      BackColor       =   &H80000002&
       Caption         =   "&Buscar"
-      Height          =   855
-      Left            =   12840
-      Picture         =   "frm_Alt_Visto_Vale.frx":0380
-      Style           =   1  'Graphical
-      TabIndex        =   9
-      TabStop         =   0   'False
-      Top             =   1440
-      Width           =   735
-   End
-   Begin VB.CheckBox ckTodas 
-      BackColor       =   &H00E0E0E0&
-      Caption         =   "Todos"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -607,49 +928,14 @@ Begin VB.Form frm_Alt_Visto_Vale
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   375
-      Left            =   1920
-      TabIndex        =   1
+      Height          =   855
+      Left            =   13440
+      Picture         =   "frm_Alt_Visto_Vale.frx":041D
+      Style           =   1  'Graphical
+      TabIndex        =   0
       TabStop         =   0   'False
-      Top             =   1200
-      Value           =   1  'Checked
-      Width           =   1095
-   End
-   Begin VB.TextBox TXT_ANO 
-      Alignment       =   1  'Right Justify
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   360
-      Left            =   6285
-      TabIndex        =   3
-      Top             =   1200
-      Width           =   810
-   End
-   Begin VB.ComboBox TXT_MES 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   360
-      ItemData        =   "frm_Alt_Visto_Vale.frx":31FA
-      Left            =   5520
-      List            =   "frm_Alt_Visto_Vale.frx":3222
-      TabIndex        =   2
-      Text            =   "TXT_MES"
-      Top             =   1200
-      Width           =   780
+      Top             =   960
+      Width           =   855
    End
    Begin VB.TextBox TXT_TOTALMais 
       Alignment       =   1  'Right Justify
@@ -675,7 +961,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   285
       Left            =   1845
       Locked          =   -1  'True
-      TabIndex        =   11
+      TabIndex        =   2
       TabStop         =   0   'False
       Text            =   "R$ 0,00"
       Top             =   7800
@@ -694,31 +980,31 @@ Begin VB.Form frm_Alt_Visto_Vale
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   7
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":324D
+            Picture         =   "frm_Alt_Visto_Vale.frx":3297
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3567
+            Picture         =   "frm_Alt_Visto_Vale.frx":35B1
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3881
+            Picture         =   "frm_Alt_Visto_Vale.frx":38CB
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3B9B
+            Picture         =   "frm_Alt_Visto_Vale.frx":3BE5
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3EB5
+            Picture         =   "frm_Alt_Visto_Vale.frx":3EFF
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":41CF
+            Picture         =   "frm_Alt_Visto_Vale.frx":4219
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":44E9
+            Picture         =   "frm_Alt_Visto_Vale.frx":4533
             Key             =   ""
          EndProperty
       EndProperty
@@ -727,7 +1013,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Align           =   1  'Align Top
       Height          =   840
       Left            =   0
-      TabIndex        =   12
+      TabIndex        =   3
       Top             =   0
       Width           =   14445
       _ExtentX        =   25479
@@ -759,15 +1045,15 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
    End
    Begin MSDataGridLib.DataGrid grid_Conta 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":493B
-      Height          =   3810
+      Bindings        =   "frm_Alt_Visto_Vale.frx":4985
+      Height          =   3570
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   1
       TabStop         =   0   'False
-      Top             =   3000
+      Top             =   3360
       Width           =   14250
       _ExtentX        =   25135
-      _ExtentY        =   6720
+      _ExtentY        =   6297
       _Version        =   393216
       AllowUpdate     =   0   'False
       AllowArrows     =   -1  'True
@@ -795,9 +1081,9 @@ Begin VB.Form frm_Alt_Visto_Vale
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ColumnCount     =   8
+      ColumnCount     =   17
       BeginProperty Column00 
-         DataField       =   "Logo"
+         DataField       =   "LOGO"
          Caption         =   "LOGO"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
@@ -823,11 +1109,11 @@ Begin VB.Form frm_Alt_Visto_Vale
          EndProperty
       EndProperty
       BeginProperty Column02 
-         DataField       =   "Data"
-         Caption         =   "DT LCTO"
+         DataField       =   "C_TP_CONTA"
+         Caption         =   "COD"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "dd/MM/yy"
+            Type            =   0
+            Format          =   ""
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
@@ -836,8 +1122,8 @@ Begin VB.Form frm_Alt_Visto_Vale
          EndProperty
       EndProperty
       BeginProperty Column03 
-         DataField       =   "Conta"
-         Caption         =   "CONTAS"
+         DataField       =   "CONTA"
+         Caption         =   "CONTA"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
             Format          =   ""
@@ -849,7 +1135,20 @@ Begin VB.Form frm_Alt_Visto_Vale
          EndProperty
       EndProperty
       BeginProperty Column04 
-         DataField       =   "Descr"
+         DataField       =   "DATA"
+         Caption         =   "DT LCTO"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   1
+            Format          =   "dd/MM/yy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   3
+         EndProperty
+      EndProperty
+      BeginProperty Column05 
+         DataField       =   "DESCR"
          Caption         =   "DESCRIÇÃO"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0
@@ -861,20 +1160,20 @@ Begin VB.Form frm_Alt_Visto_Vale
             SubFormatType   =   0
          EndProperty
       EndProperty
-      BeginProperty Column05 
-         DataField       =   "Valor"
+      BeginProperty Column06 
+         DataField       =   "VALOR"
          Caption         =   "VALOR"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   1
-            Format          =   "R$ #0.00"
+            Format          =   """R$"" #.##0,00"
             HaveTrueFalseNull=   0
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1046
-            SubFormatType   =   0
+            SubFormatType   =   2
          EndProperty
       EndProperty
-      BeginProperty Column06 
+      BeginProperty Column07 
          DataField       =   "OP"
          Caption         =   "OP"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
@@ -887,20 +1186,124 @@ Begin VB.Form frm_Alt_Visto_Vale
             SubFormatType   =   0
          EndProperty
       EndProperty
-      BeginProperty Column07 
+      BeginProperty Column08 
          DataField       =   "VISTO"
          Caption         =   "VISTO"
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   5
             Format          =   ""
             HaveTrueFalseNull=   1
-            TrueValue       =   "OK"
+            TrueValue       =   "Sim"
             FalseValue      =   "Não"
             NullValue       =   "Não"
             FirstDayOfWeek  =   0
             FirstWeekOfYear =   0
             LCID            =   1046
             SubFormatType   =   7
+         EndProperty
+      EndProperty
+      BeginProperty Column09 
+         DataField       =   "C_NCRED"
+         Caption         =   "C_NCRED"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column10 
+         DataField       =   "codigo"
+         Caption         =   "codigo"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column11 
+         DataField       =   "Ficha"
+         Caption         =   "Ficha"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column12 
+         DataField       =   "M_MES"
+         Caption         =   "M_MES"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column13 
+         DataField       =   "M_ANO"
+         Caption         =   "M_ANO"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column14 
+         DataField       =   "FUNC"
+         Caption         =   "FUNC"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column15 
+         DataField       =   "C_DATA_INTERNA"
+         Caption         =   "C_DATA_INTERNA"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column16 
+         DataField       =   "TP_COD"
+         Caption         =   "TP_COD"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
          EndProperty
       EndProperty
       SplitCount      =   1
@@ -911,189 +1314,78 @@ Begin VB.Form frm_Alt_Visto_Vale
          AllowSizing     =   0   'False
          Locked          =   -1  'True
          BeginProperty Column00 
-            ColumnAllowSizing=   0   'False
-            ColumnWidth     =   585,071
+            Alignment       =   2
+            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column01 
-            ColumnAllowSizing=   0   'False
-            ColumnWidth     =   3495,118
+            ColumnWidth     =   2894,74
          EndProperty
          BeginProperty Column02 
-            ColumnAllowSizing=   0   'False
-            ColumnWidth     =   945,071
+            Alignment       =   1
+            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column03 
-            ColumnAllowSizing=   0   'False
-            ColumnWidth     =   2594,835
+            ColumnWidth     =   2505,26
          EndProperty
          BeginProperty Column04 
-            ColumnAllowSizing=   0   'False
-            ColumnWidth     =   3495,118
+            Alignment       =   2
+            ColumnWidth     =   1005,165
          EndProperty
          BeginProperty Column05 
-            Alignment       =   1
-            ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1349,858
+            ColumnWidth     =   3704,882
          EndProperty
          BeginProperty Column06 
-            Alignment       =   2
-            ColumnAllowSizing=   0   'False
-            ColumnWidth     =   404,787
+            Alignment       =   1
+            ColumnWidth     =   1200,189
          EndProperty
          BeginProperty Column07 
-            ColumnAllowSizing=   0   'False
+            Alignment       =   2
+            ColumnWidth     =   404,787
+         EndProperty
+         BeginProperty Column08 
+            Alignment       =   2
             ColumnWidth     =   494,929
          EndProperty
-      EndProperty
-   End
-   Begin MSDataListLib.DataCombo dbNome 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":4952
-      Height          =   315
-      Left            =   240
-      TabIndex        =   4
-      Top             =   2520
-      Width           =   3855
-      _ExtentX        =   6800
-      _ExtentY        =   556
-      _Version        =   393216
-      Enabled         =   0   'False
-      MatchEntry      =   -1  'True
-      Style           =   2
-      ListField       =   "F_NOME"
-      BoundColumn     =   "F_Codigo"
-      Text            =   "%"
-      Object.DataMember      =   ""
-   End
-   Begin MSDataListLib.DataCombo TXT_LOGO 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":4969
-      DataField       =   "F_COD_L"
-      DataSource      =   "ADOREG"
-      Height          =   360
-      Left            =   240
-      TabIndex        =   0
-      Top             =   1200
-      Width           =   780
-      _ExtentX        =   1376
-      _ExtentY        =   635
-      _Version        =   393216
-      Enabled         =   0   'False
-      MatchEntry      =   -1  'True
-      Style           =   2
-      ListField       =   "COD_LOJ"
-      BoundColumn     =   "COD_LOJ"
-      Text            =   "%"
-      Object.DataMember      =   "TAB_L"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
-   Begin MSAdodcLib.Adodc ADO_CENTRAL 
-      Height          =   330
-      Left            =   4080
-      Top             =   1800
-      Visible         =   0   'False
-      Width           =   1260
-      _ExtentX        =   2223
-      _ExtentY        =   582
-      ConnectMode     =   0
-      CursorLocation  =   3
-      IsolationLevel  =   -1
-      ConnectionTimeout=   15
-      CommandTimeout  =   30
-      CursorType      =   3
-      LockType        =   3
-      CommandType     =   8
-      CursorOptions   =   0
-      CacheSize       =   50
-      MaxRecords      =   0
-      BOFAction       =   0
-      EOFAction       =   0
-      ConnectStringType=   1
-      Appearance      =   1
-      BackColor       =   -2147483643
-      ForeColor       =   -2147483640
-      Orientation     =   0
-      Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
-      OLEDBFile       =   ""
-      DataSourceName  =   ""
-      OtherAttributes =   ""
-      UserName        =   ""
-      Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "CENTRAL"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      _Version        =   393216
-   End
-   Begin MSDataListLib.DataCombo TXT_CONTA 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":497A
-      Height          =   360
-      Left            =   6360
-      TabIndex        =   7
-      Top             =   2040
-      Width           =   3135
-      _ExtentX        =   5530
-      _ExtentY        =   635
-      _Version        =   393216
-      Enabled         =   0   'False
-      MatchEntry      =   -1  'True
-      Style           =   2
-      ListField       =   "TP_DESC"
-      BoundColumn     =   "TP_COD"
-      Text            =   "%"
-      Object.DataMember      =   "SQL_TP_CONTA"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
-   Begin MSDataListLib.DataCombo TXT_LOGO2 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":498B
-      DataField       =   "F_COD_L"
-      DataSource      =   "ADOREG"
-      Height          =   360
-      Left            =   1080
-      TabIndex        =   48
-      Top             =   1200
-      Width           =   780
-      _ExtentX        =   1376
-      _ExtentY        =   635
-      _Version        =   393216
-      Enabled         =   0   'False
-      MatchEntry      =   -1  'True
-      Style           =   2
-      ListField       =   "NUM"
-      BoundColumn     =   "COD_LOJ"
-      Text            =   "%"
-      Object.DataMember      =   "TAB_L_NUM"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
+         BeginProperty Column09 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   945,071
+         EndProperty
+         BeginProperty Column10 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   915,024
+         EndProperty
+         BeginProperty Column11 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   915,024
+         EndProperty
+         BeginProperty Column12 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   915,024
+         EndProperty
+         BeginProperty Column13 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   915,024
+         EndProperty
+         BeginProperty Column14 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   915,024
+         EndProperty
+         BeginProperty Column15 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   1739,906
+         EndProperty
+         BeginProperty Column16 
+            ColumnAllowSizing=   0   'False
+            Object.Visible         =   0   'False
+            ColumnWidth     =   915,024
+         EndProperty
       EndProperty
    End
    Begin VB.Label Label10 
@@ -1110,7 +1402,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
       Height          =   375
       Left            =   7380
-      TabIndex        =   47
+      TabIndex        =   30
       Top             =   7320
       Width           =   255
    End
@@ -1136,7 +1428,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
       Height          =   375
       Left            =   10950
-      TabIndex        =   46
+      TabIndex        =   29
       Top             =   7320
       Width           =   255
    End
@@ -1162,7 +1454,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
       Height          =   495
       Left            =   3810
-      TabIndex        =   45
+      TabIndex        =   28
       Top             =   7200
       Width           =   255
    End
@@ -1188,7 +1480,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
       Height          =   375
       Left            =   165
-      TabIndex        =   44
+      TabIndex        =   27
       Top             =   7320
       Width           =   255
    End
@@ -1216,7 +1508,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   10
       Left            =   11520
-      TabIndex        =   43
+      TabIndex        =   26
       Top             =   7485
       Width           =   1050
    End
@@ -1236,7 +1528,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   9
       Left            =   11520
-      TabIndex        =   42
+      TabIndex        =   25
       Top             =   7125
       Width           =   645
    End
@@ -1256,7 +1548,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   8
       Left            =   11520
-      TabIndex        =   41
+      TabIndex        =   24
       Top             =   7845
       Width           =   675
    End
@@ -1276,7 +1568,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   7
       Left            =   7920
-      TabIndex        =   37
+      TabIndex        =   20
       Top             =   7845
       Width           =   675
    End
@@ -1296,7 +1588,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   6
       Left            =   7920
-      TabIndex        =   36
+      TabIndex        =   19
       Top             =   7125
       Width           =   645
    End
@@ -1316,7 +1608,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   5
       Left            =   7920
-      TabIndex        =   35
+      TabIndex        =   18
       Top             =   7485
       Width           =   1050
    End
@@ -1336,7 +1628,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   4
       Left            =   4320
-      TabIndex        =   31
+      TabIndex        =   14
       Top             =   7845
       Width           =   675
    End
@@ -1356,7 +1648,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   3
       Left            =   4320
-      TabIndex        =   30
+      TabIndex        =   13
       Top             =   7125
       Width           =   645
    End
@@ -1376,27 +1668,9 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   2
       Left            =   4320
-      TabIndex        =   29
+      TabIndex        =   12
       Top             =   7485
       Width           =   1050
-   End
-   Begin VB.Label Label6 
-      BackStyle       =   0  'Transparent
-      Caption         =   "TIPO"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   10200
-      TabIndex        =   23
-      Top             =   960
-      Width           =   495
    End
    Begin VB.Label lblFieldLabel 
       AutoSize        =   -1  'True
@@ -1414,7 +1688,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   1
       Left            =   720
-      TabIndex        =   22
+      TabIndex        =   8
       Top             =   7485
       Width           =   1050
    End
@@ -1434,104 +1708,14 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   0
       Left            =   720
-      TabIndex        =   20
+      TabIndex        =   6
       Top             =   7125
       Width           =   645
    End
-   Begin VB.Label Label5 
-      BackStyle       =   0  'Transparent
-      Caption         =   "CONTA"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   5520
-      TabIndex        =   18
-      Top             =   1800
-      Width           =   1455
-   End
-   Begin VB.Label Label3 
-      BackStyle       =   0  'Transparent
-      Caption         =   "(B)"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   240
-      TabIndex        =   17
-      Top             =   960
-      Width           =   615
-   End
-   Begin VB.Label Label4 
-      BackStyle       =   0  'Transparent
-      Caption         =   "ANO"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   6480
-      TabIndex        =   16
-      Top             =   960
-      Width           =   495
-   End
-   Begin VB.Label Label9 
-      BackStyle       =   0  'Transparent
-      Caption         =   "MÊS"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   5640
-      TabIndex        =   15
-      Top             =   960
-      Width           =   495
-   End
-   Begin VB.Label Label1 
-      BackStyle       =   0  'Transparent
-      Caption         =   "NOME"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   255
-      Left            =   240
-      TabIndex        =   14
-      Top             =   1800
-      Width           =   855
-   End
    Begin VB.Shape Shape1 
-      BackColor       =   &H00E0E0E0&
+      BackColor       =   &H80000004&
       BackStyle       =   1  'Opaque
-      Height          =   2055
+      Height          =   2415
       Left            =   120
       Top             =   840
       Width           =   14250
@@ -1552,7 +1736,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       Height          =   195
       Index           =   12
       Left            =   720
-      TabIndex        =   13
+      TabIndex        =   4
       Top             =   7845
       Width           =   675
    End
@@ -1659,6 +1843,8 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
     Unload Me
 End Sub
 
+
+
 Private Sub txtNome_Change()
     Dim selSt As Long
     selSt = txtNome.SelStart
@@ -1732,9 +1918,6 @@ Private Sub ck_Nome_Click()
         dbNome.Enabled = False
         cmdNome.Enabled = False
         
-        txt_tipo.Enabled = True
-        ckTipo.Enabled = True
-        
     Else
         txtNome.Enabled = True
         dbNome.Enabled = True
@@ -1742,9 +1925,6 @@ Private Sub ck_Nome_Click()
         On Error Resume Next
         txtNome.SetFocus
         Sendkeys "{f4}"
-        
-        txt_tipo.Enabled = False
-        ckTipo.Enabled = False
         
     End If
 End Sub
@@ -1759,12 +1939,12 @@ Private Sub ckConta_Click()
     If ckConta.value = 1 Then
         TXT_CONTA = "%"
         TXT_CONTA.Enabled = False
-        TXT_CONTA_COD.Enabled = False
+        TXT_CONTA_cod.Enabled = False
        
     Else
         TXT_CONTA = ""
         TXT_CONTA.Enabled = True
-        TXT_CONTA_COD.Enabled = True
+        TXT_CONTA_cod.Enabled = True
         On Error Resume Next
         TXT_CONTA.SetFocus
         Sendkeys "{f4}"
@@ -1827,12 +2007,12 @@ Dim w_Conta As String
 Dim w_tp_conta
 
 On Error GoTo err1
-If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_COD.text) + 4))
+If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_cod.text) + 4))
     
-    If TXT_CONTA_COD = "" Then
+    If TXT_CONTA_cod = "" Then
         w_tp_conta = "%"
     Else
-        w_tp_conta = TXT_CONTA_COD
+        w_tp_conta = TXT_CONTA_cod
     End If
 
     'Verifica se é programado novo (começando a partir do mês)
@@ -2282,7 +2462,7 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
             If ckFixos Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_NCRED = TAB_DESC_CALC_FIXO.CF_CODIGO AND Month(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_MES & " AND Year(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_ANO
             If ckZerados = 0 Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_VALOR <> 0 "
             If Not acessoTotal() Then wStrSql = wStrSql & " AND ((TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 and (F_TIPO <> 'V' AND F_TIPO <> 'C' AND F_TIPO <> 'X' AND F_TIPO <> '2')) OR (F_TIPO = 'V' OR F_TIPO = 'C' OR F_TIPO = 'X' OR F_TIPO = '2'))"
-            wStrSql = wStrSql & " ORDER BY lojb010.num, TAB_FUNCIONARIO.F_NOME, TAB_TP_CONTA.TP_DESC"
+            wStrSql = wStrSql & " ORDER BY lojb010.num, TAB_FUNCIONARIO.F_NOME, TAB_DESC_CALC.C_TP_CONTA, TAB_DESC_CALC.C_DATA_INTERNA"
    
             'txt111.Text = wStrSql
    
@@ -2293,7 +2473,7 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
          If ckFixos Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_NCRED = TAB_DESC_CALC_FIXO.CF_CODIGO AND Month(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_MES & " AND Year(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_ANO
          If ckZerados = 0 Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_VALOR <> 0 "
          If Not acessoTotal() Then wStrSql = wStrSql & " AND ((TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 and (F_TIPO <> 'V' AND F_TIPO <> 'C' AND F_TIPO <> 'X' AND F_TIPO <> '2')) OR (F_TIPO = 'V' OR F_TIPO = 'C' OR F_TIPO = 'X' OR F_TIPO = '2'))"
-         wStrSql = wStrSql & " ORDER BY lojb010.num, TAB_FUNCIONARIO.F_NOME, TAB_TP_CONTA.TP_DESC"
+         wStrSql = wStrSql & " ORDER BY lojb010.num, TAB_FUNCIONARIO.F_NOME, TAB_DESC_CALC.C_TP_CONTA, TAB_DESC_CALC.C_DATA_INTERNA"
        
          'txt111.Text = wStrSql
        
@@ -2310,7 +2490,7 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
         If ckFixos Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_NCRED = TAB_DESC_CALC_FIXO.CF_CODIGO AND Month(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_MES & " AND Year(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_ANO
         If ckZerados = 0 Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_VALOR <> 0 "
         If Not acessoTotal() Then wStrSql = wStrSql & " AND ((TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 and (F_TIPO <> 'V' AND F_TIPO <> 'C' AND F_TIPO <> 'X' AND F_TIPO <> '2')) OR (F_TIPO = 'V' OR F_TIPO = 'C' OR F_TIPO = 'X' OR F_TIPO = '2'))"
-        wStrSql = wStrSql & " ORDER BY lojb010.num, TAB_FUNCIONARIO.F_NOME, TAB_TP_CONTA.TP_DESC"
+        wStrSql = wStrSql & " ORDER BY lojb010.num, TAB_FUNCIONARIO.F_NOME, TAB_DESC_CALC.C_TP_CONTA, TAB_DESC_CALC.C_DATA_INTERNA"
         
         'txt111.Text = wStrSql
         
@@ -2318,7 +2498,7 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
  
     End If
 
-    w_MaisVist = 0
+        w_MaisVist = 0
     w_MaisNVist = 0
     w_MaisT = 0
     w_MenosVist = 0
@@ -2446,6 +2626,10 @@ Private Sub Form_Activate()
     w_load = True
     
     cmdPesq_Click
+    
+    ckConta.value = 0
+    TXT_CONTA_cod.SetFocus
+    
 End Sub
 
 Private Sub Form_Load()
@@ -2689,7 +2873,7 @@ End Sub
 
 
 Private Sub TXT_CONTA_Change()
-    TXT_CONTA_COD = TXT_CONTA.BoundText
+    TXT_CONTA_cod = TXT_CONTA.BoundText
 End Sub
 
 Private Sub TXT_CONTA_COD_Change()
@@ -2711,9 +2895,9 @@ Private Sub TXT_CONTA_COD_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Sub TXT_CONTA_cod_LostFocus()
-    If TXT_CONTA_COD <> "" Then
-        If TXT_CONTA_COD <> "" Then
-            TXT_CONTA.BoundText = Int(TXT_CONTA_COD)
+    If TXT_CONTA_cod <> "" Then
+        If TXT_CONTA_cod <> "" Then
+            TXT_CONTA.BoundText = Int(TXT_CONTA_cod)
         Else
             ckConta_Click
             Exit Sub
@@ -2749,7 +2933,7 @@ Private Sub TXT_LOGO_KeyDown(KeyCode As Integer, Shift As Integer)
          If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-         If TXT_CONTA_COD.text <> "" Then
+         If TXT_CONTA_cod.text <> "" Then
             Sendkeys "{tab}"
             cmdPesq_Click
         End If
@@ -2761,7 +2945,7 @@ Private Sub TXT_LOGO_Validate(Cancel As Boolean)
     If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-    If TXT_CONTA_COD.text <> "" Then
+    If TXT_CONTA_cod.text <> "" Then
         Sendkeys "{tab}"
         cmdPesq_Click
     End If
