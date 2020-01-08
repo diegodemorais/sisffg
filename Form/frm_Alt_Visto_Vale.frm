@@ -293,6 +293,17 @@ Begin VB.Form frm_Alt_Visto_Vale
       TabIndex        =   35
       Top             =   1800
       Width           =   4935
+      Begin VB.PictureBox btnLoadingFuncionario 
+         Height          =   975
+         Left            =   1920
+         Picture         =   "frm_Alt_Visto_Vale.frx":03E4
+         ScaleHeight     =   915
+         ScaleWidth      =   915
+         TabIndex        =   54
+         Top             =   200
+         Visible         =   0   'False
+         Width           =   975
+      End
       Begin VB.CheckBox ck_Nome 
          BackColor       =   &H80000002&
          Caption         =   "Todos"
@@ -331,7 +342,7 @@ Begin VB.Form frm_Alt_Visto_Vale
          Width           =   4335
       End
       Begin MSDataListLib.DataCombo dbNome 
-         Bindings        =   "frm_Alt_Visto_Vale.frx":03E4
+         Bindings        =   "frm_Alt_Visto_Vale.frx":04EE
          Height          =   315
          Left            =   120
          TabIndex        =   37
@@ -350,7 +361,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       End
       Begin MSAdodcLib.Adodc ADO_CENTRAL 
          Height          =   330
-         Left            =   1440
+         Left            =   1680
          Top             =   960
          Visible         =   0   'False
          Width           =   1260
@@ -399,7 +410,7 @@ Begin VB.Form frm_Alt_Visto_Vale
    Begin MSAdodcLib.Adodc ADO_FUNC 
       Height          =   375
       Left            =   3360
-      Top             =   1200
+      Top             =   840
       Visible         =   0   'False
       Width           =   1200
       _ExtentX        =   2117
@@ -481,7 +492,7 @@ Begin VB.Form frm_Alt_Visto_Vale
          Width           =   855
       End
       Begin MSDataListLib.DataCombo TXT_LOGO 
-         Bindings        =   "frm_Alt_Visto_Vale.frx":03FB
+         Bindings        =   "frm_Alt_Visto_Vale.frx":0505
          DataField       =   "F_COD_L"
          DataSource      =   "ADOREG"
          Height          =   360
@@ -510,7 +521,7 @@ Begin VB.Form frm_Alt_Visto_Vale
          EndProperty
       End
       Begin MSDataListLib.DataCombo TXT_LOGO2 
-         Bindings        =   "frm_Alt_Visto_Vale.frx":040C
+         Bindings        =   "frm_Alt_Visto_Vale.frx":0516
          DataField       =   "F_COD_L"
          DataSource      =   "ADOREG"
          Height          =   360
@@ -930,7 +941,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
       Height          =   855
       Left            =   13440
-      Picture         =   "frm_Alt_Visto_Vale.frx":041D
+      Picture         =   "frm_Alt_Visto_Vale.frx":0527
       Style           =   1  'Graphical
       TabIndex        =   0
       TabStop         =   0   'False
@@ -980,31 +991,31 @@ Begin VB.Form frm_Alt_Visto_Vale
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   7
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3297
+            Picture         =   "frm_Alt_Visto_Vale.frx":33A1
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":35B1
+            Picture         =   "frm_Alt_Visto_Vale.frx":36BB
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":38CB
+            Picture         =   "frm_Alt_Visto_Vale.frx":39D5
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3BE5
+            Picture         =   "frm_Alt_Visto_Vale.frx":3CEF
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":3EFF
+            Picture         =   "frm_Alt_Visto_Vale.frx":4009
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":4219
+            Picture         =   "frm_Alt_Visto_Vale.frx":4323
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Visto_Vale.frx":4533
+            Picture         =   "frm_Alt_Visto_Vale.frx":463D
             Key             =   ""
          EndProperty
       EndProperty
@@ -1045,7 +1056,7 @@ Begin VB.Form frm_Alt_Visto_Vale
       EndProperty
    End
    Begin MSDataGridLib.DataGrid grid_Conta 
-      Bindings        =   "frm_Alt_Visto_Vale.frx":4985
+      Bindings        =   "frm_Alt_Visto_Vale.frx":4A8F
       Height          =   3570
       Left            =   120
       TabIndex        =   1
@@ -1813,23 +1824,21 @@ Private bKeyBack As Boolean
 
 
 Public Function AutoCompletar_TextBox()
-    Dim I As Integer
-    Dim posSelect As Integer
-    
-        Select Case (bKeyBack Or Len(txtNome.text) = 0)
-            Case True
-                bKeyBack = False
+    If (Len(txtNome.text) = 0) Then
+        Exit Function
+    End If
+        'btnLoadingFuncionario.Visible = True
+        ADO_FUNC.Recordset.MoveFirst
+        Do Until (ADO_FUNC.Recordset.EOF)
+            If InStr(1, ADO_FUNC.Recordset.Fields("F_NOME"), txtNome.text, vbTextCompare) = 1 Then
+                dbNome.text = ADO_FUNC.Recordset.Fields("F_NOME")
+                'btnLoadingFuncionario.Visible = False
                 Exit Function
-        End Select
-            ADO_FUNC.Recordset.MoveFirst
-            Do Until (ADO_FUNC.Recordset.EOF)
-                If InStr(1, ADO_FUNC.Recordset.Fields("F_NOME"), txtNome.text, vbTextCompare) = 1 Then
-                    ' asignar el texto de array al textbox
-                    dbNome.text = ADO_FUNC.Recordset.Fields("F_NOME")
-                    Exit Function
-                End If
-                ADO_FUNC.Recordset.MoveNext
-            Loop
+            End If
+            ADO_FUNC.Recordset.MoveNext
+        Loop
+    'btnLoadingFuncionario.Visible = False
+    dbNome = "%"
 End Function
 
 
@@ -1844,6 +1853,10 @@ Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
 End Sub
 
 
+
+Private Sub Picture1_Click()
+
+End Sub
 
 Private Sub txtNome_Change()
     Dim selSt As Long
@@ -1919,6 +1932,7 @@ Private Sub ck_Nome_Click()
         cmdNome.Enabled = False
         
     Else
+        ckTodas.value = 1
         txtNome.Enabled = True
         dbNome.Enabled = True
         cmdNome.Enabled = True
@@ -2147,7 +2161,7 @@ On erro GoTo err1
 If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value = 0)) And ((dbNome = "" And ck_Nome.value = 1) Or (dbNome <> "" And ck_Nome.value = 0)) And ((TXT_CONTA = "" And ckConta.value = 1) Or (TXT_CONTA <> "" And ckConta.value = 0)) Then
     If ck_Nome.value = 0 Then
     'um nome
-        If dbNome.BoundText = "" Then
+        If dbNome = "" Then
    
             TXT_TOTALIgual = 0
             TXT_TOTALIgual = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '='").Fields("VALOR"), "R$ 0.00")
@@ -2158,9 +2172,9 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
          
         Else
       
-            TXT_TOTALIgual = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '='").Fields("Valor"), "R$ 0.00")
-            txt_VistIgual = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '=' and TAB_DESC_CALC.c_Visto = -1 ").Fields("Valor"), "R$ 0.00")
-            txt_NVistIgual = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '=' and TAB_DESC_CALC.c_Visto = 0 ").Fields("Valor"), "R$ 0.00")
+            TXT_TOTALIgual = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '='").Fields("Valor"), "R$ 0.00")
+            txt_VistIgual = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '=' and TAB_DESC_CALC.c_Visto = -1 ").Fields("Valor"), "R$ 0.00")
+            txt_NVistIgual = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '=' and TAB_DESC_CALC.c_Visto = 0 ").Fields("Valor"), "R$ 0.00")
             
         End If
         
@@ -2255,7 +2269,7 @@ On erro GoTo err1
 If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value = 0)) And ((dbNome = "" And ck_Nome.value = 1) Or (dbNome <> "" And ck_Nome.value = 0)) And ((TXT_CONTA = "" And ckConta.value = 1) Or (TXT_CONTA <> "" And ckConta.value = 0)) Then
     If ck_Nome.value = 0 Then
     'um nome
-        If dbNome.BoundText = "" Then
+        If dbNome = "" Then
    
             TXT_TOTALMenos = 0
             TXT_TOTALMenos = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '-'").Fields("VALOR"), "R$ 0.00")
@@ -2266,9 +2280,9 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
             
         Else
      
-            TXT_TOTALMenos = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '-'").Fields("Valor"), "R$ 0.00")
-            txt_VistMenos = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '-' and TAB_DESC_CALC.c_Visto = -1 ").Fields("Valor"), "R$ 0.00")
-            txt_NVistMenos = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '-' and TAB_DESC_CALC.c_Visto = 0 ").Fields("Valor"), "R$ 0.00")
+            TXT_TOTALMenos = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '-'").Fields("Valor"), "R$ 0.00")
+            txt_VistMenos = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '-' and TAB_DESC_CALC.c_Visto = -1 ").Fields("Valor"), "R$ 0.00")
+            txt_NVistMenos = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP = '-' and TAB_DESC_CALC.c_Visto = 0 ").Fields("Valor"), "R$ 0.00")
    
         End If
         
@@ -2354,7 +2368,7 @@ On erro GoTo err1
 If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value = 0)) And ((dbNome = "" And ck_Nome.value = 1) Or (dbNome <> "" And ck_Nome.value = 0)) And ((TXT_CONTA = "" And ckConta.value = 1) Or (TXT_CONTA <> "" And ckConta.value = 0)) Then
     If ck_Nome.value = 0 Then
     'um nome
-        If dbNome.BoundText = "" Then
+        If dbNome = "" Then
  
             TXT_TOTALT = 0
             TXT_TOTALT = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP <> '='").Fields("VALOR"), "R$ 0.00")
@@ -2366,9 +2380,9 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
             
         Else
   
-            TXT_TOTALT = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP <> '='").Fields("Valor"), "R$ 0.00")
-            txt_VistT = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP <> '=' and TAB_DESC_CALC.c_Visto = -1 ").Fields("Valor"), "R$ 0.00")
-            txt_NVistT = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP <> '=' and TAB_DESC_CALC.c_Visto = 0 ").Fields("Valor"), "R$ 0.00")
+            TXT_TOTALT = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP <> '='").Fields("Valor"), "R$ 0.00")
+            txt_VistT = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP <> '=' and TAB_DESC_CALC.c_Visto = -1 ").Fields("Valor"), "R$ 0.00")
+            txt_NVistT = Format(de.cnc.Execute("SELECT sum(TAB_DESC_CALC.C_VALOR) AS VALOR  FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_FUNCIONARIO, TAB_TP_CONTA WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " and TAB_DESC_CALC.C_TP_OP <> '=' and TAB_DESC_CALC.c_Visto = 0 ").Fields("Valor"), "R$ 0.00")
             
         End If
         
@@ -2455,7 +2469,7 @@ On Error GoTo err1
 If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value = 0)) And ((dbNome = "" And ck_Nome.value = 1) Or (dbNome <> "" And ck_Nome.value = 0)) And ((TXT_CONTA = "" And ckConta.value = 1) Or (TXT_CONTA <> "" And ckConta.value = 0)) Then
     If ck_Nome.value = 0 Then
     'um nome
-        If dbNome.BoundText = "" Then
+        If dbNome = "" Then
             wStrSql = "SELECT TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.c_codigo AS codigo, lojb010.num & ' ' & lojb010.cod_loj AS LOGO, TAB_FUNCIONARIO.F_NOME AS NOME, TAB_TP_CONTA.TP_DESC AS CONTA, TAB_DESC_CALC.C_DATA_INTERNA AS DATA, TAB_DESC_CALC.C_DESC AS DESCR, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, TAB_DESC_CALC.C_VISTO AS VISTO, TAB_DESC_CALC.C_TP_CONTA, TAB_DESC_CALC.C_N_Ficha as Ficha, TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO, TAB_FUNCIONARIO.F_CODIGO AS FUNC, TAB_DESC_CALC.C_DATA_INTERNA, TAB_TP_CONTA.TP_COD FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_TP_CONTA,"
             If ckFixos Then wStrSql = wStrSql & " TAB_DESC_CALC_FIXO,"
             wStrSql = wStrSql & " TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " "
@@ -2469,7 +2483,7 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
         Else
          wStrSql = "SELECT TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.c_codigo AS codigo, lojb010.num & ' ' & lojb010.cod_loj AS LOGO, TAB_FUNCIONARIO.F_NOME AS NOME, TAB_TP_CONTA.TP_DESC AS CONTA, TAB_DESC_CALC.C_DATA_INTERNA AS DATA, TAB_DESC_CALC.C_DESC AS DESCR, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, TAB_DESC_CALC.C_VISTO AS VISTO, TAB_DESC_CALC.C_TP_CONTA, TAB_DESC_CALC.C_N_Ficha as Ficha , TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO, TAB_FUNCIONARIO.F_CODIGO AS FUNC, TAB_DESC_CALC.C_DATA_INTERNA, TAB_TP_CONTA.TP_COD FROM TAB_FICHA_MENS, TAB_DESC_CALC, TAB_TP_CONTA,"
          If ckFixos Then wStrSql = wStrSql & " TAB_DESC_CALC_FIXO,"
-         wStrSql = wStrSql & " TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_F_COD = " & dbNome.BoundText & ") " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " "
+         wStrSql = wStrSql & " TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ WHERE TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_logo LIKE '" & IIf(TXT_LOGO = "", "%", TXT_LOGO) & "') AND (TAB_FICHA_MENS.M_NOME LIKE '" & dbNome & "') " & IIf(TXT_CONTA = "", "", " AND (TAB_TP_CONTA.TP_Cod = " & TXT_CONTA.BoundText & ")") & " "
          If ckFixos Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_NCRED = TAB_DESC_CALC_FIXO.CF_CODIGO AND Month(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_MES & " AND Year(TAB_DESC_CALC_FIXO.CF_DT) = " & TXT_ANO
          If ckZerados = 0 Then wStrSql = wStrSql & "AND TAB_DESC_CALC.C_VALOR <> 0 "
          If Not acessoTotal() Then wStrSql = wStrSql & " AND ((TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 and (F_TIPO <> 'V' AND F_TIPO <> 'C' AND F_TIPO <> 'X' AND F_TIPO <> '2')) OR (F_TIPO = 'V' OR F_TIPO = 'C' OR F_TIPO = 'X' OR F_TIPO = '2'))"
@@ -2584,14 +2598,14 @@ End Sub
 
 
 Private Sub dbNome_Change()
-    If dbNome.text = "%" Then
-        ckTodas.value = 0
-        ckConta.value = 0
-    Else
-        If w_load Then ckTodas.value = 1
-        ckConta.value = 1
-        cmdPesq_Click
-    End If
+'    If dbNome.text = "%" Then
+'        ckTodas.value = 0
+'        ckConta.value = 0
+'    Else
+'        If w_load Then ckTodas.value = 1
+'        ckConta.value = 1
+'        cmdPesq_Click
+'    End If
 End Sub
 
 Private Sub dbNome_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -2637,7 +2651,7 @@ On Error GoTo err1
     
     TXT_MES = Format(Date, "mm")
     TXT_ANO = Format(Date, "yyyy")
-    Set ADO_FUNC.Recordset = de.cnc.Execute("SELECT * FROM TAB_FUNCIONARIO Where NOT F_NOME = '10 - Func' and not F_NOME = '99 - Presence' ORDER BY F_NOME").Clone
+    Set ADO_FUNC.Recordset = de.cnc.Execute("SELECT F_Nome, F_CPF FROM TAB_FUNCIONARIO Where NOT F_NOME = '10 - Func' and not F_NOME = '99 - Presence' GROUP BY F_Nome, F_CPF ORDER BY F_NOME").Clone
     
     If (UCase(frmLogin.txtUserName.text) = NomeMestre Or UCase(frmLogin.txtUserName.text) = NomeMestre2 Or UCase(frmLogin.txtUserName.text) = NomeMestre3) Then
         mnu.Visible = True
