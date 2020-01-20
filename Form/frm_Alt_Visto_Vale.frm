@@ -2636,6 +2636,8 @@ Private Sub Form_Activate()
     ckConta_Click
     ck_Nome.value = 1
     ck_Nome_Click
+    ckTodas.value = 1
+    ckTodas_Click
     
     w_load = True
     
