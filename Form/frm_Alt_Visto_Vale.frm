@@ -2606,6 +2606,15 @@ Private Sub dbNome_Change()
 '        ckConta.value = 1
 '        cmdPesq_Click
 '    End If
+    If (dbNome.text <> "" And dbNome.text <> "%") Then
+        If (ck_Nome.value = 0) Then
+            ckConta.value = 1
+            ckConta_Click
+            ckTodas.value = 1
+            ckTodas_Click
+        End If
+    End If
+        
 End Sub
 
 Private Sub dbNome_KeyDown(KeyCode As Integer, Shift As Integer)
