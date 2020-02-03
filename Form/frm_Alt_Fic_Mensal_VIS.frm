@@ -6354,10 +6354,10 @@ Private Sub cmdComisCx_Click()
                 If (vrVenda >= vrMetaParc) Then
                     wFixoMeta = 0
                     If (vrVenda >= vrMeta) Then
-                        vrMetaBonus = vrSalario + 300
+                        vrMetaBonus = 300
                         wPercMeta = 100
                     Else
-                        vrMetaBonus = vrSalario + 150
+                        vrMetaBonus = 150
                         wPercMeta = 90
                     End If
                 
@@ -6495,11 +6495,16 @@ Dim w_ado_vendaAnt As ADODB.Recordset
     If de.rscmdComiss_Grouping.State = 1 Then de.rscmdComiss_Grouping.Close
     
     On Error Resume Next
-    'de.cmdDROPtmpComis1
-    'de.cmdDROPtmpComis2
     
-    'de.cmdCREATEtmpComis1
-    'de.cmdCREATEtmpComis2
+    If MsgBox("Deletar tabelas de comissão? " & lblMes.Caption & "? (padrão: não)", vbYesNo, "Deletar tabelas de comissão") = vbYes Then
+        de.cmdDROPtmpComis1
+        de.cmdDROPtmpComis2
+    End If
+    
+    If MsgBox("Criar tabelas de comissão? " & lblMes.Caption & "? (padrão: não)", vbYesNo, "Criar tabelas de comissão") = vbYes Then
+        de.cmdCREATEtmpComis1
+        de.cmdCREATEtmpComis2
+    End If
     
     de.cmdDELETEtmpComis1
     de.cmdDELETEtmpComis2
@@ -6769,10 +6774,10 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                 If (vrVenda >= vrMetaParc) Then
                     wFixoMeta = 0
                     If (vrVenda >= vrMeta) Then
-                        vrMetaBonus = vrSalario + 300
+                        vrMetaBonus = 300
                         wPercMeta = 100
                     Else
-                        vrMetaBonus = vrSalario + 150
+                        vrMetaBonus = 150
                         wPercMeta = 90
                     End If
                     
@@ -8049,10 +8054,10 @@ On Error Resume Next
                 If (vrVenda >= vrMetaParc) Then
                     wFixoMeta = 0
                     If (vrVenda >= vrMeta) Then
-                        vrMetaBonus = vrSalario + 500
+                        vrMetaBonus = 500
                         wPercMeta = 100
                     Else
-                        vrMetaBonus = vrSalario + 250
+                        vrMetaBonus = 250
                         wPercMeta = 90
                     End If
                     

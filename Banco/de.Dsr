@@ -1,11 +1,11 @@
 VERSION 5.00
 Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de 
-   ClientHeight    =   14430
+   ClientHeight    =   12360
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   31965
-   _ExtentX        =   56383
-   _ExtentY        =   25453
+   ClientWidth     =   30465
+   _ExtentX        =   53737
+   _ExtentY        =   21802
    FolderFlags     =   7
    TypeLibGuid     =   "{736B3B8B-AF06-4A16-9146-4FE54F190DC1}"
    TypeInfoGuid    =   "{19CF94E8-00B2-43A6-9004-EB73BF385E72}"
@@ -58,7 +58,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   4929
       SourceOfData    =   3
       ConnectionSource=   $"de.dsx":018B
-      Expanded        =   -1  'True
       QuoteChar       =   96
       SeparatorChar   =   46
    EndProperty
@@ -15779,7 +15778,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandText     =   $"de.dsx":195C9
       ActiveConnectionName=   "cnc"
       CommandType     =   1
-      Expanded        =   -1  'True
       IsRSReturning   =   -1  'True
       NumFields       =   17
       BeginProperty Field1 
