@@ -4752,7 +4752,7 @@ Next I
         'ATUALIZA DATA DE DEMISSÃO DO CADASTRO
         w_dt_DEM = IIf(TXT_DT_DEM = "", Null, Format(TXT_DT_DEM, "DD/MM/YYYY"))
         'Se não tiver fichas abertas
-        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_DT_DEM IS NULL AND M_F_COD = " & txt_F_COD & " AND ((M_MES >= " & TXT_MES & " AND M_ANO = " & TXT_ANO & ") OR M_ANO > " & TXT_ANO & ")").RecordCount = 0 Then
+        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_DT_DEM IS NULL AND M_F_COD = " & txt_F_COD & " AND ((M_MES >= " & txt_Mes & " AND M_ANO = " & txt_Ano & ") OR M_ANO > " & txt_Ano & ")").RecordCount = 0 Then
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DT_DEM = '" & w_dt_DEM & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
         Else
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DT_DEM = NULL  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
@@ -4895,17 +4895,17 @@ Private Sub btRptADM_Click()
 On Error GoTo err1
 
     If de.rscmdSqlFichaMensalADM_Grouping.State = 1 Then de.rscmdSqlFichaMensalADM_Grouping.Close
-    w_DtIni = CVDate("01/" & Format(TXT_MES, "00") & "/" & TXT_ANO)
-    If CDbl(TXT_MES) + 1 > 12 Then
-        w_DtFim = CVDate("01/01/" & TXT_ANO + 1) - 1
+    w_DtIni = CVDate("01/" & Format(txt_Mes, "00") & "/" & txt_Ano)
+    If CDbl(txt_Mes) + 1 > 12 Then
+        w_DtFim = CVDate("01/01/" & txt_Ano + 1) - 1
     Else
-        w_DtFim = CVDate("01/" & Format(CDbl(TXT_MES) + 1, "00") & "/" & TXT_ANO) - 1
+        w_DtFim = CVDate("01/" & Format(CDbl(txt_Mes) + 1, "00") & "/" & txt_Ano) - 1
     End If
     
-    rptFichaMensalADM.Sections("SecCab").Controls("lbAno").Caption = TXT_ANO
-    rptFichaMensalADM.Sections("SecCab").Controls("lbMes").Caption = TXT_MES
+    rptFichaMensalADM.Sections("SecCab").Controls("lbAno").Caption = txt_Ano
+    rptFichaMensalADM.Sections("SecCab").Controls("lbMes").Caption = txt_Mes
     
-    de.cmdSqlFichaMensalADM_Grouping w_DtIni, w_DtFim, TXT_MES, TXT_ANO
+    de.cmdSqlFichaMensalADM_Grouping w_DtIni, w_DtFim, txt_Mes, txt_Ano
     
     rptFichaMensalADM.Show
     
@@ -4920,10 +4920,10 @@ Private Sub btRptDem_Click()
 On Error GoTo err1
 
     If de.rscmdSqlFichaMensalDem_Grouping.State = 1 Then de.rscmdSqlFichaMensalDem_Grouping.Close
-    de.cmdSqlFichaMensalDem_Grouping TXT_MES, TXT_ANO
+    de.cmdSqlFichaMensalDem_Grouping txt_Mes, txt_Ano
     
     
-    rptFichaMensalDem.Sections("SecCab").Controls("lbTitulo").Caption = "(D)  " & Format(TXT_MES, "00") & " / " & TXT_ANO
+    rptFichaMensalDem.Sections("SecCab").Controls("lbTitulo").Caption = "(D)  " & Format(txt_Mes, "00") & " / " & txt_Ano
     'rptFichaMensalDem.Sections("SecCab").Controls("lbData").Caption = Format(Date, "DD/MM/YY") & " " & Format(Time, "hh:mm") & "hs"
     
     rptFichaMensalDem.Show
@@ -4939,14 +4939,14 @@ Private Sub btRptREG_Click()
 On Error GoTo err1
 
     If de.rscmdSqlFichaMensalREG_Grouping.State = 1 Then de.rscmdSqlFichaMensalREG_Grouping.Close
-    w_DtIni = CVDate("01/" & Format(TXT_MES, "00") & "/" & TXT_ANO)
-    If CDbl(TXT_MES) + 1 > 12 Then
-        w_DtFim = CVDate("01/01/" & TXT_ANO + 1) - 1
+    w_DtIni = CVDate("01/" & Format(txt_Mes, "00") & "/" & txt_Ano)
+    If CDbl(txt_Mes) + 1 > 12 Then
+        w_DtFim = CVDate("01/01/" & txt_Ano + 1) - 1
     Else
-        w_DtFim = CVDate("01/" & Format(CDbl(TXT_MES) + 1, "00") & "/" & TXT_ANO) - 1
+        w_DtFim = CVDate("01/" & Format(CDbl(txt_Mes) + 1, "00") & "/" & txt_Ano) - 1
     End If
     
-    de.cmdSqlFichaMensalREG_Grouping TXT_MES, TXT_ANO, w_DtIni, w_DtFim
+    de.cmdSqlFichaMensalREG_Grouping txt_Mes, txt_Ano, w_DtIni, w_DtFim
     
     rptFichaMensalREG.Show
     
@@ -4964,7 +4964,7 @@ On Error GoTo err1
 
    ' If W_FILTRO <> "" Then
         If de.rscmdSqlVctoFerias.State = 1 Then de.rscmdSqlVctoFerias.Close
-        de.cmdSqlVctoFerias TXT_ANO, TXT_MES
+        de.cmdSqlVctoFerias txt_Ano, txt_Mes
        ' de.rscmdSqlVctoFerias.Filter = IIf(W_FILTRO = "", "m_mes = 0", W_FILTRO)
             
         Dim w_Valor As Variant
@@ -4985,7 +4985,7 @@ On Error GoTo err1
             End If
        
         de.rscmdSqlVctoFerias.Sort = "ValorPG"
-        rptVctoFerias.Sections("SecCab").Controls("lbMes").Caption = TXT_MES & " / " & TXT_ANO
+        rptVctoFerias.Sections("SecCab").Controls("lbMes").Caption = txt_Mes & " / " & txt_Ano
         rptVctoFerias.Show
     'End If
 
@@ -5052,7 +5052,7 @@ End Sub
 
 Private Sub CK_ACF_MouseUp(Button As Integer, Shift As Integer, x As Single, Y As Single)
 If Not adoReg.Recordset.EOF Then
-    If (CK_ACF.Enabled = True And TXT_NFICHA = adoReg.Recordset.Fields("M_NFICHA")) Or w_bloq Then
+    If (CK_ACF.Enabled = True And txt_nficha = adoReg.Recordset.Fields("M_NFICHA")) Or w_bloq Then
         If BarraF.Buttons("salvar").Enabled = False Then Editar 0
 
         If CK_ACF.value = 0 Then
@@ -5242,7 +5242,7 @@ End Sub
 
 Private Sub cmdAddSalario_Click()
 
-    If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
+    If Not isMesValido(txt_F_COD, txt_Mes, txt_Ano) Then 'Verifica se é mês atual ou passado
         If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
             Exit Sub
         End If
@@ -5971,7 +5971,7 @@ Private Sub cmdAddSalario_Click()
              '*** paga piso ***
              Else
              
-                    W_DT_INI_MES = CVDate("01/" & TXT_MES & "/" & TXT_ANO)
+                    W_DT_INI_MES = CVDate("01/" & txt_Mes & "/" & txt_Ano)
                     W_DT_FIM_MES = CVDate("01/" & Format(W_DT_INI_MES + 35, "MM/YYYY"))
                     'sE DT DE ADM. FOR MAIOR Q/ A DT DO PRIMEIRO DIA DO MES ***
                     If CVDate(adoReg.Recordset.Fields("M_DT_ADM")) >= CVDate(W_DT_INI_MES) Then
@@ -5980,7 +5980,7 @@ Private Sub cmdAddSalario_Click()
                     
                     If Not IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
                           W_QT_DIAS_TRAB = (CVDate(adoReg.Recordset.Fields("M_DT_DEM")) + 1) - CVDate(W_DT_INI_MES)
-                    ElseIf W_DT_INI_MES = CVDate("01/" & TXT_MES & "/" & TXT_ANO) Then
+                    ElseIf W_DT_INI_MES = CVDate("01/" & txt_Mes & "/" & txt_Ano) Then
                           W_QT_DIAS_TRAB = "-30"
                     Else
                           W_QT_DIAS_TRAB = W_DT_FIM_MES - W_DT_INI_MES
@@ -6036,7 +6036,7 @@ On Error GoTo err1
         If de.rsTAB_FICHA_MENS.State = 1 Then de.rsTAB_FICHA_MENS.Close
         de.TAB_FICHA_MENS
         'FILTRA AS FICHAS DO MÊS E Q/ NÃO ESTA BLOQUEADA
-        de.rsTAB_FICHA_MENS.Filter = "M_MES = " & TXT_MES & " and M_Ano = " & TXT_ANO & ""
+        de.rsTAB_FICHA_MENS.Filter = "M_MES = " & txt_Mes & " and M_Ano = " & txt_Ano & ""
         de.rsTAB_FICHA_MENS.MoveFirst
         On Error Resume Next
         Do While Not de.rsTAB_FICHA_MENS.EOF
@@ -6141,13 +6141,13 @@ If MsgBox("Gerar Custos de Camisetas BÔNUS p/ o mês " & lblMes.Caption & "?", vb
                 w_descricao = "**Incluído automaticamente** Marca: " & adoBONUS.Fields("F_615818150") & " | Qtde: " & (adoBONUS.Fields("sum_mov_estoque_quantidade_") * -1) & " | Custo: " & custoUN
                 de.cmdAddProcesso "1622", CDate(Now()), w_descricao, "R", CStr(custoTOT), wNumContas, CDate(Now())
                 lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-                de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(custoTOT), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+                de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(custoTOT), CDate("01/" & txt_Mes & "/" & txt_Ano)
                 qtBONUS = qtBONUS + 1
             End If
             adoBONUS.MoveNext
 
         Loop
-        MsgBox "Foram incluídos " & qtBONUS & " processos de CUSTOS DE CAMISETAS BONUS no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Gasolina"
+        MsgBox "Foram incluídos " & qtBONUS & " processos de CUSTOS DE CAMISETAS BONUS no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Gasolina"
         'FIM CUSTOS CAMISETAS BONUS
 
 End If
@@ -6163,7 +6163,7 @@ Private Sub cmdComerciario_Click()
                                 " TAB_FICHA_MENS.M_F_COD AS COD, TAB_FICHA_MENS.M_LOGO, TAB_FUNCIONARIO.F_VPISO_R " & _
                                 " FROM TAB_FICHA_MENS INNER JOIN TAB_FUNCIONARIO " & _
                                 " ON TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo " & _
-                                " WHERE (((TAB_FICHA_MENS.M_ANO)=" & TXT_ANO & ") AND ((TAB_FICHA_MENS.M_MES)=" & TXT_MES & "))").Clone
+                                " WHERE (((TAB_FICHA_MENS.M_ANO)=" & txt_Ano & ") AND ((TAB_FICHA_MENS.M_MES)=" & txt_Mes & "))").Clone
                                 
     
         Do While Not adoFuncs.EOF
@@ -6235,7 +6235,7 @@ Private Sub cmdComisCx_Click()
      '*** ABRE AS FICHAS ***
     '                    Set W_ADO_FICHA = de.cnc.Execute("SELECT TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_NFICHA, TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3) AS COD_FUNC_CENTRAL, TAB_FUNCIONARIO.F_TIPO as TIPO ,  TAB_FUNCIONARIO.F_VPISO as VPISO, TAB_FUNCIONARIO.F_VPISO_R as VPISO_R, TAB_FUNCIONARIO.F_CX_QT_VND as CX_QT_VND, TAB_FICHA_MENS.M_DT_REG AS DT_REG, TAB_FICHA_MENS.M_DT_DEM AS DT_DEM, TAB_FICHA_MENS.M_DT_ADM AS DT_ADM, TAB_FICHA_MENS.M_F_COD   FROM TAB_FICHA_MENS, TAB_FUNCIONARIO WHERE TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_LOGO LIKE '" & UCase(TXT_LOGO) & "' AND TAB_FICHA_MENS.M_ACORDO = 0 AND (TAB_FICHA_MENS.M_BLOQ = 0)) AND (M_COMISSAO = 'N') ORDER BY TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3)").Clone
     'Set W_ADO_FICHA = de.cnc.Execute("SELECT TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_NFICHA, TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3) AS COD_FUNC_CENTRAL, TAB_FUNCIONARIO.F_TIPO as TIPO ,  TAB_FUNCIONARIO.F_VPISO as VPISO, TAB_FUNCIONARIO.F_VPISO_R as VPISO_R, TAB_FUNCIONARIO.F_CX_QT_VND as CX_QT_VND, TAB_FICHA_MENS.M_DT_REG AS DT_REG, TAB_FICHA_MENS.M_DT_DEM AS DT_DEM, TAB_FICHA_MENS.M_DT_ADM AS DT_ADM, TAB_FICHA_MENS.M_F_COD   FROM TAB_FICHA_MENS, TAB_FUNCIONARIO WHERE TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_LOGO LIKE '" & UCase(TXT_LOGO) & "' AND TAB_FICHA_MENS.M_ACORDO = 0 AND (TAB_FICHA_MENS.M_BLOQ = 0))  ORDER BY TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3)").Clone
-    Set W_ADO_FICHA = de.cnc.Execute("SELECT TAB_FICHA_MENS.M_NOME, TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_NFICHA, TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3) AS COD_FUNC_CENTRAL, TAB_FICHA_MENS.M_TIPO as TIPO ,  TAB_FUNCIONARIO.F_VPISO as VPISO, TAB_FUNCIONARIO.F_VPISO_R as VPISO_R, TAB_FUNCIONARIO.F_CX_QT_VND as CX_QT_VND, TAB_FICHA_MENS.M_DT_REG AS DT_REG, TAB_FICHA_MENS.M_DT_DEM AS DT_DEM, TAB_FICHA_MENS.M_DT_ADM AS DT_ADM, TAB_FICHA_MENS.M_F_COD FROM TAB_FICHA_MENS, TAB_FUNCIONARIO WHERE TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND TAB_FICHA_MENS.M_ACORDO = 0 AND (TAB_FICHA_MENS.M_DT_DEM IS NULL)  ORDER BY TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3)").Clone
+    Set W_ADO_FICHA = de.cnc.Execute("SELECT TAB_FICHA_MENS.M_NOME, TAB_FICHA_MENS.M_MES, TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_NFICHA, TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3) AS COD_FUNC_CENTRAL, TAB_FICHA_MENS.M_TIPO as TIPO ,  TAB_FUNCIONARIO.F_VPISO as VPISO, TAB_FUNCIONARIO.F_VPISO_R as VPISO_R, TAB_FUNCIONARIO.F_CX_QT_VND as CX_QT_VND, TAB_FICHA_MENS.M_DT_REG AS DT_REG, TAB_FICHA_MENS.M_DT_DEM AS DT_DEM, TAB_FICHA_MENS.M_DT_ADM AS DT_ADM, TAB_FICHA_MENS.M_F_COD FROM TAB_FICHA_MENS, TAB_FUNCIONARIO WHERE TAB_FICHA_MENS.M_F_COD = TAB_FUNCIONARIO.F_Codigo AND (TAB_FICHA_MENS.M_MES = " & txt_Mes & ") AND (TAB_FICHA_MENS.M_ANO = " & txt_Ano & ") AND TAB_FICHA_MENS.M_ACORDO = 0 AND (TAB_FICHA_MENS.M_DT_DEM IS NULL)  ORDER BY TAB_FICHA_MENS.M_LOGO, MID(TAB_FUNCIONARIO.F_COD_CENTRAL, 3)").Clone
     
     
     '***  entre os caixa **** calc a média ***
@@ -6306,9 +6306,10 @@ Private Sub cmdComisCx_Click()
             End If
             
             'percComis = de.cnc.Execuezte("SELECT TAB_FUNCIONARIO.F_COMIS From TAB_FUNCIONARIO, TAB_VENDA WHERE TAB_FUNCIONARIO.F_LOJA = TAB_VENDA.V_F_LOJA AND Right(Left(TAB_VENDA.V_DATA,5),2) = " & adoReg.Recordset.Fields("M_MES") & " AND Right(TAB_VENDA.V_DATA,4) = " & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_CODIGO = " & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
-            
+                       
             '**** BONUS DE META
              vrMeta = 999
+             
              'vrMeta = de.cnc.Execute("SELECT MT_VALOR FROM TAB_META INNER JOIN TAB_FUNCIONARIO ON MT_F_LOJA = TAB_FUNCIONARIO.F_LOJA WHERE MT_MES=" & adoReg.Recordset.Fields("M_MES") & " AND MT_ANO=" & adoReg.Recordset.Fields("M_ANO") & " AND TAB_FUNCIONARIO.F_Codigo=" & W_ADO_FICHA.Fields("M_F_COD")).Fields(0)
             If W_ADO_FICHA.Fields("M_LOGO") <> "XX" And W_ADO_FICHA.Fields("M_LOGO") <> "99" Then
                 vrMeta = de.cnc.Execute("SELECT TAB_META.MT_VALOR FROM TAB_META, Lojb010 INNER JOIN TAB_FUNCIONARIO ON Lojb010.COD_LOJ = TAB_FUNCIONARIO.F_Cod_L WHERE (((TAB_META.MT_MES)=" & W_ADO_FICHA.Fields("M_MES") & ") AND ((TAB_META.MT_ANO)=" & W_ADO_FICHA.Fields("M_ANO") & ") AND ((TAB_FUNCIONARIO.F_Codigo)=" & W_ADO_FICHA.Fields("M_F_COD") & ") AND ((Lojb010.NUM)=Right([tab_meta].[mt_f_loja],2)))").Fields(0)
@@ -6350,7 +6351,7 @@ Private Sub cmdComisCx_Click()
              wPercBonusAnt = 0
             If adoReg.Recordset.Fields("M_MES") <= 12 Then
                 
-                vrMetaParc = vrMeta * 0.9
+                vrMetaParc = Math.Round(vrMeta * 0.9, 0)
                 If (vrVenda >= vrMetaParc) Then
                     wFixoMeta = 0
                     If (vrVenda >= vrMeta) Then
@@ -6423,7 +6424,7 @@ Private Sub cmdComisCx_Click()
              '*** paga piso ***
              Else
              
-                    W_DT_INI_MES = CVDate("01/" & TXT_MES & "/" & TXT_ANO)
+                    W_DT_INI_MES = CVDate("01/" & txt_Mes & "/" & txt_Ano)
                     W_DT_FIM_MES = CVDate("01/" & Format(W_DT_INI_MES + 35, "MM/YYYY"))
                     'sE DT DE ADM. FOR MAIOR Q/ A DT DO PRIMEIRO DIA DO MES ***
                     If CVDate(W_ADO_FICHA.Fields("DT_ADM")) >= CVDate(W_DT_INI_MES) Then
@@ -6432,7 +6433,7 @@ Private Sub cmdComisCx_Click()
                     
                     If Not IsNull(W_ADO_FICHA.Fields("DT_DEM")) Then
                           W_QT_DIAS_TRAB = (CVDate(W_ADO_FICHA.Fields("DT_DEM")) + 1) - CVDate(W_DT_INI_MES)
-                    ElseIf W_DT_INI_MES = CVDate("01/" & TXT_MES & "/" & TXT_ANO) Then
+                    ElseIf W_DT_INI_MES = CVDate("01/" & txt_Mes & "/" & txt_Ano) Then
                           W_QT_DIAS_TRAB = "-30"
                     Else
                           W_QT_DIAS_TRAB = W_DT_FIM_MES - W_DT_INI_MES
@@ -6770,7 +6771,7 @@ Dim w_ado_vendaAnt As ADODB.Recordset
             If IsNull(adoReg.Recordset.Fields("M_DT_DEM")) Then
              
                 de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
-                vrMetaParc = vrMeta * 0.9
+                vrMetaParc = Math.Round(vrMeta * 0.9, 0)
                 If (vrVenda >= vrMetaParc) Then
                     wFixoMeta = 0
                     If (vrVenda >= vrMeta) Then
@@ -6884,13 +6885,13 @@ Dim w_ado_vendaAnt As ADODB.Recordset
              "TAB_COMISSAO_TEMP.F_1373503546, TAB_COMISSAO_TEMP.vendTotal, TAB_COMISSAO_TEMP.comVista, TAB_COMISSAO_TEMP.comPrazo,  " & _
              "TAB_COMISSAO_TEMP.comTotal, TAB_COMISSAO_TEMP.totGeral, (SELECT Max(TAB_FICHA_MENS.M_DT_DEM)  " & _
              "FROM TAB_FUNCIONARIO INNER JOIN TAB_FICHA_MENS ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD " & _
-             "WHERE (((TAB_FICHA_MENS.M_ANO)=" & TXT_ANO & ") AND ((TAB_FICHA_MENS.M_MES)=" & TXT_MES & ") AND " & _
+             "WHERE (((TAB_FICHA_MENS.M_ANO)=" & txt_Ano & ") AND ((TAB_FICHA_MENS.M_MES)=" & txt_Mes & ") AND " & _
              "((TAB_FUNCIONARIO.F_COD_CENTRAL)=[TAB_COMISSAO_TEMP].[F_4023717930]) AND ((TAB_FICHA_MENS.M_TIPO)='V'))) AS DT_DEM, " & _
              "(SELECT Sum((C_VALOR)) FROM TAB_FUNCIONARIO INNER JOIN (TAB_FICHA_MENS INNER JOIN TAB_DESC_CALC ON TAB_FICHA_MENS.M_NFICHA " & _
              "= TAB_DESC_CALC.C_N_FICHA) ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD " & _
              "WHERE (((TAB_DESC_CALC.C_TP_CONTA)=20 Or (TAB_DESC_CALC.C_TP_CONTA)=21 Or (TAB_DESC_CALC.C_TP_CONTA)=23) AND ((TAB_FICHA_MENS.M_TIPO)='V')) " & _
              "GROUP BY TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_MES, TAB_FUNCIONARIO.F_COD_CENTRAL, TAB_FUNCIONARIO.F_COD_CENTRAL " & _
-             "HAVING (((TAB_FICHA_MENS.M_ANO)=" & TXT_ANO & ") AND ((TAB_FICHA_MENS.M_MES)=" & TXT_MES & ") AND " & _
+             "HAVING (((TAB_FICHA_MENS.M_ANO)=" & txt_Ano & ") AND ((TAB_FICHA_MENS.M_MES)=" & txt_Mes & ") AND " & _
              "((TAB_FUNCIONARIO.F_COD_CENTRAL)=[TAB_COMISSAO_TEMP].[F_4023717930]))) AS Salario  " & _
              "FROM TAB_COMISSAO_TEMP"
     
@@ -7230,23 +7231,23 @@ On Error GoTo err1
        'PEGA DT DE DEMISSÃO
         w_dt_DEM = IIf(TXT_DT_DEM = "", Format(txt_DT_ADM, "DD/MM/YYYY"), Format(TXT_DT_DEM, "DD/MM/YYYY"))
        'Se não tiver fichas abertas
-       If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_F_COD = " & txt_F_COD & " AND iif(M_MES>01,(M_MES = " & CInt(TXT_MES) - 1 & " AND M_ANO = " & TXT_ANO & "),(M_MES = 12 AND M_ANO = " & CInt(TXT_ANO) - 1 & "))").RecordCount = 0 Then
+       If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_F_COD = " & txt_F_COD & " AND iif(M_MES>01,(M_MES = " & CInt(txt_Mes) - 1 & " AND M_ANO = " & txt_Ano & "),(M_MES = 12 AND M_ANO = " & CInt(txt_Ano) - 1 & "))").RecordCount = 0 Then
             'Se for admissão no mês atual
-            If Format(txt_DT_ADM, "YYYY") = Format(TXT_ANO, "0000") And Format(txt_DT_ADM, "MM") = Format(TXT_MES, "00") Then
+            If Format(txt_DT_ADM, "YYYY") = Format(txt_Ano, "0000") And Format(txt_DT_ADM, "MM") = Format(txt_Mes, "00") Then
                 'msgbox
             Else
             
-                 w_logo = txtLogo2
+                 w_logo = TXTLOGO2
                  w_Nome = TXT_FUNC
             
                  'ATUALIZA DATA DE DEMISSÃO NO CADASTRO PRA NÃO GERAR MAIS
                  de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DT_DEM = '" & w_dt_DEM & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
                  'DELETA FICHA ATUAL
-                 de.cnc.Execute "DELETE * FROM TAB_FICHA_MENS WHERE M_NFICHA = " & TXT_NFICHA & "", REG_AF
+                 de.cnc.Execute "DELETE * FROM TAB_FICHA_MENS WHERE M_NFICHA = " & txt_nficha & "", REG_AF
                  If REG_AF = 1 Then
                      'MsgBox "Funcionário " & w_nome & " (" & w_logo & ") excluído com sucesso do mês " & TXT_MES & "/" & TXT_ANO & ".", vbInformation
                  Else
-                     MsgBox "Funcionário " & w_Nome & " (" & w_logo & ") NÃO EXCLUÍDO do mês " & TXT_MES & "/" & TXT_ANO & ".", vbExclamation
+                     MsgBox "Funcionário " & w_Nome & " (" & w_logo & ") NÃO EXCLUÍDO do mês " & txt_Mes & "/" & txt_Ano & ".", vbExclamation
                  End If
             End If
            
@@ -7275,17 +7276,17 @@ End Sub
 Private Sub cmdDesbloquear_Click()
     
     If Trim(TXT_AC_F) = "" Then
-        de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_DT_ACF = NULL WHERE (M_NFICHA = " & TXT_NFICHA & " )", w_reg
+        de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_DT_ACF = NULL WHERE (M_NFICHA = " & txt_nficha & " )", w_reg
         adoReg.Recordset.Fields("M_DT_ACF") = Null
     End If
     
     If IsNull(adoReg.Recordset.Fields("M_DT_ACF")) Then
         If adoReg.Recordset.Fields("M_BLOQ") Then
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_BLOQ = " & 0 & " Where (M_nficha = " & TXT_NFICHA & ")"
-            de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "FICHA", "FICHA: " & TXT_NFICHA & " | FUNCIONÁRIO: " & TXT_FUNC & " | ## LIBERANDO ##"
+            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_BLOQ = " & 0 & " Where (M_nficha = " & txt_nficha & ")"
+            de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "FICHA", "FICHA: " & txt_nficha & " | FUNCIONÁRIO: " & TXT_FUNC & " | ## LIBERANDO ##"
         Else
-            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_BLOQ = " & -1 & " Where (M_nficha = " & TXT_NFICHA & ")"
-            de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "FICHA", "FICHA: " & TXT_NFICHA & " | FUNCIONÁRIO: " & TXT_FUNC & " | ## BLOQUEANDO ##"
+            de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_BLOQ = " & -1 & " Where (M_nficha = " & txt_nficha & ")"
+            de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "FICHA", "FICHA: " & txt_nficha & " | FUNCIONÁRIO: " & TXT_FUNC & " | ## BLOQUEANDO ##"
         End If
         
         Cancelar
@@ -7366,9 +7367,9 @@ Private Sub cmdDespesa99_Click()
         Dim totalRP, val As Double
         Dim adoRP As ADODB.Recordset
         Set adoRP = de.cnc.Execute("SELECT TAB_VENDA.V_F_LOJA as NUM, TAB_VENDA.V_VR, (SELECT SUM(TAB_VENDA.V_VR) FROM TAB_VENDA " & _
-                                    "WHERE (((Month([V_DATA]))=" & TXT_MES & ") AND ((Year([V_DATA]))=" & TXT_ANO & "));) AS TOTAL, [V_VR]/[TOTAL] AS PERC " & _
-                                    "FROM TAB_VENDA WHERE (((Month([V_DATA]))=" & TXT_MES & " ) AND ((Year([V_DATA]))=" & TXT_ANO & "));").Clone
-        totalRP = InputBox("Digite o valor de TOTAL FIXO da 92 no mês " & TXT_MES & "/" & TXT_ANO & ":", "Total fixo da 92")
+                                    "WHERE (((Month([V_DATA]))=" & txt_Mes & ") AND ((Year([V_DATA]))=" & txt_Ano & "));) AS TOTAL, [V_VR]/[TOTAL] AS PERC " & _
+                                    "FROM TAB_VENDA WHERE (((Month([V_DATA]))=" & txt_Mes & " ) AND ((Year([V_DATA]))=" & txt_Ano & "));").Clone
+        totalRP = InputBox("Digite o valor de TOTAL FIXO da 92 no mês " & txt_Mes & "/" & txt_Ano & ":", "Total fixo da 92")
         Dim qtRP As Integer
         qtRP = 0
         If de.cncContas.State = 0 Then de.cncContas.Open
@@ -7378,11 +7379,11 @@ Private Sub cmdDespesa99_Click()
             wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(adoRP.Fields("NUM"), "000") & "'").Fields(0)
             de.cmdAddProcesso "1603", CDate(Now()), "**Incluído automaticamente**", "R", CStr(val), wNumContas, CDate(Now())
             lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(val), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(val), CDate("01/" & txt_Mes & "/" & txt_Ano)
             qtRP = qtRP + 1
             adoRP.MoveNext
         Loop
-        MsgBox "Foram incluídos " & qtRP & " processos de Despesas RP no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Despesas RP"
+        MsgBox "Foram incluídos " & qtRP & " processos de Despesas RP no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Despesas RP"
         'FIM Despesas RP
     End If
 End Sub
@@ -7398,7 +7399,7 @@ On Error GoTo err1
        'ATUALIZA DATA DE DEMISSÃO DO CADASTRO
         w_dt_DEM = IIf(TXT_DT_DEM = "", Null, Format(TXT_DT_DEM, "DD/MM/YYYY"))
         'Se não tiver fichas abertas
-        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_DT_DEM IS NULL AND M_F_COD = " & txt_F_COD & " AND ((M_MES >= " & TXT_MES & " AND M_ANO = " & TXT_ANO & ") OR M_ANO > " & TXT_ANO & ")").RecordCount = 0 Then
+        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_DT_DEM IS NULL AND M_F_COD = " & txt_F_COD & " AND ((M_MES >= " & txt_Mes & " AND M_ANO = " & txt_Ano & ") OR M_ANO > " & txt_Ano & ")").RecordCount = 0 Then
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DT_DEM = '" & w_dt_DEM & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
         Else
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DT_DEM = NULL  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
@@ -7448,15 +7449,15 @@ Private Sub cmdEmprestimo_Click()
     
     Do While Not W_ADO_EMP.EOF
         '*** CALCULA SOMENTE SE EXISTIR FICHA NESTE MÊS -****
-        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_F_COD = " & W_ADO_EMP.Fields("E_F_COD") & " AND M_MES = " & TXT_MES & " AND M_ANO = " & TXT_ANO & "").RecordCount > 0 Then
+        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_F_COD = " & W_ADO_EMP.Fields("E_F_COD") & " AND M_MES = " & txt_Mes & " AND M_ANO = " & txt_Ano & "").RecordCount > 0 Then
                 w_parc = de.cnc.Execute("Select EP_Parc from tab_Emprestimo_pg Where ep_codigo = " & W_ADO_EMP.Fields("E_codigo") & " and ep_parc > 0 ").RecordCount + 1
-                W_DT_PG = CVDate("01/" & TXT_MES & "/" & TXT_ANO) + 32
+                W_DT_PG = CVDate("01/" & txt_Mes & "/" & txt_Ano) + 32
                 
-                If IsDate((W_ADO_EMP.Fields("E_DIA_PG") & "/" & TXT_MES & "/" & TXT_ANO)) Then
-                    W_DT_PG = CVDate(W_ADO_EMP.Fields("E_DIA_PG") & "/" & TXT_MES & "/" & TXT_ANO) + 31
+                If IsDate((W_ADO_EMP.Fields("E_DIA_PG") & "/" & txt_Mes & "/" & txt_Ano)) Then
+                    W_DT_PG = CVDate(W_ADO_EMP.Fields("E_DIA_PG") & "/" & txt_Mes & "/" & txt_Ano) + 31
                     W_DT_PG = CVDate(W_ADO_EMP.Fields("E_DIA_PG") & "/" & Format(W_DT_PG, "mm/yyyy"))
                 Else
-                    W_DT_PG = CVDate("01/" & TXT_MES & "/" & TXT_ANO) + 32
+                    W_DT_PG = CVDate("01/" & txt_Mes & "/" & txt_Ano) + 32
                     W_DT_PG = CVDate("01/" & Format(W_DT_PG, "mm/yyyy")) - 1
                     If CDbl(Format(W_DT_PG, "dd")) < W_ADO_EMP.Fields("E_DIA_PG") Then
                         w_QtDias = W_ADO_EMP.Fields("E_DIA_PG") - CDbl(Format(W_DT_PG, "dd"))
@@ -7468,7 +7469,7 @@ Private Sub cmdEmprestimo_Click()
                 W_JUROS = Format(CALC_PG_EMP(W_ADO_EMP, W_DT_PG), "R$ 0.00")
                 w_Valor = (W_ADO_EMP.Fields("E_SALDO") / IIf(W_PARC_RESTANTE = 0, 1, W_PARC_RESTANTE)) + CDbl(W_JUROS)
                                         
-                W_NFICHA = de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_F_COD = " & W_ADO_EMP.Fields("E_F_COD") & " AND M_MES = " & TXT_MES & " AND M_ANO = " & TXT_ANO & "").Fields(0)
+                W_NFICHA = de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_F_COD = " & W_ADO_EMP.Fields("E_F_COD") & " AND M_MES = " & txt_Mes & " AND M_ANO = " & txt_Ano & "").Fields(0)
                 
                 W_DESC_CONTA = "Pg. Emp.: " & W_ADO_EMP.Fields("E_QT_PG") + 1 & "/" & W_ADO_EMP.Fields("E_QT_PARC") & vbCrLf & "Valor : " & Format(w_Valor - W_JUROS, "R$ 0.00") & "    +    Juros : " & Format(W_JUROS, "R$ 0.00")
                 
@@ -7490,7 +7491,7 @@ Private Sub cmdEmprestimo_Click()
                         W_EMP_ANOT = ""
                         Dim ADO_ANOT As ADODB.Recordset
                         
-                        w_Dt = CVDate("01/" & TXT_MES & "/" & TXT_ANO) + 65
+                        w_Dt = CVDate("01/" & txt_Mes & "/" & txt_Ano) + 65
                         Set ADO_ANOT = de.cnc.Execute("SELECT * FROM TAB_EMPRESTIMO WHERE E_F_COD = " & W_ADO_EMP.Fields("E_F_COD") & " AND (E_SALDO > 0  OR E_DT_ULT_PG <= #" & Format(w_Dt, "MM/DD/YYYY") & "#)").Clone
                         Do While Not ADO_ANOT.EOF
                             W_EMP_ANOT = W_EMP_ANOT & IIf(Len(W_EMP_ANOT) > 0, vbCrLf, "") & ". Dt Emp.: " & ADO_ANOT.Fields("E_DT_EMP") & "    Valor Emp.: " & Format(ADO_ANOT.Fields("E_VALOR"), "R$ 0.00") & "     Juros : " & ADO_ANOT.Fields("E_Juro_ao_mes") * 100 & " %" & "     Parc. Pg.: " & ADO_ANOT.Fields("E_QT_PG") & " / " & ADO_ANOT.Fields("E_QT_PARC")
@@ -7531,8 +7532,8 @@ On Error GoTo err1
     If MsgBox("Gerar GASOLINA p/ o mês " & lblMes.Caption & "?", vbYesNo, "GERAR GASOLINA") = vbYes Then
         'GASOLINA
         Dim adoGasolina As ADODB.Recordset
-        Set adoGasolina = de.cnc.Execute("SELECT Lojb010.NUM, Sum(TAB_DESC_CALC.C_VALOR) AS VAL FROM Lojb010 INNER JOIN (TAB_FICHA_MENS INNER JOIN TAB_DESC_CALC ON TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA) ON Lojb010.COD_LOJ = TAB_FICHA_MENS.M_LOGO WHERE (((TAB_FICHA_MENS.M_ANO)= " & TXT_ANO & ")" & _
-                                         "  AND ((TAB_FICHA_MENS.M_MES)= " & TXT_MES & ") AND ((TAB_DESC_CALC.C_TP_CONTA)=158 Or (TAB_DESC_CALC.C_TP_CONTA)=162)) GROUP BY Lojb010.NUM;").Clone
+        Set adoGasolina = de.cnc.Execute("SELECT Lojb010.NUM, Sum(TAB_DESC_CALC.C_VALOR) AS VAL FROM Lojb010 INNER JOIN (TAB_FICHA_MENS INNER JOIN TAB_DESC_CALC ON TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA) ON Lojb010.COD_LOJ = TAB_FICHA_MENS.M_LOGO WHERE (((TAB_FICHA_MENS.M_ANO)= " & txt_Ano & ")" & _
+                                         "  AND ((TAB_FICHA_MENS.M_MES)= " & txt_Mes & ") AND ((TAB_DESC_CALC.C_TP_CONTA)=158 Or (TAB_DESC_CALC.C_TP_CONTA)=162)) GROUP BY Lojb010.NUM;").Clone
         
         
         Dim qtGasolina As Integer
@@ -7545,13 +7546,13 @@ On Error GoTo err1
             wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(adoGasolina.Fields("NUM"), "000") & "'").Fields(0)
             de.cmdAddProcesso "1486", CDate(Now()), "**Incluído automaticamente**", "R", CStr(adoGasolina.Fields("VAL")), wNumContas, CDate(Now())
             lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(adoGasolina.Fields("VAL")), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(adoGasolina.Fields("VAL")), CDate("01/" & txt_Mes & "/" & txt_Ano)
             qtGasolina = qtGasolina + 1
         'End If
             adoGasolina.MoveNext
         Loop
         
-        MsgBox "Foram incluídos " & qtGasolina & " processos de Gasolina no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Gasolina"
+        MsgBox "Foram incluídos " & qtGasolina & " processos de Gasolina no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Gasolina"
         'FIM GASOLINA
     End If
         
@@ -7560,7 +7561,7 @@ On Error GoTo err1
         Dim adoSalario As ADODB.Recordset
         Set adoSalario = de.cnc.Execute("SELECT Lojb010.NUM, Sum(TAB_DESC_CALC.C_VALOR) AS VAL FROM Lojb010 INNER JOIN (TAB_FICHA_MENS INNER JOIN TAB_DESC_CALC ON TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA) ON Lojb010.COD_LOJ = TAB_FICHA_MENS.M_LOGO " & _
                                         " GROUP BY Lojb010.NUM, TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_MES, TAB_DESC_CALC.C_TP_OP " & _
-                                        " HAVING (((TAB_FICHA_MENS.M_ANO)=" & TXT_ANO & ") AND ((TAB_FICHA_MENS.M_MES)=" & TXT_MES & ") AND ((TAB_DESC_CALC.C_TP_OP)='+'))").Clone
+                                        " HAVING (((TAB_FICHA_MENS.M_ANO)=" & txt_Ano & ") AND ((TAB_FICHA_MENS.M_MES)=" & txt_Mes & ") AND ((TAB_DESC_CALC.C_TP_OP)='+'))").Clone
         
         Dim qtSalario As Integer
         qtSalario = 0
@@ -7571,13 +7572,13 @@ On Error GoTo err1
             wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(adoSalario.Fields("NUM"), "000") & "'").Fields(0)
             de.cmdAddProcesso "1487", CDate(Now()), "**Incluído automaticamente**", "R", CStr(adoSalario.Fields("VAL")), wNumContas, CDate(Now())
             lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(adoSalario.Fields("VAL")), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(adoSalario.Fields("VAL")), CDate("01/" & txt_Mes & "/" & txt_Ano)
             qtSalario = qtSalario + 1
         End If
             adoSalario.MoveNext
         Loop
 
-        MsgBox "Foram incluídos " & qtSalario & " processos de Salário no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Salário"
+        MsgBox "Foram incluídos " & qtSalario & " processos de Salário no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Salário"
         'FIM SALARIO
     End If
     
@@ -7586,7 +7587,7 @@ On Error GoTo err1
         Dim adoPasse As ADODB.Recordset
         Set adoPasse = de.cnc.Execute("SELECT Lojb010.NUM, Sum(TAB_DESC_CALC.C_VALOR) AS VAL FROM Lojb010 INNER JOIN (TAB_FICHA_MENS INNER JOIN TAB_DESC_CALC ON TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA) ON Lojb010.COD_LOJ = TAB_FICHA_MENS.M_LOGO " & _
                                          " GROUP BY Lojb010.NUM, TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_MES, TAB_DESC_CALC.C_TP_CONTA " & _
-                                         " HAVING (((TAB_FICHA_MENS.M_ANO)= " & TXT_ANO & ") AND ((TAB_FICHA_MENS.M_MES)= " & TXT_MES & ") AND ((TAB_DESC_CALC.C_TP_CONTA)=111))").Clone
+                                         " HAVING (((TAB_FICHA_MENS.M_ANO)= " & txt_Ano & ") AND ((TAB_FICHA_MENS.M_MES)= " & txt_Mes & ") AND ((TAB_DESC_CALC.C_TP_CONTA)=111))").Clone
         
         Dim qtPasse As Integer
         qtPasse = 0
@@ -7597,13 +7598,13 @@ On Error GoTo err1
             wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(adoPasse.Fields("NUM"), "000") & "'").Fields(0)
             de.cmdAddProcesso "1594", CDate(Now()), "**Incluído automaticamente**", "R", CStr(adoPasse.Fields("VAL")), wNumContas, CDate(Now())
             lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(adoPasse.Fields("VAL")), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(adoPasse.Fields("VAL")), CDate("01/" & txt_Mes & "/" & txt_Ano)
             qtPasse = qtPasse + 1
         'End If
             adoPasse.MoveNext
         Loop
         
-        MsgBox "Foram incluídos " & qtPasse & " processos de Pagto. de Passe - VT no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Pagamento de Passes - VT"
+        MsgBox "Foram incluídos " & qtPasse & " processos de Pagto. de Passe - VT no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Pagamento de Passes - VT"
         'FIM PAGTO PASSE - VALE TRANSPORTE
     End If
         
@@ -7621,13 +7622,13 @@ On Error GoTo err1
             wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(adoABS.Fields("NUM"), "000") & "'").Fields(0)
             de.cmdAddProcesso "473", CDate(Now()), "**Incluído automaticamente** R$414,00 mensalidade + 1/12 do 13º (R$414,00 / 12 = R$34,50) = R$448,50", "R", "448,50", wNumContas, CDate(Now())
             lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), "448,50", CDate("01/" & TXT_MES & "/" & TXT_ANO)
+            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), "448,50", CDate("01/" & txt_Mes & "/" & txt_Ano)
             qtABS = qtABS + 1
         'End If
             adoABS.MoveNext
         Loop
         
-        MsgBox "Foram incluídos " & qtABS & " processos de ABS no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Mensalidade ABS"
+        MsgBox "Foram incluídos " & qtABS & " processos de ABS no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Mensalidade ABS"
         'FIM ABS
     End If
     
@@ -7636,8 +7637,8 @@ On Error GoTo err1
         Dim totalRP, val As Double
         Dim adoRP As ADODB.Recordset
         Set adoRP = de.cnc.Execute("SELECT TAB_VENDA.V_F_LOJA as NUM, TAB_VENDA.V_VR, (SELECT SUM(TAB_VENDA.V_VR) FROM TAB_VENDA " & _
-                                    "WHERE (((Month([V_DATA]))=" & TXT_MES & ") AND ((Year([V_DATA]))=" & TXT_ANO & "));) AS TOTAL, [V_VR]/[TOTAL] AS PERC " & _
-                                    "FROM TAB_VENDA WHERE (((Month([V_DATA]))=" & TXT_MES & " ) AND ((Year([V_DATA]))=" & TXT_ANO & "));").Clone
+                                    "WHERE (((Month([V_DATA]))=" & txt_Mes & ") AND ((Year([V_DATA]))=" & txt_Ano & "));) AS TOTAL, [V_VR]/[TOTAL] AS PERC " & _
+                                    "FROM TAB_VENDA WHERE (((Month([V_DATA]))=" & txt_Mes & " ) AND ((Year([V_DATA]))=" & txt_Ano & "));").Clone
         totalRP = 180000
         Dim qtRP As Integer
         qtRP = 0
@@ -7650,13 +7651,13 @@ On Error GoTo err1
             wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(adoRP.Fields("NUM"), "000") & "'").Fields(0)
             de.cmdAddProcesso "1598", CDate(Now()), "**Incluído automaticamente**", "R", CStr(val), wNumContas, CDate(Now())
             lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(val), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(val), CDate("01/" & txt_Mes & "/" & txt_Ano)
             qtRP = qtRP + 1
         'End If
             adoRP.MoveNext
         Loop
         
-        MsgBox "Foram incluídos " & qtRP & " processos de Despesas Retaguarda no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Despesas RP"
+        MsgBox "Foram incluídos " & qtRP & " processos de Despesas Retaguarda no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Despesas RP"
         'FIM Despesas RP
     End If
         
@@ -7665,7 +7666,7 @@ On Error GoTo err1
         
         Dim adoCartao As ADODB.Recordset
         If de.cncSisInt.State = 0 Then de.cncSisInt.Open
-        de.cmdTaxaCartao TXT_MES, TXT_ANO
+        de.cmdTaxaCartao txt_Mes, txt_Ano
         Set adoCartao = de.rscmdTaxaCartao.Clone
 
         Dim qtCartao As Integer
@@ -7678,13 +7679,13 @@ On Error GoTo err1
             wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(adoCartao.Fields("logo"), "000") & "'").Fields(0)
             de.cmdAddProcesso "1608", CDate(Now()), "**Incluído automaticamente**", "R", CStr(CDbl(adoCartao.Fields("taxaCartao"))), wNumContas, CDate(Now())
             lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(CDbl(adoCartao.Fields("taxaCartao"))), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+            de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(CDbl(adoCartao.Fields("taxaCartao"))), CDate("01/" & txt_Mes & "/" & txt_Ano)
             qtCartao = qtCartao + 1
         'End If
             adoCartao.MoveNext
         Loop
 
-        MsgBox "Foram incluídos " & qtCartao & " processos de Taxa de Retenção no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Taxa de Retenção de Cartão"
+        MsgBox "Foram incluídos " & qtCartao & " processos de Taxa de Retenção no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Taxa de Retenção de Cartão"
         'FIM Taxa Retenção Cartão
     End If
         
@@ -7832,10 +7833,10 @@ On Error GoTo err1
              wNumContas = de.cncContas.Execute("SELECT tblloja_loja_contas FROM tblloja where tblloja_loja_fichas = '" & Format(maquinetas(I).b, "000") & "'").Fields(0)
              de.cmdAddProcesso "1609", CDate(Now()), "**Incluído automaticamente**", "R", CStr(CDbl(maquinetas(I).val)), wNumContas, CDate(Now())
              lastNumProcesso = de.cncContas.Execute("SELECT MAX(tblpro_num) FROM tblpropg").Fields(0)
-             de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & TXT_MES & "/" & TXT_ANO), CStr(CDbl(maquinetas(I).val)), CDate("01/" & TXT_MES & "/" & TXT_ANO)
+             de.cmdAddProcessoItem lastNumProcesso, CDate("01/" & txt_Mes & "/" & txt_Ano), CStr(CDbl(maquinetas(I).val)), CDate("01/" & txt_Mes & "/" & txt_Ano)
              qtMaquinetas = qtMaquinetas + 1
        Next I
-       MsgBox "Foram incluídos " & qtMaquinetas & " processos de Mensalidade das Maquinetas no sistema de Contas, na data de " & CDate("01/" & TXT_MES & "/" & TXT_ANO) & ".", vbInformation, "Exportação de Mensalidade das Maquinetas"
+       MsgBox "Foram incluídos " & qtMaquinetas & " processos de Mensalidade das Maquinetas no sistema de Contas, na data de " & CDate("01/" & txt_Mes & "/" & txt_Ano) & ".", vbInformation, "Exportação de Mensalidade das Maquinetas"
        'FIM Mensalidade das Maquinetas
     End If
         
@@ -7868,7 +7869,7 @@ On Error GoTo err1
         Dim adoFuncs As ADODB.Recordset
         Dim adoFixos As ADODB.Recordset
         
-        Set adoFuncs = de.cnc.Execute("SELECT DISTINCT(TAB_FICHA_MENS.M_NFICHA) as FICHA, TAB_FICHA_MENS.M_F_COD as COD FROM TAB_FICHA_MENS, TAB_DESC_CALC_FIXO WHERE TAB_FICHA_MENS.M_F_COD = TAB_DESC_CALC_FIXO.CF_EMP_COD AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ")").Clone
+        Set adoFuncs = de.cnc.Execute("SELECT DISTINCT(TAB_FICHA_MENS.M_NFICHA) as FICHA, TAB_FICHA_MENS.M_F_COD as COD FROM TAB_FICHA_MENS, TAB_DESC_CALC_FIXO WHERE TAB_FICHA_MENS.M_F_COD = TAB_DESC_CALC_FIXO.CF_EMP_COD AND (TAB_FICHA_MENS.M_ANO = " & txt_Ano & ") AND (TAB_FICHA_MENS.M_MES = " & txt_Mes & ")").Clone
     
         Do While Not adoFuncs.EOF
             Set adoFixos = de.cnc.Execute("SELECT * FROM TAB_DESC_CALC_FIXO WHERE CF_EMP_COD = " & adoFuncs.Fields("COD")).Clone
@@ -7926,7 +7927,7 @@ On Error Resume Next
     Dim vrVendaAnt, percVenda, vrBonus, vrSalarioBonus
     Dim vrMeta, vrMetaBonus, descMeta, wFixoMeta, numLoja
     
-    If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
+    If Not isMesValido(txt_F_COD, txt_Mes, txt_Ano) Then 'Verifica se é mês atual ou passado
         If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de fichas") = vbNo Then
             Exit Sub
         End If
@@ -7936,7 +7937,7 @@ On Error Resume Next
         End If
     End If
     
-    If MsgBox("Deseja (re)gerar a comissão de todos os Gerentes do mês " & TXT_MES & "?", vbYesNo, "Gerar comissão") = vbNo Then
+    If MsgBox("Deseja (re)gerar a comissão de todos os Gerentes do mês " & txt_Mes & "?", vbYesNo, "Gerar comissão") = vbNo Then
         Exit Sub
     End If
     
@@ -8050,7 +8051,7 @@ On Error Resume Next
              wPercBonusAnt = 0
               If adoReg.Recordset.Fields("m_mes") <= 12 Then
                    
-                vrMetaParc = vrMeta * 0.9
+                vrMetaParc = Math.Round(vrMeta * 0.9, 0)
                 If (vrVenda >= vrMetaParc) Then
                     wFixoMeta = 0
                     If (vrVenda >= vrMeta) Then
@@ -8128,7 +8129,7 @@ On Error GoTo err1
         Dim adoFuncs As ADODB.Recordset
         Dim adoFixos As ADODB.Recordset
         
-        Set adoFuncs = de.cnc.Execute("SELECT DISTINCT(TAB_FICHA_MENS.M_NFICHA) as FICHA, TAB_FICHA_MENS.M_F_COD as COD FROM TAB_FICHA_MENS, TAB_DESC_CALC_FIXO WHERE TAB_FICHA_MENS.M_F_COD = TAB_DESC_CALC_FIXO.CF_EMP_COD AND (TAB_FICHA_MENS.M_ANO = " & TXT_ANO & ") AND (TAB_FICHA_MENS.M_MES = " & TXT_MES & ") AND (TAB_FICHA_MENS.M_PG_VT = True) ").Clone
+        Set adoFuncs = de.cnc.Execute("SELECT DISTINCT(TAB_FICHA_MENS.M_NFICHA) as FICHA, TAB_FICHA_MENS.M_F_COD as COD FROM TAB_FICHA_MENS, TAB_DESC_CALC_FIXO WHERE TAB_FICHA_MENS.M_F_COD = TAB_DESC_CALC_FIXO.CF_EMP_COD AND (TAB_FICHA_MENS.M_ANO = " & txt_Ano & ") AND (TAB_FICHA_MENS.M_MES = " & txt_Mes & ") AND (TAB_FICHA_MENS.M_PG_VT = True) ").Clone
     
         Do While Not adoFuncs.EOF
 
@@ -8229,9 +8230,9 @@ Private Sub cmdRelQtdeTipo_Click()
 On Error GoTo err1
 
     If de.rscmdSqlQtdeTipo.State = 1 Then de.rscmdSqlQtdeTipo.Close
-    de.cmdSqlQtdeTipo TXT_MES, TXT_ANO
+    de.cmdSqlQtdeTipo txt_Mes, txt_Ano
     
-    rptQtdeTipo.Sections("SecCab").Controls("lbTitulo").Caption = "FUNCIONÁRIOS por FUNÇÃO (" & TXT_MES & "/" & TXT_ANO & ")"
+    rptQtdeTipo.Sections("SecCab").Controls("lbTitulo").Caption = "FUNCIONÁRIOS por FUNÇÃO (" & txt_Mes & "/" & txt_Ano & ")"
     'rptQtdeTipo.Sections("SecCab").Controls("lbData").Caption = Format(Date, "DD=MM") & " " & Format(Time, "hh=mm")
     
     rptQtdeTipo.Show
@@ -8247,8 +8248,8 @@ Private Sub cmdSalarioCX_Click()
     If de.rscmdSqlSalarioCxNOVO.State = 1 Then de.rscmdSqlSalarioCxNOVO.Close
      
     
-    de.cmdSqlSalarioCxNOVO TXT_ANO, TXT_MES
-    rptSalarioCxNOVO.Sections("SecCab").Controls("lbTitulo").Caption = "SAL. CXs. (" & TXT_MES & ")"
+    de.cmdSqlSalarioCxNOVO txt_Ano, txt_Mes
+    rptSalarioCxNOVO.Sections("SecCab").Controls("lbTitulo").Caption = "SAL. CXs. (" & txt_Mes & ")"
     
          
     rptSalarioCxNOVO.Show
@@ -8463,7 +8464,7 @@ Private Sub flexGRID_L_KeyPress(KeyAscii As Integer)
         Case vbKeyReturn
             If adoReg.Recordset.Fields("M_BLOQ") = False Then
             
-                If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
+                If Not isMesValido(txt_F_COD, txt_Mes, txt_Ano) Then 'Verifica se é mês atual ou passado
                     If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
                         Exit Sub
                     End If
@@ -8501,7 +8502,7 @@ End Sub
 Private Sub flexGRID_L_MouseDown(Button As Integer, Shift As Integer, x As Single, Y As Single)
     If flexGRID_L.RowSel <> 0 Then
         If Button = 2 And (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And CK_ACF = 0 Then
-           If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
+           If Not isMesValido(txt_F_COD, txt_Mes, txt_Ano) Then 'Verifica se é mês atual ou passado
                 If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
                     Exit Sub
                 End If
@@ -9072,9 +9073,9 @@ On Error GoTo err1
         Case "conta": CONTA
         Case "dupla": VisDupla
         Case "vistar":
-                        frm_Alt_Visto_Vale.TXT_ANO = Me.TXT_ANO
-                        frm_Alt_Visto_Vale.TXT_MES = Me.TXT_MES
-                        frm_Alt_Visto_Vale.TXT_LOGO = Me.txtLogo
+                        frm_Alt_Visto_Vale.txt_Ano = Me.txt_Ano
+                        frm_Alt_Visto_Vale.txt_Mes = Me.txt_Mes
+                        frm_Alt_Visto_Vale.TXT_LOGO = Me.TXTLOGO
                         frm_Alt_Visto_Vale.TXT_LOGO2.BoundText = frm_Alt_Visto_Vale.TXT_LOGO.BoundText
                         frm_Alt_Visto_Vale.ckTodas.value = 1
                         frm_Alt_Visto_Vale.ck_Nome.value = 1
@@ -9086,8 +9087,8 @@ On Error GoTo err1
                         frm_Gerar_Comissao.ck_Nome.value = 0
                         'frm_Gerar_Comissao.TXT_LOGO = ADOREG.Recordset.Fields("M_LOGO")
                         frm_Gerar_Comissao.ck_Logo.value = 1
-                        frm_Gerar_Comissao.TXT_MES = adoReg.Recordset.Fields("M_MES")
-                        frm_Gerar_Comissao.TXT_ANO = adoReg.Recordset.Fields("M_ANO")
+                        frm_Gerar_Comissao.txt_Mes = adoReg.Recordset.Fields("M_MES")
+                        frm_Gerar_Comissao.txt_Ano = adoReg.Recordset.Fields("M_ANO")
                         frm_Gerar_Comissao.dbNome.BoundText = adoReg.Recordset.Fields("M_F_COD")
                        
                         frm_Gerar_Comissao.Show 1
@@ -9141,13 +9142,13 @@ On Error GoTo err1
      
     
     If FRM_LIBERAR.ckTodas.value = 0 Then
-        FRM_LIBERAR.TXT_LOGO = txtLogo
+        FRM_LIBERAR.TXT_LOGO = TXTLOGO
     Else
         FRM_LIBERAR.TXT_LOGO = "%"
     End If
     
-    FRM_LIBERAR.TXT_MES = TXT_MES
-    FRM_LIBERAR.TXT_ANO = TXT_ANO
+    FRM_LIBERAR.txt_Mes = txt_Mes
+    FRM_LIBERAR.txt_Ano = txt_Ano
     
     If FRM_LIBERAR.ck_Nome.value = 0 Then
         FRM_LIBERAR.dbNome = TXT_FUNC
@@ -9208,16 +9209,16 @@ On Error GoTo err1
         w_reg = 0
 
         Dim w_ado As ADODB.Recordset
-        Set w_ado = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_NOME, TAB_FICHA_MENS.M_NFICHA FROM TAB_FUNCIONARIO INNER JOIN TAB_FICHA_MENS ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) and ( TAB_FICHA_MENS.M_TIPO IN (" & w_Tipos & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_LIBERAR.TXT_MES & ") And ((TAB_FICHA_MENS.M_ANO) = " & FRM_LIBERAR.TXT_ANO & ") " & IIf(FRM_LIBERAR.dbNome = "%", "", "And TAB_FICHA_MENS.M_NOME Like '" & FRM_LIBERAR.dbNome & "'") & IIf(w_ACF <> "", w_ACF, "") & ") ").Clone
+        Set w_ado = de.cnc.Execute("SELECT TAB_FUNCIONARIO.F_NOME, TAB_FICHA_MENS.M_NFICHA FROM TAB_FUNCIONARIO INNER JOIN TAB_FICHA_MENS ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) and ( TAB_FICHA_MENS.M_TIPO IN (" & w_Tipos & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_LIBERAR.txt_Mes & ") And ((TAB_FICHA_MENS.M_ANO) = " & FRM_LIBERAR.txt_Ano & ") " & IIf(FRM_LIBERAR.dbNome = "%", "", "And TAB_FICHA_MENS.M_NOME Like '" & FRM_LIBERAR.dbNome & "'") & IIf(w_ACF <> "", w_ACF, "") & ") ").Clone
         If FRM_LIBERAR.cbAcao.ListIndex = 0 Then
-            de.cnc.Execute "UPDATE  TAB_FUNCIONARIO INNER JOIN TAB_FICHA_MENS ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD SET TAB_FICHA_MENS.M_BLOQ = " & 0 & " Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) and ( TAB_FICHA_MENS.M_TIPO IN (" & w_Tipos & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_LIBERAR.TXT_MES & ") And ((TAB_FICHA_MENS.M_ANO) = " & FRM_LIBERAR.TXT_ANO & ") " & IIf(FRM_LIBERAR.dbNome = "%", "", "And TAB_FICHA_MENS.M_NOME Like '" & FRM_LIBERAR.dbNome & "'") & IIf(w_ACF <> "", w_ACF, "") & ") ", w_reg
+            de.cnc.Execute "UPDATE  TAB_FUNCIONARIO INNER JOIN TAB_FICHA_MENS ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD SET TAB_FICHA_MENS.M_BLOQ = " & 0 & " Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) and ( TAB_FICHA_MENS.M_TIPO IN (" & w_Tipos & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_LIBERAR.txt_Mes & ") And ((TAB_FICHA_MENS.M_ANO) = " & FRM_LIBERAR.txt_Ano & ") " & IIf(FRM_LIBERAR.dbNome = "%", "", "And TAB_FICHA_MENS.M_NOME Like '" & FRM_LIBERAR.dbNome & "'") & IIf(w_ACF <> "", w_ACF, "") & ") ", w_reg
             Do While Not w_ado.EOF
                 de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "FICHA", "FICHA: " & w_ado.Fields(1) & " | FUNCIONÁRIO: " & w_ado.Fields(0) & " | ## LIBERANDO ##"
             w_ado.MoveNext
             Loop
             MsgBox "Foram LIBERADAS " & w_reg & " fichas!", vbInformation
         Else
-            de.cnc.Execute "UPDATE  TAB_FUNCIONARIO INNER JOIN TAB_FICHA_MENS ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD SET TAB_FICHA_MENS.M_BLOQ = " & -1 & " Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) and ( TAB_FICHA_MENS.M_TIPO IN (" & w_Tipos & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_LIBERAR.TXT_MES & ") And ((TAB_FICHA_MENS.M_ANO) = " & FRM_LIBERAR.TXT_ANO & ") " & IIf(FRM_LIBERAR.dbNome = "%", "", "And TAB_FICHA_MENS.M_NOME Like '" & FRM_LIBERAR.dbNome & "'") & IIf(w_ACF <> "", w_ACF, "") & ") ", w_reg
+            de.cnc.Execute "UPDATE  TAB_FUNCIONARIO INNER JOIN TAB_FICHA_MENS ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD SET TAB_FICHA_MENS.M_BLOQ = " & -1 & " Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) and ( TAB_FICHA_MENS.M_TIPO IN (" & w_Tipos & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_LIBERAR.txt_Mes & ") And ((TAB_FICHA_MENS.M_ANO) = " & FRM_LIBERAR.txt_Ano & ") " & IIf(FRM_LIBERAR.dbNome = "%", "", "And TAB_FICHA_MENS.M_NOME Like '" & FRM_LIBERAR.dbNome & "'") & IIf(w_ACF <> "", w_ACF, "") & ") ", w_reg
             Do While Not w_ado.EOF
                 de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "FICHA", "FICHA: " & w_ado.Fields(1) & " | FUNCIONÁRIO: " & w_ado.Fields(0) & " | ## BLOQUEANDO ##"
             w_ado.MoveNext
@@ -9257,7 +9258,7 @@ End Sub
 Private Sub CONTA()
     w_leitura = 0
  
-    If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
+    If Not isMesValido(txt_F_COD, txt_Mes, txt_Ano) Then 'Verifica se é mês atual ou passado
         If MsgBox("Você está acessando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Confirmação") = vbNo Then
             Exit Sub
         End If
@@ -9341,7 +9342,7 @@ If edicao = 1 Then
 End If
 
 If mesvalido Then
-    If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
+    If Not isMesValido(txt_F_COD, txt_Mes, txt_Ano) Then 'Verifica se é mês atual ou passado
         If MsgBox("Você está alterando uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Alteração de ficha") = vbNo Then
             Exit Sub
         End If
@@ -9363,8 +9364,8 @@ End If
         
         Grid.Enabled = Not Grid.Enabled
         
-        txtLogo.Enabled = Not txtLogo.Enabled
-        txtLogo2.Enabled = Not txtLogo2.Enabled
+        TXTLOGO.Enabled = Not TXTLOGO.Enabled
+        TXTLOGO2.Enabled = Not TXTLOGO2.Enabled
         If (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) Then txt_DT_ADM.Enabled = Not txt_DT_ADM.Enabled
         TXT_DT_REG.Enabled = Not TXT_DT_REG.Enabled
         
@@ -9396,9 +9397,9 @@ End If
         TXT_AC_F.Locked = Not TXT_AC_F.Locked
         TXT_FERIAS.Locked = Not TXT_FERIAS.Locked
         
-        TXT_OBS.Locked = Not TXT_OBS.Locked
+        txt_Obs.Locked = Not txt_Obs.Locked
         txt_notas.Locked = Not txt_notas.Locked
-        TXT_ANOTACAO.Locked = Not TXT_ANOTACAO.Locked
+        txt_ANOTACAO.Locked = Not txt_ANOTACAO.Locked
         txt_Vcto_ferias.Enabled = Not txt_Vcto_ferias.Enabled
         
         txt_NFilhos.Enabled = Not txt_NFilhos.Enabled
@@ -9416,7 +9417,7 @@ End If
     
         If BarraF.Buttons("salvar").Enabled = True Then
             Frame1.Enabled = False
-            w_logo = txtLogo
+            w_logo = TXTLOGO
         Else
             Frame1.Enabled = True
         End If
@@ -9446,7 +9447,7 @@ Private Sub Excluir()
 On Error GoTo err1
         
         
-    If vbYes = MsgBox("DESEJA REALMENTE EXCLUIR A FICHA MENSAL (" & TXT_NFICHA & " : " & TXT_FUNC & ")?" & vbNewLine & vbNewLine & "VOCÊ ESTÁ EXCLUINDO A FICHA E NÃO O LANÇAMENTO.", vbQuestion + vbYesNo) Then
+    If vbYes = MsgBox("DESEJA REALMENTE EXCLUIR A FICHA MENSAL (" & txt_nficha & " : " & TXT_FUNC & ")?" & vbNewLine & vbNewLine & "VOCÊ ESTÁ EXCLUINDO A FICHA E NÃO O LANÇAMENTO.", vbQuestion + vbYesNo) Then
     frm_Habilitar.Show 1
     w_PSS = frm_Habilitar.txt_Pss
 
@@ -9456,7 +9457,7 @@ If w_PSS = w_PassWordLib Then
         
           
         
-If Not isMesValido(txt_F_COD, TXT_MES, TXT_ANO) Then 'Verifica se é mês atual ou passado
+If Not isMesValido(txt_F_COD, txt_Mes, txt_Ano) Then 'Verifica se é mês atual ou passado
     If MsgBox("Você está excluindo uma ficha que NÃO É DO MÊS ATUAL. Deseja continuar mesmo assim?", vbYesNo, "Exclusão de ficha") = vbNo Then
         Exit Sub
     End If
@@ -9469,7 +9470,7 @@ End If
 
 
         W_POS = adoReg.Recordset.AbsolutePosition - 1
-        de.cnc.Execute "DELETE * FROM TAB_FICHA_MENS WHERE M_NFICHA = " & TXT_NFICHA & "", REG_AF
+        de.cnc.Execute "DELETE * FROM TAB_FICHA_MENS WHERE M_NFICHA = " & txt_nficha & "", REG_AF
         If REG_AF = 1 Then
             MsgBox "Registro excluído com sucesso!", vbInformation
         Else
@@ -9486,7 +9487,7 @@ End If
     
     
     de.rscmdSqlVisAltFichas.Close
-    de.cmdSqlVisAltFichas TXT_MES, TXT_ANO
+    de.cmdSqlVisAltFichas txt_Mes, txt_Ano
     Set adoReg.Recordset = de.rscmdSqlVisAltFichas.Clone
     
     If (adoReg.Recordset.Fields("M_TIPO") = "V" Or adoReg.Recordset.Fields("M_TIPO") = "C") Or acessoTotal() Then
@@ -9564,19 +9565,19 @@ On Error GoTo err1
         w_dt_REg = IIf(TXT_DT_REG = "", Null, Format(TXT_DT_REG, "DD/MM/YYYY"))
         
         If IsNull(w_dt_REg) Then
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS = '" & TXT_FERIAS & "', F_OBS = '" & TXT_OBS & "', F_NOTAS = '" & txt_notas & "', F_ANOTACAO = '" & TXT_ANOTACAO & "', F_DT_ADM = '" & Format(txt_DT_ADM, "DD/MM/YYYY") & "', F_DT_REG = NULL, F_13_OBS = '" & TXT_13_OBS & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS = '" & TXT_FERIAS & "', F_OBS = '" & txt_Obs & "', F_NOTAS = '" & txt_notas & "', F_ANOTACAO = '" & txt_ANOTACAO & "', F_DT_ADM = '" & Format(txt_DT_ADM, "DD/MM/YYYY") & "', F_DT_REG = NULL, F_13_OBS = '" & TXT_13_OBS & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
         Else
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS = '" & TXT_FERIAS & "', F_OBS = '" & TXT_OBS & "', F_NOTAS = '" & txt_notas & "', F_ANOTACAO = '" & TXT_ANOTACAO & "', F_DT_ADM = '" & Format(txt_DT_ADM, "DD/MM/YYYY") & "', F_DT_REG = '" & w_dt_REg & "', F_13_OBS = '" & TXT_13_OBS & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS = '" & TXT_FERIAS & "', F_OBS = '" & txt_Obs & "', F_NOTAS = '" & txt_notas & "', F_ANOTACAO = '" & txt_ANOTACAO & "', F_DT_ADM = '" & Format(txt_DT_ADM, "DD/MM/YYYY") & "', F_DT_REG = '" & w_dt_REg & "', F_13_OBS = '" & TXT_13_OBS & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
         End If
         
-        If w_logo <> txtLogo Then
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_COD_L = '" & txtLogo & "'   WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
+        If w_logo <> TXTLOGO Then
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_COD_L = '" & TXTLOGO & "'   WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
         End If
         
         'ATUALIZA DATA DE DEMISSÃO DO CADASTRO
         w_dt_DEM = IIf(TXT_DT_DEM = "", Null, Format(TXT_DT_DEM, "DD/MM/YYYY"))
         'Se não tiver fichas abertas
-        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_DT_DEM IS NULL AND M_F_COD = " & txt_F_COD & " AND ((M_MES >= " & TXT_MES & " AND M_ANO = " & TXT_ANO & ") OR M_ANO > " & TXT_ANO & ")").RecordCount = 0 Then
+        If de.cnc.Execute("SELECT M_NFICHA FROM TAB_FICHA_MENS WHERE M_DT_DEM IS NULL AND M_F_COD = " & txt_F_COD & " AND ((M_MES >= " & txt_Mes & " AND M_ANO = " & txt_Ano & ") OR M_ANO > " & txt_Ano & ")").RecordCount = 0 Then
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DT_DEM = '" & w_dt_DEM & "'  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
         Else
             de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_DT_DEM = NULL  WHERE (F_Codigo = " & txt_F_COD & " )", w_reg
@@ -9681,7 +9682,7 @@ On Error GoTo err1
                     de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 109 OR C_TP_CONTA = 110 OR C_TP_CONTA = 111)")
                     de.cnc.Execute ("DELETE FROM TAB_DESC_CALC_FIXO WHERE CF_EMP_COD  = " & txt_F_COD & " AND (CF_TP_CONTA = 109 OR CF_TP_CONTA = 110 OR CF_TP_CONTA = 111)")
                     
-                    de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "VALE TRANSPORTE", "FICHA: " & TXT_NFICHA & " | FUNCIONÁRIO: " & txt_F_COD & " - " & TXT_FUNC
+                    de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "VALE TRANSPORTE", "FICHA: " & txt_nficha & " | FUNCIONÁRIO: " & txt_F_COD & " - " & TXT_FUNC
                     
                     Lancamentos
 
@@ -9933,7 +9934,7 @@ End Sub
 Private Sub TXT_AC_F_Change()
     If Not adoReg.Recordset.EOF Then
         If TXT_AC_F <> w_ac_f Then
-           If w_SN_Total = True And txt_F_COD = adoReg.Recordset.Fields("M_F_COD") And (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And TXT_NFICHA = adoReg.Recordset.Fields("M_NFICHA") And BarraF.Buttons("salvar").Enabled = False Then
+           If w_SN_Total = True And txt_F_COD = adoReg.Recordset.Fields("M_F_COD") And (UCase(frmLogin.txtUserName) = UCase(NomeMestre) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre2) Or UCase(frmLogin.txtUserName) = UCase(NomeMestre3)) And txt_nficha = adoReg.Recordset.Fields("M_NFICHA") And BarraF.Buttons("salvar").Enabled = False Then
                 Editar 0
                 If TXT_AC_F = Null Or Trim(TXT_AC_F) = "" Then
                     'TXT_AC_F = Format(Date, "DD/MM/YYYY") & "  : "
@@ -10024,19 +10025,19 @@ End Sub
 
 Private Sub TXT_MES_Change()
     
-   Select Case TXT_MES
-       Case "1": lblMes.Caption = "Janeiro" & " / " & Right(TXT_ANO, 2)
-       Case "2": lblMes.Caption = "Fevereiro" & " / " & Right(TXT_ANO, 2)
-       Case "3": lblMes.Caption = "Março" & " / " & Right(TXT_ANO, 2)
-       Case "4": lblMes.Caption = "Abril" & " / " & Right(TXT_ANO, 2)
-       Case "5": lblMes.Caption = "Maio" & " / " & Right(TXT_ANO, 2)
-       Case "6": lblMes.Caption = "Junho" & " / " & Right(TXT_ANO, 2)
-       Case "7": lblMes.Caption = "Julho" & " / " & Right(TXT_ANO, 2)
-       Case "8": lblMes.Caption = "Agosto" & " / " & Right(TXT_ANO, 2)
-       Case "9": lblMes.Caption = "Setembro" & " / " & Right(TXT_ANO, 2)
-       Case "10": lblMes.Caption = "Outubro" & " / " & Right(TXT_ANO, 2)
-       Case "11": lblMes.Caption = "Novembro" & " / " & Right(TXT_ANO, 2)
-       Case "12": lblMes.Caption = "Dezembro" & " / " & Right(TXT_ANO, 2)
+   Select Case txt_Mes
+       Case "1": lblMes.Caption = "Janeiro" & " / " & Right(txt_Ano, 2)
+       Case "2": lblMes.Caption = "Fevereiro" & " / " & Right(txt_Ano, 2)
+       Case "3": lblMes.Caption = "Março" & " / " & Right(txt_Ano, 2)
+       Case "4": lblMes.Caption = "Abril" & " / " & Right(txt_Ano, 2)
+       Case "5": lblMes.Caption = "Maio" & " / " & Right(txt_Ano, 2)
+       Case "6": lblMes.Caption = "Junho" & " / " & Right(txt_Ano, 2)
+       Case "7": lblMes.Caption = "Julho" & " / " & Right(txt_Ano, 2)
+       Case "8": lblMes.Caption = "Agosto" & " / " & Right(txt_Ano, 2)
+       Case "9": lblMes.Caption = "Setembro" & " / " & Right(txt_Ano, 2)
+       Case "10": lblMes.Caption = "Outubro" & " / " & Right(txt_Ano, 2)
+       Case "11": lblMes.Caption = "Novembro" & " / " & Right(txt_Ano, 2)
+       Case "12": lblMes.Caption = "Dezembro" & " / " & Right(txt_Ano, 2)
     End Select
     
 End Sub
@@ -10138,7 +10139,7 @@ Private Sub txt_Vcto_ferias_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub txtLogo_Click(Area As Integer)
-    txtLogo2.BoundText = txtLogo.BoundText
+    TXTLOGO2.BoundText = TXTLOGO.BoundText
 End Sub
 
 Private Sub txtLogo_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -10216,7 +10217,7 @@ On Error GoTo err1
             Dim w_Ado2 As ADODB.Recordset
             Dim W_INCLUIR_FILTRO As Boolean
             
-            Set w_Ado2 = de.cnc.Execute("SELECT M_NFICHA, M_FERIAS_PG, M_DT_REG, M_DT_ADM FROM TAB_FICHA_MENS WHERE (M_DT_DEM IS NULL) AND M_MES = " & adoReg.Recordset.Fields("M_MES") & " AND M_ANO = " & adoReg.Recordset.Fields("M_ANO") & " AND M_VCTO_FERIAS = " & TXT_MES & "").Clone
+            Set w_Ado2 = de.cnc.Execute("SELECT M_NFICHA, M_FERIAS_PG, M_DT_REG, M_DT_ADM FROM TAB_FICHA_MENS WHERE (M_DT_DEM IS NULL) AND M_MES = " & adoReg.Recordset.Fields("M_MES") & " AND M_ANO = " & adoReg.Recordset.Fields("M_ANO") & " AND M_VCTO_FERIAS = " & txt_Mes & "").Clone
           
             W_FILTRO = ""
             Do While Not w_Ado2.EOF
@@ -10246,13 +10247,13 @@ On Error GoTo err1
                '
           '****************************
                     If Not IsNull(w_Ado2.Fields("M_DT_REG")) Then
-                        If Year(w_Ado2.Fields("M_DT_REG")) < TXT_ANO Then
+                        If Year(w_Ado2.Fields("M_DT_REG")) < txt_Ano Then
                             W_INCLUIR_FILTRO = True
                         Else
                             W_INCLUIR_FILTRO = False
                         End If
                     ElseIf Not IsNull(w_Ado2.Fields("M_DT_ADM")) Then
-                        If Year(w_Ado2.Fields("M_DT_ADM")) < TXT_ANO Then
+                        If Year(w_Ado2.Fields("M_DT_ADM")) < txt_Ano Then
                             W_INCLUIR_FILTRO = True
                         Else
                             W_INCLUIR_FILTRO = False
@@ -10524,13 +10525,13 @@ On Error GoTo err1
      
     FRM_IMP_F.Form_Activate
     If FRM_IMP_F.ckTodas.value = 0 Then
-        FRM_IMP_F.TXT_LOGO = txtLogo
+        FRM_IMP_F.TXT_LOGO = TXTLOGO
     Else
         FRM_IMP_F.TXT_LOGO = "%"
     End If
     
-    FRM_IMP_F.TXT_MES = TXT_MES
-    FRM_IMP_F.TXT_ANO = TXT_ANO
+    FRM_IMP_F.txt_Mes = txt_Mes
+    FRM_IMP_F.txt_Ano = txt_Ano
     
     If FRM_IMP_F.ck_Nome.value = 0 Then
         FRM_IMP_F.dbNome = TXT_FUNC
@@ -10616,8 +10617,8 @@ On Error GoTo err1
                 & "Format('01/'+Mid(Str(TAB_FICHA_MENS.M_MES),2)+'/'+Mid(Str(TAB_FICHA_MENS.M_ANO),2),'DD/MM/YYYY') AS Data," _
                 & "TAB_FUNCIONARIO.F_Cod_L AS Logo2, LOJB010.NUM as Logo, TAB_FICHA_MENS.M_TOTAL, Mid(TAB_FUNCIONARIO.F_COD_CENTRAL,3) AS COD_CENTRAL," _
                 & " TAB_FICHA_MENS.M_TIPO AS TIPO, TAB_FUNCIONARIO.F_CX_QT_VND AS Cx_Qt_VND FROM TAB_FICHA_MENS, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ " _
-                & " WHERE (((TAB_FICHA_MENS.M_F_COD)=[TAB_FUNCIONARIO].[F_Codigo]) AND ((TAB_FICHA_MENS.M_MES)=" & FRM_IMP_F.TXT_MES & ") AND" _
-                & " ((TAB_FICHA_MENS.M_ANO)=" & FRM_IMP_F.TXT_ANO & ") AND ((TAB_FUNCIONARIO.F_NOME) Like '" & FRM_IMP_F.dbNome & "' and TAB_FUNCIONARIO.F_NOME <> '10 - Func'" _
+                & " WHERE (((TAB_FICHA_MENS.M_F_COD)=[TAB_FUNCIONARIO].[F_Codigo]) AND ((TAB_FICHA_MENS.M_MES)=" & FRM_IMP_F.txt_Mes & ") AND" _
+                & " ((TAB_FICHA_MENS.M_ANO)=" & FRM_IMP_F.txt_Ano & ") AND ((TAB_FUNCIONARIO.F_NOME) Like '" & FRM_IMP_F.dbNome & "' and TAB_FUNCIONARIO.F_NOME <> '10 - Func'" _
                 & " AND TAB_FUNCIONARIO.F_NOME <> '99 - Presence') AND   (" _
                 & w_sqlTiposTripa _
                 & ") AND (" _
@@ -10644,8 +10645,8 @@ On Error GoTo err1
                 If de.rscmdSqlTotalVND.State = 1 Then de.rscmdSqlTotalVND.Close
                 
             
-                w_DtI = CVDate("01/" & Format(FRM_IMP_F.TXT_MES, "00") & "/" & Format(FRM_IMP_F.TXT_ANO, "0000"))
-                w_DtF = UltDiaMes(FRM_IMP_F.TXT_MES, FRM_IMP_F.TXT_ANO)
+                w_DtI = CVDate("01/" & Format(FRM_IMP_F.txt_Mes, "00") & "/" & Format(FRM_IMP_F.txt_Ano, "0000"))
+                w_DtF = UltDiaMes(FRM_IMP_F.txt_Mes, FRM_IMP_F.txt_Ano)
                 de.cmdSqlTotalVND w_DtI, w_DtF, IIf(FRM_IMP_F.TXT_LOGO = "", "%", FRM_IMP_F.TXT_LOGO)
                 
                 
@@ -10719,8 +10720,8 @@ If (w_tipo = "V" Or w_tipo = "C" Or w_tipo = "X" Or w_tipo = "2") Or acessoTotal
                 & "TAB_FUNCIONARIO.F_VPISO AS PB, TAB_FUNCIONARIO.F_VPISO_R AS PL, TAB_FICHA_MENS.M_BLOQ, Lojb010.NUM, TAB_FUNCIONARIO.F_DT_NASC " _
                 & "FROM (TAB_FUNCIONARIO INNER JOIN (TAB_TP_CONTA RIGHT JOIN (TAB_FICHA_MENS LEFT JOIN TAB_DESC_CALC ON TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA) ON " _
                 & "TAB_TP_CONTA.TP_COD = TAB_DESC_CALC.C_TP_CONTA) ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD) INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ " _
-                & " Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_IMP_F.TXT_MES & ") " _
-                & "And ((TAB_FICHA_MENS.M_ANO) = " & FRM_IMP_F.TXT_ANO & ") And NOT TAB_FICHA_MENS.M_NOME ='10 - Func' and not TAB_FICHA_MENS.M_NOME='99 - Presence' And ((TAB_FICHA_MENS.M_NOME) Like '" & IIf(FRM_IMP_F.dbNome = "%", "*", FRM_IMP_F.dbNome) & "') AND ((TAB_FICHA_MENS.M_TIPO) IN (" & w_Tipos & ")) " & IIf(w_ACF <> "", w_ACF, "") & ") " _
+                & " Where (( TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_IMP_F.txt_Mes & ") " _
+                & "And ((TAB_FICHA_MENS.M_ANO) = " & FRM_IMP_F.txt_Ano & ") And NOT TAB_FICHA_MENS.M_NOME ='10 - Func' and not TAB_FICHA_MENS.M_NOME='99 - Presence' And ((TAB_FICHA_MENS.M_NOME) Like '" & IIf(FRM_IMP_F.dbNome = "%", "*", FRM_IMP_F.dbNome) & "') AND ((TAB_FICHA_MENS.M_TIPO) IN (" & w_Tipos & ")) " & IIf(w_ACF <> "", w_ACF, "") & ") " _
                 & "ORDER BY TAB_FUNCIONARIO.F_Cod_L, TAB_FICHA_MENS.M_TIPO DESC, TAB_FUNCIONARIO.F_NOME, TAB_TP_CONTA.TP_NIVEL, TAB_DESC_CALC.C_TP_OP, TAB_FICHA_MENS.M_TIPO desc;"
                '& "ORDER BY TAB_FICHA_MENS.M_NFICHA, TAB_FICHA_MENS.M_NOME, TAB_TP_CONTA.TP_NIVEL, TAB_DESC_CALC.C_TP_OP;"
 Else
@@ -10737,8 +10738,8 @@ Else
                 & "FROM (TAB_FUNCIONARIO INNER JOIN (TAB_TP_CONTA RIGHT JOIN (TAB_FICHA_MENS LEFT JOIN TAB_DESC_CALC ON TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA) ON " _
                 & "TAB_TP_CONTA.TP_COD = TAB_DESC_CALC.C_TP_CONTA) ON TAB_FUNCIONARIO.F_Codigo = TAB_FICHA_MENS.M_F_COD) INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ " _
                 & " Where (( ((TAB_DESC_CALC.C_TP_CONTA <> 20 and TAB_DESC_CALC.C_TP_CONTA <> 78 AND (TAB_FICHA_MENS.M_TIPO <> 'V' AND TAB_FICHA_MENS.M_TIPO <> 'C' AND TAB_FICHA_MENS.M_TIPO <> 'X' AND TAB_FICHA_MENS.M_TIPO <> '2')) " _
-                & " OR (TAB_FICHA_MENS.M_TIPO = 'V' OR TAB_FICHA_MENS.M_TIPO = 'C' OR TAB_FICHA_MENS.M_TIPO = 'X' OR TAB_FICHA_MENS.M_TIPO = '2') ) AND  TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_IMP_F.TXT_MES & ") " _
-                & "And ((TAB_FICHA_MENS.M_ANO) = " & FRM_IMP_F.TXT_ANO & ") And NOT TAB_FICHA_MENS.M_NOME ='10 - Func' and not TAB_FICHA_MENS.M_NOME='99 - Presence' And ((TAB_FICHA_MENS.M_NOME) Like '" & IIf(FRM_IMP_F.dbNome = "%", "*", FRM_IMP_F.dbNome) & "') AND ((TAB_FICHA_MENS.M_TIPO) IN (" & w_Tipos & ")) " & IIf(w_ACF <> "", w_ACF, "") & ") " _
+                & " OR (TAB_FICHA_MENS.M_TIPO = 'V' OR TAB_FICHA_MENS.M_TIPO = 'C' OR TAB_FICHA_MENS.M_TIPO = 'X' OR TAB_FICHA_MENS.M_TIPO = '2') ) AND  TAB_FICHA_MENS.M_LOGO IN (" & w_Lojas & ")) And ((TAB_FICHA_MENS.M_MES) = " & FRM_IMP_F.txt_Mes & ") " _
+                & "And ((TAB_FICHA_MENS.M_ANO) = " & FRM_IMP_F.txt_Ano & ") And NOT TAB_FICHA_MENS.M_NOME ='10 - Func' and not TAB_FICHA_MENS.M_NOME='99 - Presence' And ((TAB_FICHA_MENS.M_NOME) Like '" & IIf(FRM_IMP_F.dbNome = "%", "*", FRM_IMP_F.dbNome) & "') AND ((TAB_FICHA_MENS.M_TIPO) IN (" & w_Tipos & ")) " & IIf(w_ACF <> "", w_ACF, "") & ") " _
                 & "ORDER BY TAB_FUNCIONARIO.F_Cod_L, TAB_FICHA_MENS.M_TIPO DESC, TAB_FUNCIONARIO.F_NOME, TAB_TP_CONTA.TP_NIVEL, TAB_DESC_CALC.C_TP_OP, TAB_FICHA_MENS.M_TIPO desc;"
 End If
         'TXT_OBS.Text = SQL_Ficha
@@ -10878,7 +10879,7 @@ If BarraF.Buttons("editar").Enabled = True Then
 
     'Atualiza Visto
     w_cod = flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)
-    W_NFICHA = TXT_NFICHA
+    W_NFICHA = txt_nficha
     W_F_COD = txt_F_COD
     
     
@@ -10939,7 +10940,7 @@ If BarraF.Buttons("editar").Enabled = True Then
 
     'Atualiza Visto
     w_cod = flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)
-    W_NFICHA = TXT_NFICHA
+    W_NFICHA = txt_nficha
     W_F_COD = txt_F_COD
     
     'w_cod = ADO_LANC.Recordset.Fields("C_Codigo")
@@ -10999,7 +11000,7 @@ On erro GoTo err1
  
     'Atualiza Visto
     w_cod = flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)
-    W_NFICHA = TXT_NFICHA
+    W_NFICHA = txt_nficha
     W_F_COD = txt_F_COD
     
     'w_cod = ADO_LANC.Recordset.Fields("C_Codigo")
@@ -11062,7 +11063,7 @@ If BarraF.Buttons("editar").Enabled = True Then
     
     'Atualiza Visto
     w_cod = flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)
-    W_NFICHA = TXT_NFICHA
+    W_NFICHA = txt_nficha
     W_F_COD = txt_F_COD
     
     'w_cod = ADO_LANC.Recordset.Fields("C_Codigo")
@@ -11217,16 +11218,16 @@ Private Sub AtribuiValorCelula()
         
             If flexGRID_L.ColSel = 0 Then 'Data
                 de.cnc.Execute ("UPDATE TAB_DESC_CALC set C_DT = '" & CDate(texto) & "' WHERE C_CODIGO = " & Str(flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)))
-                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & texto & " | VALOR: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 4) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | CONTA E DESCRICAO: " & texto & " | OP: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 5) & "   >>> DATA ANTERIOR: " & wTxtOld
+                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & texto & " | VALOR: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 4) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | CONTA E DESCRICAO: " & texto & " | OP: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 5) & "   >>> DATA ANTERIOR: " & wTxtOld
             ElseIf flexGRID_L.ColSel = 3 Then 'Descricao conta
                 de.cnc.Execute ("UPDATE TAB_DESC_CALC set C_DESC = '" & texto & "' WHERE C_CODIGO = " & Str(flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)))
-                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 0) & " | VALOR: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 4) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | DESCRICAO: " & texto & " | OP: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 5) & "   >>> DESCRIÇÃO ANTERIOR: " & wTxtOld
+                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 0) & " | VALOR: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 4) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | DESCRICAO: " & texto & " | OP: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 5) & "   >>> DESCRIÇÃO ANTERIOR: " & wTxtOld
             ElseIf flexGRID_L.ColSel = 4 Then 'Valor
                 de.cnc.Execute ("UPDATE TAB_DESC_CALC set C_VALOR = " & Str(texto) & " WHERE C_CODIGO = " & Str(flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)))
-                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 0) & " | VALOR: " & Str(texto) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | DESCRICAO: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 3) & " | OP: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 5) & "   >>> VALOR ANTERIOR: " & wTxtOld
+                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 0) & " | VALOR: " & Str(texto) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | DESCRICAO: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 3) & " | OP: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 5) & "   >>> VALOR ANTERIOR: " & wTxtOld
             ElseIf flexGRID_L.ColSel = 5 Then 'OP
                 de.cnc.Execute ("UPDATE TAB_DESC_CALC set C_TP_OP = '" & texto & "' WHERE C_CODIGO = " & Str(flexGRID_L.TextMatrix(flexGRID_L.RowSel, 7)))
-                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 0) & " | VALOR: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 4) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | DESCRICAO: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 3) & " | OP: " & texto & "   >>> OP ANTERIOR: " & wTxtOld
+                de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 0) & " | VALOR: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 4) & " | CONTA COD: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 1) & " | DESCRICAO: " & flexGRID_L.TextMatrix(flexGRID_L.RowSel, 3) & " | OP: " & texto & "   >>> OP ANTERIOR: " & wTxtOld
             End If
             
         End If
@@ -11246,7 +11247,7 @@ Private Sub OcultarControles()
 End Sub
 
 Private Sub txtLogo2_Click(Area As Integer)
-    txtLogo.BoundText = txtLogo2.BoundText
+    TXTLOGO.BoundText = TXTLOGO2.BoundText
 End Sub
 
 Private Sub txtQtdeLimiteV_DblClick()
