@@ -1953,12 +1953,12 @@ Private Sub ckConta_Click()
     If ckConta.value = 1 Then
         TXT_CONTA = "%"
         TXT_CONTA.Enabled = False
-        TXT_CONTA_cod.Enabled = False
+        TXT_CONTA_COD.Enabled = False
        
     Else
         TXT_CONTA = ""
         TXT_CONTA.Enabled = True
-        TXT_CONTA_cod.Enabled = True
+        TXT_CONTA_COD.Enabled = True
         On Error Resume Next
         TXT_CONTA.SetFocus
         Sendkeys "{f4}"
@@ -2021,34 +2021,59 @@ Dim w_Conta As String
 Dim w_tp_conta
 
 On Error GoTo err1
-If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_cod.text) + 4))
+If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_COD.text) + 4))
     
-    If TXT_CONTA_cod = "" Then
+    If TXT_CONTA_COD = "" Then
         w_tp_conta = "%"
     Else
-        w_tp_conta = TXT_CONTA_cod
+        w_tp_conta = TXT_CONTA_COD
     End If
+    
+      w_FirstTipo = True
+
+    For J = 0 To txt_tipo.ListCount - 1
+        If txt_tipo.Selected(J) = True Then
+            Select Case txt_tipo.list(J)
+                Case "VENDEDOR": w_tipo = "V"
+                Case "GERENTE": w_tipo = "G"
+                Case "GER RODA": w_tipo = "D"
+                Case "CAIXA": w_tipo = "C"
+                Case "2º CAIXA": w_tipo = "2"
+                Case "CX EXTRA": w_tipo = "X"
+                Case "SEGURANÇA": w_tipo = "R"
+                Case "SUPERVISOR": w_tipo = "S"
+                Case "RP": w_tipo = "O"
+            End Select
+        
+            If w_FirstTipo Then
+                w_Tipos = "" & w_tipo & ""
+            Else
+                w_Tipos = w_Tipos & "," & w_tipo & ""
+            End If
+            w_FirstTipo = False
+        End If
+    Next
 
     'Verifica se é programado novo (começando a partir do mês)
     If ckFixos Then
         If ck_Nome.value = 0 Then
             If ckZerados = 1 Then
                 If de.rscmdSqlVistarFixos2Zerados_Grouping.State = 1 Then de.rscmdSqlVistarFixos2Zerados_Grouping.Close
-                de.cmdSqlVistarFixos2Zerados_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistarFixos2Zerados_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVistoFixoZerados.Show 1
             Else
                 If de.rscmdSqlVistarFixos2_Grouping.State = 1 Then de.rscmdSqlVistarFixos2_Grouping.Close
-                de.cmdSqlVistarFixos2_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistarFixos2_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVistoFixo.Show 1
             End If
         Else
             If ckZerados = 1 Then
                 If de.rscmdSqlVistarFixosZerados_Grouping.State = 1 Then de.rscmdSqlVistarFixosZerados_Grouping.Close
-                de.cmdSqlVistarFixosZerados_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistarFixosZerados_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVistoTFixoZerados.Show 1
             Else
                 If de.rscmdSqlVistarFixos_Grouping.State = 1 Then de.rscmdSqlVistarFixos_Grouping.Close
-                de.cmdSqlVistarFixos_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistarFixos_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVistoTFixo.Show 1
             End If
         End If
@@ -2058,21 +2083,21 @@ If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.t
         If ck_Nome.value = 0 Then
             If ckZerados = 1 Then
                 If de.rscmdSqlVistar2Zerados_Grouping.State = 1 Then de.rscmdSqlVistar2Zerados_Grouping.Close
-                de.cmdSqlVistar2Zerados_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistar2Zerados_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVistoZerados.Show 1
             Else
                 If de.rscmdSqlVistar2_Grouping.State = 1 Then de.rscmdSqlVistar2_Grouping.Close
-                de.cmdSqlVistar2_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistar2_Grouping dbNome, w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVisto.Show 1
             End If
         Else
             If ckZerados = 1 Then
                 If de.rscmdSqlVistarZerados_Grouping.State = 1 Then de.rscmdSqlVistarZerados_Grouping.Close
-                de.cmdSqlVistarZerados_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistarZerados_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVistoTZerados.Show 1
             Else
                 If de.rscmdSqlVistar_Grouping.State = 1 Then de.rscmdSqlVistar_Grouping.Close
-                de.cmdSqlVistar_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO)
+                de.cmdSqlVistar_Grouping w_tp_conta, IIf(w_Conta = "", "%", w_Conta), TXT_MES, TXT_ANO, IIf(TXT_LOGO = "", "%", TXT_LOGO), w_Tipos
                 rptRelVistoT.Show 1
             End If
         End If
@@ -2653,7 +2678,7 @@ Private Sub Form_Activate()
     cmdPesq_Click
     
     ckConta.value = 0
-    TXT_CONTA_cod.SetFocus
+    TXT_CONTA_COD.SetFocus
     
 End Sub
 
@@ -2898,7 +2923,7 @@ End Sub
 
 
 Private Sub TXT_CONTA_Change()
-    TXT_CONTA_cod = TXT_CONTA.BoundText
+    TXT_CONTA_COD = TXT_CONTA.BoundText
 End Sub
 
 Private Sub TXT_CONTA_COD_Change()
@@ -2920,9 +2945,9 @@ Private Sub TXT_CONTA_COD_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Sub TXT_CONTA_cod_LostFocus()
-    If TXT_CONTA_cod <> "" Then
-        If TXT_CONTA_cod <> "" Then
-            TXT_CONTA.BoundText = Int(TXT_CONTA_cod)
+    If TXT_CONTA_COD <> "" Then
+        If TXT_CONTA_COD <> "" Then
+            TXT_CONTA.BoundText = Int(TXT_CONTA_COD)
         Else
             ckConta_Click
             Exit Sub
@@ -2958,7 +2983,7 @@ Private Sub TXT_LOGO_KeyDown(KeyCode As Integer, Shift As Integer)
          If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-         If TXT_CONTA_cod.text <> "" Then
+         If TXT_CONTA_COD.text <> "" Then
             Sendkeys "{tab}"
             cmdPesq_Click
         End If
@@ -2970,7 +2995,7 @@ Private Sub TXT_LOGO_Validate(Cancel As Boolean)
     If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-    If TXT_CONTA_cod.text <> "" Then
+    If TXT_CONTA_COD.text <> "" Then
         Sendkeys "{tab}"
         cmdPesq_Click
     End If

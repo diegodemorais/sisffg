@@ -2916,215 +2916,13 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
    BeginProperty Recordset21 
       CommandName     =   "cmdSqlVistar"
       CommDispId      =   1290
-      RsDispId        =   4999
+      RsDispId        =   5920
       CommandText     =   $"de.dsx":2128
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
       Grouping        =   -1  'True
       GroupingName    =   "cmdSqlVistar_Grouping"
-      IsRSReturning   =   -1  'True
-      NumFields       =   13
-      BeginProperty Field1 
-         Precision       =   10
-         Size            =   4
-         Scale           =   0
-         Type            =   3
-         Name            =   "NFICHA"
-         Caption         =   "NFICHA"
-      EndProperty
-      BeginProperty Field2 
-         Precision       =   0
-         Size            =   2
-         Scale           =   0
-         Type            =   202
-         Name            =   "LOGO"
-         Caption         =   "LOGO"
-      EndProperty
-      BeginProperty Field3 
-         Precision       =   0
-         Size            =   50
-         Scale           =   0
-         Type            =   202
-         Name            =   "NOME"
-         Caption         =   "NOME"
-      EndProperty
-      BeginProperty Field4 
-         Precision       =   10
-         Size            =   4
-         Scale           =   0
-         Type            =   3
-         Name            =   "CONTA_COD"
-         Caption         =   "CONTA_COD"
-      EndProperty
-      BeginProperty Field5 
-         Precision       =   0
-         Size            =   50
-         Scale           =   0
-         Type            =   202
-         Name            =   "CONTA"
-         Caption         =   "CONTA"
-      EndProperty
-      BeginProperty Field6 
-         Precision       =   0
-         Size            =   8
-         Scale           =   0
-         Type            =   7
-         Name            =   "DATA1"
-         Caption         =   "DATA1"
-      EndProperty
-      BeginProperty Field7 
-         Precision       =   0
-         Size            =   536870910
-         Scale           =   0
-         Type            =   203
-         Name            =   "DESCR"
-         Caption         =   "DESCR"
-      EndProperty
-      BeginProperty Field8 
-         Precision       =   19
-         Size            =   8
-         Scale           =   0
-         Type            =   6
-         Name            =   "VALOR"
-         Caption         =   "VALOR"
-      EndProperty
-      BeginProperty Field9 
-         Precision       =   0
-         Size            =   2
-         Scale           =   0
-         Type            =   11
-         Name            =   "VISTO"
-         Caption         =   "VISTO"
-      EndProperty
-      BeginProperty Field10 
-         Precision       =   10
-         Size            =   4
-         Scale           =   0
-         Type            =   3
-         Name            =   "M_MES"
-         Caption         =   "M_MES"
-      EndProperty
-      BeginProperty Field11 
-         Precision       =   10
-         Size            =   4
-         Scale           =   0
-         Type            =   3
-         Name            =   "M_ANO"
-         Caption         =   "M_ANO"
-      EndProperty
-      BeginProperty Field12 
-         Precision       =   10
-         Size            =   4
-         Scale           =   0
-         Type            =   3
-         Name            =   "F_Codigo"
-         Caption         =   "F_Codigo"
-      EndProperty
-      BeginProperty Field13 
-         Precision       =   0
-         Size            =   2
-         Scale           =   0
-         Type            =   202
-         Name            =   "NUM"
-         Caption         =   "NUM"
-      EndProperty
-      NumGroups       =   4
-      BeginProperty Grouping1 
-         Precision       =   0
-         Size            =   2
-         Scale           =   0
-         Type            =   202
-         Name            =   "NUM"
-         Caption         =   "NUM"
-      EndProperty
-      BeginProperty Grouping2 
-         Precision       =   0
-         Size            =   2
-         Scale           =   0
-         Type            =   202
-         Name            =   "LOGO"
-         Caption         =   "LOGO"
-      EndProperty
-      BeginProperty Grouping3 
-         Precision       =   10
-         Size            =   4
-         Scale           =   0
-         Type            =   3
-         Name            =   "M_MES"
-         Caption         =   "M_MES"
-      EndProperty
-      BeginProperty Grouping4 
-         Precision       =   10
-         Size            =   4
-         Scale           =   0
-         Type            =   3
-         Name            =   "M_ANO"
-         Caption         =   "M_ANO"
-      EndProperty
-      ParamCount      =   5
-      BeginProperty P1 
-         RealName        =   "[TP_CONTA]"
-         Direction       =   1
-         Precision       =   255
-         Scale           =   255
-         Size            =   510
-         DataType        =   202
-         HostType        =   8
-         Required        =   -1  'True
-      EndProperty
-      BeginProperty P2 
-         RealName        =   "[contas1]"
-         Direction       =   1
-         Precision       =   255
-         Scale           =   255
-         Size            =   510
-         DataType        =   202
-         HostType        =   8
-         Required        =   -1  'True
-      EndProperty
-      BeginProperty P3 
-         RealName        =   "[mes1]"
-         Direction       =   1
-         Precision       =   255
-         Scale           =   255
-         Size            =   510
-         DataType        =   202
-         HostType        =   8
-         Required        =   -1  'True
-      EndProperty
-      BeginProperty P4 
-         RealName        =   "[ano1]"
-         Direction       =   1
-         Precision       =   255
-         Scale           =   255
-         Size            =   510
-         DataType        =   202
-         HostType        =   8
-         Required        =   -1  'True
-      EndProperty
-      BeginProperty P5 
-         RealName        =   "[logo1]"
-         Direction       =   1
-         Precision       =   255
-         Scale           =   255
-         Size            =   510
-         DataType        =   202
-         HostType        =   8
-         Required        =   -1  'True
-      EndProperty
-      RelationCount   =   0
-      AggregateCount  =   0
-   EndProperty
-   BeginProperty Recordset22 
-      CommandName     =   "cmdSqlVistar2"
-      CommDispId      =   1294
-      RsDispId        =   4998
-      CommandText     =   $"de.dsx":2545
-      ActiveConnectionName=   "cnc"
-      CommandType     =   1
-      Grouping        =   -1  'True
-      GroupingName    =   "cmdSqlVistar2_Grouping"
       DetailExpanded  =   -1  'True
       IsRSReturning   =   -1  'True
       NumFields       =   13
@@ -3267,6 +3065,220 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       EndProperty
       ParamCount      =   6
       BeginProperty P1 
+         RealName        =   "[TP_CONTA]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
+      BeginProperty P2 
+         RealName        =   "[contas1]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
+      BeginProperty P3 
+         RealName        =   "[mes1]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
+      BeginProperty P4 
+         RealName        =   "[ano1]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
+      BeginProperty P5 
+         RealName        =   "[logo1]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
+      BeginProperty P6 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
+      RelationCount   =   0
+      AggregateCount  =   0
+   EndProperty
+   BeginProperty Recordset22 
+      CommandName     =   "cmdSqlVistar2"
+      CommDispId      =   1294
+      RsDispId        =   5969
+      CommandText     =   $"de.dsx":2577
+      ActiveConnectionName=   "cnc"
+      CommandType     =   1
+      Grouping        =   -1  'True
+      GroupingName    =   "cmdSqlVistar2_Grouping"
+      SummaryExpanded =   -1  'True
+      DetailExpanded  =   -1  'True
+      IsRSReturning   =   -1  'True
+      NumFields       =   13
+      BeginProperty Field1 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "NFICHA"
+         Caption         =   "NFICHA"
+      EndProperty
+      BeginProperty Field2 
+         Precision       =   0
+         Size            =   2
+         Scale           =   0
+         Type            =   202
+         Name            =   "LOGO"
+         Caption         =   "LOGO"
+      EndProperty
+      BeginProperty Field3 
+         Precision       =   0
+         Size            =   50
+         Scale           =   0
+         Type            =   202
+         Name            =   "NOME"
+         Caption         =   "NOME"
+      EndProperty
+      BeginProperty Field4 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "CONTA_COD"
+         Caption         =   "CONTA_COD"
+      EndProperty
+      BeginProperty Field5 
+         Precision       =   0
+         Size            =   50
+         Scale           =   0
+         Type            =   202
+         Name            =   "CONTA"
+         Caption         =   "CONTA"
+      EndProperty
+      BeginProperty Field6 
+         Precision       =   0
+         Size            =   8
+         Scale           =   0
+         Type            =   7
+         Name            =   "DATA1"
+         Caption         =   "DATA1"
+      EndProperty
+      BeginProperty Field7 
+         Precision       =   0
+         Size            =   536870910
+         Scale           =   0
+         Type            =   203
+         Name            =   "DESCR"
+         Caption         =   "DESCR"
+      EndProperty
+      BeginProperty Field8 
+         Precision       =   19
+         Size            =   8
+         Scale           =   0
+         Type            =   6
+         Name            =   "VALOR"
+         Caption         =   "VALOR"
+      EndProperty
+      BeginProperty Field9 
+         Precision       =   0
+         Size            =   2
+         Scale           =   0
+         Type            =   11
+         Name            =   "VISTO"
+         Caption         =   "VISTO"
+      EndProperty
+      BeginProperty Field10 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "M_MES"
+         Caption         =   "M_MES"
+      EndProperty
+      BeginProperty Field11 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "M_ANO"
+         Caption         =   "M_ANO"
+      EndProperty
+      BeginProperty Field12 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "F_Codigo"
+         Caption         =   "F_Codigo"
+      EndProperty
+      BeginProperty Field13 
+         Precision       =   0
+         Size            =   2
+         Scale           =   0
+         Type            =   202
+         Name            =   "NUM"
+         Caption         =   "NUM"
+      EndProperty
+      NumGroups       =   4
+      BeginProperty Grouping1 
+         Precision       =   0
+         Size            =   2
+         Scale           =   0
+         Type            =   202
+         Name            =   "NUM"
+         Caption         =   "NUM"
+      EndProperty
+      BeginProperty Grouping2 
+         Precision       =   0
+         Size            =   2
+         Scale           =   0
+         Type            =   202
+         Name            =   "LOGO"
+         Caption         =   "LOGO"
+      EndProperty
+      BeginProperty Grouping3 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "M_MES"
+         Caption         =   "M_MES"
+      EndProperty
+      BeginProperty Grouping4 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "M_ANO"
+         Caption         =   "M_ANO"
+      EndProperty
+      ParamCount      =   7
+      BeginProperty P1 
          RealName        =   "[func]"
          Direction       =   1
          Precision       =   255
@@ -3326,6 +3338,16 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          HostType        =   8
          Required        =   -1  'True
       EndProperty
+      BeginProperty P7 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
       RelationCount   =   0
       AggregateCount  =   0
    EndProperty
@@ -3333,7 +3355,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlResumoContasLg"
       CommDispId      =   1308
       RsDispId        =   1376
-      CommandText     =   $"de.dsx":2989
+      CommandText     =   $"de.dsx":29ED
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -3699,7 +3721,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "TAB_FUNC_CRED"
       CommDispId      =   1330
       RsDispId        =   1553
-      CommandText     =   $"de.dsx":2C0D
+      CommandText     =   $"de.dsx":2C71
       ActiveConnectionName=   "cncDBase"
       CommandType     =   1
       MaxRecords      =   50
@@ -3747,7 +3769,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlVisualizarFichas"
       CommDispId      =   1335
       RsDispId        =   1721
-      CommandText     =   $"de.dsx":2CF4
+      CommandText     =   $"de.dsx":2D58
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -4803,7 +4825,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlComparativo"
       CommDispId      =   1390
       RsDispId        =   1405
-      CommandText     =   $"de.dsx":305F
+      CommandText     =   $"de.dsx":30C3
       ActiveConnectionName=   "cncDBase"
       CommandType     =   1
       Prepared        =   -1  'True
@@ -4960,7 +4982,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlVisAltFichas"
       CommDispId      =   1423
       RsDispId        =   4126
-      CommandText     =   $"de.dsx":3256
+      CommandText     =   $"de.dsx":32BA
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -5364,7 +5386,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlVisAltContas"
       CommDispId      =   1448
       RsDispId        =   1906
-      CommandText     =   $"de.dsx":34E5
+      CommandText     =   $"de.dsx":3549
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -5509,7 +5531,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlComissao"
       CommDispId      =   1432
       RsDispId        =   1702
-      CommandText     =   $"de.dsx":35E7
+      CommandText     =   $"de.dsx":364B
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -5602,7 +5624,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlTP"
       CommDispId      =   1457
       RsDispId        =   1461
-      CommandText     =   $"de.dsx":36B8
+      CommandText     =   $"de.dsx":371C
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -5687,7 +5709,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdIncluirEmprestimo"
       CommDispId      =   1466
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":38F3
+      CommandText     =   $"de.dsx":3957
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -5801,7 +5823,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlEmprestimo"
       CommDispId      =   1468
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":39EE
+      CommandText     =   $"de.dsx":3A52
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -5927,7 +5949,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdIncluirEmprestimoPG"
       CommDispId      =   1484
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":3C01
+      CommandText     =   $"de.dsx":3C65
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -6011,7 +6033,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlConEmprestimo"
       CommDispId      =   1486
       RsDispId        =   1490
-      CommandText     =   $"de.dsx":3CB9
+      CommandText     =   $"de.dsx":3D1D
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -6117,7 +6139,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlConEmprestimo_PG"
       CommDispId      =   -1
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":3EA1
+      CommandText     =   $"de.dsx":3F05
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -6573,7 +6595,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdTotalVend"
       CommDispId      =   1563
       RsDispId        =   1567
-      CommandText     =   $"de.dsx":3F5F
+      CommandText     =   $"de.dsx":3FC3
       ActiveConnectionName=   "cncDBase"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -6665,7 +6687,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "Criar_Tab_Premios"
       CommDispId      =   1568
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":4275
+      CommandText     =   $"de.dsx":42D9
       ActiveConnectionName=   "cncDBase"
       CommandType     =   1
       NumFields       =   0
@@ -6811,7 +6833,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdQtde_Func_Logo"
       CommDispId      =   1591
       RsDispId        =   5687
-      CommandText     =   $"de.dsx":45FF
+      CommandText     =   $"de.dsx":4663
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -7000,7 +7022,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlTotalVND"
       CommDispId      =   1601
       RsDispId        =   1622
-      CommandText     =   $"de.dsx":4A15
+      CommandText     =   $"de.dsx":4A79
       ActiveConnectionName=   "cncDBase"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -7107,7 +7129,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlFichaMensalDem"
       CommDispId      =   1623
       RsDispId        =   5784
-      CommandText     =   $"de.dsx":4AC4
+      CommandText     =   $"de.dsx":4B28
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -7273,7 +7295,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlVctoFerias"
       CommDispId      =   1633
       RsDispId        =   3329
-      CommandText     =   $"de.dsx":4F1D
+      CommandText     =   $"de.dsx":4F81
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   4
@@ -7687,7 +7709,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlFichaMensalADM"
       CommDispId      =   1661
       RsDispId        =   5172
-      CommandText     =   $"de.dsx":51D1
+      CommandText     =   $"de.dsx":5235
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -8046,7 +8068,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdRelFichaMensal_TRIPA_Det"
       CommDispId      =   -1
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":53EF
+      CommandText     =   $"de.dsx":5453
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       RelateToParent  =   -1  'True
@@ -8117,7 +8139,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "sqlComissaoPremio"
       CommDispId      =   1761
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":5609
+      CommandText     =   $"de.dsx":566D
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       CommandCursorLocation=   2
@@ -8163,7 +8185,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlSalarioCX"
       CommDispId      =   1777
       RsDispId        =   2523
-      CommandText     =   $"de.dsx":5955
+      CommandText     =   $"de.dsx":59B9
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -8271,7 +8293,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlAltGerente"
       CommDispId      =   1786
       RsDispId        =   1788
-      CommandText     =   $"de.dsx":5BB2
+      CommandText     =   $"de.dsx":5C16
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -8328,7 +8350,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlSalarioGerentes"
       CommDispId      =   1798
       RsDispId        =   4340
-      CommandText     =   $"de.dsx":5C81
+      CommandText     =   $"de.dsx":5CE5
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -8626,7 +8648,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlVisAltContas2"
       CommDispId      =   1817
       RsDispId        =   2800
-      CommandText     =   $"de.dsx":67B7
+      CommandText     =   $"de.dsx":681B
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -8801,7 +8823,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdIncluirDescCalcFixo"
       CommDispId      =   1836
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":69C9
+      CommandText     =   $"de.dsx":6A2D
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       NumFields       =   0
@@ -8874,7 +8896,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdIncluirDescCalcVistado"
       CommDispId      =   1840
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":6A64
+      CommandText     =   $"de.dsx":6AC8
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       NumFields       =   0
@@ -8997,7 +9019,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlFixosSaldos"
       CommDispId      =   1846
       RsDispId        =   1886
-      CommandText     =   $"de.dsx":6B5C
+      CommandText     =   $"de.dsx":6BC0
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -9145,7 +9167,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlVisAltContas3"
       CommDispId      =   1852
       RsDispId        =   2801
-      CommandText     =   $"de.dsx":6FE9
+      CommandText     =   $"de.dsx":704D
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -9241,7 +9263,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlEmprestimosAnalise"
       CommDispId      =   1915
       RsDispId        =   1998
-      CommandText     =   $"de.dsx":71D7
+      CommandText     =   $"de.dsx":723B
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -9298,7 +9320,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdIncluirDescCalc2"
       CommDispId      =   1938
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":72E1
+      CommandText     =   $"de.dsx":7345
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       NumFields       =   0
@@ -9431,7 +9453,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlEmprestimosAnalise2"
       CommDispId      =   -1
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":73DF
+      CommandText     =   $"de.dsx":7443
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -9609,7 +9631,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlGerenteComissao"
       CommDispId      =   2076
       RsDispId        =   4776
-      CommandText     =   $"de.dsx":7800
+      CommandText     =   $"de.dsx":7864
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -9733,7 +9755,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlCaixaComissao"
       CommDispId      =   2084
       RsDispId        =   4700
-      CommandText     =   $"de.dsx":7AAC
+      CommandText     =   $"de.dsx":7B10
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -9890,7 +9912,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdIncluirLog"
       CommDispId      =   2158
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":8116
+      CommandText     =   $"de.dsx":817A
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       NumFields       =   0
@@ -9963,7 +9985,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlLog"
       CommDispId      =   2160
       RsDispId        =   2168
-      CommandText     =   $"de.dsx":81AC
+      CommandText     =   $"de.dsx":8210
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -10053,7 +10075,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdCod"
       CommDispId      =   2203
       RsDispId        =   5396
-      CommandText     =   $"de.dsx":82C0
+      CommandText     =   $"de.dsx":8324
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -10103,7 +10125,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdCREATEtmpComis1"
       CommDispId      =   2220
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":889B
+      CommandText     =   $"de.dsx":88FF
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -10129,7 +10151,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpComis1"
       CommDispId      =   2236
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":892F
+      CommandText     =   $"de.dsx":8993
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -10242,7 +10264,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpComis2"
       CommDispId      =   2242
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":9662
+      CommandText     =   $"de.dsx":96C6
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -10295,7 +10317,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdComiss"
       CommDispId      =   2248
       RsDispId        =   4387
-      CommandText     =   $"de.dsx":9CB8
+      CommandText     =   $"de.dsx":9D1C
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -10478,7 +10500,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdComissGerar"
       CommDispId      =   2334
       RsDispId        =   2339
-      CommandText     =   $"de.dsx":AA2A
+      CommandText     =   $"de.dsx":AA8E
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -10824,7 +10846,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlGRIDVendedor"
       CommDispId      =   2429
       RsDispId        =   4667
-      CommandText     =   $"de.dsx":B7CA
+      CommandText     =   $"de.dsx":B82E
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -10916,7 +10938,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlSalariosM"
       CommDispId      =   2443
       RsDispId        =   2458
-      CommandText     =   $"de.dsx":BA5F
+      CommandText     =   $"de.dsx":BAC3
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -11032,7 +11054,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlQtdeTipo"
       CommDispId      =   2487
       RsDispId        =   5300
-      CommandText     =   $"de.dsx":BE3C
+      CommandText     =   $"de.dsx":BEA0
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       GrandTotal      =   "total2"
@@ -11211,7 +11233,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdCREATEtmpComis11"
       CommDispId      =   2931
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":E3C0
+      CommandText     =   $"de.dsx":E424
       ActiveConnectionName=   "cncMwts2"
       CommandType     =   1
       NumFields       =   0
@@ -11237,7 +11259,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpComis11"
       CommDispId      =   2933
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":E455
+      CommandText     =   $"de.dsx":E4B9
       ActiveConnectionName=   "cncMwts2"
       CommandType     =   1
       NumFields       =   0
@@ -11350,7 +11372,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpComis22"
       CommDispId      =   2934
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":F189
+      CommandText     =   $"de.dsx":F1ED
       ActiveConnectionName=   "cncMwts2"
       CommandType     =   1
       NumFields       =   0
@@ -11403,7 +11425,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdComiss2"
       CommDispId      =   2935
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":F7E0
+      CommandText     =   $"de.dsx":F844
       ActiveConnectionName=   "cncMwts2"
       CommandType     =   1
       NumFields       =   0
@@ -11468,7 +11490,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdComissGerar2"
       CommDispId      =   2940
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":10595
+      CommandText     =   $"de.dsx":105F9
       ActiveConnectionName=   "cncMwts2"
       CommandType     =   1
       NumFields       =   0
@@ -11481,7 +11503,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlSalarioCxNOVO"
       CommDispId      =   3036
       RsDispId        =   5060
-      CommandText     =   $"de.dsx":11337
+      CommandText     =   $"de.dsx":1139B
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -11626,8 +11648,8 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
    BeginProperty Recordset103 
       CommandName     =   "cmdSqlVistarFixos"
       CommDispId      =   3353
-      RsDispId        =   4997
-      CommandText     =   $"de.dsx":12003
+      RsDispId        =   5975
+      CommandText     =   $"de.dsx":12067
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -11772,7 +11794,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "M_ANO"
          Caption         =   "M_ANO"
       EndProperty
-      ParamCount      =   5
+      ParamCount      =   6
       BeginProperty P1 
          RealName        =   "[TP_CONTA]"
          Direction       =   1
@@ -11823,14 +11845,24 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          HostType        =   8
          Required        =   -1  'True
       EndProperty
+      BeginProperty P6 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
       RelationCount   =   0
       AggregateCount  =   0
    EndProperty
    BeginProperty Recordset104 
       CommandName     =   "cmdSqlVistarFixos2"
       CommDispId      =   3360
-      RsDispId        =   4996
-      CommandText     =   $"de.dsx":124C7
+      RsDispId        =   5974
+      CommandText     =   $"de.dsx":1255F
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -11974,7 +12006,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "M_ANO"
          Caption         =   "M_ANO"
       EndProperty
-      ParamCount      =   6
+      ParamCount      =   7
       BeginProperty P1 
          RealName        =   "[func]"
          Direction       =   1
@@ -12035,6 +12067,16 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          HostType        =   8
          Required        =   -1  'True
       EndProperty
+      BeginProperty P7 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
       RelationCount   =   0
       AggregateCount  =   0
    EndProperty
@@ -12042,7 +12084,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlConfComPremioPiso"
       CommDispId      =   3363
       RsDispId        =   3365
-      CommandText     =   $"de.dsx":129B1
+      CommandText     =   $"de.dsx":12A7C
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -12090,7 +12132,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlAltFunc"
       CommDispId      =   3366
       RsDispId        =   3368
-      CommandText     =   $"de.dsx":12BBE
+      CommandText     =   $"de.dsx":12C89
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -12458,7 +12500,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlFaltas"
       CommDispId      =   4269
       RsDispId        =   4275
-      CommandText     =   $"de.dsx":12C4E
+      CommandText     =   $"de.dsx":12D19
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -12555,7 +12597,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlAddComissTMP"
       CommDispId      =   4388
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":12C97
+      CommandText     =   $"de.dsx":12D62
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       NumFields       =   0
@@ -12698,7 +12740,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdComissTMP"
       CommDispId      =   4403
       RsDispId        =   4412
-      CommandText     =   $"de.dsx":13060
+      CommandText     =   $"de.dsx":1312B
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -12885,7 +12927,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdComissDump"
       CommDispId      =   4420
       RsDispId        =   5522
-      CommandText     =   $"de.dsx":13557
+      CommandText     =   $"de.dsx":13622
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       Locktype        =   3
@@ -12900,7 +12942,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlUpdComissTMP"
       CommDispId      =   4426
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":1445D
+      CommandText     =   $"de.dsx":14528
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       NumFields       =   0
@@ -13063,7 +13105,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdRptComissTMP"
       CommDispId      =   4428
       RsDispId        =   4436
-      CommandText     =   $"de.dsx":1473C
+      CommandText     =   $"de.dsx":14807
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -13207,7 +13249,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddProcesso"
       CommDispId      =   4476
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":149C3
+      CommandText     =   $"de.dsx":14A8E
       ActiveConnectionName=   "cncContas"
       CommandType     =   1
       NumFields       =   0
@@ -13290,7 +13332,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddProcessoItem"
       CommDispId      =   4482
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":14ABD
+      CommandText     =   $"de.dsx":14B88
       ActiveConnectionName=   "cncContas"
       CommandType     =   1
       NumFields       =   0
@@ -13343,7 +13385,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlCaixaComissao2"
       CommDispId      =   4635
       RsDispId        =   4725
-      CommandText     =   $"de.dsx":14B62
+      CommandText     =   $"de.dsx":14C2D
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -13579,7 +13621,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdRptComissTMPFixo"
       CommDispId      =   4690
       RsDispId        =   4699
-      CommandText     =   $"de.dsx":1518C
+      CommandText     =   $"de.dsx":15257
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -13739,7 +13781,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdCREATEtmpDespesa1"
       CommDispId      =   4801
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":1549F
+      CommandText     =   $"de.dsx":1556A
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -13752,7 +13794,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdCREATEtmpDespesa2"
       CommDispId      =   4802
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":1554A
+      CommandText     =   $"de.dsx":15615
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -13765,7 +13807,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdCREATEtmpDespesa3"
       CommDispId      =   4803
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":155E4
+      CommandText     =   $"de.dsx":156AF
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -13778,7 +13820,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpDespesa1"
       CommDispId      =   4804
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":1568F
+      CommandText     =   $"de.dsx":1575A
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -13811,7 +13853,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpDespesa2"
       CommDispId      =   4805
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":15A93
+      CommandText     =   $"de.dsx":15B5E
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -13824,7 +13866,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpDespesa3"
       CommDispId      =   4806
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":15E7B
+      CommandText     =   $"de.dsx":15F46
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -13896,7 +13938,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdDespesas"
       CommDispId      =   4810
       RsDispId        =   4919
-      CommandText     =   $"de.dsx":1627C
+      CommandText     =   $"de.dsx":16347
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -14005,7 +14047,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlFichaMensalREG"
       CommDispId      =   4923
       RsDispId        =   4928
-      CommandText     =   $"de.dsx":16A1B
+      CommandText     =   $"de.dsx":16AE6
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -14133,7 +14175,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdTaxaCartao"
       CommDispId      =   4930
       RsDispId        =   4986
-      CommandText     =   $"de.dsx":16AD4
+      CommandText     =   $"de.dsx":16B9F
       ActiveConnectionName=   "cncSisInt"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -14199,7 +14241,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdRelSalarios"
       CommDispId      =   4987
       RsDispId        =   5349
-      CommandText     =   $"de.dsx":16D3D
+      CommandText     =   $"de.dsx":16E08
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -14322,8 +14364,8 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
    BeginProperty Recordset138 
       CommandName     =   "cmdSqlVistarZerados"
       CommDispId      =   5000
-      RsDispId        =   5010
-      CommandText     =   $"de.dsx":170F9
+      RsDispId        =   5973
+      CommandText     =   $"de.dsx":171C4
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -14407,32 +14449,32 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Size            =   4
          Scale           =   0
          Type            =   3
-         Name            =   "M_MES"
-         Caption         =   "M_MES"
+         Name            =   "m_mes"
+         Caption         =   "m_mes"
       EndProperty
       BeginProperty Field11 
          Precision       =   10
          Size            =   4
          Scale           =   0
          Type            =   3
-         Name            =   "M_ANO"
-         Caption         =   "M_ANO"
+         Name            =   "m_ano"
+         Caption         =   "m_ano"
       EndProperty
       BeginProperty Field12 
          Precision       =   10
          Size            =   4
          Scale           =   0
          Type            =   3
-         Name            =   "F_Codigo"
-         Caption         =   "F_Codigo"
+         Name            =   "f_codigo"
+         Caption         =   "f_codigo"
       EndProperty
       BeginProperty Field13 
          Precision       =   0
          Size            =   2
          Scale           =   0
          Type            =   202
-         Name            =   "NUM"
-         Caption         =   "NUM"
+         Name            =   "num"
+         Caption         =   "num"
       EndProperty
       NumGroups       =   4
       BeginProperty Grouping1 
@@ -14467,9 +14509,9 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "M_ANO"
          Caption         =   "M_ANO"
       EndProperty
-      ParamCount      =   5
+      ParamCount      =   6
       BeginProperty P1 
-         RealName        =   "[TP_CONTA]"
+         RealName        =   "[tp_conta]"
          Direction       =   1
          Precision       =   255
          Scale           =   255
@@ -14518,14 +14560,24 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          HostType        =   8
          Required        =   -1  'True
       EndProperty
+      BeginProperty P6 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
       RelationCount   =   0
       AggregateCount  =   0
    EndProperty
    BeginProperty Recordset139 
       CommandName     =   "cmdSqlVistar2Zerados"
       CommDispId      =   5001
-      RsDispId        =   5013
-      CommandText     =   $"de.dsx":174F6
+      RsDispId        =   5972
+      CommandText     =   $"de.dsx":1775B
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -14669,7 +14721,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "M_ANO"
          Caption         =   "M_ANO"
       EndProperty
-      ParamCount      =   6
+      ParamCount      =   7
       BeginProperty P1 
          RealName        =   "[func]"
          Direction       =   1
@@ -14730,14 +14782,24 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          HostType        =   8
          Required        =   -1  'True
       EndProperty
+      BeginProperty P7 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
       RelationCount   =   0
       AggregateCount  =   0
    EndProperty
    BeginProperty Recordset140 
       CommandName     =   "cmdSqlVistarFixosZerados"
       CommDispId      =   5002
-      RsDispId        =   5016
-      CommandText     =   $"de.dsx":1791A
+      RsDispId        =   5971
+      CommandText     =   $"de.dsx":17BB1
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -14881,7 +14943,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "M_ANO"
          Caption         =   "M_ANO"
       EndProperty
-      ParamCount      =   5
+      ParamCount      =   6
       BeginProperty P1 
          RealName        =   "[TP_CONTA]"
          Direction       =   1
@@ -14932,14 +14994,24 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          HostType        =   8
          Required        =   -1  'True
       EndProperty
+      BeginProperty P6 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
       RelationCount   =   0
       AggregateCount  =   0
    EndProperty
    BeginProperty Recordset141 
       CommandName     =   "cmdSqlVistarFixos2Zerados"
       CommDispId      =   5003
-      RsDispId        =   5019
-      CommandText     =   $"de.dsx":17DBE
+      RsDispId        =   5970
+      CommandText     =   $"de.dsx":18088
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -15083,7 +15155,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "M_ANO"
          Caption         =   "M_ANO"
       EndProperty
-      ParamCount      =   6
+      ParamCount      =   7
       BeginProperty P1 
          RealName        =   "[func]"
          Direction       =   1
@@ -15144,6 +15216,16 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          HostType        =   8
          Required        =   -1  'True
       EndProperty
+      BeginProperty P7 
+         RealName        =   "[tipos]"
+         Direction       =   1
+         Precision       =   255
+         Scale           =   255
+         Size            =   510
+         DataType        =   202
+         HostType        =   8
+         Required        =   -1  'True
+      EndProperty
       RelationCount   =   0
       AggregateCount  =   0
    EndProperty
@@ -15164,7 +15246,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdAddtmpBonus"
       CommDispId      =   5045
       RsDispId        =   -1
-      CommandText     =   $"de.dsx":18288
+      CommandText     =   $"de.dsx":18585
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       NumFields       =   0
@@ -15223,7 +15305,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdBonus"
       CommDispId      =   5048
       RsDispId        =   5355
-      CommandText     =   $"de.dsx":18680
+      CommandText     =   $"de.dsx":1897D
       ActiveConnectionName=   "cncMwts"
       CommandType     =   1
       IsRSReturning   =   -1  'True
@@ -15286,7 +15368,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlGridMeta"
       CommDispId      =   5223
       RsDispId        =   5230
-      CommandText     =   $"de.dsx":18898
+      CommandText     =   $"de.dsx":18B95
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Locktype        =   3
@@ -15334,7 +15416,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "relSemRegistro"
       CommDispId      =   5337
       RsDispId        =   5343
-      CommandText     =   $"de.dsx":188D6
+      CommandText     =   $"de.dsx":18BD3
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       GroupingName    =   "relSemRegistro_Grouping"
@@ -15417,7 +15499,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdRelSalariosPorMes"
       CommDispId      =   5542
       RsDispId        =   5551
-      CommandText     =   $"de.dsx":18BAC
+      CommandText     =   $"de.dsx":18EA9
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -15573,7 +15655,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdQtde_Func_Logo_Limite"
       CommDispId      =   5829
       RsDispId        =   5844
-      CommandText     =   $"de.dsx":18F83
+      CommandText     =   $"de.dsx":19280
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
@@ -15745,7 +15827,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlGridMeta2"
       CommDispId      =   5845
       RsDispId        =   5855
-      CommandText     =   $"de.dsx":1958B
+      CommandText     =   $"de.dsx":19888
       ActiveConnectionName=   "cncSisInt"
       CommandType     =   1
       Locktype        =   3
@@ -15775,7 +15857,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdTemp"
       CommDispId      =   5856
       RsDispId        =   5862
-      CommandText     =   $"de.dsx":195C9
+      CommandText     =   $"de.dsx":198C6
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True

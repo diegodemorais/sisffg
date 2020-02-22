@@ -1766,7 +1766,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          List            =   "frm_Alt_Fic_Mensal_VIS.frx":5941
          TabIndex        =   102
          Text            =   "TODOS"
-         Top             =   225
+         Top             =   240
          Width           =   1515
       End
    End
@@ -5034,11 +5034,14 @@ End Sub
 
 Private Sub cbMostrar_Click()
         cmdMostrar_Click
+        Lancamentos
+        
 End Sub
 
 Private Sub cbMostrar_KeyDown(KeyCode As Integer, Shift As Integer)
      If KeyCode = 13 Then
         cmdMostrar_Click
+        Lancamentos
     End If
 End Sub
 
