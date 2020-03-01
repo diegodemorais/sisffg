@@ -6804,7 +6804,7 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'vrMetaBonus = 0
 
                     'Bonus de % do Salário
-                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " + " & Format(wPercMeta, "0.0") & "% da meta = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
+                    de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta + vrBonusAnt, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") + Prêmio(" & Format(w_Premio, "0.00") & ") = " & Format(vrSalario, "0.00") & " + " & Format(wPercMeta, "0.0") & "% da meta = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
                     'de.cmdIncluirDescCalc Date, ADOREG.Recordset.Fields("M_NFICHA"), 101, "+", Format(vrMetaBonus + wFixoMeta, "0.00"), "#BONUS DE META# Fixo(" & Format(w_Fixo, "0.00") & ") + Comissão(" & Format(w_Comis, "0.00") & ") = " & Format(vrSalario, "0.00") & " * " & Format(wPercMeta, "0.0") & "% = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00"), ADOREG.Recordset.Fields("M_LOGO"), "0", "0", "0", ADOREG.Recordset.Fields("M_F_COD")
                 End If
                 
@@ -8094,9 +8094,9 @@ On Error Resume Next
                 'End If
                 
                 If vrSalario < vrMinimo Then
-                    vrSalarioBonus = vrMinimo + vrMetaBonus + vrMetaBonus + wFixoMeta
+                    vrSalarioBonus = vrMinimo + vrMetaBonus + vrBonusAnt + wFixoMeta
                 Else
-                    vrSalarioBonus = vrSalarioBonus + vrMetaBonus + vrMetaBonus + wFixoMeta
+                    vrSalarioBonus = vrSalarioBonus + vrMetaBonus + vrBonusAnt + wFixoMeta
                 End If
 
               End If
