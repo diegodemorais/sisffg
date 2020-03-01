@@ -6340,6 +6340,7 @@ Private Sub cmdComisCx_Click()
             
             vrComis = (vrVenda * 1000) * (percComis / 100)
             vrSalario = vrFixo + (vrComis) + vrDez
+            vrSalarioOriginal = vrSalario
             
               
             'If vrSalario < vrMinimo Then
@@ -6392,7 +6393,6 @@ Private Sub cmdComisCx_Click()
                     'vrMetaBonus = 0
                 '   descMeta = descMeta & " + Bonus Meta Ano Anterior(" & Format(vrSalario, "0.00") & " * " & Format(wPercBonusAnt, "0.0") & "% = " & Format(vrBonusAnt, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrBonusAnt + wFixoMeta, "0.00") & ") "
                 'End If
-                
                 If vrSalario < vrMinimo Then
                      vrSalario = vrMinimo + vrMetaBonus + vrBonusAnt + wFixoMeta
                 Else
@@ -6403,7 +6403,7 @@ Private Sub cmdComisCx_Click()
             '*****
 
 
-            If vrSalario < vrMinimo Then
+            If vrSalarioOriginal < vrMinimo Then
                 wDesc = "**NÃO ATINGIU O MÍNIMO** " & Format(vrVenda, "0.00") & " * " & Format(percComis, "0.00") & "% = " & Format(vrComis, "0.00") & " + " & Format(vrFixo, "0.00") & descDez & descMeta & " = " & Format(vrSalario, "0.00")
             Else
                 wDesc = Format(vrVenda, "0.00") & " * " & Format(percComis, "0.00") & "% = " & Format(vrComis, "0.00") & " + " & Format(vrFixo, "0.00") & descDez & descMeta & " = " & Format(vrSalario, "0.00")
