@@ -1953,12 +1953,12 @@ Private Sub ckConta_Click()
     If ckConta.value = 1 Then
         TXT_CONTA = "%"
         TXT_CONTA.Enabled = False
-        TXT_CONTA_COD.Enabled = False
+        TXT_CONTA_cod.Enabled = False
        
     Else
         TXT_CONTA = ""
         TXT_CONTA.Enabled = True
-        TXT_CONTA_COD.Enabled = True
+        TXT_CONTA_cod.Enabled = True
         On Error Resume Next
         TXT_CONTA.SetFocus
         Sendkeys "{f4}"
@@ -2021,12 +2021,12 @@ Dim w_Conta As String
 Dim w_tp_conta
 
 On Error GoTo err1
-If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_COD.text) + 4))
+If Len(TXT_CONTA.text) > 0 Then w_Conta = Mid(TXT_CONTA.text, 1, Len(TXT_CONTA.text) - (Len(TXT_CONTA_cod.text) + 4))
     
-    If TXT_CONTA_COD = "" Then
+    If TXT_CONTA_cod = "" Then
         w_tp_conta = "%"
     Else
-        w_tp_conta = TXT_CONTA_COD
+        w_tp_conta = TXT_CONTA_cod
     End If
     
       w_FirstTipo = True
@@ -2552,8 +2552,9 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
     
     If adoConta.Recordset.RecordCount <> 0 Then adoConta.Recordset.MoveFirst
     
+    grid_Conta.Visible = False
     Do While Not adoConta.Recordset.EOF
-
+        
         If adoConta.Recordset.Fields("visto") Then
             Select Case adoConta.Recordset.Fields("op")
                 Case "+":
@@ -2575,6 +2576,7 @@ If ((TXT_LOGO = "" And ckTodas.value = 1) Or (TXT_LOGO <> "" And ckTodas.value =
         End If
         adoConta.Recordset.MoveNext
     Loop
+    grid_Conta.Visible = True
     
     w_MaisT = w_MaisVist + w_MaisNVist
     w_MenosT = w_MenosVist + w_MenosNVist
@@ -2678,7 +2680,7 @@ Private Sub Form_Activate()
     cmdPesq_Click
     
     ckConta.value = 0
-    TXT_CONTA_COD.SetFocus
+    TXT_CONTA_cod.SetFocus
     
 End Sub
 
@@ -2923,7 +2925,7 @@ End Sub
 
 
 Private Sub TXT_CONTA_Change()
-    TXT_CONTA_COD = TXT_CONTA.BoundText
+    TXT_CONTA_cod = TXT_CONTA.BoundText
 End Sub
 
 Private Sub TXT_CONTA_COD_Change()
@@ -2945,9 +2947,9 @@ Private Sub TXT_CONTA_COD_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Sub TXT_CONTA_cod_LostFocus()
-    If TXT_CONTA_COD <> "" Then
-        If TXT_CONTA_COD <> "" Then
-            TXT_CONTA.BoundText = Int(TXT_CONTA_COD)
+    If TXT_CONTA_cod <> "" Then
+        If TXT_CONTA_cod <> "" Then
+            TXT_CONTA.BoundText = Int(TXT_CONTA_cod)
         Else
             ckConta_Click
             Exit Sub
@@ -2983,7 +2985,7 @@ Private Sub TXT_LOGO_KeyDown(KeyCode As Integer, Shift As Integer)
          If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-         If TXT_CONTA_COD.text <> "" Then
+         If TXT_CONTA_cod.text <> "" Then
             Sendkeys "{tab}"
             cmdPesq_Click
         End If
@@ -2995,7 +2997,7 @@ Private Sub TXT_LOGO_Validate(Cancel As Boolean)
     If TXT_LOGO <> "" Then ck_Nome.value = 1
          TXT_LOGO2.BoundText = TXT_LOGO.BoundText
         
-    If TXT_CONTA_COD.text <> "" Then
+    If TXT_CONTA_cod.text <> "" Then
         Sendkeys "{tab}"
         cmdPesq_Click
     End If

@@ -4709,6 +4709,7 @@ Sub Lancamentos()
         Set ADO_LANC.Recordset = de.rscmdSqlVisAltContas2.Clone
     End If
 
+    flexGRID_L.Visible = False
     flexGRID_L.ColAlignment(4) = flexAlignRightBottom 'valor
     flexGRID_L.ColAlignment(5) = flexAlignCenterBottom 'op
 
@@ -4744,7 +4745,8 @@ Sub Lancamentos()
             'flexGRID_L.Row = I
             'flexGRID_L.CellFontSize = 7
     'End If
-Next I
+    Next I
+    flexGRID_L.Visible = True
 
         'formatarFlexGrid
         
