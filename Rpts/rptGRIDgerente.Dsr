@@ -11,7 +11,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptGRID_Gerente
    _ExtentX        =   21034
    _ExtentY        =   19606
    _Version        =   393216
-   _DesignerVersion=   100688210
+   _DesignerVersion=   100688423
    ReportWidth     =   10815
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"

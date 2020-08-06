@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "mscomctl.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_Alt_Fic_Mensal_Visualizar_Dupla 
@@ -882,37 +882,31 @@ Begin VB.Form frm_Alt_Fic_Mensal_Visualizar_Dupla
          BeginProperty Column00 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   794,835
          EndProperty
          BeginProperty Column01 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
             Object.Visible         =   -1  'True
-            ColumnWidth     =   2129,953
          EndProperty
          BeginProperty Column02 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
             Object.Visible         =   0   'False
-            ColumnWidth     =   2280,189
          EndProperty
          BeginProperty Column03 
             Alignment       =   1
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   1094,74
          EndProperty
          BeginProperty Column04 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   374,74
          EndProperty
          BeginProperty Column05 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   494,929
          EndProperty
          BeginProperty Column06 
             ColumnAllowSizing=   0   'False
@@ -1198,37 +1192,31 @@ Begin VB.Form frm_Alt_Fic_Mensal_Visualizar_Dupla
          BeginProperty Column00 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   794,835
          EndProperty
          BeginProperty Column01 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
             Object.Visible         =   -1  'True
-            ColumnWidth     =   2129,953
          EndProperty
          BeginProperty Column02 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
             Object.Visible         =   0   'False
-            ColumnWidth     =   2280,189
          EndProperty
          BeginProperty Column03 
             Alignment       =   1
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   1094,74
          EndProperty
          BeginProperty Column04 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   374,74
          EndProperty
          BeginProperty Column05 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   494,929
          EndProperty
          BeginProperty Column06 
             ColumnAllowSizing=   0   'False
@@ -1593,7 +1581,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_Visualizar_Dupla
       Mask            =   "##/##/####"
       eAuto           =   1
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin rdActiveText.ActiveText TXT_FERIAS_ULT_PG 
       DataField       =   "M_FERIAS_ULT_PG"
@@ -1630,7 +1618,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_Visualizar_Dupla
       Mask            =   "##/##/####"
       eAuto           =   1
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin rdActiveText.ActiveText ActiveText1 
       DataField       =   "M_FERIAS_PG"
@@ -1667,7 +1655,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_Visualizar_Dupla
       Mask            =   "##/##/####"
       eAuto           =   1
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin rdActiveText.ActiveText ActiveText2 
       DataField       =   "M_FERIAS_ULT_PG"
@@ -1704,7 +1692,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_Visualizar_Dupla
       Mask            =   "##/##/####"
       eAuto           =   1
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin VB.Label Label7 
       BackStyle       =   0  'Transparent

@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
@@ -113,12 +113,10 @@ Begin VB.Form frm_Alt_Desc_Calc
             Alignment       =   1
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   1140,095
          EndProperty
          BeginProperty Column01 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   2459,906
          EndProperty
       EndProperty
    End
@@ -211,45 +209,45 @@ Begin VB.Form frm_Alt_Desc_Calc
       TabCaption(1)   =   "Cadastrar"
       TabPicture(1)   =   "frm_Alt_Desc_Calc.frx":1075
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "TXT_DESC_EXTRA"
-      Tab(1).Control(1)=   "TXT_DT_EXTRA"
-      Tab(1).Control(2)=   "txt_Emp(0)"
-      Tab(1).Control(3)=   "txt_Emp(2)"
-      Tab(1).Control(4)=   "TXT_E_SALDO"
-      Tab(1).Control(5)=   "TXT_E_VALOR"
-      Tab(1).Control(6)=   "TXT_E_COD"
-      Tab(1).Control(7)=   "txt_Emp(1)"
-      Tab(1).Control(8)=   "txt_NCred_Cad"
-      Tab(1).Control(9)=   "txt_Logo_Cad"
-      Tab(1).Control(10)=   "TXT_CONTA_CAD_op"
-      Tab(1).Control(11)=   "TXT_NFICHA_CAD"
-      Tab(1).Control(12)=   "TXT_DT_CAD"
-      Tab(1).Control(13)=   "TXT_CONTA_CAD"
-      Tab(1).Control(14)=   "TXT_DESC_CAD"
-      Tab(1).Control(15)=   "TXT_OP_CAD"
-      Tab(1).Control(15).Enabled=   0   'False
-      Tab(1).Control(16)=   "TXT_CONTA_Cod_CAD"
-      Tab(1).Control(17)=   "TXT_VALOR_CAD"
-      Tab(1).Control(18)=   "TXT_E_JUROS"
-      Tab(1).Control(19)=   "LB_DESC_EXTRA"
-      Tab(1).Control(20)=   "LB_DT_EXTRA"
-      Tab(1).Control(21)=   "LB_EMP_D(3)"
-      Tab(1).Control(22)=   "lbEmp(3)"
-      Tab(1).Control(23)=   "LB_EMP_D(2)"
-      Tab(1).Control(24)=   "LB_EMP_D(1)"
-      Tab(1).Control(25)=   "LB_EMP_D(0)"
-      Tab(1).Control(26)=   "lbEmp(0)"
-      Tab(1).Control(27)=   "lbEmp(1)"
-      Tab(1).Control(28)=   "lbEmp(2)"
-      Tab(1).Control(29)=   "lbncred_cad"
-      Tab(1).Control(30)=   "lblogo_cad"
-      Tab(1).Control(31)=   "Label8"
-      Tab(1).Control(32)=   "Label12"
-      Tab(1).Control(33)=   "Label11"
-      Tab(1).Control(34)=   "Label10"
-      Tab(1).Control(35)=   "Label7"
-      Tab(1).Control(36)=   "Label6"
-      Tab(1).Control(37)=   "Shape2"
+      Tab(1).Control(0)=   "Shape2"
+      Tab(1).Control(1)=   "Label6"
+      Tab(1).Control(2)=   "Label7"
+      Tab(1).Control(3)=   "Label10"
+      Tab(1).Control(4)=   "Label11"
+      Tab(1).Control(5)=   "Label12"
+      Tab(1).Control(6)=   "Label8"
+      Tab(1).Control(7)=   "lblogo_cad"
+      Tab(1).Control(8)=   "lbncred_cad"
+      Tab(1).Control(9)=   "lbEmp(2)"
+      Tab(1).Control(10)=   "lbEmp(1)"
+      Tab(1).Control(11)=   "lbEmp(0)"
+      Tab(1).Control(12)=   "LB_EMP_D(0)"
+      Tab(1).Control(13)=   "LB_EMP_D(1)"
+      Tab(1).Control(14)=   "LB_EMP_D(2)"
+      Tab(1).Control(15)=   "lbEmp(3)"
+      Tab(1).Control(16)=   "LB_EMP_D(3)"
+      Tab(1).Control(17)=   "LB_DT_EXTRA"
+      Tab(1).Control(18)=   "LB_DESC_EXTRA"
+      Tab(1).Control(19)=   "TXT_E_JUROS"
+      Tab(1).Control(20)=   "TXT_VALOR_CAD"
+      Tab(1).Control(21)=   "TXT_CONTA_Cod_CAD"
+      Tab(1).Control(22)=   "TXT_OP_CAD"
+      Tab(1).Control(22).Enabled=   0   'False
+      Tab(1).Control(23)=   "TXT_DESC_CAD"
+      Tab(1).Control(24)=   "TXT_CONTA_CAD"
+      Tab(1).Control(25)=   "TXT_DT_CAD"
+      Tab(1).Control(26)=   "TXT_NFICHA_CAD"
+      Tab(1).Control(27)=   "TXT_CONTA_CAD_op"
+      Tab(1).Control(28)=   "txt_Logo_Cad"
+      Tab(1).Control(29)=   "txt_NCred_Cad"
+      Tab(1).Control(30)=   "txt_Emp(1)"
+      Tab(1).Control(31)=   "TXT_E_COD"
+      Tab(1).Control(32)=   "TXT_E_VALOR"
+      Tab(1).Control(33)=   "TXT_E_SALDO"
+      Tab(1).Control(34)=   "txt_Emp(2)"
+      Tab(1).Control(35)=   "txt_Emp(0)"
+      Tab(1).Control(36)=   "TXT_DT_EXTRA"
+      Tab(1).Control(37)=   "TXT_DESC_EXTRA"
       Tab(1).ControlCount=   38
       Begin VB.CheckBox chkVisto 
          Caption         =   "VISTO"
@@ -353,7 +351,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          RawText         =   1
          Mask            =   "##/##/####"
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin VB.TextBox TXT_E_JUROS_E 
          Alignment       =   2  'Center
@@ -662,7 +660,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          FloatFormat     =   2
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin VB.TextBox txt_NCred_Cad 
          Alignment       =   2  'Center
@@ -1031,7 +1029,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   171376641
+         Format          =   226820097
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -1052,7 +1050,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   171376641
+         Format          =   226820097
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
@@ -1197,7 +1195,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          FloatFormat     =   2
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin VB.TextBox TXT_E_JUROS 
          Alignment       =   2  'Center
@@ -1250,7 +1248,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          RawText         =   1
          Mask            =   "##/##/####"
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin VB.Label lb_dt_13 
          BackStyle       =   0  'Transparent
@@ -1995,22 +1993,18 @@ Begin VB.Form frm_Alt_Desc_Calc
          BeginProperty Column00 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1035,213
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1140,095
          EndProperty
          BeginProperty Column02 
             Alignment       =   1
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1154,835
          EndProperty
          BeginProperty Column03 
             Alignment       =   1
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1154,835
          EndProperty
       EndProperty
    End
@@ -2159,22 +2153,18 @@ Begin VB.Form frm_Alt_Desc_Calc
          BeginProperty Column00 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1035,213
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1140,095
          EndProperty
          BeginProperty Column02 
             Alignment       =   1
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1154,835
          EndProperty
          BeginProperty Column03 
             Alignment       =   1
             ColumnAllowSizing=   0   'False
-            ColumnWidth     =   1154,835
          EndProperty
       EndProperty
    End
