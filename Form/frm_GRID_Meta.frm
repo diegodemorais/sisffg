@@ -172,19 +172,15 @@ Begin VB.Form frm_GRID_Meta
          AllowSizing     =   0   'False
          BeginProperty Column00 
             Alignment       =   2
-            ColumnWidth     =   975,118
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column02 
             Alignment       =   2
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column03 
             Alignment       =   1
-            ColumnWidth     =   1739,906
          EndProperty
       EndProperty
    End

@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_Alt_TP_CONTA 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ALTERAÇÃO DE TIPO DE CONTAS"
@@ -227,12 +227,10 @@ Begin VB.Form frm_Alt_TP_CONTA
          BeginProperty Column00 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   450,142
          EndProperty
          BeginProperty Column01 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   2340,284
          EndProperty
       EndProperty
    End
@@ -641,11 +639,11 @@ End Sub
 
 
 Private Sub TXT_DESC_GotFocus()
-    SendKeys "{home}+{end}"
+    Sendkeys "{home}+{end}"
 End Sub
 
 Private Sub TXT_DESC_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = 13 Then SendKeys "{tab}"
+    If KeyCode = 13 Then Sendkeys "{tab}"
 End Sub
 
 '--------- Ao Pressionar uma Tecla -----------
@@ -656,7 +654,7 @@ End Sub
 
 Private Sub TXT_NIVEL_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
         Pause 0.3
         If vbYes = MsgBox("Deseja Salvar?", vbQuestion + vbYesNo + vbDefaultButton1) Then Salvar
     End If
@@ -664,7 +662,7 @@ End Sub
 
 
 Private Sub TXT_OP_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = 13 Then SendKeys "{tab}"
+    If KeyCode = 13 Then Sendkeys "{tab}"
 End Sub
 
 Private Sub TXT_OP_KeyUp(KeyCode As Integer, Shift As Integer)

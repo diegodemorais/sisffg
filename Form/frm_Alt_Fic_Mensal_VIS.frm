@@ -9849,7 +9849,7 @@ Private Sub optTipo_Click()
     
     w_cod_atual = txt_F_COD
     
-    adoReg.Recordset.Sort = "M_TIPO"
+    adoReg.Recordset.Sort = "FT_ORDEM"
     cmdFiltrar_Click
         
     'ADOREG.Recordset.MoveFirst

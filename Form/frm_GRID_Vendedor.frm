@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_GRID_Vendedor 
    Caption         =   "Códigos Vendedores"
    ClientHeight    =   9240
@@ -181,17 +181,13 @@ Begin VB.Form frm_GRID_Vendedor
          AllowSizing     =   0   'False
          BeginProperty Column00 
             Alignment       =   2
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   3644,788
          EndProperty
          BeginProperty Column03 
-            ColumnWidth     =   1904,882
          EndProperty
          BeginProperty Column04 
             ColumnWidth     =   0
@@ -356,7 +352,7 @@ Sub ckTodas_Click()
         TXT_LOGO2.Enabled = True
         On Error Resume Next
         TXT_LOGO2.SetFocus
-        SendKeys "{f4}"
+        Sendkeys "{f4}"
     End If
 End Sub
 
@@ -371,7 +367,7 @@ Private Sub cmdPesq_Click()
         ckTodas.value = 1
         adoReg.Recordset.Filter = 0
     Else
-        adoReg.Recordset.Filter = "SIGLA = '" & TXT_LOGO.Text & "'"
+        adoReg.Recordset.Filter = "SIGLA = '" & TXT_LOGO.text & "'"
     End If
 End Sub
 
@@ -390,7 +386,7 @@ End Sub
 
 Private Sub Grid_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
     End If
 End Sub
 

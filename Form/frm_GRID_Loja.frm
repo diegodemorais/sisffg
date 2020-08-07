@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_GRID_Loja 
    Caption         =   "Cadastro de Lojas"
    ClientHeight    =   11220
@@ -162,28 +162,20 @@ Begin VB.Form frm_GRID_Loja
          AllowRowSizing  =   0   'False
          AllowSizing     =   0   'False
          BeginProperty Column00 
-            ColumnWidth     =   540,284
          EndProperty
          BeginProperty Column01 
-            ColumnWidth     =   540,284
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   540,284
          EndProperty
          BeginProperty Column03 
-            ColumnWidth     =   794,835
          EndProperty
          BeginProperty Column04 
-            ColumnWidth     =   794,835
          EndProperty
          BeginProperty Column05 
-            ColumnWidth     =   794,835
          EndProperty
          BeginProperty Column06 
-            ColumnWidth     =   1305,071
          EndProperty
          BeginProperty Column07 
-            ColumnWidth     =   1200,189
          EndProperty
       EndProperty
    End

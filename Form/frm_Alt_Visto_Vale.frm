@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
@@ -1326,76 +1326,59 @@ Begin VB.Form frm_Alt_Visto_Vale
          Locked          =   -1  'True
          BeginProperty Column00 
             Alignment       =   2
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column01 
-            ColumnWidth     =   2894,74
          EndProperty
          BeginProperty Column02 
             Alignment       =   1
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column03 
-            ColumnWidth     =   2505,26
          EndProperty
          BeginProperty Column04 
             Alignment       =   2
-            ColumnWidth     =   1005,165
          EndProperty
          BeginProperty Column05 
-            ColumnWidth     =   3704,882
          EndProperty
          BeginProperty Column06 
             Alignment       =   1
-            ColumnWidth     =   1200,189
          EndProperty
          BeginProperty Column07 
             Alignment       =   2
-            ColumnWidth     =   404,787
          EndProperty
          BeginProperty Column08 
             Alignment       =   2
-            ColumnWidth     =   494,929
          EndProperty
          BeginProperty Column09 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   945,071
          EndProperty
          BeginProperty Column10 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column11 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column12 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column13 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column14 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column15 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   1739,906
          EndProperty
          BeginProperty Column16 
             ColumnAllowSizing=   0   'False
             Object.Visible         =   0   'False
-            ColumnWidth     =   915,024
          EndProperty
       EndProperty
    End

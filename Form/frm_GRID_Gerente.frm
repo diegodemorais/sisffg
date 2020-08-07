@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_GRID_Gerente 
    Caption         =   "Comissão Gerentes"
@@ -337,38 +337,29 @@ Begin VB.Form frm_GRID_Gerente
          AllowSizing     =   0   'False
          BeginProperty Column00 
             Alignment       =   2
-            ColumnWidth     =   540,284
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   2805,166
          EndProperty
          BeginProperty Column03 
             Alignment       =   1
-            ColumnWidth     =   1500,095
          EndProperty
          BeginProperty Column04 
             Alignment       =   2
-            ColumnWidth     =   1005,165
          EndProperty
          BeginProperty Column05 
             Alignment       =   1
-            ColumnWidth     =   1500,095
          EndProperty
          BeginProperty Column06 
             Alignment       =   2
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column07 
             Alignment       =   1
-            ColumnWidth     =   1500,095
          EndProperty
          BeginProperty Column08 
             Alignment       =   1
-            ColumnWidth     =   1500,095
          EndProperty
       EndProperty
    End
@@ -599,7 +590,7 @@ End Sub
 
 Private Sub Grid_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
     End If
 End Sub
 

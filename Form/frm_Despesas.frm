@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_Despesas 
    Caption         =   "Despesas Extras do Caixa - Exportação"
@@ -154,30 +154,23 @@ Begin VB.Form frm_Despesas
          Locked          =   -1  'True
          BeginProperty Column00 
             Alignment       =   2
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
-            ColumnWidth     =   1200,189
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   7994,835
          EndProperty
          BeginProperty Column03 
             Object.Visible         =   0   'False
-            ColumnWidth     =   1335,118
          EndProperty
          BeginProperty Column04 
             Object.Visible         =   0   'False
-            ColumnWidth     =   1335,118
          EndProperty
          BeginProperty Column05 
             Object.Visible         =   0   'False
-            ColumnWidth     =   3435,024
          EndProperty
          BeginProperty Column06 
             Alignment       =   1
-            ColumnWidth     =   1739,906
          EndProperty
       EndProperty
    End
@@ -371,7 +364,7 @@ Begin VB.Form frm_Despesas
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   62324737
+         Format          =   216399873
          CurrentDate     =   38282
       End
       Begin VB.Label Label6 
@@ -714,30 +707,23 @@ Begin VB.Form frm_Despesas
          Locked          =   -1  'True
          BeginProperty Column00 
             Alignment       =   2
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
-            ColumnWidth     =   1200,189
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   7994,835
          EndProperty
          BeginProperty Column03 
             Object.Visible         =   0   'False
-            ColumnWidth     =   1335,118
          EndProperty
          BeginProperty Column04 
             Object.Visible         =   0   'False
-            ColumnWidth     =   1335,118
          EndProperty
          BeginProperty Column05 
             Object.Visible         =   0   'False
-            ColumnWidth     =   3435,024
          EndProperty
          BeginProperty Column06 
             Alignment       =   1
-            ColumnWidth     =   1739,906
          EndProperty
       EndProperty
    End

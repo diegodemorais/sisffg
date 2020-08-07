@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_Alt_Fic_Mensal 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ALTERAÇÃO DE FICHA MENSAL"
@@ -434,24 +434,20 @@ Begin VB.Form frm_Alt_Fic_Mensal
             Alignment       =   2
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   734,74
          EndProperty
          BeginProperty Column01 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   3000,189
          EndProperty
          BeginProperty Column02 
             Alignment       =   1
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   884,976
          EndProperty
          BeginProperty Column03 
             Alignment       =   2
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   345,26
          EndProperty
       EndProperty
    End
@@ -626,7 +622,6 @@ Begin VB.Form frm_Alt_Fic_Mensal
          BeginProperty Column01 
             ColumnAllowSizing=   0   'False
             Locked          =   -1  'True
-            ColumnWidth     =   2624,882
          EndProperty
       EndProperty
    End

@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
-Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
+Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
 Begin VB.Form frm_Emprestimos_Cons 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Empréstimos"
@@ -247,24 +247,18 @@ Begin VB.Form frm_Emprestimos_Cons
       BeginProperty Split0 
          ScrollBars      =   2
          BeginProperty Column00 
-            ColumnWidth     =   734,74
          EndProperty
          BeginProperty Column01 
             Alignment       =   2
-            ColumnWidth     =   659,906
          EndProperty
          BeginProperty Column02 
             Alignment       =   2
-            ColumnWidth     =   420,095
          EndProperty
          BeginProperty Column03 
-            ColumnWidth     =   915,024
          EndProperty
          BeginProperty Column04 
-            ColumnWidth     =   900,284
          EndProperty
          BeginProperty Column05 
-            ColumnWidth     =   975,118
          EndProperty
       EndProperty
    End
@@ -476,7 +470,7 @@ Begin VB.Form frm_Emprestimos_Cons
       Mask            =   "##/##/####"
       eAuto           =   1
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin rdActiveText.ActiveText txt_Dt_ult_PG2 
       DataField       =   "Dt_Ult_PG"
@@ -503,7 +497,7 @@ Begin VB.Form frm_Emprestimos_Cons
       Mask            =   "##/##/####"
       eAuto           =   1
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin VB.Label lblFieldLabel 
       Alignment       =   1  'Right Justify
@@ -717,9 +711,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub ADOREG_MoveComplete(ByVal adReason As ADODB.EventReasonEnum, ByVal pError As ADODB.Error, adStatus As ADODB.EventStatusEnum, ByVal pRecordset As ADODB.Recordset)
+Private Sub adoReg_MoveComplete(ByVal adReason As ADODB.EventReasonEnum, ByVal pError As ADODB.Error, adStatus As ADODB.EventStatusEnum, ByVal pRecordset As ADODB.Recordset)
 On Error Resume Next
-    ADOREG.Caption = "Registro(s): " & ADOREG.Recordset.AbsolutePosition & "  de  " & ADOREG.Recordset.RecordCount
+    adoReg.Caption = "Registro(s): " & adoReg.Recordset.AbsolutePosition & "  de  " & adoReg.Recordset.RecordCount
 End Sub
 
 
@@ -727,19 +721,19 @@ Private Sub BarraF_ButtonClick(ByVal Button As MSComctlLib.Button)
 On Error Resume Next
     Select Case Button.key
     Case "salvar":
-                    SendKeys "{tab}"
-                    ADOREG.Recordset.UpdateBatch
+                    Sendkeys "{tab}"
+                    adoReg.Recordset.UpdateBatch
                     If adoItens.Recordset.RecordCount > 0 Then adoItens.Recordset.UpdateBatch
     Case "fechar":
-                    SendKeys "{tab}"
-                    ADOREG.Recordset.UpdateBatch
+                    Sendkeys "{tab}"
+                    adoReg.Recordset.UpdateBatch
                     If adoItens.Recordset.RecordCount > 0 Then adoItens.Recordset.UpdateBatch
                     Pause 0.2
                     Unload Me
     Case "excluir":
         If adoItens.Recordset.RecordCount = 0 Then
             If vbYes = MsgBox("Deseja Excluir o empréstimo?", vbQuestion + vbYesNo) Then
-                de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO - '" & CDbl(txtSaldo) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
+                de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO - '" & CDbl(txtSaldo) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
 
                 de.cnc.Execute "Delete * from tab_Emprestimo Where  E_Codigo = " & CDbl(txtCodigo) & ""
                 Unload Me
@@ -753,8 +747,8 @@ End Sub
 
 Private Sub Form_Load()
 On Error Resume Next
-    Set ADOREG.Recordset = de.rscmdSqlConEmprestimo.Clone
-    Set adoItens.Recordset = ADOREG.Recordset.Fields(10).value
+    Set adoReg.Recordset = de.rscmdSqlConEmprestimo.Clone
+    Set adoItens.Recordset = adoReg.Recordset.Fields(10).value
 End Sub
 
 

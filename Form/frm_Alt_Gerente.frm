@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_Vendas 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Lançamentos"
@@ -312,13 +312,10 @@ Begin VB.Form frm_Vendas
          AllowRowSizing  =   0   'False
          AllowSizing     =   0   'False
          BeginProperty Column00 
-            ColumnWidth     =   840,189
          EndProperty
          BeginProperty Column01 
-            ColumnWidth     =   1395,213
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   1395,213
          EndProperty
       EndProperty
    End
@@ -594,9 +591,9 @@ If Not adoReg.Recordset.EOF Then
     TXT_DATA.DataField = ""
     TXT_CODIGO.DataField = ""
     
-    TXT_LOJA.Text = ""
-    TXT_DATA.Text = ""
-    TXT_CODIGO.Text = ""
+    TXT_LOJA.text = ""
+    TXT_DATA.text = ""
+    TXT_CODIGO.text = ""
     TXT_LOJA.Enabled = True
     TXT_DATA.Enabled = True
     TXT_CODIGO.Enabled = True
@@ -814,17 +811,17 @@ End Sub
 
 
 Private Sub TXT_CODIGO_GotFocus()
-SendKeys "{home}+{end}"
+Sendkeys "{home}+{end}"
 End Sub
 
 
 
 Private Sub TXT_DATA_GotFocus()
-SendKeys "{home}+{end}"
+Sendkeys "{home}+{end}"
 End Sub
 
 
 
 Private Sub TXT_LOJA_GotFocus()
-SendKeys "{home}+{end}"
+Sendkeys "{home}+{end}"
 End Sub

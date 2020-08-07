@@ -1,10 +1,10 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Begin VB.Form frm_Alt_Funcionario 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ALTERAÇÃO DE EMP"
@@ -807,25 +807,19 @@ Begin VB.Form frm_Alt_Funcionario
          AllowRowSizing  =   0   'False
          AllowSizing     =   0   'False
          BeginProperty Column00 
-            ColumnWidth     =   599,811
          EndProperty
          BeginProperty Column01 
-            ColumnWidth     =   3525,166
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   705,26
          EndProperty
          BeginProperty Column03 
             Object.Visible         =   0   'False
-            ColumnWidth     =   645,165
          EndProperty
          BeginProperty Column04 
             Object.Visible         =   0   'False
-            ColumnWidth     =   794,835
          EndProperty
          BeginProperty Column05 
             Object.Visible         =   0   'False
-            ColumnWidth     =   945,071
          EndProperty
       EndProperty
    End
@@ -966,7 +960,7 @@ Begin VB.Form frm_Alt_Funcionario
       _ExtentY        =   609
       _Version        =   393216
       Enabled         =   0   'False
-      Format          =   61210625
+      Format          =   216465409
       CurrentDate     =   38432
    End
    Begin MSMask.MaskEdBox txtCPF 
@@ -1600,15 +1594,15 @@ On Error GoTo err1
 If Not IsNumeric(adoReg.Recordset.RecordCount) Then adoReg.Caption = "REGISTRO : " & adoReg.Recordset.AbsolutePosition & " / " & adoReg.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
 
     Select Case adoReg.Recordset.Fields("F_TIPO")
-        Case "V": TXT_TIPO = "VENDEDOR"
-        Case "G": TXT_TIPO = "GERENTE"
-        Case "D": TXT_TIPO = "GER RODA"
-        Case "C": TXT_TIPO = "CAIXA"
-        Case "2": TXT_TIPO = "2º CAIXA"
-        Case "X": TXT_TIPO = "CX EXTRA"
-        Case "R": TXT_TIPO = "SEGURANÇA"
-        Case "S": TXT_TIPO = "SUPERVISOR"
-        Case "O": TXT_TIPO = "RP"
+        Case "V": txt_tipo = "VENDEDOR"
+        Case "G": txt_tipo = "GERENTE"
+        Case "D": txt_tipo = "GER RODA"
+        Case "C": txt_tipo = "CAIXA"
+        Case "2": txt_tipo = "2º CAIXA"
+        Case "X": txt_tipo = "CX EXTRA"
+        Case "R": txt_tipo = "SEGURANÇA"
+        Case "S": txt_tipo = "SUPERVISOR"
+        Case "O": txt_tipo = "RP"
     End Select
 
 If IsNull(adoReg.Recordset.Fields("F_DT_DEM")) Then
@@ -1714,12 +1708,12 @@ If Not adoReg.Recordset.EOF Then
     BarraF.Buttons("editar").Enabled = Not BarraF.Buttons("editar").Enabled
     
     Grid.Enabled = Not Grid.Enabled
-    TXT_TIPO.Enabled = Not TXT_TIPO.Enabled
+    txt_tipo.Enabled = Not txt_tipo.Enabled
     TXT_NOME.Enabled = Not TXT_NOME.Enabled
     TXT_DT_REG.Enabled = Not TXT_DT_REG.Enabled
     txt_DT_ADM.Enabled = Not txt_DT_ADM.Enabled
     If acessoTotal Then TXT_DT_DEM.Enabled = Not TXT_DT_DEM.Enabled
-    txt_ANOTACAO.Enabled = Not txt_ANOTACAO.Enabled
+    TXT_ANOTACAO.Enabled = Not TXT_ANOTACAO.Enabled
     TXT_LOGO.Enabled = Not TXT_LOGO.Enabled
     TXT_LOGO2.Enabled = Not TXT_LOGO2.Enabled
     'TXT_CRED.Enabled = Not TXT_CRED.Enabled
@@ -2254,7 +2248,7 @@ End Sub
 
 
 Private Sub txt_tipo_Click()
-    Select Case TXT_TIPO
+    Select Case txt_tipo
         Case "VENDEDOR": TXT_TIPO2 = "V"
         Case "GERENTE": TXT_TIPO2 = "G"
         Case "GER RODA": TXT_TIPO2 = "D"

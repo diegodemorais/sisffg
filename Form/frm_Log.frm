@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
 Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
 Begin VB.Form frm_Log 
    AutoRedraw      =   -1  'True
@@ -49,7 +49,7 @@ Begin VB.Form frm_Log
       Mask            =   "##/##/##"
       FontBold        =   -1  'True
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin rdActiveText.ActiveText txtDtIni 
       BeginProperty DataFormat 
@@ -84,7 +84,7 @@ Begin VB.Form frm_Log
       Mask            =   "##/##/##"
       FontBold        =   -1  'True
       FontName        =   "MS Sans Serif"
-      FontSize        =   8,25
+      FontSize        =   8.25
    End
    Begin VB.TextBox txtDescricao 
       BeginProperty DataFormat 
@@ -422,25 +422,19 @@ Begin VB.Form frm_Log
          AllowSizing     =   0   'False
          Locked          =   -1  'True
          BeginProperty Column00 
-            ColumnWidth     =   794,835
          EndProperty
          BeginProperty Column01 
-            ColumnWidth     =   1005,165
          EndProperty
          BeginProperty Column02 
-            ColumnWidth     =   1005,165
          EndProperty
          BeginProperty Column03 
-            ColumnWidth     =   1005,165
          EndProperty
          BeginProperty Column04 
-            ColumnWidth     =   1005,165
          EndProperty
          BeginProperty Column05 
             ColumnWidth     =   1800
          EndProperty
          BeginProperty Column06 
-            ColumnWidth     =   2,01e5
          EndProperty
       EndProperty
    End
@@ -688,13 +682,13 @@ End Sub
 '*** KEYASCII ***
 Private Sub TXT_ANO_KeyDown(KeyCode As Integer, Shift As Integer)
       If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
         cmdPesq_Click
       End If
 End Sub
 Private Sub TXT_CONTA_COD_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
     End If
 End Sub
 
@@ -719,13 +713,13 @@ End Sub
 
 Private Sub TXT_LOGO_KeyDown(KeyCode As Integer, Shift As Integer)
       If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
         cmdPesq_Click
       End If
 End Sub
 Private Sub TXT_MES_KeyDown(KeyCode As Integer, Shift As Integer)
       If KeyCode = 13 Then
-        SendKeys "{tab}"
+        Sendkeys "{tab}"
         cmdPesq_Click
       End If
 
