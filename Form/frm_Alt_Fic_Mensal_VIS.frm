@@ -4693,7 +4693,7 @@ Sub Lancamentos()
             flexGRID_L.CellForeColor = vbBlue
         Next coluna
    End If
-   If Replace(flexGRID_L.TextMatrix(I, 4), "R$ ", "") > 0 Then
+   If Replace(flexGRID_L.TextMatrix(I, 8), "R$ ", "") > 0 Then
         ' Varre todas as colunas da linha e seta a cor de fundo
         For coluna = 0 To flexGRID_L.Cols - 1
             flexGRID_L.Col = coluna
