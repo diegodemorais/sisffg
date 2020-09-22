@@ -1,28 +1,27 @@
 VERSION 5.00
-Object = "{F6125AB1-8AB1-11CE-A77F-08002B2F4E98}#2.0#0"; "MSRDC20.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{48E59290-9880-11CF-9754-00AA00C00908}#1.0#0"; "MSINET.OCX"
-Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
-Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCHRT20.OCX"
-Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
-Object = "{20C62CAE-15DA-101B-B9A8-444553540000}#1.1#0"; "MSMAPI32.OCX"
-Object = "{C1A8AF28-1257-101B-8FB0-0020AF039CA3}#1.1#0"; "MCI32.OCX"
-Object = "{27395F88-0C0C-101B-A3C9-08002B2F49FB}#1.1#0"; "PICCLP32.OCX"
-Object = "{6FBA474E-43AC-11CE-9A0E-00AA0062BB4C}#1.0#0"; "SYSINFO.OCX"
-Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDATLST.OCX"
-Object = "{38911DA0-E448-11D0-84A3-00DD01104159}#1.1#0"; "COMCT332.OCX"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
-Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
-Object = "{FAEEE763-117E-101B-8933-08002B2F4F5A}#1.1#0"; "DBLIST32.OCX"
-Object = "{5C8CED40-8909-11D0-9483-00A0C91110ED}#1.0#0"; "MSDATREP.OCX"
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
+Object = "{F6125AB1-8AB1-11CE-A77F-08002B2F4E98}#2.0#0"; "msrdc20.Ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFlxGrd.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{48E59290-9880-11CF-9754-00AA00C00908}#1.0#0"; "MSINET.Ocx"
+Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSChrt20.ocx"
+Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.ocx"
+Object = "{20C62CAE-15DA-101B-B9A8-444553540000}#1.1#0"; "msmapi32.Ocx"
+Object = "{C1A8AF28-1257-101B-8FB0-0020AF039CA3}#1.1#0"; "mci32.Ocx"
+Object = "{27395F88-0C0C-101B-A3C9-08002B2F49FB}#1.1#0"; "PicClp32.Ocx"
+Object = "{6FBA474E-43AC-11CE-9A0E-00AA0062BB4C}#1.0#0"; "sysinfo.Ocx"
+Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSComm32.Ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
+Object = "{38911DA0-E448-11D0-84A3-00DD01104159}#1.1#0"; "comct332.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
+Object = "{FAEEE763-117E-101B-8933-08002B2F4F5A}#1.1#0"; "dblist32.Ocx"
+Object = "{5C8CED40-8909-11D0-9483-00A0C91110ED}#1.0#0"; "MSDatRep.Ocx"
+Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.5#0"; "COMCTL32.ocx"
 Object = "{BEC61919-E6C4-11D1-BE7D-C63815000000}#1.0#0"; "FLEXWIZ.OCX"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_componentes 
@@ -35,6 +34,18 @@ Begin VB.Form frm_componentes
    ScaleHeight     =   9465
    ScaleWidth      =   13785
    StartUpPosition =   3  'Windows Default
+   Begin ComctlLib.Toolbar Toolbar2 
+      Align           =   1  'Align Top
+      Height          =   420
+      Left            =   0
+      TabIndex        =   41
+      Top             =   900
+      Width           =   13785
+      _ExtentX        =   24315
+      _ExtentY        =   741
+      Appearance      =   1
+      _Version        =   327682
+   End
    Begin MSDataRepeaterLib.DataRepeater DataRepeater1 
       Height          =   1275
       Left            =   7680
@@ -50,18 +61,6 @@ Begin VB.Form frm_componentes
          _StreamID       =   -1412567295
          _Version        =   65536
       EndProperty
-   End
-   Begin ComctlLib.Toolbar Toolbar2 
-      Align           =   1  'Align Top
-      Height          =   420
-      Left            =   0
-      TabIndex        =   41
-      Top             =   900
-      Width           =   13785
-      _ExtentX        =   24315
-      _ExtentY        =   741
-      Appearance      =   1
-      _Version        =   327682
    End
    Begin MSFlexGridWizard.SubWizard SubWizard1 
       Height          =   4455
@@ -142,6 +141,7 @@ Begin VB.Form frm_componentes
       BeginProperty Panels {0713E89E-850A-101B-AFC0-4210102A8DA7} 
          NumPanels       =   1
          BeginProperty Panel1 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
          EndProperty
       EndProperty
@@ -158,6 +158,7 @@ Begin VB.Form frm_componentes
       BeginProperty Tabs {0713E432-850A-101B-AFC0-4210102A8DA7} 
          NumTabs         =   1
          BeginProperty Tab1 {0713F341-850A-101B-AFC0-4210102A8DA7} 
+            Key             =   ""
             Object.Tag             =   ""
             ImageVarType    =   2
          EndProperty
@@ -252,7 +253,7 @@ Begin VB.Form frm_componentes
       _ExtentY        =   1429
       _CBWidth        =   3615
       _CBHeight       =   810
-      _Version        =   "6.7.9782"
+      _Version        =   "6.7.9839"
       MinHeight1      =   360
       Width1          =   2880
       NewRow1         =   0   'False
@@ -430,18 +431,6 @@ Begin VB.Form frm_componentes
       Top             =   3840
       Width           =   1575
    End
-   Begin RichTextLib.RichTextBox RichTextBox1 
-      Height          =   735
-      Left            =   7920
-      TabIndex        =   28
-      Top             =   5640
-      Width           =   1575
-      _ExtentX        =   2778
-      _ExtentY        =   1296
-      _Version        =   393217
-      Enabled         =   -1  'True
-      TextRTF         =   $"frm_componentes.frx":2356
-   End
    Begin InetCtlsObjects.Inet Inet1 
       Left            =   6000
       Top             =   3720
@@ -459,7 +448,7 @@ Begin VB.Form frm_componentes
       _ExtentY        =   450
       _Version        =   393216
       Arrows          =   65536
-      Orientation     =   1572865
+      Orientation     =   1638401
    End
    Begin MSComCtl2.DTPicker DTPicker1 
       Height          =   735
@@ -470,7 +459,7 @@ Begin VB.Form frm_componentes
       _ExtentX        =   2778
       _ExtentY        =   1296
       _Version        =   393216
-      Format          =   83820545
+      Format          =   76677121
       CurrentDate     =   38441
    End
    Begin MSComCtl2.MonthView MonthView1 
@@ -478,14 +467,14 @@ Begin VB.Form frm_componentes
       Left            =   3600
       TabIndex        =   25
       Top             =   5880
-      Width           =   2490
-      _ExtentX        =   4392
+      Width           =   2700
+      _ExtentX        =   4763
       _ExtentY        =   4180
       _Version        =   393216
       ForeColor       =   -2147483630
       BackColor       =   -2147483633
       Appearance      =   1
-      StartOfWeek     =   83820545
+      StartOfWeek     =   76677121
       CurrentDate     =   38441
    End
    Begin MSComCtl2.UpDown UpDown1 
@@ -669,11 +658,11 @@ Begin VB.Form frm_componentes
       Tab             =   1
       TabHeight       =   520
       TabCaption(0)   =   "Tab 0"
-      TabPicture(0)   =   "frm_componentes.frx":23DC
+      TabPicture(0)   =   "frm_componentes.frx":2356
       Tab(0).ControlEnabled=   0   'False
       Tab(0).ControlCount=   0
       TabCaption(1)   =   "Tab 1"
-      TabPicture(1)   =   "frm_componentes.frx":23F8
+      TabPicture(1)   =   "frm_componentes.frx":2372
       Tab(1).ControlEnabled=   -1  'True
       Tab(1).ControlCount=   0
       TabCaption(2)   =   "Tab 2"
@@ -840,7 +829,7 @@ Begin VB.Form frm_componentes
    Begin Skin_Button.ctr_Button cmdSalarioGerente 
       Height          =   285
       Left            =   1320
-      TabIndex        =   48
+      TabIndex        =   28
       TabStop         =   0   'False
       ToolTipText     =   "Salários Gerentes"
       Top             =   1680
@@ -868,8 +857,8 @@ Begin VB.Form frm_componentes
       FCOLO           =   0
       MCOL            =   12632256
       MPTR            =   1
-      MICON           =   "frm_componentes.frx":2414
-      PICN            =   "frm_componentes.frx":2430
+      MICON           =   "frm_componentes.frx":238E
+      PICN            =   "frm_componentes.frx":23AA
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -892,103 +881,103 @@ Begin VB.Form frm_componentes
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   25
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":3712
+            Picture         =   "frm_componentes.frx":368C
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":53474
+            Picture         =   "frm_componentes.frx":533EE
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":A31D6
+            Picture         =   "frm_componentes.frx":A3150
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":F2F38
+            Picture         =   "frm_componentes.frx":F2EB2
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":142C9A
+            Picture         =   "frm_componentes.frx":142C14
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":1929FC
+            Picture         =   "frm_componentes.frx":192976
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":1E275E
+            Picture         =   "frm_componentes.frx":1E26D8
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":2324C0
+            Picture         =   "frm_componentes.frx":23243A
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":282222
+            Picture         =   "frm_componentes.frx":28219C
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":2D1F84
+            Picture         =   "frm_componentes.frx":2D1EFE
             Key             =   ""
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":321CE6
+            Picture         =   "frm_componentes.frx":321C60
             Key             =   ""
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":371A48
+            Picture         =   "frm_componentes.frx":3719C2
             Key             =   ""
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":3C17AA
+            Picture         =   "frm_componentes.frx":3C1724
             Key             =   ""
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":41150C
+            Picture         =   "frm_componentes.frx":411486
             Key             =   ""
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":46126E
+            Picture         =   "frm_componentes.frx":4611E8
             Key             =   ""
          EndProperty
          BeginProperty ListImage16 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":4B0FD0
+            Picture         =   "frm_componentes.frx":4B0F4A
             Key             =   ""
          EndProperty
          BeginProperty ListImage17 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":500D32
+            Picture         =   "frm_componentes.frx":500CAC
             Key             =   ""
          EndProperty
          BeginProperty ListImage18 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":550A94
+            Picture         =   "frm_componentes.frx":550A0E
             Key             =   ""
          EndProperty
          BeginProperty ListImage19 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":5A07F6
+            Picture         =   "frm_componentes.frx":5A0770
             Key             =   ""
          EndProperty
          BeginProperty ListImage20 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":5F0558
+            Picture         =   "frm_componentes.frx":5F04D2
             Key             =   ""
          EndProperty
          BeginProperty ListImage21 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":6402BA
+            Picture         =   "frm_componentes.frx":640234
             Key             =   ""
          EndProperty
          BeginProperty ListImage22 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":69001C
+            Picture         =   "frm_componentes.frx":68FF96
             Key             =   ""
          EndProperty
          BeginProperty ListImage23 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":6DFD7E
+            Picture         =   "frm_componentes.frx":6DFCF8
             Key             =   ""
          EndProperty
          BeginProperty ListImage24 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":72FAE0
+            Picture         =   "frm_componentes.frx":72FA5A
             Key             =   ""
          EndProperty
          BeginProperty ListImage25 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_componentes.frx":77F842
+            Picture         =   "frm_componentes.frx":77F7BC
             Key             =   ""
          EndProperty
       EndProperty
