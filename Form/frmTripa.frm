@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "richtx32.ocx"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frmTripa 
    BorderStyle     =   1  'Fixed Single
@@ -53,10 +54,34 @@ Begin VB.Form frmTripa
       CHECK           =   0   'False
       VALUE           =   0   'False
    End
+   Begin RichTextLib.RichTextBox DocumentoTxt 
+      Height          =   6375
+      Left            =   120
+      TabIndex        =   0
+      Top             =   720
+      Width           =   5505
+      _ExtentX        =   9710
+      _ExtentY        =   11245
+      _Version        =   393217
+      ReadOnly        =   -1  'True
+      ScrollBars      =   2
+      AutoVerbMenu    =   -1  'True
+      FileName        =   "D:\Sistemas\SisFF\Rpts\Tripa.txt"
+      TextRTF         =   $"frmTripa.frx":1608
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Lucida Console"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
    Begin Skin_Button.ctr_Button cmdPrint 
       Height          =   615
       Left            =   120
-      TabIndex        =   0
+      TabIndex        =   3
       Top             =   7200
       Width           =   1575
       _ExtentX        =   2778
@@ -81,8 +106,7 @@ Begin VB.Form frmTripa
       FCOLO           =   0
       MCOL            =   12632256
       MPTR            =   1
-      MICON           =   "frmTripa.frx":1608
-      PICN            =   "frmTripa.frx":1624
+      MICON           =   "frmTripa.frx":16A4
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -128,12 +152,12 @@ On Error GoTo err1
     'Cria Arquivo texto para Impressão da Tripa
     Set fs = CreateObject("Scripting.FileSystemObject")
     Set a = fs.createTextFile(strDirRPT & "\print.bat")
-    
+
     a.Writeline ("@Echo OFF")
     a.Writeline ("Type " & strDirRPT & "\tripa.txt > " & strImpressora)
     a.Writeline ("Exit")
     a.Close
-    
+
     Call Shell(strDirRPT & "\print.bat")
 
 sair:
