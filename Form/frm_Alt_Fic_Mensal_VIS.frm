@@ -8035,15 +8035,15 @@ On Error Resume Next
                     End If
                     
                 'If (vrVenda >= vrMeta) Then
-                    'wFixoMeta = vrSalario * 0.1
-                    'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
-                '        vrMetaBonus = vrSalario * 0.05
+                '    wFixoMeta = vrSalario * 0.1
+                '    If (((vrVenda / vrMeta) - 1) * 100) >= 10 Then
+                '        vrMetaBonus = vrSalario + 500
                 '        wPercMeta = 5
-                    'Else
-                        'vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
-                    '    wPercMeta = ((vrVenda / vrMeta) - 1) * 100
-                    'End If
-                    'vrMetaBonus = 0
+                '    Else
+                '        vrMetaBonus = vrSalario * ((vrVenda / vrMeta) - 1)
+                '        wPercMeta = ((vrVenda / vrMeta) - 1) * 100
+                '    End If
+                '    vrMetaBonus = 0
                     descMeta = " + Bonus Meta(" & Format(wPercMeta, "0.0") & "% da meta = " & Format(vrMetaBonus, "0.00") & ")"
                 Else
                    descMeta = ""
