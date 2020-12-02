@@ -3,7 +3,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
    ClientHeight    =   12360
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   30465
+   ClientWidth     =   0
    _ExtentX        =   53737
    _ExtentY        =   21802
    FolderFlags     =   7
