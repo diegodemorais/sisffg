@@ -6343,12 +6343,12 @@ Private Sub cmdComisCx_Click()
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.1
-                            'vrMetaBonus = 300
+                            'vrMetaBonus = vrSalario * 0.1
+                            vrMetaBonus = 150
                             wPercMeta = 100
                         Else
-                            'vrMetaBonus = 150
-                            vrMetaBonus = vrSalario * 0.05
+                            'vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = 100
                             wPercMeta = 95
                         End If
                         
@@ -6772,12 +6772,12 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.1
-                            'vrMetaBonus = 300
+                            'vrMetaBonus = vrSalario * 0.1
+                            vrMetaBonus = 150
                             wPercMeta = 100
                         Else
-                            'vrMetaBonus = 150
-                            vrMetaBonus = vrSalario * 0.05
+                            'vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = 100
                             wPercMeta = 95
                         End If
                     
@@ -8069,12 +8069,12 @@ On Error Resume Next
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.1
-                            'vrMetaBonus = 300
+                            'vrMetaBonus = vrSalario * 0.1
+                            vrMetaBonus = 300
                             wPercMeta = 100
                         Else
-                            'vrMetaBonus = 150
-                            vrMetaBonus = vrSalario * 0.05
+                            'vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = 200
                             wPercMeta = 95
                         End If
                     descMeta = " + Bonus Meta(" & Format(wPercMeta, "0.0") & "% da meta = " & Format(vrMetaBonus, "0.00") & ")"
@@ -9200,9 +9200,9 @@ On Error GoTo err1
     'tipos
     w_FirstTipo = True
     Dim w_tipo
-    For J = 0 To FRM_LIBERAR.TXT_TIPO.ListCount - 1
-        If FRM_LIBERAR.TXT_TIPO.Selected(J) = True Then
-            Select Case FRM_LIBERAR.TXT_TIPO.list(J)
+    For J = 0 To FRM_LIBERAR.txt_tipo.ListCount - 1
+        If FRM_LIBERAR.txt_tipo.Selected(J) = True Then
+            Select Case FRM_LIBERAR.txt_tipo.list(J)
                 Case "VENDEDOR": w_tipo = "V"
                 Case "GERENTE": w_tipo = "G"
                 Case "GER RODA": w_tipo = "D"
@@ -10565,7 +10565,7 @@ On Error GoTo err1
     FRM_IMP_F.CkTripa.Visible = True
     
 
-    FRM_IMP_F.TXT_TIPO = TXT_FTIPO
+    FRM_IMP_F.txt_tipo = TXT_FTIPO
     
     FRM_IMP_F.Show 1
     
@@ -10592,9 +10592,9 @@ On Error GoTo err1
     'tipos
     w_FirstTipo = True
     Dim w_tipo
-    For J = 0 To FRM_IMP_F.TXT_TIPO.ListCount - 1
-        If FRM_IMP_F.TXT_TIPO.Selected(J) = True Then
-            Select Case FRM_IMP_F.TXT_TIPO.list(J)
+    For J = 0 To FRM_IMP_F.txt_tipo.ListCount - 1
+        If FRM_IMP_F.txt_tipo.Selected(J) = True Then
+            Select Case FRM_IMP_F.txt_tipo.list(J)
                 Case "VENDEDOR": w_tipo = "V"
                 Case "GERENTE": w_tipo = "G"
                 Case "GER RODA": w_tipo = "D"
