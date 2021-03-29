@@ -3,8 +3,8 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
    ClientHeight    =   12360
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   30465
-   _ExtentX        =   53737
+   ClientWidth     =   10080
+   _ExtentX        =   17780
    _ExtentY        =   21802
    FolderFlags     =   7
    TypeLibGuid     =   "{736B3B8B-AF06-4A16-9146-4FE54F190DC1}"
@@ -34,7 +34,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   2202
       SourceOfData    =   3
       ConnectionSource=   $"de.dsx":018B
-      Expanded        =   -1  'True
       QuoteChar       =   34
       SeparatorChar   =   46
    EndProperty
@@ -15687,14 +15686,16 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
    BeginProperty Recordset151 
       CommandName     =   "cmdQtde_Func_Logo_Limite"
       CommDispId      =   5829
-      RsDispId        =   5844
+      RsDispId        =   6141
       CommandText     =   $"de.dsx":19457
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       Grouping        =   -1  'True
       GroupingName    =   "cmdQtde_Func_Logo_Limite_Grouping"
+      GrandTotal      =   "TG"
+      Expanded        =   -1  'True
       IsRSReturning   =   -1  'True
-      NumFields       =   12
+      NumFields       =   13
       BeginProperty Field1 
          Precision       =   10
          Size            =   4
@@ -15791,7 +15792,15 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "QtdeLimiteVend"
          Caption         =   "QtdeLimiteVend"
       EndProperty
-      NumGroups       =   5
+      BeginProperty Field13 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "QtdeVend"
+         Caption         =   "QtdeVend"
+      EndProperty
+      NumGroups       =   6
       BeginProperty Grouping1 
          Precision       =   10
          Size            =   4
@@ -15832,6 +15841,14 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "QtdeLimiteVend"
          Caption         =   "QtdeLimiteVend"
       EndProperty
+      BeginProperty Grouping6 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "QtdeVend"
+         Caption         =   "QtdeVend"
+      EndProperty
       ParamCount      =   2
       BeginProperty P1 
          RealName        =   "[ano]"
@@ -15860,7 +15877,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlGridMeta2"
       CommDispId      =   5845
       RsDispId        =   5855
-      CommandText     =   $"de.dsx":19A5F
+      CommandText     =   $"de.dsx":19A05
       ActiveConnectionName=   "cncSisInt"
       CommandType     =   1
       Locktype        =   3
@@ -15890,7 +15907,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdTemp"
       CommDispId      =   5856
       RsDispId        =   5862
-      CommandText     =   $"de.dsx":19A9D
+      CommandText     =   $"de.dsx":19A43
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True

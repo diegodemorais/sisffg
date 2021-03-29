@@ -1556,9 +1556,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub btnQtdEmpLogoLimite_Click()
 On Error GoTo err1
-
      If de.rscmdQtde_Func_Logo_Limite_Grouping.State = 1 Then de.rscmdQtde_Func_Logo_Limite_Grouping.Close
-     
 ini:
      w_mes = InputBox("Entre com o Mês:", , Format(Date, "MM"))
      w_ano = InputBox("Entre com o Ano:", , Format(Date, "YYYY"))
