@@ -786,7 +786,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
             LCID            =   2057
             SubFormatType   =   0
          EndProperty
-         DataMember      =   "cmdQtde_Func_Logo_Limite"
+         DataMember      =   "cmdQtde_Func_Logo_Limite_Grouping"
       EndProperty
       ItemType5       =   13
       BeginProperty Item5 {49FF6930-2B8C-11D1-8DA9-00A0C90FFFC2} 
@@ -817,7 +817,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
             LCID            =   2057
             SubFormatType   =   0
          EndProperty
-         DataMember      =   "cmdQtde_Func_Logo_Limite"
+         DataMember      =   "cmdQtde_Func_Logo_Limite_Grouping"
       EndProperty
    EndProperty
 End
