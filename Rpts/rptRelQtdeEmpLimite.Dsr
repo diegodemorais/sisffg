@@ -13,7 +13,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
    _ExtentY        =   19420
    _Version        =   393216
    _DesignerVersion=   100688423
-   ReportWidth     =   11160
+   ReportWidth     =   11115
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -223,7 +223,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       Name            =   "SecCabG"
       Object.Height          =   315
       KeepTogether    =   -1  'True
-      NumControls     =   13
+      NumControls     =   15
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
@@ -247,7 +247,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Lb2"
-         Object.Left            =   6945
+         Object.Left            =   6870
          Object.Top             =   45
          Object.Width           =   1005
          Object.Height          =   240
@@ -267,7 +267,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "LB3"
-         Object.Left            =   8145
+         Object.Left            =   7950
          Object.Top             =   45
          Object.Width           =   930
          Object.Height          =   240
@@ -403,7 +403,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
-         Object.Left            =   10290
+         Object.Left            =   9825
          Object.Top             =   45
          Object.Width           =   360
          Object.Height          =   240
@@ -422,9 +422,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text4"
-         Object.Left            =   10560
+         Object.Left            =   10050
+         Object.Top             =   10
          Object.Width           =   360
-         Object.Height          =   300
+         Object.Height          =   290
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
             Size            =   12
@@ -452,7 +453,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item10 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Fundo"
-         Object.Width           =   10935
+         Object.Width           =   11100
          Object.Height          =   315
          BackColor       =   14737632
       EndProperty
@@ -460,9 +461,10 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text8"
-         Object.Left            =   9930
+         Object.Left            =   9465
+         Object.Top             =   10
          Object.Width           =   405
-         Object.Height          =   300
+         Object.Height          =   290
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
             Size            =   12
@@ -490,7 +492,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Vendedores"
-         Object.Left            =   9390
+         Object.Left            =   8955
          Object.Top             =   45
          Object.Width           =   765
          Object.Height          =   240
@@ -505,6 +507,56 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
          EndProperty
          Object.Caption         =   "Vend.:"
       EndProperty
+      ItemType13      =   3
+      BeginProperty Item13 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label16"
+         Object.Left            =   10425
+         Object.Top             =   45
+         Object.Width           =   360
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Tot.:"
+      EndProperty
+      ItemType14      =   4
+      BeginProperty Item14 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Text10"
+         Object.Left            =   10725
+         Object.Top             =   10
+         Object.Width           =   360
+         Object.Height          =   290
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   255
+         DataField       =   "QTDE"
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   0
+         EndProperty
+         DataMember      =   "cmdQtde_Func_Logo_Limite_Grouping"
+      EndProperty
    EndProperty
    SectionCode3    =   4
    BeginProperty Section3 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
@@ -518,7 +570,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
          _Version        =   393216
          Name            =   "Line1"
          Object.Top             =   300
-         Object.Width           =   10800
+         Object.Width           =   11115
          Object.Height          =   3
       EndProperty
       ItemType1       =   4
@@ -553,7 +605,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item2 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text2"
-         Object.Left            =   6975
+         Object.Left            =   6855
          Object.Width           =   990
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -582,7 +634,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text3"
-         Object.Left            =   8160
+         Object.Left            =   7950
          Object.Width           =   930
          Object.Height          =   255
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -683,14 +735,14 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
    BeginProperty Section6 {1C13A8E0-A0B6-11D0-848E-00A0C90DC8A9} 
       _Version        =   393216
       Name            =   "Section5"
-      Object.Height          =   765
-      NumControls     =   6
+      Object.Height          =   960
+      NumControls     =   8
       ItemType0       =   3
       BeginProperty Item0 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label8"
-         Object.Left            =   10005
-         Object.Top             =   495
+         Object.Left            =   9120
+         Object.Top             =   675
          Object.Width           =   360
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -708,8 +760,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item1 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
-         Object.Left            =   8640
-         Object.Top             =   495
+         Object.Left            =   7845
+         Object.Top             =   675
          Object.Width           =   765
          Object.Height          =   240
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -727,15 +779,15 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item2 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label15"
-         Object.Left            =   8625
-         Object.Top             =   180
-         Object.Width           =   2340
-         Object.Height          =   285
+         Object.Left            =   7830
+         Object.Top             =   309
+         Object.Width           =   3015
+         Object.Height          =   336
          BorderColor     =   16777215
          Object.BorderStyle     =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   12
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -752,18 +804,18 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item3 {1C13A8E4-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Shape1"
-         Object.Left            =   8640
-         Object.Top             =   195
-         Object.Width           =   2340
-         Object.Height          =   540
+         Object.Left            =   7845
+         Object.Top             =   345
+         Object.Width           =   3000
+         Object.Height          =   570
          BackColor       =   14737632
       EndProperty
       ItemType4       =   13
       BeginProperty Item4 {49FF6930-2B8C-11D1-8DA9-00A0C90FFFC2} 
          _Version        =   393216
          Name            =   "Function1"
-         Object.Left            =   9390
-         Object.Top             =   450
+         Object.Left            =   8535
+         Object.Top             =   640
          Object.Width           =   600
          Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -792,8 +844,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
       BeginProperty Item5 {49FF6930-2B8C-11D1-8DA9-00A0C90FFFC2} 
          _Version        =   393216
          Name            =   "Function2"
-         Object.Left            =   10410
-         Object.Top             =   450
+         Object.Left            =   9345
+         Object.Top             =   640
          Object.Width           =   570
          Object.Height          =   315
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -807,6 +859,56 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} rptRelQtdeEmpLimite
          EndProperty
          ForeColor       =   255
          DataField       =   "QtdeLimiteVend"
+         Alignment       =   2
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   2057
+            SubFormatType   =   0
+         EndProperty
+         DataMember      =   "cmdQtde_Func_Logo_Limite_Grouping"
+      EndProperty
+      ItemType6       =   3
+      BeginProperty Item6 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label17"
+         Object.Left            =   9975
+         Object.Top             =   675
+         Object.Width           =   360
+         Object.Height          =   240
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Tot.:"
+      EndProperty
+      ItemType7       =   13
+      BeginProperty Item7 {49FF6930-2B8C-11D1-8DA9-00A0C90FFFC2} 
+         _Version        =   393216
+         Name            =   "Function3"
+         Object.Left            =   10380
+         Object.Top             =   640
+         Object.Width           =   480
+         Object.Height          =   315
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   255
+         DataField       =   "QTDE"
          Alignment       =   2
          BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
             Type            =   0

@@ -15686,7 +15686,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
    BeginProperty Recordset151 
       CommandName     =   "cmdQtde_Func_Logo_Limite"
       CommDispId      =   5829
-      RsDispId        =   6141
+      RsDispId        =   6145
       CommandText     =   $"de.dsx":19457
       ActiveConnectionName=   "cnc"
       CommandType     =   1
@@ -15800,7 +15800,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Name            =   "QtdeVend"
          Caption         =   "QtdeVend"
       EndProperty
-      NumGroups       =   6
+      NumGroups       =   7
       BeginProperty Grouping1 
          Precision       =   10
          Size            =   4
@@ -15838,16 +15838,24 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
          Size            =   4
          Scale           =   0
          Type            =   3
-         Name            =   "QtdeLimiteVend"
-         Caption         =   "QtdeLimiteVend"
+         Name            =   "QtdeVend"
+         Caption         =   "QtdeVend"
       EndProperty
       BeginProperty Grouping6 
          Precision       =   10
          Size            =   4
          Scale           =   0
          Type            =   3
-         Name            =   "QtdeVend"
-         Caption         =   "QtdeVend"
+         Name            =   "QtdeLimiteVend"
+         Caption         =   "QtdeLimiteVend"
+      EndProperty
+      BeginProperty Grouping7 
+         Precision       =   10
+         Size            =   4
+         Scale           =   0
+         Type            =   3
+         Name            =   "QTDE"
+         Caption         =   "QTDE"
       EndProperty
       ParamCount      =   2
       BeginProperty P1 
@@ -15877,7 +15885,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdSqlGridMeta2"
       CommDispId      =   5845
       RsDispId        =   5855
-      CommandText     =   $"de.dsx":19A05
+      CommandText     =   $"de.dsx":19ABC
       ActiveConnectionName=   "cncSisInt"
       CommandType     =   1
       Locktype        =   3
@@ -15907,7 +15915,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       CommandName     =   "cmdTemp"
       CommDispId      =   5856
       RsDispId        =   5862
-      CommandText     =   $"de.dsx":19A43
+      CommandText     =   $"de.dsx":19AFA
       ActiveConnectionName=   "cnc"
       CommandType     =   1
       IsRSReturning   =   -1  'True
