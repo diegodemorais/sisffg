@@ -6343,12 +6343,12 @@ Private Sub cmdComisCx_Click()
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         If (vrVenda >= vrMeta) Then
-                            'vrMetaBonus = vrSalario * 0.1
-                            vrMetaBonus = 150
+                            vrMetaBonus = vrSalario * 0.15
+                            'vrMetaBonus = 150
                             wPercMeta = 100
                         Else
-                            'vrMetaBonus = vrSalario * 0.05
-                            vrMetaBonus = 100
+                            vrMetaBonus = vrSalario * 0.1
+                            'vrMetaBonus = 100
                             wPercMeta = 95
                         End If
                         
@@ -6772,12 +6772,12 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         If (vrVenda >= vrMeta) Then
-                            'vrMetaBonus = vrSalario * 0.1
-                            vrMetaBonus = 150
+                            vrMetaBonus = vrSalario * 0.15
+                            'vrMetaBonus = 150
                             wPercMeta = 100
                         Else
-                            'vrMetaBonus = vrSalario * 0.05
-                            vrMetaBonus = 100
+                            vrMetaBonus = vrSalario * 0.1
+                            'vrMetaBonus = 100
                             wPercMeta = 95
                         End If
                     
@@ -8069,12 +8069,12 @@ On Error Resume Next
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         If (vrVenda >= vrMeta) Then
-                            'vrMetaBonus = vrSalario * 0.1
-                            vrMetaBonus = 300
+                            vrMetaBonus = vrSalario * 0.15
+                            'vrMetaBonus = 300
                             wPercMeta = 100
                         Else
-                            'vrMetaBonus = vrSalario * 0.05
-                            vrMetaBonus = 200
+                            vrMetaBonus = vrSalario * 0.1
+                            'vrMetaBonus = 200
                             wPercMeta = 95
                         End If
                     descMeta = " + Bonus Meta(" & Format(wPercMeta, "0.0") & "% da meta = " & Format(vrMetaBonus, "0.00") & ")"
