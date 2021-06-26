@@ -2,10 +2,10 @@ VERSION 5.00
 Begin VB.MDIForm mdiPrincipal 
    BackColor       =   &H00C0C0C0&
    Caption         =   "Fichas de Funcionários [SisFF]"
-   ClientHeight    =   9960
+   ClientHeight    =   10755
    ClientLeft      =   60
    ClientTop       =   750
-   ClientWidth     =   15600
+   ClientWidth     =   20370
    Icon            =   "mdiPrincipal.frx":0000
    LinkTopic       =   "MDIForm1"
    ScrollBars      =   0   'False
@@ -303,8 +303,8 @@ On Error GoTo err1
  FRM_IMP_F.Show 1
  
     
-w_mes = FRM_IMP_F.txt_Mes
-w_ano = FRM_IMP_F.txt_Ano
+w_mes = FRM_IMP_F.TXT_MES
+w_ano = FRM_IMP_F.TXT_ANO
 w_Nome = FRM_IMP_F.dbNome & "%"
 w_logo = FRM_IMP_F.TXT_LOGO & "%"
     
@@ -345,8 +345,8 @@ On Error GoTo err1
     FRM_IMP_F.Show 1
     
      
-    w_mes = FRM_IMP_F.txt_Mes
-    w_ano = FRM_IMP_F.txt_Ano
+    w_mes = FRM_IMP_F.TXT_MES
+    w_ano = FRM_IMP_F.TXT_ANO
     w_Nome = FRM_IMP_F.dbNome
     w_logo = FRM_IMP_F.TXT_LOGO
      
@@ -392,8 +392,8 @@ On Error GoTo err1
  
     FRM_IMP_F.Show 1
      
-    w_mes = FRM_IMP_F.txt_Mes
-    w_ano = FRM_IMP_F.txt_Ano
+    w_mes = FRM_IMP_F.TXT_MES
+    w_ano = FRM_IMP_F.TXT_ANO
     w_Nome = FRM_IMP_F.dbNome
     w_logo = FRM_IMP_F.TXT_LOGO
     
@@ -432,13 +432,13 @@ On Error GoTo err1
      
     
     If FRM_IMP_F.ckTodas.value = 0 Then
-        FRM_IMP_F.TXT_LOGO = TXTLOGO
+        FRM_IMP_F.TXT_LOGO = txtLogo
     Else
         FRM_IMP_F.TXT_LOGO = "%"
     End If
     
-    FRM_IMP_F.txt_Mes = txt_Mes
-    FRM_IMP_F.txt_Ano = txt_Ano
+    FRM_IMP_F.TXT_MES = TXT_MES
+    FRM_IMP_F.TXT_ANO = TXT_ANO
     
     If FRM_IMP_F.ck_Nome.value = 0 Then
         FRM_IMP_F.dbNome = TXT_FUNC
@@ -529,8 +529,8 @@ On Error GoTo err1
                 & "Format('01/'+Mid(Str(TAB_FICHA_MENS.M_MES),2)+'/'+Mid(Str(TAB_FICHA_MENS.M_ANO),2),'DD/MM/YYYY') AS Data," _
                 & "TAB_FUNCIONARIO.F_Cod_L AS Logo2, LOJB010.NUM as Logo, TAB_FICHA_MENS.M_TOTAL, Mid(TAB_FUNCIONARIO.F_COD_CENTRAL,3) AS COD_CENTRAL," _
                 & " TAB_FICHA_MENS.M_TIPO AS TIPO, TAB_FUNCIONARIO.F_CX_QT_VND AS Cx_Qt_VND FROM TAB_FICHA_MENS, TAB_FUNCIONARIO INNER JOIN Lojb010 ON TAB_FUNCIONARIO.F_Cod_L = Lojb010.COD_LOJ " _
-                & " WHERE (((TAB_FICHA_MENS.M_F_COD)=[TAB_FUNCIONARIO].[F_Codigo]) AND ((TAB_FICHA_MENS.M_MES)=" & FRM_IMP_F.txt_Mes & ") AND" _
-                & " ((TAB_FICHA_MENS.M_ANO)=" & FRM_IMP_F.txt_Ano & ") AND ((TAB_FUNCIONARIO.F_NOME) Like '" & FRM_IMP_F.dbNome & "' and TAB_FUNCIONARIO.F_NOME <> '10 - Func'" _
+                & " WHERE (((TAB_FICHA_MENS.M_F_COD)=[TAB_FUNCIONARIO].[F_Codigo]) AND ((TAB_FICHA_MENS.M_MES)=" & FRM_IMP_F.TXT_MES & ") AND" _
+                & " ((TAB_FICHA_MENS.M_ANO)=" & FRM_IMP_F.TXT_ANO & ") AND ((TAB_FUNCIONARIO.F_NOME) Like '" & FRM_IMP_F.dbNome & "' and TAB_FUNCIONARIO.F_NOME <> '10 - Func'" _
                 & " AND TAB_FUNCIONARIO.F_NOME <> '99 - Presence') AND   (" _
                 & w_sqlTiposTripa _
                 & ") AND (" _
@@ -550,8 +550,8 @@ On Error GoTo err1
                 If de.rscmdSqlTotalVND.State = 1 Then de.rscmdSqlTotalVND.Close
                 
             
-                w_DtI = CVDate("01/" & Format(FRM_IMP_F.txt_Mes, "00") & "/" & Format(FRM_IMP_F.txt_Ano, "0000"))
-                w_DtF = UltDiaMes(FRM_IMP_F.txt_Mes, FRM_IMP_F.txt_Ano)
+                w_DtI = CVDate("01/" & Format(FRM_IMP_F.TXT_MES, "00") & "/" & Format(FRM_IMP_F.TXT_ANO, "0000"))
+                w_DtF = UltDiaMes(FRM_IMP_F.TXT_MES, FRM_IMP_F.TXT_ANO)
                 de.cmdSqlTotalVND w_DtI, w_DtF, IIf(FRM_IMP_F.TXT_LOGO = "", "%", FRM_IMP_F.TXT_LOGO)
                 
                 
@@ -612,8 +612,8 @@ On Error GoTo err1
  
  FRM_IMP_F.Show 1
  
-w_mes = FRM_IMP_F.txt_Mes
-w_ano = FRM_IMP_F.txt_Ano
+w_mes = FRM_IMP_F.TXT_MES
+w_ano = FRM_IMP_F.TXT_ANO
 w_logo = FRM_IMP_F.TXT_LOGO & "%"
     
 If FRM_IMP_F.txt_State = "A" And IsNumeric(w_mes) And IsNumeric(w_ano) Then
@@ -725,7 +725,7 @@ Private Sub mnuSisMenFicRelVend_Click()
     'w_Nome = FRM_IMP_F.dbNome
     'w_logo = FRM_IMP_F.TXT_LOGO
       
-    de.sqlComissaoPremio FRM_IMP_F.txt_Mes, FRM_IMP_F.txt_Ano, FRM_IMP_F.TXT_LOGO
+    de.sqlComissaoPremio FRM_IMP_F.TXT_MES, FRM_IMP_F.TXT_ANO, FRM_IMP_F.TXT_LOGO
     rptComissaoPremio.Show
     
         
