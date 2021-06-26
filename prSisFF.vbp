@@ -127,6 +127,7 @@ Designer=Rpts\rptGRIDgerente.Dsr
 Designer=Rpts\rptSalariosBruto.Dsr
 Designer=Rpts\rptComissMwts.Dsr
 Designer=Rpts\rptRelQtdeEmp.Dsr
+Form=Form\frmRelatorioComissao.frm
 IconForm="frmLogin"
 Startup="frmLogin"
 HelpFile=""

@@ -2,10 +2,10 @@ VERSION 5.00
 Begin VB.MDIForm mdiPrincipal 
    BackColor       =   &H00C0C0C0&
    Caption         =   "Fichas de Funcionários [SisFF]"
-   ClientHeight    =   10755
+   ClientHeight    =   10335
    ClientLeft      =   60
    ClientTop       =   750
-   ClientWidth     =   20370
+   ClientWidth     =   20475
    Icon            =   "mdiPrincipal.frx":0000
    LinkTopic       =   "MDIForm1"
    ScrollBars      =   0   'False
