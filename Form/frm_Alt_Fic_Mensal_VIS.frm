@@ -92,7 +92,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.TextBox Text1 
       Appearance      =   0  'Flat
-      BackColor       =   &H00FFC0C0&
+      BackColor       =   &H00FFFFFF&
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -102,6 +102,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   315
       Left            =   2640
       TabIndex        =   71
@@ -373,10 +374,11 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       _ExtentX        =   13996
       _ExtentY        =   556
       _Version        =   393216
-      Enabled         =   0   'False
+      Locked          =   -1  'True
       MatchEntry      =   -1  'True
       Style           =   2
-      BackColor       =   12632064
+      BackColor       =   8438015
+      ForeColor       =   0
       ListField       =   "F_NOME"
       BoundColumn     =   "F_Codigo"
       Text            =   ""
@@ -1311,7 +1313,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Width           =   255
    End
    Begin VB.Frame frmAtualizando 
-      BackColor       =   &H00808000&
+      BackColor       =   &H0080C0FF&
       BorderStyle     =   0  'None
       Height          =   960
       Left            =   4320
@@ -1332,7 +1334,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00FFFFFF&
+         ForeColor       =   &H00000000&
          Height          =   705
          Left            =   240
          TabIndex        =   83
@@ -2423,7 +2425,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.TextBox TXT_MAIS 
       Alignment       =   1  'Right Justify
-      BackColor       =   &H00C0C000&
+      BackColor       =   &H0080C0FF&
       BeginProperty DataFormat 
          Type            =   1
          Format          =   "R$ #.00"
@@ -2463,7 +2465,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.TextBox txt_SaldoEmp 
       Alignment       =   1  'Right Justify
-      BackColor       =   &H00C0C000&
+      BackColor       =   &H0080C0FF&
       BeginProperty DataFormat 
          Type            =   1
          Format          =   """R$ ""#.##0,00"
@@ -2493,10 +2495,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.TextBox txt_F_COD 
       Alignment       =   2  'Center
-      BackColor       =   &H00C0C000&
+      BackColor       =   &H0080C0FF&
       DataField       =   "M_F_COD"
       DataSource      =   "ADOREG"
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
@@ -2506,8 +2507,10 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00000000&
       Height          =   315
       Left            =   6480
+      Locked          =   -1  'True
       TabIndex        =   22
       Top             =   2085
       Width           =   1380
@@ -2642,34 +2645,45 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.TextBox TXT_ANO 
       Alignment       =   2  'Center
-      BackColor       =   &H00C0C000&
+      BackColor       =   &H0080C0FF&
       DataField       =   "M_ANO"
       DataSource      =   "ADOREG"
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   8.25
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00000000&
       Height          =   315
       Left            =   5400
+      Locked          =   -1  'True
       TabIndex        =   3
       Top             =   2085
       Width           =   570
    End
    Begin VB.ComboBox TXT_MES 
-      BackColor       =   &H00C0C000&
+      BackColor       =   &H0080C0FF&
       DataField       =   "M_MES"
       DataSource      =   "ADOREG"
-      Enabled         =   0   'False
-      Height          =   315
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   330
       ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":9AA7
       Left            =   4560
       List            =   "frm_Alt_Fic_Mensal_VIS.frx":9ACF
+      Locked          =   -1  'True
       TabIndex        =   2
       Top             =   2085
       Width           =   660
@@ -2814,27 +2828,28 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":134D8
       DataField       =   "M_LOGO"
       DataSource      =   "ADOREG"
-      Height          =   315
+      Height          =   330
       Left            =   3600
       TabIndex        =   1
       TabStop         =   0   'False
       Top             =   2085
       Width           =   735
       _ExtentX        =   1296
-      _ExtentY        =   556
+      _ExtentY        =   582
       _Version        =   393216
-      Enabled         =   0   'False
+      Locked          =   -1  'True
       MatchEntry      =   -1  'True
-      BackColor       =   12632064
+      BackColor       =   8438015
+      ForeColor       =   0
       ListField       =   "COD_LOJ"
       BoundColumn     =   "COD_LOJ"
       Text            =   ""
       Object.DataMember      =   "TAB_L"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
+         Name            =   "Arial"
          Size            =   8.25
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -3334,9 +3349,10 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       _ExtentX        =   1720
       _ExtentY        =   873
       _Version        =   393216
-      Enabled         =   0   'False
+      Locked          =   -1  'True
       MatchEntry      =   -1  'True
-      BackColor       =   12632064
+      BackColor       =   8438015
+      ForeColor       =   0
       ListField       =   "NUM"
       BoundColumn     =   "COD_LOJ"
       Text            =   ""
@@ -4215,7 +4231,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H000000C0&
+      ForeColor       =   &H000000FF&
       Height          =   375
       Left            =   120
       TabIndex        =   76
@@ -11184,7 +11200,8 @@ Private Sub ExibirCelula()
     
     Select Case LastCol
     Case Else
-        Text1.Move flexGRID_L.CellLeft - Screen.TwipsPerPixelX, flexGRID_L.CellTop + 7045 - Screen.TwipsPerPixelY, flexGRID_L.CellWidth + Screen.TwipsPerPixelX * 2, flexGRID_L.CellHeight + Screen.TwipsPerPixelY * 2
+        
+        Text1.Move flexGRID_L.CellLeft - Screen.TwipsPerPixelX, flexGRID_L.CellTop + 7540 - IIf(flexGRID_L.Top = 7560, 0, 2760) - Screen.TwipsPerPixelY, flexGRID_L.CellWidth + Screen.TwipsPerPixelX * 2, flexGRID_L.CellHeight + Screen.TwipsPerPixelY * 2
         Text1.text = flexGRID_L.text
         If Len(flexGRID_L.text) = 0 Then
             If LastRow > 1 Then
