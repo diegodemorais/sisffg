@@ -1053,7 +1053,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   217251841
+         Format          =   218431489
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -1074,7 +1074,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   217251841
+         Format          =   218431489
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
@@ -2558,25 +2558,25 @@ Dim w_currentRow As Integer
 Dim w_suprimir_exclusao
 
 Sub formatarFlexGrid()
-    If Not (adoReg.Recordset.EOF) Then
+    If Not (ADOREG.Recordset.EOF) Then
         flexGRID.Visible = False
 
-        For i = 1 To flexGRID.Rows - 1
-            If flexGRID.TextMatrix(i, 10) > 0 Then
+        For I = 1 To flexGRID.Rows - 1
+            If flexGRID.TextMatrix(I, 10) > 0 Then
                  ' Varre todas as colunas da linha e seta a cor de fundo
                  For coluna = 0 To flexGRID.Cols - 1
                      flexGRID.Col = coluna
-                     flexGRID.Row = i
+                     flexGRID.Row = I
                      flexGRID.CellBackColor = vbYellow
                      flexGRID.CellFontBold = True
                      'flexGRID_L.CellForeColor = &H80000004
                  Next coluna
              End If
             With flexGRID
-                    .Row = i: .Col = 17: .CellPictureAlignment = 4 ' Align the checkbox
+                    .Row = I: .Col = 17: .CellPictureAlignment = 4 ' Align the checkbox
                     Set .CellPicture = picUnchecked.Picture ' Set the default checkbox picture to the empty box
             End With
-        Next i
+        Next I
         
         flexGRID.ColAlignment(4) = flexAlignRightBottom 'valor
         flexGRID.ColAlignment(5) = flexAlignCenterBottom 'op
@@ -2665,7 +2665,7 @@ End Sub
 
 
 Private Sub Form_Activate()
-If w_At = True Then adoReg.Refresh
+If w_At = True Then ADOREG.Refresh
     
 End Sub
 
@@ -2698,9 +2698,9 @@ flexGRID.ColWidth(17) = 700 'excluir?
     w_At = True
         
     If frm_Alt_Fic_Mensal_VIS.TXT_FUNC = "" Then
-        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.TXT_NFICHA
+        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.txt_nficha
     Else
-        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.TXT_NFICHA
+        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.txt_nficha
     End If
     TXT_CONTA_CAD = ""
     TXT_DESC_CAD = ""
@@ -2726,24 +2726,24 @@ flexGRID.ColWidth(17) = 700 'excluir?
     If de.rscmdBase.State = 1 Then de.rscmdBase.Close
     
 
- If (frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
+ If (frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
         de.rscmdBase.Open "SELECT TAB_DESC_CALC.* FROM TAB_DESC_CALC WHERE (TAB_DESC_CALC.C_N_FICHA = " & TXT_NFICHA_CAD & ") ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT", , adOpenStatic, adLockOptimistic
     Else
         de.rscmdBase.Open "SELECT TAB_DESC_CALC.* FROM TAB_DESC_CALC WHERE (TAB_DESC_CALC.C_N_FICHA = " & TXT_NFICHA_CAD & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT", , adOpenStatic, adLockOptimistic
     End If
 
-    Set adoReg.Recordset = de.rscmdBase.Clone
+    Set ADOREG.Recordset = de.rscmdBase.Clone
     de.rscmdBase.Close
     
     v_filtro = "VCTO <= #" & Format(CVDate(w_Dt), "mm/dd/YYYY") & "#"
     v_filtro_puro = ""
 
         
-    If Not adoReg.Recordset.EOF Then
-        If (frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+    If Not ADOREG.Recordset.EOF Then
+        If (frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         Else
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         End If
     End If
     V_MOVE = True
@@ -2778,16 +2778,16 @@ End Sub
 '*** Caption no navegador ***
 Private Sub adoReg_MoveComplete(ByVal adReason As ADODB.EventReasonEnum, ByVal pError As ADODB.Error, adStatus As ADODB.EventStatusEnum, ByVal pRecordset As ADODB.Recordset)
 On Error GoTo err1
-    If Not adoReg.Recordset.EOF Then adoReg.Caption = "REGISTROS: " & adoReg.Recordset.AbsolutePosition & " / " & adoReg.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
+    If Not ADOREG.Recordset.EOF Then ADOREG.Caption = "REGISTROS: " & ADOREG.Recordset.AbsolutePosition & " / " & ADOREG.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
     
    If V_MOVE = True Then
         On Error Resume Next
         
-       For i = 3 To 7
+       For I = 3 To 7
           
-          If i > 3 And i <= 7 Then lbEmp(i).Visible = adoReg.Recordset.Fields("C_TP_CONTA") = 31
-          If i >= 3 Then txt_Emp(i).Visible = adoReg.Recordset.Fields("C_TP_CONTA") = 31
-       Next i
+          If I > 3 And I <= 7 Then lbEmp(I).Visible = ADOREG.Recordset.Fields("C_TP_CONTA") = 31
+          If I >= 3 Then txt_Emp(I).Visible = ADOREG.Recordset.Fields("C_TP_CONTA") = 31
+       Next I
         
         V_MOVE = False
         'ADO_GRID.Recordset.Requery
@@ -2822,8 +2822,8 @@ On Error GoTo err1
 
         V_MOVE = False
 '        ADOREG.Recordset.Requery
-        adoReg.Refresh
-        adoReg.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
+        ADOREG.Refresh
+        ADOREG.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
 
         V_MOVE = True
         
@@ -2886,12 +2886,12 @@ Private Sub Cancelar()
 On Error GoTo err1
     
 If GUIA.TabVisible(0) = True Then   '*** alteração
-    If adoReg.Recordset.RecordCount > 0 Then
+    If ADOREG.Recordset.RecordCount > 0 Then
     
-        pos = adoReg.Recordset.AbsolutePosition - 1
-        adoReg.Recordset.CancelBatch adAffectCurrent
-        adoReg.Refresh
-        adoReg.Recordset.Move pos
+        pos = ADOREG.Recordset.AbsolutePosition - 1
+        ADOREG.Recordset.CancelBatch adAffectCurrent
+        ADOREG.Refresh
+        ADOREG.Recordset.Move pos
     
     End If
     Editar
@@ -2902,7 +2902,7 @@ If GUIA.TabVisible(0) = True Then   '*** alteração
     
 Else '*** cad
     
-    TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.TXT_NFICHA
+    TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.txt_nficha
     TXT_CONTA_CAD = ""
     TXT_DESC_CAD = ""
     TXT_OP = ""
@@ -3058,22 +3058,22 @@ If w_PSS = w_PassWordLib Then
         
         'Se excluir o Emprestimo ,  tb  dá baixa no Cad Func.
       
-            W_E_Cod = adoReg.Recordset.Fields("C_EMP_COD")
-            W_C_COD = adoReg.Recordset.Fields("C_CODIGO")
-            w_Valor = adoReg.Recordset.Fields("C_VALOR")
+            W_E_Cod = ADOREG.Recordset.Fields("C_EMP_COD")
+            W_C_COD = ADOREG.Recordset.Fields("C_CODIGO")
+            w_Valor = ADOREG.Recordset.Fields("C_VALOR")
         
         
         If TXT_CONTA.BoundText = "9" And GUIA.TabVisible(0) = True Then
             '*** Qdo excluir Pag. de Emprestimo ! Pega o valor pago e desconta no saldo de emp. do tab_funcionario ***
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO - '" & adoReg.Recordset.Fields("C_VALOR") + IIf(IsNull(adoReg.Recordset.Fields("c_JUROS")), 0, adoReg.Recordset.Fields("c_JUROS")) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("m_F_COD") & ")"
-            de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_SALDO = E_SALDO - '" & adoReg.Recordset.Fields("C_VALOR") + adoReg.Recordset.Fields("c_JUROS") & "' WHERE E_Codigo = " & W_E_Cod & ""
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO - '" & ADOREG.Recordset.Fields("C_VALOR") + IIf(IsNull(ADOREG.Recordset.Fields("c_JUROS")), 0, ADOREG.Recordset.Fields("c_JUROS")) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("m_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_SALDO = E_SALDO - '" & ADOREG.Recordset.Fields("C_VALOR") + ADOREG.Recordset.Fields("c_JUROS") & "' WHERE E_Codigo = " & W_E_Cod & ""
         
         ElseIf TXT_CONTA.BoundText = "31" Then
             '*** Qdo excluir Emprestimo !   Pega o saldo q/ restou do emprestimo e desconta no saldo de emp. do tab_funcionario ***
             W_SALDO = 0
             On Error Resume Next
-            W_SALDO = de.cnc.Execute("SELECT E_SALDO FROM TAB_EMPRESTIMO WHERE E_CODIGO = " & adoReg.Recordset.Fields("C_EMP_COD") & "").Fields("E_SALDO")
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO =  F_EMPRESTIMO - '" & CDbl(W_SALDO) & "'  WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("m_F_COD") & ")"
+            W_SALDO = de.cnc.Execute("SELECT E_SALDO FROM TAB_EMPRESTIMO WHERE E_CODIGO = " & ADOREG.Recordset.Fields("C_EMP_COD") & "").Fields("E_SALDO")
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO =  F_EMPRESTIMO - '" & CDbl(W_SALDO) & "'  WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("m_F_COD") & ")"
         End If
         
         
@@ -3085,7 +3085,7 @@ If w_PSS = w_PassWordLib Then
         ElseIf TXT_CONTA.BoundText = "31" Then
             
             '*** Excluir o Emprestimo
-            de.cnc.Execute "DELETE * FROM TAB_EMPRESTIMO WHERE E_CODIGO = " & adoReg.Recordset.Fields("C_EMP_COD") & "", wRegAf
+            de.cnc.Execute "DELETE * FROM TAB_EMPRESTIMO WHERE E_CODIGO = " & ADOREG.Recordset.Fields("C_EMP_COD") & "", wRegAf
             If wRegAf = 0 Then MsgBox "Registro de Emprestimo não encontrado pra exclusão!", vbCritical
         
         End If
@@ -3093,18 +3093,18 @@ If w_PSS = w_PassWordLib Then
         w_Conta = TXT_CONTA.BoundText
      
         
-        de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP
+        de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP
         
         '*** Exclui o registro
-        adoReg.Recordset.Find "C_CODIGO = " & ADO_GRID.Recordset.Fields("C_CODIGO") & ""
-        W_POS = adoReg.Recordset.AbsolutePosition - 1
-        adoReg.Recordset.Delete
-        w_adoFiltro = adoReg.Recordset.Filter
+        ADOREG.Recordset.Find "C_CODIGO = " & ADO_GRID.Recordset.Fields("C_CODIGO") & ""
+        W_POS = ADOREG.Recordset.AbsolutePosition - 1
+        ADOREG.Recordset.Delete
+        w_adoFiltro = ADOREG.Recordset.Filter
         Form_Load
         ADO_GRID.Refresh
-        adoReg.Refresh
+        ADOREG.Refresh
       
-        adoReg.Recordset.Filter = w_adoFiltro
+        ADOREG.Recordset.Filter = w_adoFiltro
         ADO_GRID.Recordset.Filter = w_adoFiltro
       
         Grid.Refresh
@@ -3131,7 +3131,7 @@ If w_PSS = w_PassWordLib Then
       
     '*** ATUALIZA A ULTIMA DATA DE PAGAMENTO NA TAB_EMPRESTIMO *** SE FOR DESCONTO
     If w_Conta = "9" Then
-        W_DT_PG = de.cnc.Execute("SELECT MAX(EP_DT_PG) AS DT_ULT FROM TAB_EMPRESTIMO_PG WHERE (EP_Codigo = " & W_E_Cod & " AND EP_C_CODIGO <> " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields(0)
+        W_DT_PG = de.cnc.Execute("SELECT MAX(EP_DT_PG) AS DT_ULT FROM TAB_EMPRESTIMO_PG WHERE (EP_Codigo = " & W_E_Cod & " AND EP_C_CODIGO <> " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields(0)
         If Not IsNull(W_DT_PG) Then
             de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_DT_ULT_PG = '" & CVDate(W_DT_PG) & "', E_QT_PG = E_QT_PG-1  WHERE (E_Codigo = " & W_E_Cod & ")"
         Else
@@ -3140,7 +3140,7 @@ If w_PSS = w_PassWordLib Then
     ElseIf w_Conta = "14" Then
     
         '*** Atualiza VALOR DO SALDO DEVEDOR EM TAB_FUNCIONARIO ***
-        de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_SALDO_ANT = F_SALDO_ANT + '" & CDbl(w_Valor) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("m_F_COD") & ")"
+        de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_SALDO_ANT = F_SALDO_ANT + '" & CDbl(w_Valor) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("m_F_COD") & ")"
     
     End If
         
@@ -3162,7 +3162,7 @@ If w_PSS = w_PassWordLib Then
             
 
             '*** UPDATE NO FUNCIONARIO ATUALIZANDO A ANOTAÇÃO DO EMPRESTIMO ***
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
         End If
         
     End If
@@ -3179,26 +3179,26 @@ err1:
         MsgBox Err.Number & " : " & Err.Description, vbCritical
     Else
         MsgBox "NÃO É POSSÍVEL EXCLUIR ESTA FICHA MENSAL, DEVIDO A CÁLCULOS RELACIONADAS A ELA!", vbCritical
-        adoReg.Refresh
+        ADOREG.Refresh
     End If
     Resume sair
 End Sub
 
 Sub ExcluirSelecionados()
-Dim i As Integer
+Dim I As Integer
         
     ADO_GRID.Recordset.MoveFirst
     With flexGRID
-    For i = .Rows - 1 To 0 Step -1
+    For I = .Rows - 1 To 0 Step -1
         If .Rows >= 1 Then
             .Col = 17
-            .Row = i
+            .Row = I
             If .CellPicture = picChecked Then
-                ADO_GRID.Recordset.Find "C_CODIGO = " & flexGRID.TextMatrix(i, 7), , adSearchForward
+                ADO_GRID.Recordset.Find "C_CODIGO = " & flexGRID.TextMatrix(I, 7), , adSearchForward
                 Excluir
             End If
         End If
-    Next i
+    Next I
     End With
 
 End Sub
@@ -3290,10 +3290,10 @@ On Error GoTo err1
             
         '*** REMOVE O FILTRO ****
         Case 4:
-            If Not adoReg.Recordset.Filter = 0 Then
+            If Not ADOREG.Recordset.Filter = 0 Then
                 W_LD_FILTRO = False
-                adoReg.Recordset.Filter = 0
-                adoReg.Refresh
+                ADOREG.Recordset.Filter = 0
+                ADOREG.Refresh
             End If
         End Select
         
@@ -3311,7 +3311,7 @@ On Error GoTo err1
                 If Not W_FILTRO = "" And IsNumeric(W_FILTRO) And IsNumeric(W_FILTRO1) And Len(W_FILTRO1) = 4 Then
                     W_FILTRO = "M_MES = " & W_FILTRO & " AND M_ANO = " & W_FILTRO1
                     W_LD_FILTRO = True
-                    adoReg.Recordset.Filter = W_FILTRO
+                    ADOREG.Recordset.Filter = W_FILTRO
                     ADO_GRID.Recordset.MoveFirst
                 End If
                                 
@@ -3320,14 +3320,14 @@ On Error GoTo err1
                 If Not W_FILTRO = "" And IsNumeric(W_FILTRO) Then
                     W_FILTRO = W_CAMPO & " = " & W_FILTRO
                     W_LD_FILTRO = True
-                    adoReg.Recordset.Filter = W_FILTRO
+                    ADOREG.Recordset.Filter = W_FILTRO
                 End If
         
         End If
     End If
     
     ADO_GRID.Refresh
-    ADO_GRID.Recordset.Filter = adoReg.Recordset.Filter
+    ADO_GRID.Recordset.Filter = ADOREG.Recordset.Filter
     
     
 sair:
@@ -3358,21 +3358,21 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
         txt_valor.SetFocus
         txt_DT.SetFocus
         wDadosOld = "FICHA: " & ADO_GRID.Recordset.Fields("C_N_FICHA") & " | DATA: " & ADO_GRID.Recordset.Fields("DATA") & " | VALOR: " & ADO_GRID.Recordset.Fields("VALOR") & " | CONTA COD: " & ADO_GRID.Recordset.Fields("COD") & " | CONTA DESC: " & ADO_GRID.Recordset.Fields("TP") & " | DESCRIÇÃO: " & ADO_GRID.Recordset.Fields("CONTA") & " | OP: " & ADO_GRID.Recordset.Fields("OP")
-        adoReg.Recordset.UpdateBatch adAffectCurrent
+        ADOREG.Recordset.UpdateBatch adAffectCurrent
         
-        de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP & "   >>> DADOS ANTIGOS: " & wDadosOld
+        de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP & "   >>> DADOS ANTIGOS: " & wDadosOld
         
         If TXT_CONTA.BoundText = 32 Then
             'frm_Alt_Fic_Mensal_VIS.TXT_13_OBS = TXT_OBS
             'frm_Alt_Fic_Mensal_VIS.TXT_13_PG = txt_13
             '*** Atualiza Dt 13º ***  TAB_FUNCIONARIO
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_PG = '" & txt_13 & "' , F_13_OBS = '" & TXT_OBS & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_PG = '" & txt_13 & "' , F_13_OBS = '" & txt_Obs & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
             '*** Atualiza Dt 13º***   TAB_FICHA_MENS
             'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_PG = '" & txt_13 & "', M_13_OBS = '" & TXT_OBS & "'  WHERE (M_F_Cod = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OK") = 0
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_PG") = txt_13
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OBS") = TXT_OBS
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_OK") = 0
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_PG") = txt_13
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_OBS") = txt_Obs
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Update
         End If
         
        'Atualiza no cadastro dos fixos
@@ -3388,12 +3388,12 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
         w_At = True
             
         'Pause 1
-        adoReg.Refresh
+        ADOREG.Refresh
         
         'de.rsTAB_DESC_CALC.Requery
         If de.rscmdBase.State = 1 Then de.rscmdBase.Close
     
-        If (frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
+        If (frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
             de.rscmdBase.Open "SELECT TAB_DESC_CALC.* FROM TAB_DESC_CALC WHERE (TAB_DESC_CALC.C_N_FICHA = " & TXT_NFICHA_CAD & ") ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT", , adOpenStatic, adLockOptimistic
         Else
             de.rscmdBase.Open "SELECT TAB_DESC_CALC.* FROM TAB_DESC_CALC WHERE (TAB_DESC_CALC.C_N_FICHA = " & TXT_NFICHA_CAD & ") AND (TAB_DESC_CALC.C_TP_CONTA <> 20) AND (TAB_DESC_CALC.C_TP_CONTA <> 78) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT", , adOpenStatic, adLockOptimistic
@@ -3401,21 +3401,21 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
     
     
     
-        Set adoReg.Recordset = de.rscmdBase.Clone
+        Set ADOREG.Recordset = de.rscmdBase.Clone
         
-        adoReg.Refresh
+        ADOREG.Refresh
         
-        If (frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+        If (frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         Else
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         End If
 
         ADO_GRID.Refresh
         'Pause 1
         'Grid.ReBind
     
-        W_FICHA = TXT_NFICHA
+        W_FICHA = txt_nficha
         w_PSS = ""
         
         
@@ -3430,7 +3430,7 @@ Else    '**** CADASTRAR ****
         w_mes = frm_Alt_Fic_Mensal_VIS.TXT_MES
         w_ano = frm_Alt_Fic_Mensal_VIS.TXT_ANO
     ElseIf lb_form = "visualizar" Then
-        w_mes = frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_MES")
+        w_mes = frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_MES")
         w_ano = frm_Alt_Fic_Mensal_VIS.TXT_ANO
     End If
     
@@ -3481,35 +3481,35 @@ Else    '**** CADASTRAR ****
         '*** atualiza Data de PG de Férias
         Case 24:
             '*** Atualiza Dt FERIASº ***  TAB_FUNCIONARIO
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS_OK = 0 , F_FERIAS_ULT_PG = F_FERIAS_PG, F_FERIAS_PG = '" & TXT_DT_EXTRA & "', F_FERIAS = '" & TXT_DESC_EXTRA & "'  WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_FERIAS_OK = 0 , F_FERIAS_ULT_PG = F_FERIAS_PG, F_FERIAS_PG = '" & TXT_DT_EXTRA & "', F_FERIAS = '" & TXT_DESC_EXTRA & "'  WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
             '*** Atualiza Dt FERIAS***   TAB_FICHA_MENS
             'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_FERIAS_OK = 0 , M_FERIAS_ULT_PG = M_FERIAS_PG, M_FERIAS_PG = '" & TXT_DT_EXTRA & "',M_FERIAS = '" & TXT_DESC_EXTRA & "'  WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")"
             'de.rsTAB_FICHA_MENS.Requery
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_OK") = 0
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_ULT_PG") = frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_PG")
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS_PG") = TXT_DT_EXTRA
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_FERIAS") = TXT_DESC_EXTRA
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_FERIAS_OK") = 0
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_FERIAS_ULT_PG") = frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_FERIAS_PG")
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_FERIAS_PG") = TXT_DT_EXTRA
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_FERIAS") = TXT_DESC_EXTRA
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Update
         
         '*** atualiza Data de PG de 13º
         Case 32:
             '*** Atualiza Dt 13º ***  TAB_FUNCIONARIO
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_ULT_PG = F_13_PG, F_13_PG = '" & TXT_DT_EXTRA & "' , F_13_OBS = '" & TXT_DESC_EXTRA & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_ULT_PG = F_13_PG, F_13_PG = '" & TXT_DT_EXTRA & "' , F_13_OBS = '" & TXT_DESC_EXTRA & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
             '*** Atualiza Dt 13º***   TAB_FICHA_MENS
             'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_ULT_PG = M_13_PG, M_13_PG = '" & TXT_DT_EXTRA & "', M_13_OBS = '" & TXT_DESC_EXTRA & "'  WHERE (M_F_Cod = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
             'de.rsTAB_FICHA_MENS.Requery
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OK") = 0
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_ULT_PG") = frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_PG")
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_PG") = TXT_DT_EXTRA
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_13_OBS") = TXT_DESC_EXTRA
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_OK") = 0
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_ULT_PG") = frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_PG")
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_PG") = TXT_DT_EXTRA
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_OBS") = TXT_DESC_EXTRA
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Update
             
         
         '*** Desconto Saldo Mês Anterior
         Case 14:
             
             '*** Atualiza VALOR DO SALDO DEVEDOR EM TAB_FUNCIONARIO ***
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_SALDO_ANT = F_SALDO_ANT - '" & TXT_VALOR_CAD & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_SALDO_ANT = F_SALDO_ANT - '" & TXT_VALOR_CAD & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
                         
         
         '*** Desconto Emprestimo   OU   EMPRESTIMO
@@ -3521,7 +3521,7 @@ Else    '**** CADASTRAR ****
             If (CDbl(TXT_VALOR_CAD) * -1) > CDbl(TXT_E_JUROS) Then w_parc = w_parc + 1
             
             '*** Dá baixa no emprestimo na tab. funcionario ***
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO - '" & CDbl(w_Valor) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO - '" & CDbl(w_Valor) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
             
             '*** Dá baixa no emprestimo na tab. emprestimo ***
             de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_QT_PG = E_QT_PG + 1 , E_DT_ULT_PG = '" & TXT_DT_CAD & "', E_SALDO = E_SALDO - '" & CDbl(w_Valor) & "' WHERE (E_Codigo = " & TXT_E_COD & ")"
@@ -3534,7 +3534,7 @@ Else    '**** CADASTRAR ****
         '*** EMPRESTIMO
         Case 31:
             '*** Dá Entrada(soma) no emprestimo na tab. funcionario ***
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO + '" & CDbl(TXT_VALOR_CAD) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO = F_EMPRESTIMO + '" & CDbl(TXT_VALOR_CAD) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
         
         End Select
     
@@ -3556,10 +3556,10 @@ Else    '**** CADASTRAR ****
             Loop
             
             '*** UPDATE NO FUNCIONARIO ATUALIZANDO A ANOTAÇÃO DO EMPRESTIMO ***
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
             'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_EMPRESTIMO_ANOT = '" & W_EMP_ANOT & "' WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")"
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_EMPRESTIMO_ANOT") = W_EMP_ANOT
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_EMPRESTIMO_ANOT") = W_EMP_ANOT
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Update
             
         End If
      
@@ -3593,20 +3593,20 @@ Else    '**** CADASTRAR ****
 
 End If
 
-   If TXT_NFICHA <> "" Then
+   If txt_nficha <> "" Then
         
         'de.rsTAB_DESC_CALC.Close
         'de.TAB_DESC_CALC
         
         '*** CALCULA O TOTAL - APÓS O NOVO VALOR ***
-        W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields("MAIS")
-        W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields("MENOS")
+        W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MAIS")
+        W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MENOS")
         
         W_TOTAL = IIf(IsNull(W_MAIS), 0, W_MAIS) - IIf(IsNull(W_MENOS), 0, W_MENOS)
 
             'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & TXT_NFICHA & ")"
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_TOTAL") = CDbl(W_TOTAL)
-            frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Update
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_TOTAL") = CDbl(W_TOTAL)
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Update
                    
   End If
 
@@ -3763,7 +3763,7 @@ End Sub
 Private Sub Timer1_Timer()
 On Error Resume Next
 
-    If adoReg.Recordset.State = 1 Then If adoReg.Recordset.EOF Then Adicionar
+    If ADOREG.Recordset.State = 1 Then If ADOREG.Recordset.EOF Then Adicionar
     Timer1.Enabled = False
 
 End Sub
@@ -3880,7 +3880,7 @@ Private Sub TXT_CONTA_Change()
 On Error GoTo err1
    If w_At = False And BarraF.Buttons("cancelar").Enabled = True Then
             
-           If adoReg.Recordset.Fields("C_TP_CONTA") <> TXT_CONTA.BoundText Then
+           If ADOREG.Recordset.Fields("C_TP_CONTA") <> TXT_CONTA.BoundText Then
                 txt_conta_Op.BoundText = TXT_CONTA.BoundText
                 
                 TXT_CONTA_cod.BoundText = TXT_CONTA.BoundText
@@ -4021,7 +4021,7 @@ Private Sub TXT_CONTA_COD_Change()
        lb_dt_13.Visible = True
        lb_OBS.Visible = True
        txt_13.Visible = True
-       TXT_OBS.Visible = True
+       txt_Obs.Visible = True
     ElseIf TXT_CONTA_cod.BoundText = "32" Then
        lb_dt_13 = "DT. (13º)"
        lb_OBS = "OBS 13º"
@@ -4029,13 +4029,13 @@ Private Sub TXT_CONTA_COD_Change()
        lb_OBS.Visible = True
        txt_13.Visible = True
        txt_13 = frm_Alt_Fic_Mensal_VIS.TXT_13_PG
-       TXT_OBS = frm_Alt_Fic_Mensal_VIS.TXT_13_OBS
-       TXT_OBS.Visible = True
+       txt_Obs = frm_Alt_Fic_Mensal_VIS.TXT_13_OBS
+       txt_Obs.Visible = True
     Else
        lb_dt_13.Visible = False
        lb_OBS.Visible = False
        txt_13.Visible = False
-       TXT_OBS.Visible = False
+       txt_Obs.Visible = False
         
     End If
 
@@ -4277,7 +4277,7 @@ On Error GoTo loaderror
               w_qtdeL = wtab.RecordCount
               wtab.MoveFirst
               'INSERI OS REGISTRO P/ O GRID
-              For i = 1 To w_qtdeL
+              For I = 1 To w_qtdeL
                   W_QTDE = W_QTDE + 1
                   
                   If wtab.Fields("Saldo") > 0 Then
@@ -4290,7 +4290,7 @@ On Error GoTo loaderror
                     de.cmdIncluirAuxCred (wtab.Fields("CRED_LOJA") & "." & wtab.Fields("N_CRED")), Format(w_Dt, "dd/mm/yyyy"), CDbl(wtab.Fields("VALOR_COMPRA")), CDbl(wtab.Fields("SALDO")), W_LJ & "." & w_cod
                   End If
                wtab.MoveNext
-              Next i
+              Next I
               
             db.Close
     
