@@ -19,361 +19,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    Moveable        =   0   'False
    ScaleHeight     =   10365
    ScaleWidth      =   20475
-   Begin VB.CommandButton cmdRelAdmin 
-      Caption         =   "*"
-      Height          =   255
-      Left            =   15680
-      TabIndex        =   89
-      Top             =   1680
-      Visible         =   0   'False
-      Width           =   255
-   End
-   Begin Skin_Button.ctr_Button cmdLancamentosExpand 
-      Height          =   405
-      Left            =   8040
-      TabIndex        =   167
-      TabStop         =   0   'False
-      ToolTipText     =   "Expandir Lançamentos"
-      Top             =   7200
-      Width           =   420
-      _ExtentX        =   741
-      _ExtentY        =   714
-      BTYPE           =   3
-      TX              =   ""
-      ENAB            =   -1  'True
-      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      COLTYPE         =   4
-      FOCUSR          =   -1  'True
-      BCOL            =   14215660
-      BCOLO           =   14215660
-      FCOL            =   0
-      FCOLO           =   0
-      MCOL            =   12632256
-      MPTR            =   1
-      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":1042
-      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":105E
-      UMCOL           =   -1  'True
-      SOFT            =   0   'False
-      PICPOS          =   0
-      NGREY           =   0   'False
-      FX              =   0
-      HAND            =   0   'False
-      CHECK           =   0   'False
-      VALUE           =   0   'False
-   End
-   Begin MSDataListLib.DataCombo TXT_CRED 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":3EE8
-      DataField       =   "M_F_COD"
-      DataSource      =   "ADOREG"
-      Height          =   315
-      Left            =   240
-      TabIndex        =   15
-      Top             =   7650
-      Visible         =   0   'False
-      Width           =   855
-      _ExtentX        =   1508
-      _ExtentY        =   556
-      _Version        =   393216
-      Enabled         =   0   'False
-      MatchEntry      =   -1  'True
-      Style           =   2
-      ListField       =   "F_COD_CRED"
-      BoundColumn     =   "F_Codigo"
-      Text            =   ""
-      Object.DataMember      =   "TAB_FUNCIONARIO"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
-   Begin VB.TextBox Text1 
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H000000FF&
-      Height          =   315
-      Left            =   2640
-      TabIndex        =   71
-      Top             =   7920
-      Visible         =   0   'False
-      Width           =   1215
-   End
-   Begin VB.Timer Timer1 
-      Enabled         =   0   'False
-      Interval        =   10
-      Left            =   14880
-      Top             =   9000
-   End
-   Begin MSAdodcLib.Adodc ADOREG 
-      Height          =   330
-      Left            =   120
-      Top             =   9240
-      Visible         =   0   'False
-      Width           =   15480
-      _ExtentX        =   27305
-      _ExtentY        =   582
-      ConnectMode     =   0
-      CursorLocation  =   3
-      IsolationLevel  =   -1
-      ConnectionTimeout=   15
-      CommandTimeout  =   30
-      CursorType      =   3
-      LockType        =   3
-      CommandType     =   8
-      CursorOptions   =   0
-      CacheSize       =   50
-      MaxRecords      =   0
-      BOFAction       =   0
-      EOFAction       =   0
-      ConnectStringType=   1
-      Appearance      =   1
-      BackColor       =   8454143
-      ForeColor       =   -2147483640
-      Orientation     =   0
-      Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
-      OLEDBFile       =   ""
-      DataSourceName  =   ""
-      OtherAttributes =   ""
-      UserName        =   ""
-      Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "REGISTRO : 0/0"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      _Version        =   393216
-   End
-   Begin Skin_Button.ctr_Button cmdAddSalario 
-      Height          =   285
-      Left            =   14640
-      TabIndex        =   63
-      TabStop         =   0   'False
-      ToolTipText     =   "Gerar COMISSÃO para este funcionário"
-      Top             =   4440
-      Width           =   300
-      _ExtentX        =   529
-      _ExtentY        =   503
-      BTYPE           =   3
-      TX              =   ""
-      ENAB            =   -1  'True
-      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      COLTYPE         =   4
-      FOCUSR          =   -1  'True
-      BCOL            =   14215660
-      BCOLO           =   14215660
-      FCOL            =   0
-      FCOLO           =   0
-      MCOL            =   12632256
-      MPTR            =   1
-      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":3EF9
-      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":3F15
-      UMCOL           =   -1  'True
-      SOFT            =   0   'False
-      PICPOS          =   0
-      NGREY           =   0   'False
-      FX              =   0
-      HAND            =   0   'False
-      CHECK           =   0   'False
-      VALUE           =   0   'False
-   End
-   Begin Skin_Button.ctr_Button cmdDescCalcFixo 
-      Height          =   285
-      Left            =   14640
-      TabIndex        =   66
-      TabStop         =   0   'False
-      ToolTipText     =   "Gerar Lançamentos Fixos"
-      Top             =   4080
-      Visible         =   0   'False
-      Width           =   300
-      _ExtentX        =   529
-      _ExtentY        =   503
-      BTYPE           =   3
-      TX              =   ""
-      ENAB            =   -1  'True
-      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      COLTYPE         =   4
-      FOCUSR          =   -1  'True
-      BCOL            =   14215660
-      BCOLO           =   14215660
-      FCOL            =   0
-      FCOLO           =   0
-      MCOL            =   12632256
-      MPTR            =   1
-      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":5B37
-      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":5B53
-      UMCOL           =   -1  'True
-      SOFT            =   0   'False
-      PICPOS          =   0
-      NGREY           =   0   'False
-      FX              =   0
-      HAND            =   0   'False
-      CHECK           =   0   'False
-      VALUE           =   0   'False
-   End
-   Begin VB.Frame CARIMBO 
-      BackColor       =   &H00C0C0FF&
-      BorderStyle     =   0  'None
-      Height          =   1545
-      Left            =   7320
-      TabIndex        =   45
-      Top             =   5640
-      Visible         =   0   'False
-      Width           =   1470
-      Begin VB.Label lb_Dt_ACF 
-         Alignment       =   1  'Right Justify
-         BackStyle       =   0  'Transparent
-         Caption         =   "20/02/2006"
-         DataField       =   "M_DT_ACF"
-         BeginProperty DataFormat 
-            Type            =   1
-            Format          =   "dd/MM/yyyy"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1046
-            SubFormatType   =   3
-         EndProperty
-         DataSource      =   "ADOREG"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00FF0000&
-         Height          =   270
-         Left            =   195
-         TabIndex        =   47
-         Top             =   975
-         Width           =   1050
-      End
-      Begin VB.Label Label21 
-         Alignment       =   2  'Center
-         BackStyle       =   0  'Transparent
-         Caption         =   "ACERTO FINAL"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H000000FF&
-         Height          =   705
-         Left            =   0
-         TabIndex        =   46
-         Top             =   360
-         Width           =   1560
-      End
-      Begin VB.Line Line3 
-         BorderColor     =   &H0000C000&
-         BorderWidth     =   7
-         X1              =   600
-         X2              =   390
-         Y1              =   1200
-         Y2              =   600
-      End
-      Begin VB.Line Line2 
-         BorderColor     =   &H0000C000&
-         BorderWidth     =   7
-         X1              =   510
-         X2              =   1035
-         Y1              =   1200
-         Y2              =   435
-      End
-      Begin VB.Shape Shape3 
-         BackColor       =   &H00C0FFC0&
-         BorderColor     =   &H000000C0&
-         BorderWidth     =   7
-         FillColor       =   &H000000FF&
-         Height          =   1335
-         Left            =   -720
-         Shape           =   3  'Circle
-         Top             =   120
-         Width           =   2895
-      End
-   End
-   Begin MSDataListLib.DataCombo TXT_FUNC 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":7775
-      DataField       =   "M_F_COD"
-      DataSource      =   "ADOREG"
-      Height          =   315
-      Left            =   120
-      TabIndex        =   7
-      Top             =   2520
-      Width           =   7935
-      _ExtentX        =   13996
-      _ExtentY        =   556
-      _Version        =   393216
-      Locked          =   -1  'True
-      MatchEntry      =   -1  'True
-      Style           =   2
-      BackColor       =   8438015
-      ForeColor       =   0
-      ListField       =   "F_NOME"
-      BoundColumn     =   "F_Codigo"
-      Text            =   ""
-      Object.DataMember      =   "TAB_FUNCIONARIO"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
    Begin VB.CommandButton cmdDelFichas 
       BackColor       =   &H8000000D&
       Caption         =   "Deletar Fichas ñ exist."
@@ -514,197 +159,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Visible         =   0   'False
       Width           =   2000
    End
-   Begin VB.Frame frmNavegar 
-      BackColor       =   &H80000000&
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   840
-      Left            =   13260
-      TabIndex        =   133
-      Top             =   840
-      Width           =   1280
-      Begin Skin_Button.ctr_Button bt_VoltarDT 
-         Height          =   675
-         Left            =   40
-         TabIndex        =   134
-         TabStop         =   0   'False
-         Top             =   120
-         Width           =   585
-         _ExtentX        =   1032
-         _ExtentY        =   1191
-         BTYPE           =   3
-         TX              =   ""
-         ENAB            =   -1  'True
-         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         COLTYPE         =   4
-         FOCUSR          =   -1  'True
-         BCOL            =   14215660
-         BCOLO           =   14215660
-         FCOL            =   0
-         FCOLO           =   0
-         MCOL            =   12632256
-         MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":7786
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":77A2
-         UMCOL           =   -1  'True
-         SOFT            =   0   'False
-         PICPOS          =   0
-         NGREY           =   0   'False
-         FX              =   0
-         HAND            =   0   'False
-         CHECK           =   0   'False
-         VALUE           =   0   'False
-      End
-      Begin Skin_Button.ctr_Button bt_AvaDT 
-         Height          =   675
-         Left            =   650
-         TabIndex        =   135
-         TabStop         =   0   'False
-         Top             =   120
-         Width           =   585
-         _ExtentX        =   1032
-         _ExtentY        =   1191
-         BTYPE           =   3
-         TX              =   ""
-         ENAB            =   -1  'True
-         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         COLTYPE         =   4
-         FOCUSR          =   -1  'True
-         BCOL            =   14215660
-         BCOLO           =   14215660
-         FCOL            =   0
-         FCOLO           =   0
-         MCOL            =   12632256
-         MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":7BF4
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":7C10
-         UMCOL           =   -1  'True
-         SOFT            =   0   'False
-         PICPOS          =   0
-         NGREY           =   0   'False
-         FX              =   0
-         HAND            =   0   'False
-         CHECK           =   0   'False
-         VALUE           =   0   'False
-      End
-   End
-   Begin VB.Frame frmAtualizar 
-      BackColor       =   &H80000000&
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   840
-      Left            =   0
-      TabIndex        =   130
-      Top             =   840
-      Width           =   1935
-      Begin VB.CommandButton cmdAtualizarCaption 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         Caption         =   "Atualizar"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   675
-         Left            =   40
-         MaskColor       =   &H00FFFFFF&
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":8062
-         TabIndex        =   132
-         Top             =   150
-         Width           =   1185
-      End
-      Begin VB.CommandButton cmdAtualizar 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FF8080&
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   675
-         Left            =   1210
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":80D9
-         Style           =   1  'Graphical
-         TabIndex        =   131
-         Top             =   130
-         Width           =   705
-      End
-   End
-   Begin VB.Frame frmEsconder 
-      BackColor       =   &H80000000&
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   840
-      Left            =   19800
-      TabIndex        =   128
-      Top             =   840
-      Width           =   615
-      Begin VB.CommandButton cmdEsconder 
-         Caption         =   "!"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   375
-         Left            =   120
-         MaskColor       =   &H8000000A&
-         Style           =   1  'Graphical
-         TabIndex        =   129
-         Top             =   240
-         Width           =   390
-      End
-   End
    Begin VB.CommandButton cmdDespesa 
       BackColor       =   &H8000000D&
       Caption         =   "Despesas CX"
@@ -804,6 +258,580 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Top             =   4080
       Visible         =   0   'False
       Width           =   2000
+   End
+   Begin MSHierarchicalFlexGridLib.MSHFlexGrid flexGRID_L 
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":1042
+      Height          =   2415
+      Left            =   0
+      TabIndex        =   67
+      Top             =   7560
+      Width           =   15915
+      _ExtentX        =   28072
+      _ExtentY        =   4260
+      _Version        =   393216
+      Rows            =   10
+      FixedRows       =   0
+      FixedCols       =   0
+      ForeColorSel    =   -2147483639
+      AllowBigSelection=   0   'False
+      FocusRect       =   2
+      HighLight       =   0
+      ScrollBars      =   2
+      GridLineWidthFixed=   1
+      RowSizingMode   =   1
+      _NumberOfBands  =   1
+      _Band(0).Cols   =   2
+      _Band(0).GridLinesBand=   1
+      _Band(0).GridLineWidthBand=   1
+      _Band(0).TextStyleBand=   0
+      _Band(0).TextStyleHeader=   0
+      _Band(0).ColHeader=   1
+   End
+   Begin VB.CommandButton cmdRelAdmin 
+      Caption         =   "*"
+      Height          =   255
+      Left            =   15680
+      TabIndex        =   89
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   255
+   End
+   Begin Skin_Button.ctr_Button cmdLancamentosExpand 
+      Height          =   405
+      Left            =   8040
+      TabIndex        =   167
+      TabStop         =   0   'False
+      ToolTipText     =   "Expandir Lançamentos"
+      Top             =   7200
+      Width           =   420
+      _ExtentX        =   741
+      _ExtentY        =   714
+      BTYPE           =   3
+      TX              =   ""
+      ENAB            =   -1  'True
+      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      COLTYPE         =   4
+      FOCUSR          =   -1  'True
+      BCOL            =   14215660
+      BCOLO           =   14215660
+      FCOL            =   0
+      FCOLO           =   0
+      MCOL            =   12632256
+      MPTR            =   1
+      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":1059
+      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":1075
+      UMCOL           =   -1  'True
+      SOFT            =   0   'False
+      PICPOS          =   0
+      NGREY           =   0   'False
+      FX              =   0
+      HAND            =   0   'False
+      CHECK           =   0   'False
+      VALUE           =   0   'False
+   End
+   Begin MSDataListLib.DataCombo TXT_CRED 
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":3EFF
+      DataField       =   "M_F_COD"
+      DataSource      =   "ADOREG"
+      Height          =   315
+      Left            =   240
+      TabIndex        =   15
+      Top             =   7650
+      Visible         =   0   'False
+      Width           =   855
+      _ExtentX        =   1508
+      _ExtentY        =   556
+      _Version        =   393216
+      Enabled         =   0   'False
+      MatchEntry      =   -1  'True
+      Style           =   2
+      ListField       =   "F_COD_CRED"
+      BoundColumn     =   "F_Codigo"
+      Text            =   ""
+      Object.DataMember      =   "TAB_FUNCIONARIO"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin VB.TextBox Text1 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00FFFFFF&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   315
+      Left            =   2640
+      TabIndex        =   71
+      Top             =   7920
+      Visible         =   0   'False
+      Width           =   1215
+   End
+   Begin VB.Timer Timer1 
+      Enabled         =   0   'False
+      Interval        =   10
+      Left            =   14880
+      Top             =   9000
+   End
+   Begin MSAdodcLib.Adodc ADOREG 
+      Height          =   330
+      Left            =   120
+      Top             =   9240
+      Visible         =   0   'False
+      Width           =   15480
+      _ExtentX        =   27305
+      _ExtentY        =   582
+      ConnectMode     =   0
+      CursorLocation  =   3
+      IsolationLevel  =   -1
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      CursorType      =   3
+      LockType        =   3
+      CommandType     =   8
+      CursorOptions   =   0
+      CacheSize       =   50
+      MaxRecords      =   0
+      BOFAction       =   0
+      EOFAction       =   0
+      ConnectStringType=   1
+      Appearance      =   1
+      BackColor       =   8454143
+      ForeColor       =   -2147483640
+      Orientation     =   0
+      Enabled         =   -1
+      Connect         =   ""
+      OLEDBString     =   ""
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      RecordSource    =   ""
+      Caption         =   "REGISTRO : 0/0"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      _Version        =   393216
+   End
+   Begin Skin_Button.ctr_Button cmdAddSalario 
+      Height          =   285
+      Left            =   14640
+      TabIndex        =   63
+      TabStop         =   0   'False
+      ToolTipText     =   "Gerar COMISSÃO para este funcionário"
+      Top             =   4440
+      Width           =   300
+      _ExtentX        =   529
+      _ExtentY        =   503
+      BTYPE           =   3
+      TX              =   ""
+      ENAB            =   -1  'True
+      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      COLTYPE         =   4
+      FOCUSR          =   -1  'True
+      BCOL            =   14215660
+      BCOLO           =   14215660
+      FCOL            =   0
+      FCOLO           =   0
+      MCOL            =   12632256
+      MPTR            =   1
+      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":3F10
+      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":3F2C
+      UMCOL           =   -1  'True
+      SOFT            =   0   'False
+      PICPOS          =   0
+      NGREY           =   0   'False
+      FX              =   0
+      HAND            =   0   'False
+      CHECK           =   0   'False
+      VALUE           =   0   'False
+   End
+   Begin Skin_Button.ctr_Button cmdDescCalcFixo 
+      Height          =   285
+      Left            =   14640
+      TabIndex        =   66
+      TabStop         =   0   'False
+      ToolTipText     =   "Gerar Lançamentos Fixos"
+      Top             =   4080
+      Visible         =   0   'False
+      Width           =   300
+      _ExtentX        =   529
+      _ExtentY        =   503
+      BTYPE           =   3
+      TX              =   ""
+      ENAB            =   -1  'True
+      BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      COLTYPE         =   4
+      FOCUSR          =   -1  'True
+      BCOL            =   14215660
+      BCOLO           =   14215660
+      FCOL            =   0
+      FCOLO           =   0
+      MCOL            =   12632256
+      MPTR            =   1
+      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":5B4E
+      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":5B6A
+      UMCOL           =   -1  'True
+      SOFT            =   0   'False
+      PICPOS          =   0
+      NGREY           =   0   'False
+      FX              =   0
+      HAND            =   0   'False
+      CHECK           =   0   'False
+      VALUE           =   0   'False
+   End
+   Begin VB.Frame CARIMBO 
+      BackColor       =   &H00C0C0FF&
+      BorderStyle     =   0  'None
+      Height          =   1545
+      Left            =   7320
+      TabIndex        =   45
+      Top             =   5640
+      Visible         =   0   'False
+      Width           =   1470
+      Begin VB.Label lb_Dt_ACF 
+         Alignment       =   1  'Right Justify
+         BackStyle       =   0  'Transparent
+         Caption         =   "20/02/2006"
+         DataField       =   "M_DT_ACF"
+         BeginProperty DataFormat 
+            Type            =   1
+            Format          =   "dd/MM/yyyy"
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1046
+            SubFormatType   =   3
+         EndProperty
+         DataSource      =   "ADOREG"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   270
+         Left            =   195
+         TabIndex        =   47
+         Top             =   975
+         Width           =   1050
+      End
+      Begin VB.Label Label21 
+         Alignment       =   2  'Center
+         BackStyle       =   0  'Transparent
+         Caption         =   "ACERTO FINAL"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   705
+         Left            =   0
+         TabIndex        =   46
+         Top             =   360
+         Width           =   1560
+      End
+      Begin VB.Line Line3 
+         BorderColor     =   &H0000C000&
+         BorderWidth     =   7
+         X1              =   600
+         X2              =   390
+         Y1              =   1200
+         Y2              =   600
+      End
+      Begin VB.Line Line2 
+         BorderColor     =   &H0000C000&
+         BorderWidth     =   7
+         X1              =   510
+         X2              =   1035
+         Y1              =   1200
+         Y2              =   435
+      End
+      Begin VB.Shape Shape3 
+         BackColor       =   &H00C0FFC0&
+         BorderColor     =   &H000000C0&
+         BorderWidth     =   7
+         FillColor       =   &H000000FF&
+         Height          =   1335
+         Left            =   -720
+         Shape           =   3  'Circle
+         Top             =   120
+         Width           =   2895
+      End
+   End
+   Begin MSDataListLib.DataCombo TXT_FUNC 
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":778C
+      DataField       =   "M_F_COD"
+      DataSource      =   "ADOREG"
+      Height          =   315
+      Left            =   120
+      TabIndex        =   7
+      Top             =   2520
+      Width           =   7935
+      _ExtentX        =   13996
+      _ExtentY        =   556
+      _Version        =   393216
+      Locked          =   -1  'True
+      MatchEntry      =   -1  'True
+      Style           =   2
+      BackColor       =   8438015
+      ForeColor       =   0
+      ListField       =   "F_NOME"
+      BoundColumn     =   "F_Codigo"
+      Text            =   ""
+      Object.DataMember      =   "TAB_FUNCIONARIO"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin VB.Frame frmNavegar 
+      BackColor       =   &H80000000&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   840
+      Left            =   13260
+      TabIndex        =   133
+      Top             =   840
+      Width           =   1280
+      Begin Skin_Button.ctr_Button bt_VoltarDT 
+         Height          =   675
+         Left            =   40
+         TabIndex        =   134
+         TabStop         =   0   'False
+         Top             =   120
+         Width           =   585
+         _ExtentX        =   1032
+         _ExtentY        =   1191
+         BTYPE           =   3
+         TX              =   ""
+         ENAB            =   -1  'True
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         COLTYPE         =   4
+         FOCUSR          =   -1  'True
+         BCOL            =   14215660
+         BCOLO           =   14215660
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":779D
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":77B9
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
+      Begin Skin_Button.ctr_Button bt_AvaDT 
+         Height          =   675
+         Left            =   650
+         TabIndex        =   135
+         TabStop         =   0   'False
+         Top             =   120
+         Width           =   585
+         _ExtentX        =   1032
+         _ExtentY        =   1191
+         BTYPE           =   3
+         TX              =   ""
+         ENAB            =   -1  'True
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         COLTYPE         =   4
+         FOCUSR          =   -1  'True
+         BCOL            =   14215660
+         BCOLO           =   14215660
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":7C0B
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":7C27
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
+   End
+   Begin VB.Frame frmAtualizar 
+      BackColor       =   &H80000000&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   840
+      Left            =   0
+      TabIndex        =   130
+      Top             =   840
+      Width           =   1935
+      Begin VB.CommandButton cmdAtualizarCaption 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Caption         =   "Atualizar"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   675
+         Left            =   40
+         MaskColor       =   &H00FFFFFF&
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":8079
+         TabIndex        =   132
+         Top             =   150
+         Width           =   1185
+      End
+      Begin VB.CommandButton cmdAtualizar 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FF8080&
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   675
+         Left            =   1210
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":80F0
+         Style           =   1  'Graphical
+         TabIndex        =   131
+         Top             =   130
+         Width           =   705
+      End
+   End
+   Begin VB.Frame frmEsconder 
+      BackColor       =   &H80000000&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   840
+      Left            =   19800
+      TabIndex        =   128
+      Top             =   840
+      Width           =   615
+      Begin VB.CommandButton cmdEsconder 
+         Caption         =   "!"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   120
+         MaskColor       =   &H8000000A&
+         Style           =   1  'Graphical
+         TabIndex        =   129
+         Top             =   240
+         Width           =   390
+      End
    End
    Begin VB.CommandButton cmd13 
       BackColor       =   &H8000000D&
@@ -1164,8 +1192,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":83E3
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":83FF
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":83FA
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":8416
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1315,7 +1343,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       End
    End
    Begin MSDataGridLib.DataGrid Grid 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":96E1
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":96F8
       CausesValidation=   0   'False
       Height          =   7275
       Left            =   15960
@@ -2124,9 +2152,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       End
       Begin VB.ComboBox cbMostrar 
          Height          =   315
-         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":96F6
+         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":970D
          Left            =   120
-         List            =   "frm_Alt_Fic_Mensal_VIS.frx":971B
+         List            =   "frm_Alt_Fic_Mensal_VIS.frx":9732
          TabIndex        =   74
          Text            =   "TODOS"
          Top             =   240
@@ -2341,7 +2369,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Enabled         =   0   'False
       Height          =   315
       Left            =   17640
-      Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9786
+      Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":979D
       Style           =   1  'Graphical
       TabIndex        =   48
       TabStop         =   0   'False
@@ -2652,9 +2680,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   330
-      ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":9A90
+      ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":9AA7
       Left            =   4560
-      List            =   "frm_Alt_Fic_Mensal_VIS.frx":9AB8
+      List            =   "frm_Alt_Fic_Mensal_VIS.frx":9ACF
       Locked          =   -1  'True
       TabIndex        =   2
       Top             =   2085
@@ -2735,69 +2763,69 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   15
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9AE3
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9AFA
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9DFD
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9E14
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A117
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A12E
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A431
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A448
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A74B
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A762
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AA65
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AA7C
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AD7F
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AD96
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":B659
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":B670
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D363
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D37A
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D67D
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D694
             Key             =   ""
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DACF
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DAE6
             Key             =   ""
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DDE9
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DE00
             Key             =   ""
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":E10B
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":E122
             Key             =   ""
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":108BD
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":108D4
             Key             =   ""
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":10D0F
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":10D26
             Key             =   ""
          EndProperty
       EndProperty
    End
    Begin MSDataListLib.DataCombo txtLogo 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":134C1
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":134D8
       DataField       =   "M_LOGO"
       DataSource      =   "ADOREG"
       Height          =   330
@@ -2856,8 +2884,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       FCOLO           =   0
       MCOL            =   12632256
       MPTR            =   1
-      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":134D2
-      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":134EE
+      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":134E9
+      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":13505
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -2904,9 +2932,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Width           =   2055
          Begin VB.ComboBox txt_PMes 
             Height          =   315
-            ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":15110
+            ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":15127
             Left            =   195
-            List            =   "frm_Alt_Fic_Mensal_VIS.frx":15138
+            List            =   "frm_Alt_Fic_Mensal_VIS.frx":1514F
             TabIndex        =   30
             Top             =   195
             Width           =   690
@@ -3141,7 +3169,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Begin VB.CommandButton cmdFiltrar 
          Height          =   555
          Left            =   10680
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":15163
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":1517A
          Style           =   1  'Graphical
          TabIndex        =   37
          Top             =   240
@@ -3151,7 +3179,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Begin VB.CommandButton bt_Salva_Ac 
          Height          =   555
          Left            =   10680
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":1546D
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":15484
          Style           =   1  'Graphical
          TabIndex        =   53
          TabStop         =   0   'False
@@ -3309,7 +3337,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
    End
    Begin MSDataListLib.DataCombo txtLogo2 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":15777
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":1578E
       DataField       =   "M_LOGO"
       DataSource      =   "ADOREG"
       Height          =   495
@@ -3462,8 +3490,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":15788
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":157A4
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":1579F
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":157BB
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -3503,8 +3531,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":16A86
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":16AA2
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":16A9D
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":16AB9
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -3581,8 +3609,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":17D84
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":17DA0
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":17D9B
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":17DB7
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -3703,9 +3731,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          DataSource      =   "adoReg"
          Enabled         =   0   'False
          Height          =   315
-         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":19082
+         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":19099
          Left            =   2520
-         List            =   "frm_Alt_Fic_Mensal_VIS.frx":190AA
+         List            =   "frm_Alt_Fic_Mensal_VIS.frx":190C1
          TabIndex        =   151
          Top             =   960
          Width           =   780
@@ -3725,7 +3753,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Begin VB.CommandButton cmdFaltas 
          Height          =   435
          Left            =   6240
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":190D5
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":190EC
          Style           =   1  'Graphical
          TabIndex        =   149
          Top             =   840
@@ -3909,8 +3937,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":193DF
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":193FB
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":193F6
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":19412
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -4046,34 +4074,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Top             =   960
          Width           =   705
       End
-   End
-   Begin MSHierarchicalFlexGridLib.MSHFlexGrid flexGRID_L 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":1A6DD
-      Height          =   2415
-      Left            =   0
-      TabIndex        =   67
-      Top             =   7560
-      Width           =   15915
-      _ExtentX        =   28072
-      _ExtentY        =   4260
-      _Version        =   393216
-      Rows            =   10
-      FixedRows       =   0
-      FixedCols       =   0
-      ForeColorSel    =   -2147483639
-      AllowBigSelection=   0   'False
-      FocusRect       =   2
-      HighLight       =   0
-      ScrollBars      =   2
-      GridLineWidthFixed=   1
-      RowSizingMode   =   1
-      _NumberOfBands  =   1
-      _Band(0).Cols   =   2
-      _Band(0).GridLinesBand=   1
-      _Band(0).GridLineWidthBand=   1
-      _Band(0).TextStyleBand=   0
-      _Band(0).TextStyleHeader=   0
-      _Band(0).ColHeader=   1
    End
    Begin VB.Label Label37 
       BackStyle       =   0  'Transparent
