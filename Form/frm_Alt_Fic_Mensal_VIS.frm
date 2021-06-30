@@ -1316,9 +1316,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BackColor       =   &H0080C0FF&
       BorderStyle     =   0  'None
       Height          =   960
-      Left            =   4320
+      Left            =   4920
       TabIndex        =   82
-      Top             =   4440
+      Top             =   2880
       Visible         =   0   'False
       Width           =   5640
       Begin VB.Label Label6 
@@ -2741,13 +2741,13 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1035
+      Height          =   795
       Left            =   8880
       Locked          =   -1  'True
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
       TabIndex        =   6
-      Top             =   5160
+      Top             =   5400
       Width           =   6795
    End
    Begin MSComctlLib.ImageList ImageList1 
@@ -4240,7 +4240,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.Label lblNotas 
       BackStyle       =   0  'Transparent
-      Caption         =   "CONTROLE SAL.:"
+      Caption         =   "CONTROLE SAL."
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
@@ -4448,7 +4448,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.Label Label7 
       BackStyle       =   0  'Transparent
-      Caption         =   "ANOTAÇÕES GERAIS:"
+      Caption         =   "ANOTAÇÕES GERAIS"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
@@ -4538,7 +4538,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Width           =   495
    End
    Begin VB.Label Label2 
-      Alignment       =   1  'Right Justify
       BackStyle       =   0  'Transparent
       Caption         =   "EMPRÉSTIMOS"
       BeginProperty Font 
@@ -4551,10 +4550,10 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   14040
+      Left            =   8880
       TabIndex        =   11
-      Top             =   4920
-      Width           =   1575
+      Top             =   5160
+      Width           =   1455
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
