@@ -19,6 +19,15 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    Moveable        =   0   'False
    ScaleHeight     =   10365
    ScaleWidth      =   20475
+   Begin VB.CommandButton cmdRelAdmin 
+      Caption         =   "*"
+      Height          =   255
+      Left            =   15680
+      TabIndex        =   89
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   255
+   End
    Begin Skin_Button.ctr_Button cmdLancamentosExpand 
       Height          =   405
       Left            =   8040
@@ -246,34 +255,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       CHECK           =   0   'False
       VALUE           =   0   'False
    End
-   Begin MSHierarchicalFlexGridLib.MSHFlexGrid flexGRID_L 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":7775
-      Height          =   2415
-      Left            =   0
-      TabIndex        =   67
-      Top             =   7560
-      Width           =   15915
-      _ExtentX        =   28072
-      _ExtentY        =   4260
-      _Version        =   393216
-      Rows            =   10
-      FixedRows       =   0
-      FixedCols       =   0
-      ForeColorSel    =   -2147483639
-      AllowBigSelection=   0   'False
-      FocusRect       =   2
-      HighLight       =   0
-      ScrollBars      =   2
-      GridLineWidthFixed=   1
-      RowSizingMode   =   1
-      _NumberOfBands  =   1
-      _Band(0).Cols   =   2
-      _Band(0).GridLinesBand=   1
-      _Band(0).GridLineWidthBand=   1
-      _Band(0).TextStyleBand=   0
-      _Band(0).TextStyleHeader=   0
-      _Band(0).ColHeader=   1
-   End
    Begin VB.Frame CARIMBO 
       BackColor       =   &H00C0C0FF&
       BorderStyle     =   0  'None
@@ -363,7 +344,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       End
    End
    Begin MSDataListLib.DataCombo TXT_FUNC 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":778C
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":7775
       DataField       =   "M_F_COD"
       DataSource      =   "ADOREG"
       Height          =   315
@@ -578,8 +559,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":779D
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":77B9
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":7786
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":77A2
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -618,8 +599,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":7C0B
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":7C27
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":7BF4
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":7C10
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -662,7 +643,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Height          =   675
          Left            =   40
          MaskColor       =   &H00FFFFFF&
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":8079
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":8062
          TabIndex        =   132
          Top             =   150
          Width           =   1185
@@ -681,7 +662,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          EndProperty
          Height          =   675
          Left            =   1210
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":80F0
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":80D9
          Style           =   1  'Graphical
          TabIndex        =   131
          Top             =   130
@@ -1183,8 +1164,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":83FA
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":8416
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":83E3
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":83FF
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -1303,15 +1284,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Width           =   1215
       End
    End
-   Begin VB.CommandButton cmdRelAdmin 
-      Caption         =   "*"
-      Height          =   255
-      Left            =   15680
-      TabIndex        =   89
-      Top             =   1680
-      Visible         =   0   'False
-      Width           =   255
-   End
    Begin VB.Frame frmAtualizando 
       BackColor       =   &H0080C0FF&
       BorderStyle     =   0  'None
@@ -1343,7 +1315,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       End
    End
    Begin MSDataGridLib.DataGrid Grid 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":96F8
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":96E1
       CausesValidation=   0   'False
       Height          =   7275
       Left            =   15960
@@ -2152,9 +2124,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       End
       Begin VB.ComboBox cbMostrar 
          Height          =   315
-         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":970D
+         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":96F6
          Left            =   120
-         List            =   "frm_Alt_Fic_Mensal_VIS.frx":9732
+         List            =   "frm_Alt_Fic_Mensal_VIS.frx":971B
          TabIndex        =   74
          Text            =   "TODOS"
          Top             =   240
@@ -2244,14 +2216,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1035
-      Left            =   120
+      Left            =   8880
       Locked          =   -1  'True
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
       TabIndex        =   64
-      Top             =   6480
+      Top             =   5400
       Visible         =   0   'False
-      Width           =   15570
+      Width           =   6810
    End
    Begin VB.CheckBox ck_pg_SFam 
       Caption         =   "Check1"
@@ -2369,7 +2341,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Enabled         =   0   'False
       Height          =   315
       Left            =   17640
-      Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":979D
+      Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9786
       Style           =   1  'Graphical
       TabIndex        =   48
       TabStop         =   0   'False
@@ -2557,7 +2529,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   795
+      Height          =   2115
       Left            =   120
       Locked          =   -1  'True
       MultiLine       =   -1  'True
@@ -2680,9 +2652,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   330
-      ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":9AA7
+      ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":9A90
       Left            =   4560
-      List            =   "frm_Alt_Fic_Mensal_VIS.frx":9ACF
+      List            =   "frm_Alt_Fic_Mensal_VIS.frx":9AB8
       Locked          =   -1  'True
       TabIndex        =   2
       Top             =   2085
@@ -2747,7 +2719,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
       TabIndex        =   6
-      Top             =   5400
+      Top             =   6720
       Width           =   6795
    End
    Begin MSComctlLib.ImageList ImageList1 
@@ -2763,69 +2735,69 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   15
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9AFA
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9AE3
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9E14
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":9DFD
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A12E
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A117
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A448
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A431
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A762
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":A74B
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AA7C
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AA65
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AD96
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":AD7F
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":B670
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":B659
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D37A
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D363
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D694
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":D67D
             Key             =   ""
          EndProperty
          BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DAE6
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DACF
             Key             =   ""
          EndProperty
          BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DE00
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":DDE9
             Key             =   ""
          EndProperty
          BeginProperty ListImage13 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":E122
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":E10B
             Key             =   ""
          EndProperty
          BeginProperty ListImage14 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":108D4
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":108BD
             Key             =   ""
          EndProperty
          BeginProperty ListImage15 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":10D26
+            Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":10D0F
             Key             =   ""
          EndProperty
       EndProperty
    End
    Begin MSDataListLib.DataCombo txtLogo 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":134D8
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":134C1
       DataField       =   "M_LOGO"
       DataSource      =   "ADOREG"
       Height          =   330
@@ -2884,8 +2856,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       FCOLO           =   0
       MCOL            =   12632256
       MPTR            =   1
-      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":134E9
-      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":13505
+      MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":134D2
+      PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":134EE
       UMCOL           =   -1  'True
       SOFT            =   0   'False
       PICPOS          =   0
@@ -2932,9 +2904,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Width           =   2055
          Begin VB.ComboBox txt_PMes 
             Height          =   315
-            ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":15127
+            ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":15110
             Left            =   195
-            List            =   "frm_Alt_Fic_Mensal_VIS.frx":1514F
+            List            =   "frm_Alt_Fic_Mensal_VIS.frx":15138
             TabIndex        =   30
             Top             =   195
             Width           =   690
@@ -3169,7 +3141,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Begin VB.CommandButton cmdFiltrar 
          Height          =   555
          Left            =   10680
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":1517A
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":15163
          Style           =   1  'Graphical
          TabIndex        =   37
          Top             =   240
@@ -3179,7 +3151,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Begin VB.CommandButton bt_Salva_Ac 
          Height          =   555
          Left            =   10680
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":15484
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":1546D
          Style           =   1  'Graphical
          TabIndex        =   53
          TabStop         =   0   'False
@@ -3337,7 +3309,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
    End
    Begin MSDataListLib.DataCombo txtLogo2 
-      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":1578E
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":15777
       DataField       =   "M_LOGO"
       DataSource      =   "ADOREG"
       Height          =   495
@@ -3490,8 +3462,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":1579F
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":157BB
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":15788
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":157A4
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -3531,8 +3503,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":16A9D
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":16AB9
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":16A86
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":16AA2
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -3609,8 +3581,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":17D9B
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":17DB7
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":17D84
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":17DA0
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -3731,9 +3703,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          DataSource      =   "adoReg"
          Enabled         =   0   'False
          Height          =   315
-         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":19099
+         ItemData        =   "frm_Alt_Fic_Mensal_VIS.frx":19082
          Left            =   2520
-         List            =   "frm_Alt_Fic_Mensal_VIS.frx":190C1
+         List            =   "frm_Alt_Fic_Mensal_VIS.frx":190AA
          TabIndex        =   151
          Top             =   960
          Width           =   780
@@ -3753,7 +3725,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Begin VB.CommandButton cmdFaltas 
          Height          =   435
          Left            =   6240
-         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":190EC
+         Picture         =   "frm_Alt_Fic_Mensal_VIS.frx":190D5
          Style           =   1  'Graphical
          TabIndex        =   149
          Top             =   840
@@ -3937,8 +3909,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":193F6
-         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":19412
+         MICON           =   "frm_Alt_Fic_Mensal_VIS.frx":193DF
+         PICN            =   "frm_Alt_Fic_Mensal_VIS.frx":193FB
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -4074,6 +4046,34 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Top             =   960
          Width           =   705
       End
+   End
+   Begin MSHierarchicalFlexGridLib.MSHFlexGrid flexGRID_L 
+      Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":1A6DD
+      Height          =   2415
+      Left            =   0
+      TabIndex        =   67
+      Top             =   7560
+      Width           =   15915
+      _ExtentX        =   28072
+      _ExtentY        =   4260
+      _Version        =   393216
+      Rows            =   10
+      FixedRows       =   0
+      FixedCols       =   0
+      ForeColorSel    =   -2147483639
+      AllowBigSelection=   0   'False
+      FocusRect       =   2
+      HighLight       =   0
+      ScrollBars      =   2
+      GridLineWidthFixed=   1
+      RowSizingMode   =   1
+      _NumberOfBands  =   1
+      _Band(0).Cols   =   2
+      _Band(0).GridLinesBand=   1
+      _Band(0).GridLineWidthBand=   1
+      _Band(0).TextStyleBand=   0
+      _Band(0).TextStyleHeader=   0
+      _Band(0).ColHeader=   1
    End
    Begin VB.Label Label37 
       BackStyle       =   0  'Transparent
@@ -4251,11 +4251,11 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   120
+      Left            =   8880
       TabIndex        =   65
-      Top             =   6240
+      Top             =   5160
       Visible         =   0   'False
-      Width           =   3375
+      Width           =   1575
    End
    Begin VB.Label Label25 
       BackStyle       =   0  'Transparent
@@ -4552,7 +4552,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Height          =   255
       Left            =   8880
       TabIndex        =   11
-      Top             =   5160
+      Top             =   6480
       Width           =   1455
    End
    Begin VB.Label Label3 
@@ -8606,7 +8606,7 @@ cmdDesbloquear.Visible = False
     lblNotas.Visible = True
     txt_notas.Visible = True
  
-    cmdSalarioGerente.Visible = True
+    'cmdSalarioGerente.Visible = True
     'cmdFixosSaldos.Visible = True
     
     txtQtdeLimiteV.Enabled = True
