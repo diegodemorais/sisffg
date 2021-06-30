@@ -2564,7 +2564,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       ScrollBars      =   2  'Vertical
       TabIndex        =   4
       Top             =   5400
-      Width           =   7750
+      Width           =   8715
    End
    Begin VB.TextBox TXT_TOTAL 
       Alignment       =   1  'Right Justify
@@ -2742,13 +2742,13 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1035
-      Left            =   8040
+      Left            =   8880
       Locked          =   -1  'True
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
       TabIndex        =   6
       Top             =   5160
-      Width           =   7635
+      Width           =   6795
    End
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   14760
@@ -4240,7 +4240,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.Label lblNotas 
       BackStyle       =   0  'Transparent
-      Caption         =   "ANOTAÇÕES EXTRAS:"
+      Caption         =   "CONTROLE SAL.:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
@@ -4448,7 +4448,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin VB.Label Label7 
       BackStyle       =   0  'Transparent
-      Caption         =   "OBSERVAÇÃO:"
+      Caption         =   "ANOTAÇÕES GERAIS:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
@@ -6351,18 +6351,18 @@ Private Sub cmdComisCx_Click()
                 'End If
                 
                 vrMetaParc = Math.Round(vrMeta * 0.95, 0)
-                If (vrVenda >= vrMetaParc) Then
-                    'If (vrVenda >= vrMeta) Then
+                'If (vrVenda >= vrMetaParc) Then
+                    If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
-                        If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.15
+                        'If (vrVenda >= vrMeta) Then
+                            vrMetaBonus = vrSalario * 0.05
                             'vrMetaBonus = 150
                             wPercMeta = 100
-                        Else
-                            vrMetaBonus = vrSalario * 0.1
+                        'Else
+                        '    vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 100
-                            wPercMeta = 95
-                        End If
+                        '    wPercMeta = 95
+                        'End If
                         
                     descMeta = " + Bonus Meta(" & Format(vrSalario, "0.00") & " + " & Format(wPercMeta, "0.0") & "% da meta = " & Format(vrMetaBonus, "0.00") & " + Fixo Meta(" & Format(wFixoMeta, "0.00") & ") = " & Format(vrMetaBonus + wFixoMeta, "0.00") & ") "
                 Else
@@ -6780,18 +6780,19 @@ Dim w_ado_vendaAnt As ADODB.Recordset
              
                 de.cnc.Execute ("DELETE FROM TAB_DESC_CALC WHERE C_N_FICHA = " & adoReg.Recordset.Fields("M_NFICHA") & " AND (C_TP_CONTA = 101)")
                 vrMetaParc = Math.Round(vrMeta * 0.95, 0)
-                If (vrVenda >= vrMetaParc) Then
+                'If (vrVenda >= vrMetaParc) Then
+                 If (vrVenda >= vrMeta) Then
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
-                        If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.15
+                        'If (vrVenda >= vrMeta) Then
+                            vrMetaBonus = vrSalario * 0.05
                             'vrMetaBonus = 150
                             wPercMeta = 100
-                        Else
-                            vrMetaBonus = vrSalario * 0.1
+                        'Else
+                            'vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 100
-                            wPercMeta = 95
-                        End If
+                            'wPercMeta = 95
+                        'End If
                     
                     'If (((vrVenda / vrMeta) - 1) * 100) >= 5 Then
                 
@@ -8077,18 +8078,18 @@ On Error Resume Next
                 '    End If
 
                 vrMetaParc = Math.Round(vrMeta * 0.95, 0)
-                If (vrVenda >= vrMetaParc) Then
-                    'If (vrVenda >= vrMeta) Then
+                'If (vrVenda >= vrMetaParc) Then
+                    If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
-                        If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.15
+                        'If (vrVenda >= vrMeta) Then
+                            vrMetaBonus = vrSalario * 0.05
                             'vrMetaBonus = 300
                             wPercMeta = 100
-                        Else
-                            vrMetaBonus = vrSalario * 0.1
+                        'Else
+                        '    vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 200
-                            wPercMeta = 95
-                        End If
+                        '    wPercMeta = 95
+                        'End If
                     descMeta = " + Bonus Meta(" & Format(wPercMeta, "0.0") & "% da meta = " & Format(vrMetaBonus, "0.00") & ")"
                 Else
                     descMeta = ""

@@ -27,7 +27,7 @@ Begin VB.Form frmSplash
       Height          =   360
       Left            =   240
       TabIndex        =   5
-      Top             =   3600
+      Top             =   3960
       Width           =   4095
       _ExtentX        =   7223
       _ExtentY        =   635
@@ -53,6 +53,27 @@ Begin VB.Form frmSplash
       BackColorFundo  =   -2147483643
       BackColorProgress=   16711680
       MaxProgress     =   100
+   End
+   Begin VB.Label lblComments 
+      AutoSize        =   -1  'True
+      BackColor       =   &H00FFFFFF&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Comentários"
+      BeginProperty Font 
+         Name            =   "Arial Narrow"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000000&
+      Height          =   660
+      Left            =   240
+      TabIndex        =   7
+      Top             =   3120
+      Width           =   4065
    End
    Begin VB.Label Label2 
       BackColor       =   &H80000005&
@@ -190,6 +211,7 @@ Option Explicit
 
 Private Sub Form_Load()
     lblVersion.Caption = "Versão: " & App.Major & "." & App.Minor & "." & App.Revision
+    lblComments.Caption = App.Comments
     'lblProductName.Caption = App.Title
     'frmSplash.lblWarning = frmSplash.lblWarning & " **********   BASE OFICIAL !  ***********"
        
@@ -212,7 +234,7 @@ On Error GoTo err1
 sair:
 
     PB.value = 10
-    PB.Text = "Carregando " & frmSplash.PB.value & "%"
+    PB.text = "Carregando " & frmSplash.PB.value & "%"
     
     mdiPrincipal.Show
     frmSplash.Hide
