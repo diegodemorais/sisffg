@@ -22,11 +22,35 @@ Begin VB.Form frm_Alt_Desc_Calc
    ScaleHeight     =   9735
    ScaleWidth      =   18750
    StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton cmdProcessando 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00FF8080&
+      CausesValidation=   0   'False
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1155
+      Left            =   11520
+      Picture         =   "frm_Alt_Desc_Calc.frx":1042
+      Style           =   1  'Graphical
+      TabIndex        =   84
+      TabStop         =   0   'False
+      ToolTipText     =   "Processando"
+      Top             =   3840
+      Visible         =   0   'False
+      Width           =   1065
+   End
    Begin VB.PictureBox picUnchecked 
       AutoSize        =   -1  'True
       Height          =   255
       Left            =   360
-      Picture         =   "frm_Alt_Desc_Calc.frx":1042
+      Picture         =   "frm_Alt_Desc_Calc.frx":134C
       ScaleHeight     =   195
       ScaleWidth      =   195
       TabIndex        =   82
@@ -38,7 +62,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       AutoSize        =   -1  'True
       Height          =   255
       Left            =   720
-      Picture         =   "frm_Alt_Desc_Calc.frx":112C
+      Picture         =   "frm_Alt_Desc_Calc.frx":1436
       ScaleHeight     =   195
       ScaleWidth      =   195
       TabIndex        =   81
@@ -64,7 +88,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Top             =   960
    End
    Begin MSDataGridLib.DataGrid Grid 
-      Bindings        =   "frm_Alt_Desc_Calc.frx":1216
+      Bindings        =   "frm_Alt_Desc_Calc.frx":1520
       Height          =   2415
       Left            =   6600
       TabIndex        =   77
@@ -159,7 +183,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       TabHeight       =   520
       Enabled         =   0   'False
       TabCaption(0)   =   "Alteração"
-      TabPicture(0)   =   "frm_Alt_Desc_Calc.frx":122D
+      TabPicture(0)   =   "frm_Alt_Desc_Calc.frx":1537
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label9"
       Tab(0).Control(0).Enabled=   0   'False
@@ -231,47 +255,47 @@ Begin VB.Form frm_Alt_Desc_Calc
       Tab(0).Control(33).Enabled=   0   'False
       Tab(0).ControlCount=   34
       TabCaption(1)   =   "Cadastrar"
-      TabPicture(1)   =   "frm_Alt_Desc_Calc.frx":1249
+      TabPicture(1)   =   "frm_Alt_Desc_Calc.frx":1553
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Shape2"
-      Tab(1).Control(1)=   "Label6"
-      Tab(1).Control(2)=   "Label7"
-      Tab(1).Control(3)=   "Label10"
-      Tab(1).Control(4)=   "Label11"
-      Tab(1).Control(5)=   "Label12"
-      Tab(1).Control(6)=   "Label8"
-      Tab(1).Control(7)=   "lblogo_cad"
-      Tab(1).Control(8)=   "lbncred_cad"
-      Tab(1).Control(9)=   "lbEmp(2)"
-      Tab(1).Control(10)=   "lbEmp(1)"
-      Tab(1).Control(11)=   "lbEmp(0)"
-      Tab(1).Control(12)=   "LB_EMP_D(0)"
-      Tab(1).Control(13)=   "LB_EMP_D(1)"
-      Tab(1).Control(14)=   "LB_EMP_D(2)"
-      Tab(1).Control(15)=   "lbEmp(3)"
-      Tab(1).Control(16)=   "LB_EMP_D(3)"
-      Tab(1).Control(17)=   "LB_DT_EXTRA"
-      Tab(1).Control(18)=   "LB_DESC_EXTRA"
-      Tab(1).Control(19)=   "TXT_E_JUROS"
-      Tab(1).Control(20)=   "TXT_VALOR_CAD"
-      Tab(1).Control(21)=   "TXT_CONTA_Cod_CAD"
-      Tab(1).Control(22)=   "TXT_OP_CAD"
-      Tab(1).Control(22).Enabled=   0   'False
-      Tab(1).Control(23)=   "TXT_DESC_CAD"
-      Tab(1).Control(24)=   "TXT_CONTA_CAD"
-      Tab(1).Control(25)=   "TXT_DT_CAD"
-      Tab(1).Control(26)=   "TXT_NFICHA_CAD"
-      Tab(1).Control(27)=   "TXT_CONTA_CAD_op"
-      Tab(1).Control(28)=   "txt_Logo_Cad"
-      Tab(1).Control(29)=   "txt_NCred_Cad"
-      Tab(1).Control(30)=   "txt_Emp(1)"
-      Tab(1).Control(31)=   "TXT_E_COD"
-      Tab(1).Control(32)=   "TXT_E_VALOR"
-      Tab(1).Control(33)=   "TXT_E_SALDO"
-      Tab(1).Control(34)=   "txt_Emp(2)"
-      Tab(1).Control(35)=   "txt_Emp(0)"
-      Tab(1).Control(36)=   "TXT_DT_EXTRA"
-      Tab(1).Control(37)=   "TXT_DESC_EXTRA"
+      Tab(1).Control(0)=   "TXT_DESC_EXTRA"
+      Tab(1).Control(1)=   "TXT_DT_EXTRA"
+      Tab(1).Control(2)=   "txt_Emp(0)"
+      Tab(1).Control(3)=   "txt_Emp(2)"
+      Tab(1).Control(4)=   "TXT_E_SALDO"
+      Tab(1).Control(5)=   "TXT_E_VALOR"
+      Tab(1).Control(6)=   "TXT_E_COD"
+      Tab(1).Control(7)=   "txt_Emp(1)"
+      Tab(1).Control(8)=   "txt_NCred_Cad"
+      Tab(1).Control(9)=   "txt_Logo_Cad"
+      Tab(1).Control(10)=   "TXT_CONTA_CAD_op"
+      Tab(1).Control(11)=   "TXT_NFICHA_CAD"
+      Tab(1).Control(12)=   "TXT_DT_CAD"
+      Tab(1).Control(13)=   "TXT_CONTA_CAD"
+      Tab(1).Control(14)=   "TXT_DESC_CAD"
+      Tab(1).Control(15)=   "TXT_OP_CAD"
+      Tab(1).Control(15).Enabled=   0   'False
+      Tab(1).Control(16)=   "TXT_CONTA_Cod_CAD"
+      Tab(1).Control(17)=   "TXT_VALOR_CAD"
+      Tab(1).Control(18)=   "TXT_E_JUROS"
+      Tab(1).Control(19)=   "LB_DESC_EXTRA"
+      Tab(1).Control(20)=   "LB_DT_EXTRA"
+      Tab(1).Control(21)=   "LB_EMP_D(3)"
+      Tab(1).Control(22)=   "lbEmp(3)"
+      Tab(1).Control(23)=   "LB_EMP_D(2)"
+      Tab(1).Control(24)=   "LB_EMP_D(1)"
+      Tab(1).Control(25)=   "LB_EMP_D(0)"
+      Tab(1).Control(26)=   "lbEmp(0)"
+      Tab(1).Control(27)=   "lbEmp(1)"
+      Tab(1).Control(28)=   "lbEmp(2)"
+      Tab(1).Control(29)=   "lbncred_cad"
+      Tab(1).Control(30)=   "lblogo_cad"
+      Tab(1).Control(31)=   "Label8"
+      Tab(1).Control(32)=   "Label12"
+      Tab(1).Control(33)=   "Label11"
+      Tab(1).Control(34)=   "Label10"
+      Tab(1).Control(35)=   "Label7"
+      Tab(1).Control(36)=   "Label6"
+      Tab(1).Control(37)=   "Shape2"
       Tab(1).ControlCount=   38
       Begin VB.CheckBox chkVisto 
          Caption         =   "VISTO"
@@ -850,7 +874,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Width           =   585
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD_op 
-         Bindings        =   "frm_Alt_Desc_Calc.frx":1265
+         Bindings        =   "frm_Alt_Desc_Calc.frx":156F
          DataSource      =   "ADOREG"
          Height          =   360
          Left            =   -71160
@@ -878,7 +902,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          EndProperty
       End
       Begin MSDataListLib.DataCombo txt_conta_Op 
-         Bindings        =   "frm_Alt_Desc_Calc.frx":1276
+         Bindings        =   "frm_Alt_Desc_Calc.frx":1580
          DataField       =   "C_TP_CONTA"
          DataSource      =   "ADOREG"
          Height          =   360
@@ -975,9 +999,9 @@ Begin VB.Form frm_Alt_Desc_Calc
             Strikethrough   =   0   'False
          EndProperty
          Height          =   480
-         ItemData        =   "frm_Alt_Desc_Calc.frx":1287
+         ItemData        =   "frm_Alt_Desc_Calc.frx":1591
          Left            =   4275
-         List            =   "frm_Alt_Desc_Calc.frx":1294
+         List            =   "frm_Alt_Desc_Calc.frx":159E
          TabIndex        =   6
          TabStop         =   0   'False
          Text            =   "+"
@@ -1005,7 +1029,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Width           =   3855
       End
       Begin MSDataListLib.DataCombo TXT_CONTA 
-         Bindings        =   "frm_Alt_Desc_Calc.frx":12A1
+         Bindings        =   "frm_Alt_Desc_Calc.frx":15AB
          DataField       =   "C_TP_CONTA"
          DataSource      =   "ADOREG"
          Height          =   360
@@ -1053,7 +1077,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   140378113
+         Format          =   217776129
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -1074,11 +1098,11 @@ Begin VB.Form frm_Alt_Desc_Calc
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   140378113
+         Format          =   217776129
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
-         Bindings        =   "frm_Alt_Desc_Calc.frx":12B2
+         Bindings        =   "frm_Alt_Desc_Calc.frx":15BC
          Height          =   360
          Left            =   -74085
          TabIndex        =   11
@@ -1133,9 +1157,9 @@ Begin VB.Form frm_Alt_Desc_Calc
             Strikethrough   =   0   'False
          EndProperty
          Height          =   480
-         ItemData        =   "frm_Alt_Desc_Calc.frx":12C3
+         ItemData        =   "frm_Alt_Desc_Calc.frx":15CD
          Left            =   -70725
-         List            =   "frm_Alt_Desc_Calc.frx":12D0
+         List            =   "frm_Alt_Desc_Calc.frx":15DA
          TabIndex        =   13
          TabStop         =   0   'False
          Text            =   "+"
@@ -1143,7 +1167,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Width           =   615
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_cod 
-         Bindings        =   "frm_Alt_Desc_Calc.frx":12DD
+         Bindings        =   "frm_Alt_Desc_Calc.frx":15E7
          DataField       =   "C_TP_CONTA"
          DataSource      =   "ADOREG"
          Height          =   360
@@ -1170,7 +1194,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          EndProperty
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_Cod_CAD 
-         Bindings        =   "frm_Alt_Desc_Calc.frx":12EE
+         Bindings        =   "frm_Alt_Desc_Calc.frx":15F8
          Height          =   360
          Left            =   -74805
          TabIndex        =   10
@@ -1920,7 +1944,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Width           =   2295
    End
    Begin MSDataGridLib.DataGrid GRID_EMP 
-      Bindings        =   "frm_Alt_Desc_Calc.frx":12FF
+      Bindings        =   "frm_Alt_Desc_Calc.frx":1609
       Height          =   3075
       Left            =   0
       TabIndex        =   52
@@ -2080,7 +2104,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid GRID_CRED 
-      Bindings        =   "frm_Alt_Desc_Calc.frx":1315
+      Bindings        =   "frm_Alt_Desc_Calc.frx":161F
       Height          =   3075
       Left            =   0
       TabIndex        =   43
@@ -2214,43 +2238,43 @@ Begin VB.Form frm_Alt_Desc_Calc
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   10
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":132C
+            Picture         =   "frm_Alt_Desc_Calc.frx":1636
             Key             =   ""
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":1646
+            Picture         =   "frm_Alt_Desc_Calc.frx":1950
             Key             =   ""
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":1960
+            Picture         =   "frm_Alt_Desc_Calc.frx":1C6A
             Key             =   ""
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":1C7A
+            Picture         =   "frm_Alt_Desc_Calc.frx":1F84
             Key             =   ""
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":1F94
+            Picture         =   "frm_Alt_Desc_Calc.frx":229E
             Key             =   ""
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":22AE
+            Picture         =   "frm_Alt_Desc_Calc.frx":25B8
             Key             =   ""
          EndProperty
          BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":25C8
+            Picture         =   "frm_Alt_Desc_Calc.frx":28D2
             Key             =   ""
          EndProperty
          BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":4702
+            Picture         =   "frm_Alt_Desc_Calc.frx":4A0C
             Key             =   ""
          EndProperty
          BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":4FDC
+            Picture         =   "frm_Alt_Desc_Calc.frx":52E6
             Key             =   ""
          EndProperty
          BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc.frx":6CE6
+            Picture         =   "frm_Alt_Desc_Calc.frx":6FF0
             Key             =   ""
          EndProperty
       EndProperty
@@ -2360,8 +2384,8 @@ Begin VB.Form frm_Alt_Desc_Calc
          FCOLO           =   0
          MCOL            =   12632256
          MPTR            =   1
-         MICON           =   "frm_Alt_Desc_Calc.frx":290B0
-         PICN            =   "frm_Alt_Desc_Calc.frx":290CC
+         MICON           =   "frm_Alt_Desc_Calc.frx":293BA
+         PICN            =   "frm_Alt_Desc_Calc.frx":293D6
          UMCOL           =   -1  'True
          SOFT            =   0   'False
          PICPOS          =   0
@@ -2468,7 +2492,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       _Version        =   393216
    End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid flexGRID 
-      Bindings        =   "frm_Alt_Desc_Calc.frx":4B496
+      Bindings        =   "frm_Alt_Desc_Calc.frx":4B7A0
       Height          =   8055
       Left            =   5280
       TabIndex        =   78
@@ -2672,6 +2696,10 @@ End Sub
 
 
 
+Private Sub Form_Initialize()
+        w_suprimir_exclusao = False
+End Sub
+
 Private Sub Form_Load()
 On Error GoTo err1
 
@@ -2752,7 +2780,6 @@ flexGRID.ColWidth(17) = 700 'excluir?
 
    
     formatarFlexGrid
-    w_suprimir_exclusao = False
     
     ADO_GRID.Recordset.MoveFirst
     flexGRID.Row = 0
@@ -3014,7 +3041,7 @@ err1:
     Resume sair
 End Sub
 
-Private Sub Excluir()
+Private Sub Excluir(Optional ByVal skipPassword As Boolean = False)
 On Error GoTo err1
 Dim w_exluir As Boolean
 Dim fixo
@@ -3029,16 +3056,18 @@ On Error Resume Next
 fixo = de.cnc.Execute("SELECT CF_EMP_COD FROM TAB_DESC_CALC_FIXO WHERE CF_EMP_COD = " & frm_Alt_Fic_Mensal_VIS.txt_F_COD & " AND CF_CODIGO = " & txt_ncred).Fields(0)
 On Error GoTo err1
         
-'If ADO_GRID.Recordset.Fields("C_VISTO") = True And w_PSS = "" Then
-If ADO_GRID.Recordset.Fields("VISTO") = "Sim" Or fixo <> Empty Then
-    frm_Habilitar.Show 1
-    w_PSS = frm_Habilitar.txt_Pss
-Else
-    w_PSS = w_PassWordLib
+        
+If skipPassword = False Then
+    'If ADO_GRID.Recordset.Fields("C_VISTO") = True And w_PSS = "" Then
+    If ADO_GRID.Recordset.Fields("VISTO") = "Sim" Or fixo <> Empty Then
+        frm_Habilitar.Show 1
+        w_PSS = frm_Habilitar.txt_Pss
+    Else
+        w_PSS = w_PassWordLib
+    End If
 End If
 
 If w_PSS = w_PassWordLib Then
-        
 
         If w_suprimir_exclusao Then
             w_excluir = True
@@ -3093,57 +3122,23 @@ If w_PSS = w_PassWordLib Then
         
         w_Conta = TXT_CONTA.BoundText
      
-        
-        de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP
-        
-        '*** Exclui o registro
-        adoReg.Recordset.Find "C_CODIGO = " & ADO_GRID.Recordset.Fields("C_CODIGO") & ""
-        W_POS = adoReg.Recordset.AbsolutePosition - 1
-        adoReg.Recordset.Delete
-        w_adoFiltro = adoReg.Recordset.Filter
-        Form_Load
-        ADO_GRID.Refresh
-        adoReg.Refresh
+     
+     
       
-        adoReg.Recordset.Filter = w_adoFiltro
-        ADO_GRID.Recordset.Filter = w_adoFiltro
-      
-        Grid.Refresh
-      
-        de.rsTAB_DESC_CALC.Close
-        de.TAB_DESC_CALC
-        '*** CALCULA O TOTAL - APÓS O NOVO VALOR ***
-        
-        'If (frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
-        '    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MAIS")
-        '    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MENOS")
-        'Else
-        '    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ") AND (TAB_DESC_CALC.C_TP_CONTA <> 20)").Fields("MAIS")
-        '    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ") AND (TAB_DESC_CALC.C_TP_CONTA <> 20)").Fields("MENOS")
-        'End If
-        
-        'W_TOTAL = IIf(IsNull(W_MAIS), 0, W_MAIS) + IIf(IsNull(W_MENOS), 0, W_MENOS)
-        
-        'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")"
-      
-         w_PSS = ""
-      '  Grid.ReBind
-      
-      
-    '*** ATUALIZA A ULTIMA DATA DE PAGAMENTO NA TAB_EMPRESTIMO *** SE FOR DESCONTO
-    If w_Conta = "9" Then
-        W_DT_PG = de.cnc.Execute("SELECT MAX(EP_DT_PG) AS DT_ULT FROM TAB_EMPRESTIMO_PG WHERE (EP_Codigo = " & W_E_Cod & " AND EP_C_CODIGO <> " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields(0)
-        If Not IsNull(W_DT_PG) Then
-            de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_DT_ULT_PG = '" & CVDate(W_DT_PG) & "', E_QT_PG = E_QT_PG-1  WHERE (E_Codigo = " & W_E_Cod & ")"
-        Else
-            de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_DT_ULT_PG = E_DT_EMP, E_QT_PG = E_QT_PG-1  WHERE (E_Codigo = " & W_E_Cod & ")"
-        End If
-    ElseIf w_Conta = "14" Then
-    
-        '*** Atualiza VALOR DO SALDO DEVEDOR EM TAB_FUNCIONARIO ***
-        de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_SALDO_ANT = F_SALDO_ANT + '" & CDbl(w_Valor) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("m_F_COD") & ")"
-    
-    End If
+            '*** ATUALIZA A ULTIMA DATA DE PAGAMENTO NA TAB_EMPRESTIMO *** SE FOR DESCONTO
+            If w_Conta = "9" Then
+                W_DT_PG = de.cnc.Execute("SELECT MAX(EP_DT_PG) AS DT_ULT FROM TAB_EMPRESTIMO_PG WHERE (EP_Codigo = " & W_E_Cod & " AND EP_C_CODIGO <> " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields(0)
+                If Not IsNull(W_DT_PG) Then
+                    de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_DT_ULT_PG = '" & CVDate(W_DT_PG) & "', E_QT_PG = E_QT_PG-1  WHERE (E_Codigo = " & W_E_Cod & ")"
+                Else
+                    de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_DT_ULT_PG = E_DT_EMP, E_QT_PG = E_QT_PG-1  WHERE (E_Codigo = " & W_E_Cod & ")"
+                End If
+            ElseIf w_Conta = "14" Then
+            
+                '*** Atualiza VALOR DO SALDO DEVEDOR EM TAB_FUNCIONARIO ***
+                de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_SALDO_ANT = F_SALDO_ANT + '" & CDbl(w_Valor) & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("m_F_COD") & ")"
+            
+            End If
         
         
         
@@ -3167,7 +3162,32 @@ If w_PSS = w_PassWordLib Then
         End If
         
     End If
-    formatarFlexGrid
+     
+        
+        de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP
+        
+        '*** Exclui o registro
+        adoReg.Recordset.Find "C_CODIGO = " & ADO_GRID.Recordset.Fields("C_CODIGO") & ""
+        W_POS = adoReg.Recordset.AbsolutePosition - 1
+        adoReg.Recordset.Delete
+        resetNavigate
+        '*** CALCULA O TOTAL - APÓS O NOVO VALOR ***
+        
+        'If (frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
+        '    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MAIS")
+        '    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MENOS")
+        'Else
+        '    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ") AND (TAB_DESC_CALC.C_TP_CONTA <> 20)").Fields("MAIS")
+        '    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ") AND (TAB_DESC_CALC.C_TP_CONTA <> 20)").Fields("MENOS")
+        'End If
+        
+        'W_TOTAL = IIf(IsNull(W_MAIS), 0, W_MAIS) + IIf(IsNull(W_MENOS), 0, W_MENOS)
+        
+        'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_TOTAL = '" & CDbl(W_TOTAL) & "' WHERE (M_NFICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")"
+      If skipPassword = False Then w_PSS = ""
+      '  Grid.ReBind
+      
+    
     
 Else
     MsgBox "Senha de Liberação Incorreta!", vbCritical
@@ -3185,23 +3205,72 @@ err1:
     Resume sair
 End Sub
 
-Sub ExcluirSelecionados()
-Dim I As Integer
+Sub resetNavigate()
+          w_adoFiltro = adoReg.Recordset.Filter
+          Form_Load
+          ADO_GRID.Refresh
+          adoReg.Refresh
         
-    ADO_GRID.Recordset.MoveFirst
+          adoReg.Recordset.Filter = w_adoFiltro
+          ADO_GRID.Recordset.Filter = w_adoFiltro
+        
+          Grid.Refresh
+        
+          de.rsTAB_DESC_CALC.Close
+          de.TAB_DESC_CALC
+          
+          formatarFlexGrid
+End Sub
+
+Sub ExcluirSelecionados()
+Dim I, pos As Integer
+Dim Codigos() As String
+Dim auxSuprimir As Boolean
+
+    pos = 0
+    ReDim Codigos(1 To flexGRID.Rows)
+        
     With flexGRID
     For I = .Rows - 1 To 0 Step -1
         If .Rows >= 1 Then
             .Col = 17
             .Row = I
             If .CellPicture = picChecked Then
-                ADO_GRID.Recordset.Find "C_CODIGO = " & flexGRID.TextMatrix(I, 7), , adSearchForward
-                Excluir
+                pos = pos + 1
+                Codigos(pos) = flexGRID.TextMatrix(I, 7)
             End If
         End If
     Next I
     End With
+    
+    If pos > 0 Then
+                
+        frm_Habilitar.Show 1
+        w_PSS = frm_Habilitar.txt_Pss
+   
+        If w_PSS = w_PassWordLib Then
+                cmdProcessando.Visible = True
+                If vbYes = MsgBox("Deseja realmente excluir " & pos & " lançamentos??", vbQuestion + vbYesNo) Then
 
+                    auxSuprimir = w_suprimir_exclusao
+                    w_suprimir_exclusao = True
+                    For I = pos To 1 Step -1
+                        ADO_GRID.Recordset.Find "C_CODIGO = " & Codigos(I), , adSearchForward
+                        Excluir True
+                    Next I
+                    w_suprimir_exclusao = auxSuprimir
+                    MsgBox "Os " & pos & " registros foram excluídos com sucesso!", vbOKOnly
+                Else
+                    MsgBox "Operação cancelada.", vbOKOnly
+                End If
+                cmdProcessando.Visible = False
+        Else
+            MsgBox "Senha de Liberação Incorreta!", vbCritical
+        End If
+    Else
+        MsgBox "Selecione pelo menos 1 registro para a exclusão.", vbInformation, "Operação cancelada"
+    End If
+    
 End Sub
 
 Private Sub Fechar()
