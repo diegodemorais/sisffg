@@ -17,7 +17,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   1001
       SourceOfData    =   3
       ConnectionSource=   $"de.dsx":0000
-      Expanded        =   -1  'True
       QuoteChar       =   96
       SeparatorChar   =   46
    EndProperty
@@ -34,6 +33,7 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       ConnDispId      =   2202
       SourceOfData    =   3
       ConnectionSource=   $"de.dsx":018B
+      Expanded        =   -1  'True
       QuoteChar       =   34
       SeparatorChar   =   46
    EndProperty
@@ -15693,7 +15693,6 @@ Begin {C0E45035-5775-11D0-B388-00A0C9055D8E} de
       Grouping        =   -1  'True
       GroupingName    =   "cmdQtde_Func_Logo_Limite_Grouping"
       GrandTotal      =   "TG"
-      Expanded        =   -1  'True
       IsRSReturning   =   -1  'True
       NumFields       =   13
       BeginProperty Field1 
