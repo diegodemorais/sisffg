@@ -2,26 +2,75 @@ VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
 Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
 Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
+Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_Alt_Desc_Calc_fixo 
-   BackColor       =   &H80000001&
+   BackColor       =   &H00C0FFFF&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ALTERAÇÃO E CADASTRO DE LANÇAMENTOS PROGRAMADOS"
-   ClientHeight    =   6705
+   ClientHeight    =   8550
    ClientLeft      =   45
    ClientTop       =   330
-   ClientWidth     =   9570
+   ClientWidth     =   12675
    Icon            =   "frm_Alt_Desc_Calc_fixo.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    Moveable        =   0   'False
-   ScaleHeight     =   6705
-   ScaleWidth      =   9570
+   ScaleHeight     =   8550
+   ScaleWidth      =   12675
    StartUpPosition =   1  'CenterOwner
+   Begin VB.CommandButton cmdProcessando 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00FF8080&
+      CausesValidation=   0   'False
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1155
+      Left            =   8760
+      Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1042
+      Style           =   1  'Graphical
+      TabIndex        =   71
+      TabStop         =   0   'False
+      ToolTipText     =   "Processando"
+      Top             =   3960
+      Visible         =   0   'False
+      Width           =   1065
+   End
+   Begin VB.PictureBox picChecked 
+      AutoSize        =   -1  'True
+      Height          =   255
+      Left            =   480
+      Picture         =   "frm_Alt_Desc_Calc_fixo.frx":134C
+      ScaleHeight     =   195
+      ScaleWidth      =   195
+      TabIndex        =   70
+      Top             =   1320
+      Visible         =   0   'False
+      Width           =   255
+   End
+   Begin VB.PictureBox picUnchecked 
+      AutoSize        =   -1  'True
+      Height          =   255
+      Left            =   120
+      Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1436
+      ScaleHeight     =   195
+      ScaleWidth      =   195
+      TabIndex        =   69
+      Top             =   1320
+      Visible         =   0   'False
+      Width           =   255
+   End
    Begin VB.Timer Timer1 
       Enabled         =   0   'False
       Interval        =   300
@@ -29,22 +78,22 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       Top             =   2040
    End
    Begin TabDlg.SSTab GUIA 
-      Height          =   3975
+      Height          =   6375
       Left            =   120
-      TabIndex        =   18
-      Top             =   2280
+      TabIndex        =   17
+      Top             =   1800
       Width           =   5070
       _ExtentX        =   8943
-      _ExtentY        =   7011
+      _ExtentY        =   11245
       _Version        =   393216
       Style           =   1
       Tabs            =   2
       TabsPerRow      =   2
       TabHeight       =   520
       Enabled         =   0   'False
-      BackColor       =   -2147483647
+      BackColor       =   12648447
       TabCaption(0)   =   "Alteração"
-      TabPicture(0)   =   "frm_Alt_Desc_Calc_fixo.frx":1042
+      TabPicture(0)   =   "frm_Alt_Desc_Calc_fixo.frx":1520
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Label9"
       Tab(0).Control(0).Enabled=   0   'False
@@ -100,7 +149,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       Tab(0).Control(25).Enabled=   0   'False
       Tab(0).ControlCount=   26
       TabCaption(1)   =   "Cadastrar"
-      TabPicture(1)   =   "frm_Alt_Desc_Calc_fixo.frx":105E
+      TabPicture(1)   =   "frm_Alt_Desc_Calc_fixo.frx":153C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Shape2"
       Tab(1).Control(1)=   "Label6"
@@ -158,7 +207,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   3960
-         TabIndex        =   66
+         TabIndex        =   65
          Top             =   3480
          Width           =   975
       End
@@ -187,7 +236,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   195
-         TabIndex        =   64
+         TabIndex        =   63
          Top             =   600
          Width           =   1305
       End
@@ -206,7 +255,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Left            =   1440
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   61
+         TabIndex        =   60
          Top             =   2520
          Visible         =   0   'False
          Width           =   3525
@@ -226,7 +275,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Left            =   -73680
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   59
+         TabIndex        =   58
          Top             =   3210
          Visible         =   0   'False
          Width           =   3525
@@ -234,7 +283,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       Begin rdActiveText.ActiveText TXT_DT_EXTRA 
          Height          =   345
          Left            =   -74760
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   3330
          Visible         =   0   'False
          Width           =   975
@@ -323,7 +372,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   240
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   3360
          Visible         =   0   'False
          Width           =   1020
@@ -351,7 +400,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   -72450
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   3360
          Visible         =   0   'False
          Width           =   1140
@@ -379,7 +428,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   -73710
-         TabIndex        =   47
+         TabIndex        =   46
          Top             =   3360
          Visible         =   0   'False
          Width           =   1140
@@ -406,7 +455,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   -74760
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   3360
          Visible         =   0   'False
          Width           =   900
@@ -502,7 +551,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   -74160
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   3360
          Visible         =   0   'False
          Width           =   945
@@ -530,7 +579,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   -74760
-         TabIndex        =   38
+         TabIndex        =   37
          Top             =   3360
          Visible         =   0   'False
          Width           =   585
@@ -560,7 +609,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   840
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   3360
          Visible         =   0   'False
          Width           =   705
@@ -590,17 +639,17 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   195
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   3360
          Visible         =   0   'False
          Width           =   585
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD_op 
-         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":107A
+         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":1558
          DataSource      =   "ADOREG"
          Height          =   360
          Left            =   -71160
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   1365
          Visible         =   0   'False
          Width           =   615
@@ -624,12 +673,12 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
       End
       Begin MSDataListLib.DataCombo txt_conta_Op 
-         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":108B
+         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":1569
          DataField       =   "CF_TP_CONTA"
          DataSource      =   "ADOREG"
          Height          =   360
          Left            =   3720
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   1320
          Visible         =   0   'False
          Width           =   615
@@ -692,9 +741,9 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   480
-         ItemData        =   "frm_Alt_Desc_Calc_fixo.frx":109C
+         ItemData        =   "frm_Alt_Desc_Calc_fixo.frx":157A
          Left            =   4275
-         List            =   "frm_Alt_Desc_Calc_fixo.frx":10A9
+         List            =   "frm_Alt_Desc_Calc_fixo.frx":1587
          TabIndex        =   5
          TabStop         =   0   'False
          Text            =   "+"
@@ -722,7 +771,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Width           =   3855
       End
       Begin MSDataListLib.DataCombo TXT_CONTA 
-         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":10B6
+         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":1594
          DataField       =   "CF_TP_CONTA"
          DataSource      =   "ADOREG"
          Height          =   360
@@ -770,7 +819,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   214958081
+         Format          =   246677505
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -791,11 +840,11 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          _ExtentX        =   2223
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   214958081
+         Format          =   246677505
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
-         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":10C7
+         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":15A5
          Height          =   360
          Left            =   -74085
          TabIndex        =   10
@@ -850,9 +899,9 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
             Strikethrough   =   0   'False
          EndProperty
          Height          =   480
-         ItemData        =   "frm_Alt_Desc_Calc_fixo.frx":10D8
+         ItemData        =   "frm_Alt_Desc_Calc_fixo.frx":15B6
          Left            =   -70725
-         List            =   "frm_Alt_Desc_Calc_fixo.frx":10E5
+         List            =   "frm_Alt_Desc_Calc_fixo.frx":15C3
          TabIndex        =   12
          TabStop         =   0   'False
          Text            =   "+"
@@ -860,7 +909,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Width           =   615
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_cod 
-         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":10F2
+         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":15D0
          DataField       =   "CF_TP_CONTA"
          DataSource      =   "ADOREG"
          Height          =   360
@@ -887,7 +936,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_Cod_CAD 
-         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":1103
+         Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":15E1
          Height          =   360
          Left            =   -74805
          TabIndex        =   9
@@ -961,7 +1010,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   360
          Left            =   -71160
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   3360
          Visible         =   0   'False
          Width           =   1020
@@ -969,7 +1018,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       Begin rdActiveText.ActiveText txt_13 
          Height          =   345
          Left            =   240
-         TabIndex        =   62
+         TabIndex        =   61
          Top             =   3210
          Visible         =   0   'False
          Width           =   975
@@ -1006,7 +1055,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   1500
-         TabIndex        =   65
+         TabIndex        =   64
          Top             =   3000
          Visible         =   0   'False
          Width           =   3255
@@ -1026,7 +1075,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   240
-         TabIndex        =   63
+         TabIndex        =   62
          Top             =   3000
          Visible         =   0   'False
          Width           =   975
@@ -1046,7 +1095,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -73575
-         TabIndex        =   60
+         TabIndex        =   59
          Top             =   3000
          Visible         =   0   'False
          Width           =   3255
@@ -1066,7 +1115,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -74760
-         TabIndex        =   58
+         TabIndex        =   57
          Top             =   3120
          Visible         =   0   'False
          Width           =   735
@@ -1088,7 +1137,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   255
          Index           =   3
          Left            =   -71160
-         TabIndex        =   55
+         TabIndex        =   54
          Top             =   3120
          Visible         =   0   'False
          Width           =   1035
@@ -1102,7 +1151,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   195
          Index           =   3
          Left            =   -72180
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   3120
          Visible         =   0   'False
          Width           =   555
@@ -1123,7 +1172,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   255
          Index           =   0
          Left            =   225
-         TabIndex        =   53
+         TabIndex        =   52
          Top             =   3120
          Visible         =   0   'False
          Width           =   1035
@@ -1145,7 +1194,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   255
          Index           =   2
          Left            =   -72450
-         TabIndex        =   51
+         TabIndex        =   50
          Top             =   3120
          Visible         =   0   'False
          Width           =   1095
@@ -1167,7 +1216,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   255
          Index           =   1
          Left            =   -73710
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   3120
          Visible         =   0   'False
          Width           =   1095
@@ -1188,7 +1237,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   255
          Index           =   0
          Left            =   -74760
-         TabIndex        =   49
+         TabIndex        =   48
          Top             =   3120
          Visible         =   0   'False
          Width           =   915
@@ -1202,7 +1251,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   195
          Index           =   7
          Left            =   3525
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   3000
          Visible         =   0   'False
          Width           =   570
@@ -1216,7 +1265,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   195
          Index           =   0
          Left            =   -71430
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   3180
          Visible         =   0   'False
          Width           =   615
@@ -1239,7 +1288,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   195
          Index           =   1
          Left            =   -70470
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   3120
          Visible         =   0   'False
          Width           =   150
@@ -1253,7 +1302,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Height          =   195
          Index           =   2
          Left            =   -71415
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   2985
          Visible         =   0   'False
          Width           =   570
@@ -1273,7 +1322,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -74040
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   3120
          Visible         =   0   'False
          Width           =   810
@@ -1293,7 +1342,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -74760
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   3120
          Visible         =   0   'False
          Width           =   615
@@ -1312,7 +1361,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   840
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   3120
          Visible         =   0   'False
          Width           =   690
@@ -1331,7 +1380,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   195
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   3120
          Visible         =   0   'False
          Width           =   690
@@ -1350,7 +1399,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   195
-         TabIndex        =   30
+         TabIndex        =   29
          Top             =   360
          Width           =   975
       End
@@ -1369,7 +1418,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -74820
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   435
          Width           =   975
       End
@@ -1388,7 +1437,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   3795
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   360
          Width           =   1095
       End
@@ -1406,7 +1455,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   1965
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   360
          Width           =   975
       End
@@ -1424,7 +1473,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   195
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   1080
          Width           =   1455
       End
@@ -1442,7 +1491,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   195
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   1800
          Width           =   1335
       End
@@ -1460,7 +1509,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          EndProperty
          Height          =   255
          Left            =   4275
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   1800
          Width           =   495
       End
@@ -1480,7 +1529,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -71220
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   435
          Width           =   1095
       End
@@ -1499,7 +1548,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -73110
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   435
          Width           =   975
       End
@@ -1518,7 +1567,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -74805
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   1110
          Width           =   1455
       End
@@ -1537,7 +1586,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -74805
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   1830
          Width           =   1335
       End
@@ -1556,7 +1605,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          ForeColor       =   &H00FF0000&
          Height          =   255
          Left            =   -70725
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   1830
          Width           =   495
       End
@@ -1569,64 +1618,14 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Width           =   4905
       End
    End
-   Begin MSComctlLib.ImageList ImageList1 
-      Left            =   8040
-      Top             =   0
-      _ExtentX        =   1005
-      _ExtentY        =   1005
-      BackColor       =   -2147483643
-      ImageWidth      =   32
-      ImageHeight     =   32
-      MaskColor       =   12632256
-      _Version        =   393216
-      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
-         NumListImages   =   9
-         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1114
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":142E
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1748
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1A62
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1D7C
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":2096
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":23B0
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":44EA
-            Key             =   ""
-         EndProperty
-         BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_Alt_Desc_Calc_fixo.frx":4DC4
-            Key             =   ""
-         EndProperty
-      EndProperty
-   End
    Begin MSComctlLib.Toolbar BarraF 
       Align           =   1  'Align Top
       Height          =   840
       Left            =   0
       TabIndex        =   16
       Top             =   0
-      Width           =   9570
-      _ExtentX        =   16880
+      Width           =   12675
+      _ExtentX        =   22357
       _ExtentY        =   1482
       ButtonWidth     =   1799
       ButtonHeight    =   1429
@@ -1635,7 +1634,7 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       ImageList       =   "ImageList1"
       _Version        =   393216
       BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
-         NumButtons      =   10
+         NumButtons      =   11
          BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
             Caption         =   "&Fechar"
             Key             =   "fechar"
@@ -1685,103 +1684,120 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
             Style           =   3
          EndProperty
          BeginProperty Button10 {66833FEA-8583-11D1-B16A-00C0F0283628} 
-            Enabled         =   0   'False
-            Object.Visible         =   0   'False
-            Caption         =   "Atualizar Ficha"
-            Key             =   "atualizar"
-            Description     =   "Atualizar na Ficha Atual"
-            Object.ToolTipText     =   "Atualizar na Ficha Atual"
-            ImageIndex      =   7
+            Caption         =   "Exc. Se&l."
+            Key             =   "excluirSelecionados"
+            Description     =   "Excluir selecionados"
+            Object.ToolTipText     =   "Excluir selecionados"
+            ImageIndex      =   10
+         EndProperty
+         BeginProperty Button11 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Style           =   3
          EndProperty
       EndProperty
-   End
-   Begin MSDataGridLib.DataGrid Grid 
-      Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":6ACE
-      Height          =   4695
-      Left            =   5280
-      TabIndex        =   17
-      Top             =   1560
-      Width           =   4170
-      _ExtentX        =   7355
-      _ExtentY        =   8281
-      _Version        =   393216
-      AllowUpdate     =   0   'False
-      AllowArrows     =   -1  'True
-      BackColor       =   65535
-      ColumnHeaders   =   -1  'True
-      HeadLines       =   1
-      RowHeight       =   15
-      FormatLocked    =   -1  'True
-      BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "DESCRIÇÃO DE CÁLCULOS"
-      ColumnCount     =   2
-      BeginProperty Column00 
-         DataField       =   "CF_VALOR"
-         Caption         =   "VALOR"
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   1
-            Format          =   "R$ #,##0.00"
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1046
-            SubFormatType   =   0
+      Begin MSComctlLib.ImageList ImageList1 
+         Left            =   8520
+         Top             =   120
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         BackColor       =   -2147483643
+         ImageWidth      =   32
+         ImageHeight     =   32
+         MaskColor       =   12632256
+         _Version        =   393216
+         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+            NumListImages   =   10
+            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":15F2
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":190C
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1C26
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":1F40
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":225A
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":2574
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":288E
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":49C8
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":52A2
+               Key             =   ""
+            EndProperty
+            BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "frm_Alt_Desc_Calc_fixo.frx":6FAC
+               Key             =   ""
+            EndProperty
          EndProperty
-      EndProperty
-      BeginProperty Column01 
-         DataField       =   "TP_DESC"
-         Caption         =   "CONTA"
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1046
-            SubFormatType   =   0
+      End
+      Begin Skin_Button.ctr_Button cmdSuprimir 
+         Height          =   525
+         Left            =   11880
+         TabIndex        =   68
+         TabStop         =   0   'False
+         ToolTipText     =   "Suprimir confirmações de exclusão"
+         Top             =   120
+         Visible         =   0   'False
+         Width           =   540
+         _ExtentX        =   953
+         _ExtentY        =   926
+         BTYPE           =   3
+         TX              =   ""
+         ENAB            =   0   'False
+         BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "MS Sans Serif"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
          EndProperty
-      EndProperty
-      SplitCount      =   1
-      BeginProperty Split0 
-         MarqueeStyle    =   3
-         ScrollBars      =   2
-         AllowRowSizing  =   0   'False
-         AllowSizing     =   0   'False
-         BeginProperty Column00 
-            Alignment       =   1
-            ColumnAllowSizing=   0   'False
-            Locked          =   -1  'True
-         EndProperty
-         BeginProperty Column01 
-            ColumnAllowSizing=   0   'False
-            Locked          =   -1  'True
-         EndProperty
-      EndProperty
+         COLTYPE         =   4
+         FOCUSR          =   -1  'True
+         BCOL            =   14215660
+         BCOLO           =   14215660
+         FCOL            =   0
+         FCOLO           =   0
+         MCOL            =   12632256
+         MPTR            =   1
+         MICON           =   "frm_Alt_Desc_Calc_fixo.frx":29376
+         PICN            =   "frm_Alt_Desc_Calc_fixo.frx":29392
+         UMCOL           =   -1  'True
+         SOFT            =   0   'False
+         PICPOS          =   0
+         NGREY           =   0   'False
+         FX              =   0
+         HAND            =   0   'False
+         CHECK           =   0   'False
+         VALUE           =   0   'False
+      End
    End
    Begin MSAdodcLib.Adodc ADOREG 
       Align           =   2  'Align Bottom
       Height          =   330
       Left            =   0
-      Top             =   6375
-      Width           =   9570
-      _ExtentX        =   16880
+      Top             =   8220
+      Width           =   12675
+      _ExtentX        =   22357
       _ExtentY        =   582
       ConnectMode     =   0
       CursorLocation  =   2
@@ -1826,10 +1842,10 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       Align           =   2  'Align Bottom
       Height          =   330
       Left            =   0
-      Top             =   6045
+      Top             =   7890
       Visible         =   0   'False
-      Width           =   9570
-      _ExtentX        =   16880
+      Width           =   12675
+      _ExtentX        =   22357
       _ExtentY        =   582
       ConnectMode     =   0
       CursorLocation  =   2
@@ -1870,6 +1886,34 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       EndProperty
       _Version        =   393216
    End
+   Begin MSHierarchicalFlexGridLib.MSHFlexGrid flexGRID 
+      Bindings        =   "frm_Alt_Desc_Calc_fixo.frx":4B75C
+      Height          =   6615
+      Left            =   5280
+      TabIndex        =   67
+      Top             =   1560
+      Width           =   7335
+      _ExtentX        =   12938
+      _ExtentY        =   11668
+      _Version        =   393216
+      Rows            =   7
+      FixedRows       =   0
+      FixedCols       =   0
+      BackColorFixed  =   49152
+      ForeColorFixed  =   16777215
+      AllowBigSelection=   0   'False
+      ScrollBars      =   2
+      SelectionMode   =   1
+      GridLineWidthFixed=   1
+      RowSizingMode   =   1
+      _NumberOfBands  =   1
+      _Band(0).Cols   =   2
+      _Band(0).GridLinesBand=   1
+      _Band(0).GridLineWidthBand=   1
+      _Band(0).TextStyleBand=   0
+      _Band(0).TextStyleHeader=   0
+      _Band(0).ColHeader=   1
+   End
    Begin VB.Label lbFunc 
       Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
@@ -1883,12 +1927,12 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
+      ForeColor       =   &H00000000&
       Height          =   495
       Left            =   240
-      TabIndex        =   67
+      TabIndex        =   66
       Top             =   960
-      Width           =   9015
+      Width           =   12855
    End
    Begin VB.Label LB_FUNC 
       Alignment       =   2  'Center
@@ -1906,8 +1950,8 @@ Begin VB.Form frm_Alt_Desc_Calc_fixo
       ForeColor       =   &H00000000&
       Height          =   255
       Left            =   240
-      TabIndex        =   31
-      Top             =   1920
+      TabIndex        =   30
+      Top             =   1440
       Width           =   4935
    End
    Begin VB.Menu mnuSel 
@@ -1932,9 +1976,15 @@ Dim w_At As Boolean
 Dim w_PSS As String
 Dim w_txt_desc As String
 Dim w_unload As Boolean
+Dim w_currentRow As Integer
+Dim w_suprimir_exclusao
 
 Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 
+
+Private Sub Form_Initialize()
+        w_suprimir_exclusao = False
+End Sub
 
 Private Sub c_Filtro_Click()
 On Error GoTo err1
@@ -2008,13 +2058,104 @@ err1:
     Resume sair
 End Sub
 
+Sub resetNavigate()
+          w_adoFiltro = adoReg.Recordset.Filter
+          Form_Load
+          ADO_GRID.Refresh
+          adoReg.Refresh
+        
+          adoReg.Recordset.Filter = w_adoFiltro
+          ADO_GRID.Recordset.Filter = w_adoFiltro
+        
+          flexGRID.Refresh
+        
+          de.rsTAB_DESC_CALC.Close
+          de.TAB_DESC_CALC
+          
+          formatarFlexGrid
+End Sub
+
+Private Sub flexGRID_DblClick()
+    With flexGRID
+        If .ColSel = 12 Then
+            w_col = .Col
+            .Col = 3
+            If .CellPicture = picChecked Then
+                Set .CellPicture = picUnchecked
+            Else
+                Set .CellPicture = picChecked
+            End If
+        End If
+    End With
+End Sub
+
+Private Sub flexGRID_RowColChange()
+    If flexGRID.RowSel <> 0 And flexGRID.RowSel <> w_currentRow Then
+        ADO_GRID.Recordset.MoveFirst
+        ADO_GRID.Recordset.Find "CF_CODIGO = " & flexGRID.TextMatrix(flexGRID.RowSel, 4), , adSearchForward
+        w_currentRow = flexGRID.RowSel
+    End If
+End Sub
+
 Private Sub Form_Activate()
 If w_At = True Then adoReg.Refresh
     
 End Sub
 
+
+Sub formatarFlexGrid()
+    If Not (adoReg.Recordset.EOF) Then
+        flexGRID.Visible = False
+
+        For I = 1 To flexGRID.Rows - 1
+        '    If flexGRID.TextMatrix(I, 10) > 0 Then
+        '         ' Varre todas as colunas da linha e seta a cor de fundo
+                 For coluna = 0 To flexGRID.Cols - 1
+                     flexGRID.Col = coluna
+                     flexGRID.Row = I
+                     flexGRID.CellBackColor = vbYellow
+                     flexGRID.CellFontBold = True
+                     'flexGRID_L.CellForeColor = &H80000004
+                 Next coluna
+        '     End If
+            With flexGRID
+                    .Row = I: .Col = 3: .CellPictureAlignment = 4 ' Align the checkbox
+                    Set .CellPicture = picUnchecked.Picture ' Set the default checkbox picture to the empty box
+            End With
+        Next I
+        
+        flexGRID.ColAlignment(2) = flexAlignRightBottom 'valor
+        flexGRID.ColAlignment(3) = flexAlignCenterBottom 'excluir
+        
+        flexGRID.TextMatrix(0, 0) = "Cód"
+        flexGRID.TextMatrix(0, 1) = "Descrição Conta"
+        flexGRID.TextMatrix(0, 2) = "Valor"
+        flexGRID.TextMatrix(0, 3) = "Excluir?"
+        
+        flexGRID.Visible = True
+        
+    End If
+
+End Sub
+
+
 Private Sub Form_Load()
 On Error GoTo err1
+
+flexGRID.ColWidth(0) = 1000 'TP conta(CONTA)
+flexGRID.ColWidth(1) = 4000 'conta(DESCRIÇÃO)
+flexGRID.ColWidth(2) = 1300 'CF_VALOR
+flexGRID.ColWidth(3) = 700 'excluir?
+
+flexGRID.ColWidth(4) = 0
+flexGRID.ColWidth(5) = 0
+flexGRID.ColWidth(6) = 0
+flexGRID.ColWidth(7) = 0
+flexGRID.ColWidth(8) = 0
+flexGRID.ColWidth(9) = 0
+flexGRID.ColWidth(10) = 0
+flexGRID.ColWidth(11) = 0
+flexGRID.ColWidth(12) = 0
 
 w_unload = False
 
@@ -2070,16 +2211,16 @@ w_unload = False
         
     If Not adoReg.Recordset.EOF Then
  If acessoTotal() Then
-        Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE (TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & TXT_NFICHA_CAD & " ) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
+        Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.CF_TP_CONTA as TP_CONTA, TAB_TP_CONTA.TP_DESC as CONTA, Format(TAB_DESC_CALC_FIXO.CF_VALOR,'R$ ###,##0.00') AS VALOR, '' as EXCLUIR, TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE (TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & TXT_NFICHA_CAD & " ) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
     Else
-        Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE (TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & TXT_NFICHA_CAD & " AND TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 20 AND TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 78) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
+        Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.CF_TP_CONTA as TP_CONTA, TAB_TP_CONTA.TP_DESC as CONTA, Format(TAB_DESC_CALC_FIXO.CF_VALOR,'R$ ###,##0.00') AS VALOR, '' as EXCLUIR, TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE (TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & TXT_NFICHA_CAD & " AND TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 20 AND TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 78) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
     End If
     End If
     V_MOVE = True
 
     Timer1.Enabled = True
 
-   
+   formatarFlexGrid
 
 sair:
     Exit Sub
@@ -2156,16 +2297,100 @@ Private Sub BarraF_ButtonClick(ByVal Button As MSComctlLib.Button)
         Case "fechar": Fechar
         Case "adicionar": Adicionar
         Case "editar": Editar
-                       If BarraF.Buttons("editar").Enabled = False Then txt_DT.SetFocus
+                       If BarraF.Buttons("editar").Enabled = False Then Me.txt_DT.SetFocus
 
         Case "salvar": Salvar
         Case "cancelar": Cancelar
         Case "excluir":   If BarraF.Buttons("adicionar").Enabled = True Then Excluir
-
+        Case "excluirSelecionados": ExcluirSelecionados
         'Case "atualizar": AtualizarFicha
     End Select
 End Sub
 
+Sub ExcluirSelecionados()
+Dim I, pos As Integer
+Dim codigos() As String
+Dim contas() As String
+Dim descricoes() As String
+Dim registros As String
+
+    pos = 0
+    registros = vbNewLine
+    ReDim codigos(1 To flexGRID.Rows)
+    ReDim contas(1 To flexGRID.Rows)
+    ReDim descricoes(1 To flexGRID.Rows)
+        
+    With flexGRID
+    For I = .Rows - 1 To 0 Step -1
+        If .Rows >= 1 Then
+            .Col = 3
+            .Row = I
+            If .CellPicture = picChecked Then
+                pos = pos + 1
+                codigos(pos) = flexGRID.TextMatrix(I, 4)
+                contas(pos) = flexGRID.TextMatrix(I, 0)
+                descricoes(pos) = flexGRID.TextMatrix(I, 1)
+                registros = registros & vbNewLine & contas(pos) & ": " & descricoes(pos)
+            End If
+        End If
+    Next I
+    End With
+    
+    If pos > 0 Then
+                
+        frm_Habilitar.Show 1
+        w_PSS = frm_Habilitar.txt_Pss
+   
+        If w_PSS = w_PassWordLib Then
+                cmdProcessando.Visible = True
+                If vbYes = MsgBox("Deseja realmente excluir estes " & pos & " lançamentos programados? " & registros, vbQuestion + vbYesNo) Then
+                    For I = pos To 1 Step -1
+                        excluirLanc codigos(I)
+                    Next I
+                    MsgBox "Os " & pos & " registros foram excluídos com sucesso!", vbOKOnly
+                    resetNavigate
+                Else
+                    MsgBox "Operação cancelada.", vbOKOnly
+                End If
+                cmdProcessando.Visible = False
+        Else
+            MsgBox "Senha de Liberação Incorreta!", vbCritical
+        End If
+    Else
+        MsgBox "Selecione pelo menos 1 registro para a exclusão.", vbInformation, "Operação cancelada"
+    End If
+    
+End Sub
+
+
+Private Sub excluirLanc(ByVal codigo As String)
+On Error GoTo err1
+Dim ficha, emp_cod As Integer
+          
+        
+Set adoExcluir = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.CF_EMP_COD AS emp_cod, " _
+    & "(SELECT Max(M_NFICHA) FROM TAB_FICHA_MENS GROUP BY TAB_FICHA_MENS.M_F_COD HAVING (((TAB_FICHA_MENS.M_F_COD)= TAB_DESC_CALC_FIXO.CF_EMP_COD))) as ficha " _
+    & "FROM TAB_DESC_CALC_FIXO WHERE (((TAB_DESC_CALC_FIXO.CF_CODIGO)=" & codigo & "))").Clone
+
+    ficha = adoExcluir.Fields("ficha")
+    emp_cod = adoExcluir.Fields("emp_cod")
+        
+    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC_FIXO Where CF_CODIGO = " & codigo)
+    de.cnc.Execute ("DELETE FROM TAB_DESC_CALC Where C_N_FICHA = " & ficha & " AND C_NCRED = " & codigo)
+   
+sair:
+    Exit Sub
+err1:
+    If Not Err.Number = -2147467259 Then
+        MsgBox Err.Number & " : " & Err.Description, vbCritical
+    Else
+        MsgBox Err.Number & " : " & Err.Description, vbCritical
+        'MsgBox "NÃO É POSSÍVEL EXCLUIR ESTA FICHA MENSAL, DEVIDO A CÁLCULOS RELACIONADAS A ELA!", vbCritical
+        adoReg.Refresh
+    End If
+    Resume sair
+
+End Sub
 
 '*** Rotinas ***
 Private Sub Adicionar()
@@ -2304,11 +2529,11 @@ If w_PSS = w_PassWordLib Then
     'BarraF.Buttons("atualizar").Enabled = Not BarraF.Buttons("atualizar").Enabled
     
     'GRID_CRED.Enabled = Not GRID_CRED.Enabled
-    Grid.Enabled = Not Grid.Enabled
+    flexGRID.Enabled = Not flexGRID.Enabled
         
     GUIA.Enabled = Not GUIA.Enabled
    
-    If BarraF.Buttons("salvar").Enabled = False Then Grid.SetFocus
+    If BarraF.Buttons("salvar").Enabled = False Then flexGRID.SetFocus
     Pause 0.5
 Else
     MsgBox "Senha de Liberação incorreta!", vbCritical
@@ -2363,7 +2588,7 @@ If w_PSS = w_PassWordLib Then
         adoReg.Recordset.Filter = w_adoFiltro
         ADO_GRID.Recordset.Filter = w_adoFiltro
       
-        Grid.Refresh
+        flexGRID.Refresh
       
         de.rsTAB_DESC_CALC_FIXO.Close
         de.TAB_DESC_CALC_FIXO
@@ -2608,14 +2833,16 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
         adoReg.Refresh
         
      If acessoTotal() Then
-         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & adoReg.Recordset.Fields("CF_EMP_COD") & " ) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
+         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.CF_TP_CONTA as TP_CONTA, TAB_TP_CONTA.TP_DESC as CONTA, Format(TAB_DESC_CALC_FIXO.CF_VALOR,'R$ ###,##0.00') AS VALOR, '' as EXCLUIR, TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & adoReg.Recordset.Fields("CF_EMP_COD") & " ) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
      Else
-         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & adoReg.Recordset.Fields("CF_EMP_COD") & " ) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 20) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 78) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
+         Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC_FIXO.CF_TP_CONTA as TP_CONTA, TAB_TP_CONTA.TP_DESC as CONTA, Format(TAB_DESC_CALC_FIXO.CF_VALOR,'R$ ###,##0.00') AS VALOR, '' as EXCLUIR, TAB_DESC_CALC_FIXO.* , TAB_TP_CONTA.TP_DESC FROM TAB_TP_CONTA, TAB_DESC_CALC_FIXO WHERE ( TAB_DESC_CALC_FIXO.CF_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC_FIXO.CF_EMP_COD = " & adoReg.Recordset.Fields("CF_EMP_COD") & " ) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 20) AND (TAB_DESC_CALC_FIXO.CF_TP_CONTA <> 78) Order By TAB_DESC_CALC_FIXO.CF_Valor, TAB_DESC_CALC_FIXO.CF_DT").Clone
      End If
 
         ADO_GRID.Refresh
         'Pause 1
-        Grid.ReBind
+        'FlexGrid.ReBind
+        
+        resetNavigate
     
         W_FICHA = TXT_NFICHA
         w_PSS = ""
@@ -2713,6 +2940,8 @@ End If
     Set adoFixos = Nothing
   End If
 
+
+formatarFlexGrid
 
 
 sair:
@@ -2827,6 +3056,17 @@ Private Sub GUIA_GotFocus()
     Else
         TXT_DT_CAD.SetFocus
     End If
+End Sub
+
+
+
+Private Sub mnuSuprimir_Click(Index As Integer)
+    If w_suprimir_exclusao Then
+        w_suprimir_exclusao = False
+    Else
+        w_suprimir_exclusao = True
+    End If
+    cmdSuprimir.Visible = w_suprimir_exclusao
 End Sub
 
 
