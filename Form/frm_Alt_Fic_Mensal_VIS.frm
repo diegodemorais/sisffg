@@ -1,30 +1,30 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
-Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
-Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "msdatlst.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
+Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "activetext.ocx"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_Alt_Fic_Mensal_VIS 
    BackColor       =   &H80000000&
    Caption         =   "FICHA MENSAL"
-   ClientHeight    =   10365
-   ClientLeft      =   5370
-   ClientTop       =   3210
+   ClientHeight    =   10361
+   ClientLeft      =   5369
+   ClientTop       =   3211
    ClientWidth     =   20475
    Icon            =   "frm_Alt_Fic_Mensal_VIS.frx":0000
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    Moveable        =   0   'False
-   ScaleHeight     =   10365
+   ScaleHeight     =   10361
    ScaleWidth      =   20475
    Begin VB.CommandButton cmdDelFichas 
       BackColor       =   &H8000000D&
       Caption         =   "Deletar Fichas ñ exist."
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -44,7 +44,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Atualizar Dt Demissão"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -64,7 +64,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Gerar Contr. Sindical"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -84,7 +84,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Gerar Fixo específico"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -104,7 +104,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Exportar Custo Bônus"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -124,7 +124,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Gerar Comerciários"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -144,7 +144,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Exportar Despesas RP"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -164,7 +164,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Despesas CX"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -184,7 +184,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Exportar p/ Contas"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -204,7 +204,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Gerar Baixas Emprest."
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -224,7 +224,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Gerar Salários Família"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -244,7 +244,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Gerar Saldos Anterior"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -259,6 +259,126 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Visible         =   0   'False
       Width           =   2000
    End
+   Begin VB.CommandButton cmd13 
+      BackColor       =   &H8000000D&
+      Caption         =   "Gerar 13ºs"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.83
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   15680
+      MaskColor       =   &H00FF0000&
+      TabIndex        =   85
+      Top             =   3720
+      Visible         =   0   'False
+      Width           =   2000
+   End
+   Begin VB.CommandButton cmdFixos 
+      BackColor       =   &H8000000D&
+      Caption         =   "Gerar Fixos"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.83
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   15680
+      MaskColor       =   &H00FF0000&
+      TabIndex        =   114
+      Top             =   3360
+      Visible         =   0   'False
+      Width           =   2000
+   End
+   Begin VB.CommandButton cmdComissGerente 
+      BackColor       =   &H8000000D&
+      Caption         =   "Comiss. Gerente"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.83
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   15680
+      MaskColor       =   &H00FF0000&
+      TabIndex        =   90
+      Top             =   3000
+      Visible         =   0   'False
+      Width           =   2000
+   End
+   Begin VB.CommandButton cmdComixCxEXT 
+      BackColor       =   &H8000000D&
+      Caption         =   "Comiss. CX EXTRA"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.83
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   15680
+      MaskColor       =   &H00FF0000&
+      TabIndex        =   88
+      Top             =   2640
+      Visible         =   0   'False
+      Width           =   2000
+   End
+   Begin VB.CommandButton cmdComisCx 
+      BackColor       =   &H8000000D&
+      Caption         =   "Comiss. CX"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.83
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   15680
+      MaskColor       =   &H00FF0000&
+      TabIndex        =   87
+      Top             =   2280
+      Visible         =   0   'False
+      Width           =   2000
+   End
+   Begin VB.CommandButton cmdComisMwts 
+      BackColor       =   &H8000000D&
+      Caption         =   "Comiss. Vendedor"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.83
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   15680
+      MaskColor       =   &H00FF0000&
+      TabIndex        =   86
+      Top             =   1920
+      Visible         =   0   'False
+      Width           =   2000
+   End
    Begin MSHierarchicalFlexGridLib.MSHFlexGrid flexGRID_L 
       Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":1042
       Height          =   2415
@@ -266,8 +386,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       TabIndex        =   67
       Top             =   7560
       Width           =   15915
-      _ExtentX        =   28072
-      _ExtentY        =   4260
+      _ExtentX        =   28084
+      _ExtentY        =   4265
       _Version        =   393216
       Rows            =   10
       FixedRows       =   0
@@ -304,14 +424,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       ToolTipText     =   "Expandir Lançamentos"
       Top             =   7200
       Width           =   420
-      _ExtentX        =   741
-      _ExtentY        =   714
+      _ExtentX        =   743
+      _ExtentY        =   719
       BTYPE           =   3
       TX              =   ""
       ENAB            =   -1  'True
       BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -341,14 +461,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":3EFF
       DataField       =   "M_F_COD"
       DataSource      =   "ADOREG"
-      Height          =   315
-      Left            =   240
+      Height          =   286
+      Left            =   234
       TabIndex        =   15
-      Top             =   7650
+      Top             =   7644
       Visible         =   0   'False
-      Width           =   855
-      _ExtentX        =   1508
-      _ExtentY        =   556
+      Width           =   858
+      _ExtentX        =   1582
+      _ExtentY        =   503
       _Version        =   393216
       Enabled         =   0   'False
       MatchEntry      =   -1  'True
@@ -359,7 +479,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Object.DataMember      =   "TAB_FUNCIONARIO"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -372,7 +492,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BackColor       =   &H00FFFFFF&
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -399,8 +519,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Top             =   9240
       Visible         =   0   'False
       Width           =   15480
-      _ExtentX        =   27305
-      _ExtentY        =   582
+      _ExtentX        =   27317
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -431,7 +551,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "REGISTRO : 0/0"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -448,14 +568,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       ToolTipText     =   "Gerar COMISSÃO para este funcionário"
       Top             =   4440
       Width           =   300
-      _ExtentX        =   529
+      _ExtentX        =   527
       _ExtentY        =   503
       BTYPE           =   3
       TX              =   ""
       ENAB            =   -1  'True
       BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -490,14 +610,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Top             =   4080
       Visible         =   0   'False
       Width           =   300
-      _ExtentX        =   529
+      _ExtentX        =   527
       _ExtentY        =   503
       BTYPE           =   3
       TX              =   ""
       ENAB            =   -1  'True
       BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -549,7 +669,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          DataSource      =   "ADOREG"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -569,7 +689,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "ACERTO FINAL"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   12
+            Size            =   12.23
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -615,13 +735,13 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":778C
       DataField       =   "M_F_COD"
       DataSource      =   "ADOREG"
-      Height          =   315
-      Left            =   120
+      Height          =   286
+      Left            =   117
       TabIndex        =   7
-      Top             =   2520
-      Width           =   7935
-      _ExtentX        =   13996
-      _ExtentY        =   556
+      Top             =   2522
+      Width           =   7930
+      _ExtentX        =   14617
+      _ExtentY        =   503
       _Version        =   393216
       Locked          =   -1  'True
       MatchEntry      =   -1  'True
@@ -634,7 +754,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Object.DataMember      =   "TAB_FUNCIONARIO"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -646,7 +766,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BackColor       =   &H80000000&
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -665,14 +785,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabStop         =   0   'False
          Top             =   120
          Width           =   585
-         _ExtentX        =   1032
-         _ExtentY        =   1191
+         _ExtentX        =   1030
+         _ExtentY        =   1198
          BTYPE           =   3
          TX              =   ""
          ENAB            =   -1  'True
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -705,14 +825,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabStop         =   0   'False
          Top             =   120
          Width           =   585
-         _ExtentX        =   1032
-         _ExtentY        =   1191
+         _ExtentX        =   1030
+         _ExtentY        =   1198
          BTYPE           =   3
          TX              =   ""
          ENAB            =   -1  'True
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -743,7 +863,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BackColor       =   &H80000000&
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -761,7 +881,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Atualizar"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -781,7 +901,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          BackColor       =   &H00FF8080&
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -801,7 +921,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BackColor       =   &H80000000&
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -817,7 +937,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "!"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   12
+            Size            =   12.23
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -832,126 +952,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Top             =   240
          Width           =   390
       End
-   End
-   Begin VB.CommandButton cmd13 
-      BackColor       =   &H8000000D&
-      Caption         =   "Gerar 13ºs"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   15680
-      MaskColor       =   &H00FF0000&
-      TabIndex        =   85
-      Top             =   3720
-      Visible         =   0   'False
-      Width           =   2000
-   End
-   Begin VB.CommandButton cmdFixos 
-      BackColor       =   &H8000000D&
-      Caption         =   "Gerar Fixos"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   15680
-      MaskColor       =   &H00FF0000&
-      TabIndex        =   114
-      Top             =   3360
-      Visible         =   0   'False
-      Width           =   2000
-   End
-   Begin VB.CommandButton cmdComissGerente 
-      BackColor       =   &H8000000D&
-      Caption         =   "Comiss. Gerente"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   15680
-      MaskColor       =   &H00FF0000&
-      TabIndex        =   90
-      Top             =   3000
-      Visible         =   0   'False
-      Width           =   2000
-   End
-   Begin VB.CommandButton cmdComixCxEXT 
-      BackColor       =   &H8000000D&
-      Caption         =   "Comiss. CX EXTRA"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   15680
-      MaskColor       =   &H00FF0000&
-      TabIndex        =   88
-      Top             =   2640
-      Visible         =   0   'False
-      Width           =   2000
-   End
-   Begin VB.CommandButton cmdComisCx 
-      BackColor       =   &H8000000D&
-      Caption         =   "Comiss. CX"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   15680
-      MaskColor       =   &H00FF0000&
-      TabIndex        =   87
-      Top             =   2280
-      Visible         =   0   'False
-      Width           =   2000
-   End
-   Begin VB.CommandButton cmdComisMwts 
-      BackColor       =   &H8000000D&
-      Caption         =   "Comiss. Vendedor"
-      BeginProperty Font 
-         Name            =   "Arial"
-         Size            =   9
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   15680
-      MaskColor       =   &H00FF0000&
-      TabIndex        =   86
-      Top             =   1920
-      Visible         =   0   'False
-      Width           =   2000
    End
    Begin VB.Frame frmQtde 
       BackColor       =   &H0080C0FF&
@@ -975,7 +975,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "Arial"
-               Size            =   9.75
+               Size            =   9.51
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -993,7 +993,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
             Caption         =   "LIM. VEND.:"
             BeginProperty Font 
                Name            =   "Arial"
-               Size            =   9
+               Size            =   8.83
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1021,7 +1021,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
             Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "Arial"
-               Size            =   9.75
+               Size            =   9.51
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1039,7 +1039,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
             Caption         =   "TOTAL:"
             BeginProperty Font 
                Name            =   "Arial"
-               Size            =   9.75
+               Size            =   9.51
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -1059,7 +1059,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1077,7 +1077,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1095,7 +1095,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1113,7 +1113,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1131,7 +1131,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1149,7 +1149,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1170,14 +1170,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          ToolTipText     =   "Relatório de Funcionários por Função"
          Top             =   120
          Width           =   270
-         _ExtentX        =   476
+         _ExtentX        =   479
          _ExtentY        =   503
          BTYPE           =   2
          TX              =   ""
          ENAB            =   -1  'True
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1208,7 +1208,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "CAIXA EXT.:"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1226,7 +1226,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "CAIXA:"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1244,7 +1244,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "GERENTE:"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1262,7 +1262,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "DEMITIDOS:"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1280,7 +1280,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "SEGURANÇA:"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1298,7 +1298,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "VENDEDOR:"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1327,7 +1327,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "ATUALIZANDO..."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   32.25
+            Size            =   32.6
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1350,8 +1350,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       TabIndex        =   0
       Top             =   1680
       Width           =   4485
-      _ExtentX        =   7911
-      _ExtentY        =   12832
+      _ExtentX        =   7908
+      _ExtentY        =   12844
       _Version        =   393216
       AllowUpdate     =   0   'False
       AllowArrows     =   -1  'True
@@ -1362,7 +1362,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       FormatLocked    =   -1  'True
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1371,7 +1371,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.1509
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -1945,7 +1945,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          AllowRowSizing  =   0   'False
          AllowSizing     =   0   'False
          BeginProperty Column00 
-            ColumnWidth     =   494.929
+            ColumnWidth     =   489.26
          EndProperty
          BeginProperty Column01 
             Object.Visible         =   0   'False
@@ -2005,7 +2005,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
             Object.Visible         =   0   'False
          EndProperty
          BeginProperty Column20 
-            ColumnWidth     =   2805.166
+            ColumnWidth     =   2798.362
          EndProperty
          BeginProperty Column21 
             Object.Visible         =   0   'False
@@ -2057,14 +2057,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          EndProperty
          BeginProperty Column37 
             Object.Visible         =   -1  'True
-            ColumnWidth     =   299.906
+            ColumnWidth     =   298.772
          EndProperty
          BeginProperty Column38 
             Object.Visible         =   0   'False
          EndProperty
          BeginProperty Column39 
             Object.Visible         =   -1  'True
-            ColumnWidth     =   299.906
+            ColumnWidth     =   298.772
          EndProperty
          BeginProperty Column40 
             Object.Visible         =   0   'False
@@ -2092,7 +2092,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "BLOQUEADO"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   20.25
+            Size            =   20.38
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2111,7 +2111,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Bloq / Liberar ficha"
       BeginProperty Font 
          Name            =   "Arial Rounded MT Bold"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2130,7 +2130,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   " Mostrar: "
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2166,7 +2166,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   " Ordem: "
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2182,7 +2182,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Tipo"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2200,7 +2200,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "(B)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2217,7 +2217,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2236,7 +2236,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2281,7 +2281,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2309,7 +2309,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2337,7 +2337,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2392,7 +2392,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Lucida Console"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2477,7 +2477,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2500,7 +2500,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2529,7 +2529,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2550,7 +2550,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2580,7 +2580,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2602,8 +2602,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Top             =   9210
       Visible         =   0   'False
       Width           =   1455
-      _ExtentX        =   2566
-      _ExtentY        =   582
+      _ExtentX        =   2564
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -2634,7 +2634,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2650,7 +2650,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2671,7 +2671,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2695,7 +2695,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2713,7 +2713,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   6.75
+         Size            =   6.79
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2734,7 +2734,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2753,8 +2753,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   14760
       Top             =   120
-      _ExtentX        =   1005
-      _ExtentY        =   1005
+      _ExtentX        =   1006
+      _ExtentY        =   1006
       BackColor       =   8454143
       ImageWidth      =   32
       ImageHeight     =   32
@@ -2828,14 +2828,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Bindings        =   "frm_Alt_Fic_Mensal_VIS.frx":134D8
       DataField       =   "M_LOGO"
       DataSource      =   "ADOREG"
-      Height          =   330
-      Left            =   3600
+      Height          =   312
+      Left            =   3601
       TabIndex        =   1
       TabStop         =   0   'False
-      Top             =   2085
-      Width           =   735
-      _ExtentX        =   1296
-      _ExtentY        =   582
+      Top             =   2080
+      Width           =   728
+      _ExtentX        =   1342
+      _ExtentY        =   551
       _Version        =   393216
       Locked          =   -1  'True
       MatchEntry      =   -1  'True
@@ -2847,7 +2847,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Object.DataMember      =   "TAB_L"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.1509
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2862,14 +2862,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       TabStop         =   0   'False
       Top             =   4200
       Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   926
+      _ExtentX        =   958
+      _ExtentY        =   935
       BTYPE           =   3
       TX              =   ""
       ENAB            =   -1  'True
       BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2900,7 +2900,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   " Pesquisar: "
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2917,7 +2917,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Mês / Ano"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2967,7 +2967,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          EndProperty
          BeginProperty Font 
             Name            =   "Lucida Console"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -2989,7 +2989,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Vcto (F)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3008,7 +3008,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "(D)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3028,7 +3028,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "S. Emprést."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3048,7 +3048,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Nº Ficha"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3067,7 +3067,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "(B)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3087,7 +3087,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Mês / Ano"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3106,7 +3106,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Nome"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3125,7 +3125,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Remover Filtro"
          BeginProperty Font 
             Name            =   "Arial Black"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   900
             Underline       =   0   'False
@@ -3145,7 +3145,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   " Digite: "
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3189,15 +3189,15 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    End
    Begin MSComctlLib.Toolbar BarraF 
       Align           =   1  'Align Top
-      Height          =   840
+      Height          =   793
       Left            =   0
       TabIndex        =   72
       Top             =   0
       Width           =   20475
-      _ExtentX        =   36116
-      _ExtentY        =   1482
-      ButtonWidth     =   1826
-      ButtonHeight    =   1429
+      _ExtentX        =   36111
+      _ExtentY        =   1342
+      ButtonWidth     =   1773
+      ButtonHeight    =   1342
       Appearance      =   1
       Style           =   1
       ImageList       =   "ImageList1"
@@ -3346,8 +3346,8 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       TabStop         =   0   'False
       Top             =   1920
       Width           =   975
-      _ExtentX        =   1720
-      _ExtentY        =   873
+      _ExtentX        =   1725
+      _ExtentY        =   863
       _Version        =   393216
       Locked          =   -1  'True
       MatchEntry      =   -1  'True
@@ -3359,7 +3359,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Object.DataMember      =   "tab_L_num"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
-         Size            =   15.75
+         Size            =   15.6226
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -3403,12 +3403,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabIndex        =   138
          Top             =   240
          Width           =   1095
-         _ExtentX        =   1931
-         _ExtentY        =   609
+         _ExtentX        =   1941
+         _ExtentY        =   599
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3421,7 +3421,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin rdActiveText.ActiveText TXT_DT_REG 
          DataField       =   "M_DT_REG"
@@ -3440,12 +3440,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabIndex        =   141
          Top             =   840
          Width           =   1095
-         _ExtentX        =   1931
-         _ExtentY        =   609
+         _ExtentX        =   1941
+         _ExtentY        =   599
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3458,7 +3458,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin Skin_Button.ctr_Button btRptADM 
          Height          =   480
@@ -3468,14 +3468,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          ToolTipText     =   "Relatório dos @"
          Top             =   150
          Width           =   360
-         _ExtentX        =   635
-         _ExtentY        =   847
+         _ExtentX        =   647
+         _ExtentY        =   839
          BTYPE           =   2
          TX              =   ""
          ENAB            =   -1  'True
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3509,14 +3509,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          ToolTipText     =   "Relatório dos ®"
          Top             =   750
          Width           =   360
-         _ExtentX        =   635
-         _ExtentY        =   847
+         _ExtentX        =   647
+         _ExtentY        =   839
          BTYPE           =   2
          TX              =   ""
          ENAB            =   -1  'True
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3559,12 +3559,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabIndex        =   145
          Top             =   840
          Width           =   1095
-         _ExtentX        =   1931
-         _ExtentY        =   609
+         _ExtentX        =   1941
+         _ExtentY        =   599
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3577,7 +3577,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin Skin_Button.ctr_Button btRptDem 
          Height          =   480
@@ -3587,14 +3587,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          ToolTipText     =   "Relatório dos (D)"
          Top             =   300
          Width           =   360
-         _ExtentX        =   635
-         _ExtentY        =   847
+         _ExtentX        =   647
+         _ExtentY        =   839
          BTYPE           =   2
          TX              =   ""
          ENAB            =   -1  'True
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3625,7 +3625,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "(D)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3643,7 +3643,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "®"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   12.75
+            Size            =   12.91
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3661,7 +3661,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "@"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -3689,7 +3689,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3776,12 +3776,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabIndex        =   155
          Top             =   960
          Width           =   1095
-         _ExtentX        =   1931
-         _ExtentY        =   556
+         _ExtentX        =   1941
+         _ExtentY        =   551
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3794,7 +3794,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin rdActiveText.ActiveText TXT_FERIAS_ULT_PG 
          DataField       =   "M_FERIAS_ULT_PG"
@@ -3813,12 +3813,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabIndex        =   156
          Top             =   960
          Width           =   1095
-         _ExtentX        =   1931
-         _ExtentY        =   556
+         _ExtentX        =   1941
+         _ExtentY        =   551
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3831,7 +3831,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin rdActiveText.ActiveText TXT_13_PG 
          DataField       =   "M_13_PG"
@@ -3850,12 +3850,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabIndex        =   157
          Top             =   360
          Width           =   1095
-         _ExtentX        =   1931
-         _ExtentY        =   609
+         _ExtentX        =   1941
+         _ExtentY        =   599
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3868,7 +3868,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin rdActiveText.ActiveText TXT_13_ULT_PG 
          DataField       =   "M_13_ULT_PG"
@@ -3887,12 +3887,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          TabIndex        =   158
          Top             =   360
          Width           =   1095
-         _ExtentX        =   1931
-         _ExtentY        =   609
+         _ExtentX        =   1941
+         _ExtentY        =   599
          Enabled         =   0   'False
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3905,7 +3905,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin Skin_Button.ctr_Button btRptVctoFerias 
          Height          =   525
@@ -3915,14 +3915,14 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          ToolTipText     =   "Relatório das Férias Vencendo"
          Top             =   720
          Width           =   360
-         _ExtentX        =   635
-         _ExtentY        =   926
+         _ExtentX        =   647
+         _ExtentY        =   935
          BTYPE           =   2
          TX              =   ""
          ENAB            =   -1  'True
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3953,7 +3953,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "13º PG"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3971,7 +3971,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "13º ULT"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -3989,7 +3989,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "OBS 13º"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -4007,7 +4007,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Vcto (F)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -4025,7 +4025,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "(F) PG"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -4043,7 +4043,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "(F) ULT"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -4061,7 +4061,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Caption         =   "Pg. VT:"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -4080,7 +4080,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "FÉRIAS:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4108,7 +4108,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   12.23
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4137,7 +4137,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   12.23
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4156,7 +4156,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "TEMPO DE SERVIÇO:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4175,7 +4175,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "IDADE:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4204,7 +4204,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   18
+         Size            =   18.34
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4224,7 +4224,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "FUNCAO"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   15.75
+         Size            =   15.63
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4243,7 +4243,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "CONTROLE SAL."
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4262,7 +4262,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "PG. SAL. F.:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4280,7 +4280,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Nº FILHOS:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4298,7 +4298,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "V. PISO BRT:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4316,7 +4316,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "V. PISO LIQ.:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4335,7 +4335,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "+"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   18
+         Size            =   17.66
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4355,7 +4355,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "-"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   18
+         Size            =   17.66
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4375,7 +4375,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "S. Empréstimo"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4394,7 +4394,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Nº FUNC"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4413,7 +4413,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "S. Devedor"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4433,7 +4433,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "(B)"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4451,7 +4451,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "ANOTAÇÕES GERAIS"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4470,7 +4470,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "T."
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4488,7 +4488,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       BackStyle       =   0  'Transparent
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -4506,7 +4506,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "Nº FICHA"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4524,7 +4524,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "MÊS"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4542,7 +4542,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "EMPRÉSTIMOS"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4560,7 +4560,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "NOME:"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -4578,7 +4578,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Caption         =   "ANO"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -6357,7 +6357,7 @@ Private Sub cmdComisCx_Click()
                     If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 150
                             wPercMeta = 100
                         'Else
@@ -6790,7 +6790,7 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 150
                             wPercMeta = 100
                         'Else
@@ -7168,7 +7168,7 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta, numLoja
                 
                  vrMetaBonus = 0
                 
-                If ADOREG.Recordset.Fields("m_mes") <= 12 Then
+                'If ADOREG.Recordset.Fields("m_mes") <= 12 Then
                     'wPercMeta = 0
                     'If vrVenda >= (vrMeta * 1.1) Then
                     '    vrMetaBonus = vrSalario * 0.1
@@ -7195,7 +7195,7 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta, numLoja
                     '    descMeta = ""
                     ' End If
                  
-                Else
+                'Else
                  
                      'If vrVenda >= vrMeta Then
                      '   'Bonus de 15% do Salario
@@ -7209,7 +7209,7 @@ Dim vrMeta, vrMetaBonus, descMeta, vrPisoMeta, numLoja
                      'End If
                     '*****
                 
-                End If
+                'End If
              End If
              
 
@@ -8087,7 +8087,7 @@ On Error Resume Next
                     If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 300
                             wPercMeta = 100
                         'Else
