@@ -12,13 +12,13 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
    ClientHeight    =   9919
    ClientLeft      =   5369
    ClientTop       =   3211
-   ClientWidth     =   18616
+   ClientWidth     =   20241
    Icon            =   "frm_Alt_Fic_Mensal_VIS.frx":0000
    LinkTopic       =   "Form1"
    MDIChild        =   -1  'True
    Moveable        =   0   'False
    ScaleHeight     =   9919
-   ScaleWidth      =   18616
+   ScaleWidth      =   20241
    Begin VB.CommandButton cmdDelFichas 
       BackColor       =   &H8000000D&
       Caption         =   "Deletar Fichas ñ exist."
@@ -3193,9 +3193,9 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
       Left            =   0
       TabIndex        =   72
       Top             =   0
-      Width           =   18616
-      _ExtentX        =   32828
-      _ExtentY        =   1342
+      Width           =   20241
+      _ExtentX        =   35704
+      _ExtentY        =   1390
       ButtonWidth     =   1773
       ButtonHeight    =   1342
       Appearance      =   1
