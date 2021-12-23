@@ -1,21 +1,21 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "msdatlst.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
 Begin VB.Form frm_Alt_Fic_Mensal 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ALTERAÇÃO DE FICHA MENSAL"
-   ClientHeight    =   7905
-   ClientLeft      =   45
-   ClientTop       =   330
+   ClientHeight    =   7904
+   ClientLeft      =   39
+   ClientTop       =   325
    ClientWidth     =   9750
    Icon            =   "frm_Alt_Fic_Mensal.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    Moveable        =   0   'False
-   ScaleHeight     =   7905
+   ScaleHeight     =   7904
    ScaleWidth      =   9750
    StartUpPosition =   1  'CenterOwner
    Begin VB.TextBox Text2 
@@ -34,7 +34,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -62,7 +62,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -94,7 +94,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -115,7 +115,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -144,7 +144,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -164,8 +164,8 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Top             =   2880
       Visible         =   0   'False
       Width           =   1695
-      _ExtentX        =   2990
-      _ExtentY        =   582
+      _ExtentX        =   2995
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -196,7 +196,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "REGISTRO : 0/0"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -219,7 +219,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       EndProperty
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -241,7 +241,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -272,7 +272,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       DataSource      =   "ADOREG"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -294,8 +294,8 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Top             =   5760
       Visible         =   0   'False
       Width           =   1455
-      _ExtentX        =   2566
-      _ExtentY        =   582
+      _ExtentX        =   2564
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -326,7 +326,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -342,8 +342,8 @@ Begin VB.Form frm_Alt_Fic_Mensal
       TabIndex        =   8
       Top             =   5640
       Width           =   5535
-      _ExtentX        =   9763
-      _ExtentY        =   3413
+      _ExtentX        =   9753
+      _ExtentY        =   3403
       _Version        =   393216
       AllowUpdate     =   0   'False
       AllowArrows     =   -1  'True
@@ -354,7 +354,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       FormatLocked    =   -1  'True
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -363,7 +363,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
-         Size            =   6.75
+         Size            =   6.7925
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -458,7 +458,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -490,7 +490,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -509,7 +509,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -530,7 +530,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -552,8 +552,8 @@ Begin VB.Form frm_Alt_Fic_Mensal
       TabIndex        =   0
       Top             =   960
       Width           =   3915
-      _ExtentX        =   6906
-      _ExtentY        =   10186
+      _ExtentX        =   6901
+      _ExtentY        =   10184
       _Version        =   393216
       AllowUpdate     =   0   'False
       AllowArrows     =   -1  'True
@@ -564,7 +564,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       FormatLocked    =   -1  'True
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -573,7 +573,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.1509
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -631,8 +631,8 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Left            =   0
       Top             =   7575
       Width           =   9750
-      _ExtentX        =   17198
-      _ExtentY        =   582
+      _ExtentX        =   17205
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -663,7 +663,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "REGISTRO : 0/0"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -675,8 +675,8 @@ Begin VB.Form frm_Alt_Fic_Mensal
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   6120
       Top             =   0
-      _ExtentX        =   1005
-      _ExtentY        =   1005
+      _ExtentX        =   1006
+      _ExtentY        =   1006
       BackColor       =   -2147483643
       ImageWidth      =   32
       ImageHeight     =   32
@@ -716,15 +716,15 @@ Begin VB.Form frm_Alt_Fic_Mensal
    End
    Begin MSComctlLib.Toolbar BarraF 
       Align           =   1  'Align Top
-      Height          =   840
+      Height          =   572
       Left            =   0
       TabIndex        =   9
       Top             =   0
       Width           =   9750
-      _ExtentX        =   17198
-      _ExtentY        =   1482
-      ButtonWidth     =   1667
-      ButtonHeight    =   1429
+      _ExtentX        =   17205
+      _ExtentY        =   1006
+      ButtonWidth     =   1605
+      ButtonHeight    =   1342
       Appearance      =   1
       Style           =   1
       ImageList       =   "ImageList1"
@@ -795,13 +795,13 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Bindings        =   "frm_Alt_Fic_Mensal.frx":2C39
       DataField       =   "M_F_COD"
       DataSource      =   "ADOREG"
-      Height          =   315
-      Left            =   360
+      Height          =   286
+      Left            =   364
       TabIndex        =   4
-      Top             =   2400
-      Width           =   5055
-      _ExtentX        =   8916
-      _ExtentY        =   556
+      Top             =   2405
+      Width           =   5057
+      _ExtentX        =   9321
+      _ExtentY        =   503
       _Version        =   393216
       Enabled         =   0   'False
       MatchEntry      =   -1  'True
@@ -812,7 +812,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Object.DataMember      =   "TAB_FUNCIONARIO"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -824,14 +824,14 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Bindings        =   "frm_Alt_Fic_Mensal.frx":2C4A
       DataField       =   "M_F_COD"
       DataSource      =   "ADOREG"
-      Height          =   315
-      Left            =   2880
+      Height          =   286
+      Left            =   2886
       TabIndex        =   17
-      Top             =   1200
+      Top             =   1196
       Visible         =   0   'False
-      Width           =   855
-      _ExtentX        =   1508
-      _ExtentY        =   556
+      Width           =   858
+      _ExtentX        =   1582
+      _ExtentY        =   503
       _Version        =   393216
       Enabled         =   0   'False
       MatchEntry      =   -1  'True
@@ -842,7 +842,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Object.DataMember      =   "TAB_FUNCIONARIO"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -854,13 +854,13 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Bindings        =   "frm_Alt_Fic_Mensal.frx":2C5B
       DataField       =   "M_LOGO"
       DataSource      =   "ADOREG"
-      Height          =   315
-      Left            =   1815
+      Height          =   286
+      Left            =   1820
       TabIndex        =   21
-      Top             =   1245
-      Width           =   735
-      _ExtentX        =   1296
-      _ExtentY        =   556
+      Top             =   1248
+      Width           =   728
+      _ExtentX        =   1342
+      _ExtentY        =   503
       _Version        =   393216
       Enabled         =   0   'False
       MatchEntry      =   -1  'True
@@ -870,7 +870,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Object.DataMember      =   "TAB_L"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -883,7 +883,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "(D)"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -902,7 +902,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "S. Empréstimo"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9
+         Size            =   8.83
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -921,7 +921,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "Nº :"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -939,7 +939,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "®"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -957,7 +957,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "@"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -976,7 +976,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "S. Devedor"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -995,7 +995,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "(B)"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1013,7 +1013,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "OBSERVAÇÃO"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1032,7 +1032,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "TOTAL"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -1049,7 +1049,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       BackStyle       =   0  'Transparent
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -1067,7 +1067,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "Nº FICHA"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1085,7 +1085,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "MÊS"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1103,7 +1103,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "(F)"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1121,7 +1121,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "ANOTAÇÃO"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1139,7 +1139,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "EMP"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1157,7 +1157,7 @@ Begin VB.Form frm_Alt_Fic_Mensal
       Caption         =   "ANO"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   9.75
+         Size            =   9.51
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1201,18 +1201,18 @@ Dim W_FILTRO As String
 'ADODB.Recordset
 Private Sub adoReg_MoveComplete(ByVal adReason As ADODB.EventReasonEnum, ByVal pError As ADODB.Error, adStatus As ADODB.EventStatusEnum, ByVal pRecordset As ADODB.Recordset)
 On Error GoTo err1
-    If Not adoReg.Recordset.EOF Then
-        adoReg.Caption = "REGISTRO : " & adoReg.Recordset.AbsolutePosition & " / " & adoReg.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
+    If Not ADOREG.Recordset.EOF Then
+        ADOREG.Caption = "REGISTRO : " & ADOREG.Recordset.AbsolutePosition & " / " & ADOREG.Recordset.RecordCount & IIf(W_LD_FILTRO = True, " (FILTRADO)", "")
     
             '*** DESABILITA O EDITAR ****
             
-            If adoReg.Recordset.Fields("M_BLOQ") = True Then
+            If ADOREG.Recordset.Fields("M_BLOQ") = True Then
                  BarraF.Buttons("editar").Enabled = False
             Else
                  BarraF.Buttons("editar").Enabled = True
             End If
             
-            If adoReg.Recordset.Fields("m_TOTAL") < 0 Then
+            If ADOREG.Recordset.Fields("m_TOTAL") < 0 Then
                 TXT_TOTAL.ForeColor = vbRed
             Else
                 TXT_TOTAL.ForeColor = vbBlue
@@ -1257,33 +1257,33 @@ On Error GoTo err1
     
     'Saldo DO EMPRESTIMO
     de.rsTAB_FUNCIONARIO.Requery
-    w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
+    w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
     txt_SaldoEmp = IIf(IsNull(w_Emprest), Format(0, "R$ 0.00"), Format(w_Emprest, "R$ 0.00"))
     
-    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.adoReg.Recordset.Fields("M_NFICHA") & ")").Clone
+    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.ADOREG.Recordset.Fields("M_NFICHA") & ")").Clone
     ADO_LANC.Refresh
    
     '*** CALCULA O TOTAL - APÓS O NOVO VALOR ***
-    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC WHERE C_Tp_Op = '+' and C_VALOR > 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.adoReg.Recordset.Fields("M_NFICHA") & ")").Fields("MAIS")
-    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE C_Tp_Op = '-' and C_VALOR < 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.adoReg.Recordset.Fields("M_NFICHA") & ")").Fields("MENOS")
+    W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC WHERE C_Tp_Op = '+' and C_VALOR > 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.ADOREG.Recordset.Fields("M_NFICHA") & ")").Fields("MAIS")
+    W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE C_Tp_Op = '-' and C_VALOR < 0 AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.ADOREG.Recordset.Fields("M_NFICHA") & ")").Fields("MENOS")
     
     W_TOTAL = IIf(IsNull(W_MENOS), 0, W_MENOS) + IIf(IsNull(W_MAIS), 0, W_MAIS)
  
-    If adoReg.Recordset.Fields("m_TOTAL") <> CDbl(W_TOTAL) Then
+    If ADOREG.Recordset.Fields("m_TOTAL") <> CDbl(W_TOTAL) Then
         TXT_TOTAL = Format(W_TOTAL, "R$ 0.00")
-        adoReg.Recordset.Fields("m_TOTAL") = TXT_TOTAL
+        ADOREG.Recordset.Fields("m_TOTAL") = TXT_TOTAL
     End If
 
-    adoReg.Recordset.UpdateBatch adAffectCurrent
+    ADOREG.Recordset.UpdateBatch adAffectCurrent
     
-    If adoReg.Recordset.Fields("m_TOTAL") < 0 Then
+    If ADOREG.Recordset.Fields("m_TOTAL") < 0 Then
         TXT_TOTAL.ForeColor = vbRed
     Else
         TXT_TOTAL.ForeColor = vbBlue
     End If
 
 
-    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.adoReg.Recordset.Fields("M_NFICHA") & ")").Clone
+    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_Visualizar.ADOREG.Recordset.Fields("M_NFICHA") & ")").Clone
     ADO_LANC.Refresh
     
     txtLogo.SetFocus
@@ -1293,7 +1293,7 @@ sair:
     Exit Sub
 err1:
     If Err.Number <> 3705 And Err.Number <> -2147217864 Then MsgBox Err.Number & " : " & Err.Description, vbCritical
-    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")").Clone
+    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_NFICHA") & ")").Clone
     Cancelar
     Cancelar
 
@@ -1304,22 +1304,22 @@ Private Sub Form_Load()
 On Error GoTo err1
       
     If de.rscmdBase.State = 1 Then de.rscmdBase.Close
-    de.rscmdBase.Open "SELECT TAB_FICHA_MENS.*  FROM TAB_FICHA_MENS Where m_nficha = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & "", , adOpenStatic, adLockOptimistic
-    Set adoReg.Recordset = de.rscmdBase.Clone   '.Clone
+    de.rscmdBase.Open "SELECT TAB_FICHA_MENS.*  FROM TAB_FICHA_MENS Where m_nficha = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_NFICHA") & "", , adOpenStatic, adLockOptimistic
+    Set ADOREG.Recordset = de.rscmdBase.Clone   '.Clone
 
     V_MOVE = False
-    Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_FICHA_MENS.* , TAB_FUNCIONARIO.F_NOME FROM TAB_FUNCIONARIO, TAB_FICHA_MENS WHERE TAB_FUNCIONARIO.F_CODIGO = TAB_FICHA_MENS.M_F_COD and m_nficha = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & " Order By TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_Mes").Clone
-    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_NFICHA") & ")").Clone
+    Set ADO_GRID.Recordset = de.cnc.Execute("SELECT TAB_FICHA_MENS.* , TAB_FUNCIONARIO.F_NOME FROM TAB_FUNCIONARIO, TAB_FICHA_MENS WHERE TAB_FUNCIONARIO.F_CODIGO = TAB_FICHA_MENS.M_F_COD and m_nficha = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_NFICHA") & " Order By TAB_FICHA_MENS.M_ANO, TAB_FICHA_MENS.M_Mes").Clone
+    Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_NFICHA") & ")").Clone
     
-    If TXT_FILTRO <> "" Then adoReg.Recordset.Filter = TXT_FILTRO
+    If TXT_FILTRO <> "" Then ADOREG.Recordset.Filter = TXT_FILTRO
     
     V_MOVE = True
     
     'Saldo restante da ficha
-    W_SALDO = de.cnc.Execute("Select F_SALDO_ANT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
+    W_SALDO = de.cnc.Execute("Select F_SALDO_ANT FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
     txt_SaldoAnt = IIf(IsNull(W_SALDO), Format(0, "R$ 0.00"), Format(W_SALDO, "R$ 0.00"))
     'Saldo DO EMPRESTIMO
-    w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & adoReg.Recordset.Fields("M_F_COD") & "").Fields(0)
+    w_Emprest = de.cnc.Execute("Select F_EMPRESTIMO FROM TAB_FUNCIONARIO WHERE F_CODIGO = " & ADOREG.Recordset.Fields("M_F_COD") & "").Fields(0)
     txt_SaldoEmp = IIf(IsNull(w_Emprest), Format(0, "R$ 0.00"), Format(w_Emprest, "R$ 0.00"))
 
     If txt_SaldoAnt < 0 Then
@@ -1328,7 +1328,7 @@ On Error GoTo err1
         txt_SaldoAnt.ForeColor = vbBlue
     End If
         
-    If de.rscmdBase.State = 1 Then adoReg.Refresh
+    If de.rscmdBase.State = 1 Then ADOREG.Refresh
     Editar
 
 sair:
@@ -1343,10 +1343,10 @@ On Error GoTo err1
 
     If V_MOVE = True Then
         V_MOVE = False
-        adoReg.Recordset.UpdateBatch ' adAffectCurrent
-        adoReg.Refresh
-        adoReg.Recordset.Requery
-        adoReg.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
+        ADOREG.Recordset.UpdateBatch ' adAffectCurrent
+        ADOREG.Refresh
+        ADOREG.Recordset.Requery
+        ADOREG.Recordset.Move ADO_GRID.Recordset.AbsolutePosition - 1
         V_MOVE = True
         Set ADO_LANC.Recordset = de.cnc.Execute("SELECT TAB_DESC_CALC.C_DT AS DATA, 'CT: ' + TAB_TP_CONTA.TP_DESC + '     DESC: ' + TAB_DESC_CALC.C_DESC AS CONTA, TAB_DESC_CALC.C_VALOR AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP FROM TAB_DESC_CALC, TAB_TP_CONTA WHERE TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND (TAB_DESC_CALC.C_N_FICHA = " & ADO_GRID.Recordset.Fields("M_NFICHA") & ")").Clone
     End If
@@ -1377,7 +1377,7 @@ End Sub
 '*** Rotinas ***
 Private Sub CONTA()
  
-If adoReg.Recordset.Fields("M_BLOQ") = False Then
+If ADOREG.Recordset.Fields("M_BLOQ") = False Then
  
     frm_Alt_Desc_Calc.lb_form = "mensal"
     frm_Alt_Desc_Calc.LB_FUNC.Caption = TXT_FUNC.text
@@ -1392,23 +1392,23 @@ End Sub
 
 Private Sub Cancelar()
 On Error GoTo err1
-    W_FILTRO = adoReg.Recordset.Filter
-    pos = adoReg.Recordset.Fields("m_nficha")
-    adoReg.Recordset.CancelBatch adAffectCurrent
-    adoReg.Refresh
+    W_FILTRO = ADOREG.Recordset.Filter
+    pos = ADOREG.Recordset.Fields("m_nficha")
+    ADOREG.Recordset.CancelBatch adAffectCurrent
+    ADOREG.Refresh
     
-    If W_FILTRO <> "0" Then adoReg.Recordset.Filter = W_FILTRO
-    adoReg.Recordset.MoveFirst
-    Do While Not adoReg.Recordset.EOF
-      If adoReg.Recordset.Fields("m_nficha") = pos Then Exit Do
-      adoReg.Recordset.MoveNext
+    If W_FILTRO <> "0" Then ADOREG.Recordset.Filter = W_FILTRO
+    ADOREG.Recordset.MoveFirst
+    Do While Not ADOREG.Recordset.EOF
+      If ADOREG.Recordset.Fields("m_nficha") = pos Then Exit Do
+      ADOREG.Recordset.MoveNext
     Loop
 
     Pause 0.3
    Editar
     
        '*** DESABILITA O EDITAR ****
-   If adoReg.Recordset.Fields("M_BLOQ") = True Then
+   If ADOREG.Recordset.Fields("M_BLOQ") = True Then
         BarraF.Buttons("editar").Enabled = False
    Else
         BarraF.Buttons("editar").Enabled = True
@@ -1425,7 +1425,7 @@ End Sub
 Private Sub Editar()
 On Error GoTo err1
     
-If adoReg.Recordset.Fields("M_BLOQ") = False Then
+If ADOREG.Recordset.Fields("M_BLOQ") = False Then
 
     BarraF.Buttons("salvar").Enabled = Not BarraF.Buttons("salvar").Enabled
     BarraF.Buttons("cancelar").Enabled = Not BarraF.Buttons("cancelar").Enabled
@@ -1471,15 +1471,15 @@ On Error GoTo err1
 If w_PSS = w_PassWordLib Then
         
     If vbYes = MsgBox("DESEJA REALMENTE EXCLUIR A FICHA MENSAL (" & TXT_NFICHA & " : " & TXT_FUNC & ")?", vbQuestion + vbYesNo) Then
-        W_POS = adoReg.Recordset.AbsolutePosition - 1
-        adoReg.Recordset.Delete
-        adoReg.Recordset.UpdateBatch
-        w_adoFiltro = adoReg.Recordset.Filter
+        W_POS = ADOREG.Recordset.AbsolutePosition - 1
+        ADOREG.Recordset.Delete
+        ADOREG.Recordset.UpdateBatch
+        w_adoFiltro = ADOREG.Recordset.Filter
         Form_Load
         ADO_GRID.Refresh
-        adoReg.Refresh
+        ADOREG.Refresh
       
-        adoReg.Recordset.Filter = w_adoFiltro
+        ADOREG.Recordset.Filter = w_adoFiltro
         ADO_GRID.Recordset.Filter = w_adoFiltro
       
         Grid.Refresh
@@ -1500,7 +1500,7 @@ err1:
         MsgBox Err.Number & " : " & Err.Description, vbCritical
     Else
         MsgBox "NÃO É POSSÍVEL EXCLUIR ESTA FICHA MENSAL, DEVIDO A CÁLCULOS RELACIONADAS A ELA!", vbCritical
-        adoReg.Refresh
+        ADOREG.Refresh
     End If
     Resume sair
 End Sub
@@ -1553,10 +1553,10 @@ On Error GoTo err1
             
         '*** REMOVE O FILTRO ****
         Case 4:
-            If Not adoReg.Recordset.Filter = 0 Then
+            If Not ADOREG.Recordset.Filter = 0 Then
                 W_LD_FILTRO = False
-                adoReg.Recordset.Filter = 0
-                adoReg.Refresh
+                ADOREG.Recordset.Filter = 0
+                ADOREG.Refresh
             End If
         End Select
         
@@ -1574,8 +1574,8 @@ On Error GoTo err1
                 If Not W_FILTRO = "" And IsNumeric(W_FILTRO) And IsNumeric(W_FILTRO1) And Len(W_FILTRO1) = 4 Then
                     W_FILTRO = "M_MES = " & W_FILTRO & " AND M_ANO = " & W_FILTRO1
                     W_LD_FILTRO = True
-                    adoReg.Recordset.Filter = W_FILTRO
-                    ADO_GRID.Recordset.Filter = adoReg.Recordset.Filter
+                    ADOREG.Recordset.Filter = W_FILTRO
+                    ADO_GRID.Recordset.Filter = ADOREG.Recordset.Filter
                     ADO_GRID.Recordset.MoveFirst
                 End If
                                 
@@ -1584,14 +1584,14 @@ On Error GoTo err1
                 If Not W_FILTRO = "" And IsNumeric(W_FILTRO) Then
                     W_FILTRO = W_CAMPO & " = " & W_FILTRO
                     W_LD_FILTRO = True
-                    adoReg.Recordset.Filter = W_FILTRO
+                    ADOREG.Recordset.Filter = W_FILTRO
                 End If
         
         End If
     End If
     
     ADO_GRID.Refresh
-    ADO_GRID.Recordset.Filter = adoReg.Recordset.Filter
+    ADO_GRID.Recordset.Filter = ADOREG.Recordset.Filter
     
     
 sair:
@@ -1606,7 +1606,7 @@ End Sub
 Private Sub Salvar()
 On Error GoTo err1
     
-    adoReg.Recordset.UpdateBatch adAffectCurrent
+    ADOREG.Recordset.UpdateBatch adAffectCurrent
         
     '*** Atualiza o Funcionário ****
     

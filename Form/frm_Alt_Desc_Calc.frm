@@ -1,26 +1,26 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "msCOMCTL.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
-Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "MSDatLst.Ocx"
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSAdoDc.ocx"
-Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
-Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "ACTIVETEXT.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
+Object = "{F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0"; "msdatlst.ocx"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "msadodc.ocx"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
+Object = "{4E6B00F6-69BE-11D2-885A-A1A33992992C}#2.6#0"; "activetext.ocx"
 Object = "{83E7A33D-84B8-4C96-9A60-2290FFC1A9A1}#2.0#0"; "Skin_Button.ocx"
 Begin VB.Form frm_Alt_Desc_Calc 
    BorderStyle     =   1  'Fixed Single
-   ClientHeight    =   9735
-   ClientLeft      =   45
-   ClientTop       =   615
-   ClientWidth     =   18750
+   ClientHeight    =   9737
+   ClientLeft      =   39
+   ClientTop       =   611
+   ClientWidth     =   18759
    Icon            =   "frm_Alt_Desc_Calc.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    Moveable        =   0   'False
-   ScaleHeight     =   9735
-   ScaleWidth      =   18750
+   ScaleHeight     =   9737
+   ScaleWidth      =   18759
    StartUpPosition =   1  'CenterOwner
    Begin VB.CommandButton cmdProcessando 
       Appearance      =   0  'Flat
@@ -28,7 +28,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       CausesValidation=   0   'False
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   8.25
+         Size            =   8.15
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -48,27 +48,27 @@ Begin VB.Form frm_Alt_Desc_Calc
    End
    Begin VB.PictureBox picUnchecked 
       AutoSize        =   -1  'True
-      Height          =   255
+      Height          =   221
       Left            =   360
       Picture         =   "frm_Alt_Desc_Calc.frx":134C
-      ScaleHeight     =   195
-      ScaleWidth      =   195
+      ScaleHeight     =   169
+      ScaleWidth      =   169
       TabIndex        =   82
       Top             =   840
       Visible         =   0   'False
-      Width           =   255
+      Width           =   221
    End
    Begin VB.PictureBox picChecked 
       AutoSize        =   -1  'True
-      Height          =   255
+      Height          =   221
       Left            =   720
       Picture         =   "frm_Alt_Desc_Calc.frx":1436
-      ScaleHeight     =   195
-      ScaleWidth      =   195
+      ScaleHeight     =   169
+      ScaleWidth      =   169
       TabIndex        =   81
       Top             =   840
       Visible         =   0   'False
-      Width           =   255
+      Width           =   221
    End
    Begin VB.CommandButton cmdCopiarDescricao 
       Appearance      =   0  'Flat
@@ -95,8 +95,8 @@ Begin VB.Form frm_Alt_Desc_Calc
       Top             =   3840
       Visible         =   0   'False
       Width           =   4050
-      _ExtentX        =   7144
-      _ExtentY        =   4260
+      _ExtentX        =   7141
+      _ExtentY        =   4265
       _Version        =   393216
       AllowUpdate     =   0   'False
       AllowArrows     =   -1  'True
@@ -107,7 +107,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       FormatLocked    =   -1  'True
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -116,7 +116,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -174,8 +174,8 @@ Begin VB.Form frm_Alt_Desc_Calc
       TabIndex        =   18
       Top             =   1200
       Width           =   5070
-      _ExtentX        =   8943
-      _ExtentY        =   8070
+      _ExtentX        =   8938
+      _ExtentY        =   8075
       _Version        =   393216
       Style           =   1
       Tabs            =   2
@@ -324,7 +324,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -342,7 +342,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -362,7 +362,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -383,11 +383,11 @@ Begin VB.Form frm_Alt_Desc_Calc
          TabIndex        =   67
          Top             =   3330
          Width           =   975
-         _ExtentX        =   1720
-         _ExtentY        =   609
+         _ExtentX        =   1725
+         _ExtentY        =   599
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -399,7 +399,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          RawText         =   1
          Mask            =   "##/##/####"
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin VB.TextBox TXT_E_JUROS_E 
          Alignment       =   2  'Center
@@ -417,7 +417,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -436,7 +436,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          BackColor       =   &H00C0C0FF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -457,7 +457,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          BackColor       =   &H00C0C0FF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -489,7 +489,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -517,7 +517,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -545,7 +545,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -572,7 +572,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          EndProperty
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -593,7 +593,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          DataSource      =   "ADOREG"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -626,7 +626,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          DataSource      =   "ADOREG"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -656,7 +656,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          EndProperty
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -690,11 +690,11 @@ Begin VB.Form frm_Alt_Desc_Calc
          TabIndex        =   2
          Top             =   600
          Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
+         _ExtentX        =   2348
+         _ExtentY        =   671
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -708,7 +708,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          FloatFormat     =   2
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin VB.TextBox txt_NCred_Cad 
          Alignment       =   2  'Center
@@ -724,7 +724,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -752,7 +752,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -772,8 +772,8 @@ Begin VB.Form frm_Alt_Desc_Calc
          Top             =   3600
          Visible         =   0   'False
          Width           =   2535
-         _ExtentX        =   4471
-         _ExtentY        =   582
+         _ExtentX        =   4481
+         _ExtentY        =   575
          ConnectMode     =   0
          CursorLocation  =   3
          IsolationLevel  =   -1
@@ -804,7 +804,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "CRED"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -829,7 +829,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -859,7 +859,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -876,14 +876,14 @@ Begin VB.Form frm_Alt_Desc_Calc
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD_op 
          Bindings        =   "frm_Alt_Desc_Calc.frx":156F
          DataSource      =   "ADOREG"
-         Height          =   360
-         Left            =   -71160
+         Height          =   325
+         Left            =   -71162
          TabIndex        =   33
          Top             =   1365
          Visible         =   0   'False
-         Width           =   615
-         _ExtentX        =   1085
-         _ExtentY        =   635
+         Width           =   611
+         _ExtentX        =   1126
+         _ExtentY        =   575
          _Version        =   393216
          MatchEntry      =   -1  'True
          Style           =   2
@@ -893,7 +893,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Object.DataMember      =   "SQL_TP_CONTA"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.8302
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -905,14 +905,14 @@ Begin VB.Form frm_Alt_Desc_Calc
          Bindings        =   "frm_Alt_Desc_Calc.frx":1580
          DataField       =   "C_TP_CONTA"
          DataSource      =   "ADOREG"
-         Height          =   360
-         Left            =   3720
+         Height          =   325
+         Left            =   3718
          TabIndex        =   32
-         Top             =   1320
+         Top             =   1326
          Visible         =   0   'False
-         Width           =   615
-         _ExtentX        =   1085
-         _ExtentY        =   635
+         Width           =   611
+         _ExtentX        =   1126
+         _ExtentY        =   575
          _Version        =   393216
          MatchEntry      =   -1  'True
          Style           =   2
@@ -922,7 +922,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Object.DataMember      =   "SQL_TP_CONTA"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.8302
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -946,7 +946,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -973,7 +973,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -991,7 +991,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          DataSource      =   "ADOREG"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Size            =   13.58
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1013,7 +1013,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          DataSource      =   "ADOREG"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1032,14 +1032,14 @@ Begin VB.Form frm_Alt_Desc_Calc
          Bindings        =   "frm_Alt_Desc_Calc.frx":15AB
          DataField       =   "C_TP_CONTA"
          DataSource      =   "ADOREG"
-         Height          =   360
-         Left            =   915
+         Height          =   325
+         Left            =   910
          TabIndex        =   4
          TabStop         =   0   'False
-         Top             =   1320
-         Width           =   3975
-         _ExtentX        =   7011
-         _ExtentY        =   635
+         Top             =   1326
+         Width           =   3978
+         _ExtentX        =   7332
+         _ExtentY        =   575
          _Version        =   393216
          MatchEntry      =   -1  'True
          Style           =   2
@@ -1049,7 +1049,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Object.DataMember      =   "SQL_TP_CONTA"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.8302
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1074,10 +1074,10 @@ Begin VB.Form frm_Alt_Desc_Calc
          TabIndex        =   1
          Top             =   615
          Width           =   1260
-         _ExtentX        =   2223
-         _ExtentY        =   609
+         _ExtentX        =   2228
+         _ExtentY        =   599
          _Version        =   393216
-         Format          =   248053761
+         Format          =   239665153
          CurrentDate     =   38432
       End
       Begin MSComCtl2.DTPicker TXT_DT_CAD 
@@ -1095,22 +1095,22 @@ Begin VB.Form frm_Alt_Desc_Calc
          TabIndex        =   8
          Top             =   690
          Width           =   1260
-         _ExtentX        =   2223
-         _ExtentY        =   609
+         _ExtentX        =   2228
+         _ExtentY        =   599
          _Version        =   393216
-         Format          =   248053761
+         Format          =   239665153
          CurrentDate     =   38432
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_CAD 
          Bindings        =   "frm_Alt_Desc_Calc.frx":15BC
-         Height          =   360
-         Left            =   -74085
+         Height          =   325
+         Left            =   -74087
          TabIndex        =   11
          TabStop         =   0   'False
-         Top             =   1350
-         Width           =   3975
-         _ExtentX        =   7011
-         _ExtentY        =   635
+         Top             =   1352
+         Width           =   3978
+         _ExtentX        =   7332
+         _ExtentY        =   575
          _Version        =   393216
          MatchEntry      =   -1  'True
          Style           =   2
@@ -1120,7 +1120,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Object.DataMember      =   "SQL_TP_CONTA"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.8302
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1131,7 +1131,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Begin VB.TextBox TXT_DESC_CAD 
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   8.15
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1149,7 +1149,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Begin VB.ComboBox TXT_OP_CAD 
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   13.5
+            Size            =   13.58
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1170,13 +1170,13 @@ Begin VB.Form frm_Alt_Desc_Calc
          Bindings        =   "frm_Alt_Desc_Calc.frx":15E7
          DataField       =   "C_TP_CONTA"
          DataSource      =   "ADOREG"
-         Height          =   360
+         Height          =   325
          Left            =   195
          TabIndex        =   3
-         Top             =   1320
-         Width           =   735
-         _ExtentX        =   1296
-         _ExtentY        =   635
+         Top             =   1326
+         Width           =   728
+         _ExtentX        =   1342
+         _ExtentY        =   575
          _Version        =   393216
          MatchEntry      =   -1  'True
          ListField       =   "TP_COD"
@@ -1185,7 +1185,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Object.DataMember      =   "SQL_TP_CONTA"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.8302
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1195,13 +1195,13 @@ Begin VB.Form frm_Alt_Desc_Calc
       End
       Begin MSDataListLib.DataCombo TXT_CONTA_Cod_CAD 
          Bindings        =   "frm_Alt_Desc_Calc.frx":15F8
-         Height          =   360
-         Left            =   -74805
+         Height          =   325
+         Left            =   -74802
          TabIndex        =   10
-         Top             =   1350
-         Width           =   735
-         _ExtentX        =   1296
-         _ExtentY        =   635
+         Top             =   1352
+         Width           =   728
+         _ExtentX        =   1342
+         _ExtentY        =   575
          _Version        =   393216
          MatchEntry      =   -1  'True
          ListField       =   "TP_COD"
@@ -1210,7 +1210,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Object.DataMember      =   "SQL_TP_CONTA"
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   8.8302
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1224,12 +1224,12 @@ Begin VB.Form frm_Alt_Desc_Calc
          TabIndex        =   9
          Top             =   690
          Width           =   1215
-         _ExtentX        =   2143
-         _ExtentY        =   661
+         _ExtentX        =   2133
+         _ExtentY        =   671
          Alignment       =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1243,7 +1243,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          FloatFormat     =   2
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin VB.TextBox TXT_E_JUROS 
          Alignment       =   2  'Center
@@ -1259,7 +1259,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1280,11 +1280,11 @@ Begin VB.Form frm_Alt_Desc_Calc
          Top             =   3210
          Visible         =   0   'False
          Width           =   975
-         _ExtentX        =   1720
-         _ExtentY        =   609
+         _ExtentX        =   1725
+         _ExtentY        =   599
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1296,14 +1296,14 @@ Begin VB.Form frm_Alt_Desc_Calc
          RawText         =   1
          Mask            =   "##/##/####"
          FontName        =   "MS Sans Serif"
-         FontSize        =   8.25
+         FontSize        =   7.472
       End
       Begin VB.Label lb_dt_13 
          BackStyle       =   0  'Transparent
          Caption         =   "DATA (13º)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1323,7 +1323,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "OBS 13º OU TXT FÉRIAS"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1343,7 +1343,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "OBS 13º OU TXT FÉRIAS"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1362,7 +1362,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "DATA (F)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9
+            Size            =   8.83
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1382,7 +1382,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "EMP. JUROS"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1404,7 +1404,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "V.JUROS"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1439,7 +1439,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "EMP. COD."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1461,7 +1461,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "SALDO"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1483,7 +1483,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "VALOR"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1504,7 +1504,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "COD."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1541,7 +1541,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "%:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1592,7 +1592,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "%"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.47
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -1627,7 +1627,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "NUM."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1647,7 +1647,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "(B)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1667,7 +1667,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "NUM."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1686,7 +1686,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "(B)"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1705,7 +1705,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "Nº FICHA"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1723,7 +1723,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "Nº FICHA"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1743,7 +1743,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "VALOR"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1761,7 +1761,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "DATA"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1779,7 +1779,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "CONTA"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1797,7 +1797,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "DESCRIÇÃO"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1815,7 +1815,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "OP."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1834,7 +1834,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "VALOR"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1853,7 +1853,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "DATA"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1872,7 +1872,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "CONTA"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1891,7 +1891,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "DESCRIÇÃO"
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1910,7 +1910,7 @@ Begin VB.Form frm_Alt_Desc_Calc
          Caption         =   "OP."
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   9.75
+            Size            =   9.51
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1951,8 +1951,8 @@ Begin VB.Form frm_Alt_Desc_Calc
       Top             =   6000
       Visible         =   0   'False
       Width           =   5055
-      _ExtentX        =   8916
-      _ExtentY        =   5424
+      _ExtentX        =   8914
+      _ExtentY        =   5415
       _Version        =   393216
       AllowUpdate     =   0   'False
       Enabled         =   -1  'True
@@ -1962,7 +1962,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       FormatLocked    =   -1  'True
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1971,7 +1971,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2062,8 +2062,8 @@ Begin VB.Form frm_Alt_Desc_Calc
       Top             =   6720
       Visible         =   0   'False
       Width           =   2055
-      _ExtentX        =   3625
-      _ExtentY        =   582
+      _ExtentX        =   3618
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -2094,7 +2094,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Caption         =   "Emprestimo"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2111,8 +2111,8 @@ Begin VB.Form frm_Alt_Desc_Calc
       Top             =   6000
       Visible         =   0   'False
       Width           =   5055
-      _ExtentX        =   8916
-      _ExtentY        =   5424
+      _ExtentX        =   8914
+      _ExtentY        =   5415
       _Version        =   393216
       AllowUpdate     =   0   'False
       Enabled         =   0   'False
@@ -2122,7 +2122,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       FormatLocked    =   -1  'True
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2131,7 +2131,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.4717
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2228,8 +2228,8 @@ Begin VB.Form frm_Alt_Desc_Calc
    Begin MSComctlLib.ImageList ImageList1 
       Left            =   8040
       Top             =   0
-      _ExtentX        =   1005
-      _ExtentY        =   1005
+      _ExtentX        =   1006
+      _ExtentY        =   1006
       BackColor       =   -2147483643
       ImageWidth      =   32
       ImageHeight     =   32
@@ -2281,15 +2281,15 @@ Begin VB.Form frm_Alt_Desc_Calc
    End
    Begin MSComctlLib.Toolbar BarraF 
       Align           =   1  'Align Top
-      Height          =   840
+      Height          =   572
       Left            =   0
       TabIndex        =   17
       Top             =   0
-      Width           =   18750
-      _ExtentX        =   33073
-      _ExtentY        =   1482
-      ButtonWidth     =   1799
-      ButtonHeight    =   1429
+      Width           =   18759
+      _ExtentX        =   33092
+      _ExtentY        =   1006
+      ButtonWidth     =   1725
+      ButtonHeight    =   1342
       Appearance      =   1
       Style           =   1
       ImageList       =   "ImageList1"
@@ -2362,14 +2362,14 @@ Begin VB.Form frm_Alt_Desc_Calc
          Top             =   120
          Visible         =   0   'False
          Width           =   540
-         _ExtentX        =   953
-         _ExtentY        =   926
+         _ExtentX        =   958
+         _ExtentY        =   935
          BTYPE           =   3
          TX              =   ""
          ENAB            =   0   'False
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   7.4717
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -2398,12 +2398,12 @@ Begin VB.Form frm_Alt_Desc_Calc
    End
    Begin MSAdodcLib.Adodc ADOREG 
       Align           =   2  'Align Bottom
-      Height          =   330
+      Height          =   325
       Left            =   0
-      Top             =   9405
-      Width           =   18750
-      _ExtentX        =   33073
-      _ExtentY        =   582
+      Top             =   9412
+      Width           =   18759
+      _ExtentX        =   33092
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   2
       IsolationLevel  =   -1
@@ -2434,7 +2434,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Caption         =   "REGISTRO : 0/0"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2445,13 +2445,13 @@ Begin VB.Form frm_Alt_Desc_Calc
    End
    Begin MSAdodcLib.Adodc ADO_GRID 
       Align           =   2  'Align Bottom
-      Height          =   330
+      Height          =   325
       Left            =   0
-      Top             =   9075
+      Top             =   9087
       Visible         =   0   'False
-      Width           =   18750
-      _ExtentX        =   33073
-      _ExtentY        =   582
+      Width           =   18759
+      _ExtentX        =   33092
+      _ExtentY        =   575
       ConnectMode     =   0
       CursorLocation  =   2
       IsolationLevel  =   -1
@@ -2482,7 +2482,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Caption         =   "REGISTRO : 0/0"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   7.47
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -2498,8 +2498,8 @@ Begin VB.Form frm_Alt_Desc_Calc
       TabIndex        =   78
       Top             =   960
       Width           =   13455
-      _ExtentX        =   23733
-      _ExtentY        =   14208
+      _ExtentX        =   23723
+      _ExtentY        =   14210
       _Version        =   393216
       Rows            =   7
       FixedRows       =   0
@@ -2534,7 +2534,7 @@ Begin VB.Form frm_Alt_Desc_Calc
       Caption         =   "FC"
       BeginProperty Font 
          Name            =   "Arial"
-         Size            =   12
+         Size            =   12.23
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -2726,9 +2726,9 @@ flexGRID.ColWidth(17) = 700 'excluir?
     w_At = True
         
     If frm_Alt_Fic_Mensal_VIS.TXT_FUNC = "" Then
-        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.txt_nficha
+        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.TXT_NFICHA
     Else
-        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.txt_nficha
+        TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.TXT_NFICHA
     End If
     TXT_CONTA_CAD = ""
     TXT_DESC_CAD = ""
@@ -2769,9 +2769,9 @@ flexGRID.ColWidth(17) = 700 'excluir?
         
     If Not ADOREG.Recordset.EOF Then
         If (frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         Else
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR  FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78 ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         End If
     End If
     V_MOVE = True
@@ -2930,7 +2930,7 @@ If GUIA.TabVisible(0) = True Then   '*** alteração
     
 Else '*** cad
     
-    TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.txt_nficha
+    TXT_NFICHA_CAD = frm_Alt_Fic_Mensal_VIS.TXT_NFICHA
     TXT_CONTA_CAD = ""
     TXT_DESC_CAD = ""
     TXT_OP = ""
@@ -3282,7 +3282,7 @@ If w_PSS = w_PassWordLib Then
       
             '*** ATUALIZA A ULTIMA DATA DE PAGAMENTO NA TAB_EMPRESTIMO *** SE FOR DESCONTO
             If w_Conta = "9" Then
-                W_DT_PG = de.cnc.Execute("SELECT MAX(EP_DT_PG) AS DT_ULT FROM TAB_EMPRESTIMO_PG WHERE (EP_Codigo = " & W_E_Cod & " AND EP_C_CODIGO <> " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields(0)
+                W_DT_PG = de.cnc.Execute("SELECT MAX(EP_DT_PG) AS DT_ULT FROM TAB_EMPRESTIMO_PG WHERE (EP_Codigo = " & W_E_Cod & " AND EP_C_CODIGO <> " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields(0)
                 If Not IsNull(W_DT_PG) Then
                     de.cnc.Execute "UPDATE TAB_EMPRESTIMO SET E_DT_ULT_PG = '" & CVDate(W_DT_PG) & "', E_QT_PG = E_QT_PG-1  WHERE (E_Codigo = " & W_E_Cod & ")"
                 Else
@@ -3319,7 +3319,7 @@ If w_PSS = w_PassWordLib Then
     End If
      
         
-        de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP
+        de.cmdIncluirLog Date, Time, w_usuario, "EXCLUIR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP
         
         '*** Exclui o registro
         ADOREG.Recordset.Find "C_CODIGO = " & ADO_GRID.Recordset.Fields("C_CODIGO") & ""
@@ -3517,18 +3517,18 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
         wDadosOld = "FICHA: " & ADO_GRID.Recordset.Fields("C_N_FICHA") & " | DATA: " & ADO_GRID.Recordset.Fields("DATA") & " | VALOR: " & ADO_GRID.Recordset.Fields("VALOR") & " | CONTA COD: " & ADO_GRID.Recordset.Fields("COD") & " | CONTA DESC: " & ADO_GRID.Recordset.Fields("TP") & " | DESCRIÇÃO: " & ADO_GRID.Recordset.Fields("CONTA") & " | OP: " & ADO_GRID.Recordset.Fields("OP")
         ADOREG.Recordset.UpdateBatch adAffectCurrent
         
-        de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & txt_nficha & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP & "   >>> DADOS ANTIGOS: " & wDadosOld
+        de.cmdIncluirLog Date, Time, w_usuario, "EDITAR", "LANÇAMENTOS", "FICHA: " & TXT_NFICHA & " | DATA: " & txt_DT & " | VALOR: " & txt_valor & " | CONTA COD: " & TXT_CONTA_cod & " | CONTA: " & TXT_CONTA & " | DESCRIÇÃO: " & TXT_DESC & " | OP: " & TXT_OP & "   >>> DADOS ANTIGOS: " & wDadosOld
         
         If TXT_CONTA.BoundText = 32 Then
             'frm_Alt_Fic_Mensal_VIS.TXT_13_OBS = TXT_OBS
             'frm_Alt_Fic_Mensal_VIS.TXT_13_PG = txt_13
             '*** Atualiza Dt 13º ***  TAB_FUNCIONARIO
-            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_PG = '" & txt_13 & "' , F_13_OBS = '" & txt_Obs & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
+            de.cnc.Execute "UPDATE TAB_FUNCIONARIO SET F_13_OK = 0 , F_13_PG = '" & txt_13 & "' , F_13_OBS = '" & TXT_OBS & "' WHERE (F_Codigo = " & frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_F_COD") & ")"
             '*** Atualiza Dt 13º***   TAB_FICHA_MENS
             'de.cnc.Execute "UPDATE TAB_FICHA_MENS SET M_13_OK = 0 , M_13_PG = '" & txt_13 & "', M_13_OBS = '" & TXT_OBS & "'  WHERE (M_F_Cod = " & frm_Alt_Fic_Mensal_VIS.adoReg.Recordset.Fields("M_F_COD") & ")"
             frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_OK") = 0
             frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_PG") = txt_13
-            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_OBS") = txt_Obs
+            frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("M_13_OBS") = TXT_OBS
             frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Update
         End If
         
@@ -3563,16 +3563,16 @@ If GUIA.TabVisible(0) = True Then   '****   ALTERAR   ****
         ADOREG.Refresh
         
         If (frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "V" Or frm_Alt_Fic_Mensal_VIS.ADOREG.Recordset.Fields("F_TIPO") = "C") Or acessoTotal() Then
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " ) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         Else
-            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
+            Set ADO_GRID.Recordset = de.cnc.Execute("SELECT Format(TAB_DESC_CALC.C_DT,'dd/mm/yy') AS DATA, TAB_DESC_CALC.C_TP_CONTA AS COD, TAB_TP_CONTA.TP_DESC AS TP, TAB_DESC_CALC.C_DESC AS CONTA, Format(TAB_DESC_CALC.C_VALOR,'R$ ###,##0.00') AS VALOR, TAB_DESC_CALC.C_TP_OP AS OP, Format(TAB_DESC_CALC.C_VISTO,'Yes/No') AS VISTO, TAB_DESC_CALC.C_CODIGO, TAB_DESC_CALC.C_N_FICHA, TAB_DESC_CALC.C_LOGO, TAB_DESC_CALC.C_NCRED, TAB_DESC_CALC.C_JUROS, TAB_DESC_CALC.C_VALOR_PARC, TAB_DESC_CALC.C_QTDE_PARC, TAB_DESC_CALC.C_EMP_COD, TAB_FICHA_MENS.M_NFICHA, Format(TAB_DESC_CALC.C_DATA_INTERNA,'dd/mm/yy hh:mm') AS DT_INTERNA, '' as EXCLUIR FROM TAB_TP_CONTA, TAB_DESC_CALC, TAB_FICHA_MENS WHERE (TAB_FICHA_MENS.M_NFICHA = TAB_DESC_CALC.C_N_FICHA AND TAB_DESC_CALC.C_TP_CONTA = TAB_TP_CONTA.TP_COD AND TAB_DESC_CALC.C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & " AND TAB_DESC_CALC.C_TP_CONTA <> 20 AND TAB_DESC_CALC.C_TP_CONTA <> 78) ORDER BY TAB_DESC_CALC.C_TP_OP, C_DT").Clone
         End If
 
         ADO_GRID.Refresh
         'Pause 1
         'Grid.ReBind
     
-        W_FICHA = txt_nficha
+        W_FICHA = TXT_NFICHA
         w_PSS = ""
         
         
@@ -3750,14 +3750,14 @@ Else    '**** CADASTRAR ****
 
 End If
 
-   If txt_nficha <> "" Then
+   If TXT_NFICHA <> "" Then
         
         'de.rsTAB_DESC_CALC.Close
         'de.TAB_DESC_CALC
         
         '*** CALCULA O TOTAL - APÓS O NOVO VALOR ***
-        W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MAIS")
-        W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.txt_nficha & ")").Fields("MENOS")
+        W_MAIS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MAIS FROM TAB_DESC_CALC  WHERE (C_TP_OP = '+') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields("MAIS")
+        W_MENOS = de.cnc.Execute("SELECT SUM(C_VALOR) AS MENOS FROM TAB_DESC_CALC WHERE (C_TP_OP = '-') AND (C_N_FICHA = " & frm_Alt_Fic_Mensal_VIS.TXT_NFICHA & ")").Fields("MENOS")
         
         W_TOTAL = IIf(IsNull(W_MAIS), 0, W_MAIS) - IIf(IsNull(W_MENOS), 0, W_MENOS)
 
@@ -4178,7 +4178,7 @@ Private Sub TXT_CONTA_COD_Change()
        lb_dt_13.Visible = True
        lb_OBS.Visible = True
        txt_13.Visible = True
-       txt_Obs.Visible = True
+       TXT_OBS.Visible = True
     ElseIf TXT_CONTA_cod.BoundText = "32" Then
        lb_dt_13 = "DT. (13º)"
        lb_OBS = "OBS 13º"
@@ -4186,13 +4186,13 @@ Private Sub TXT_CONTA_COD_Change()
        lb_OBS.Visible = True
        txt_13.Visible = True
        txt_13 = frm_Alt_Fic_Mensal_VIS.TXT_13_PG
-       txt_Obs = frm_Alt_Fic_Mensal_VIS.TXT_13_OBS
-       txt_Obs.Visible = True
+       TXT_OBS = frm_Alt_Fic_Mensal_VIS.TXT_13_OBS
+       TXT_OBS.Visible = True
     Else
        lb_dt_13.Visible = False
        lb_OBS.Visible = False
        txt_13.Visible = False
-       txt_Obs.Visible = False
+       TXT_OBS.Visible = False
         
     End If
 
