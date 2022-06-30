@@ -1,3 +1,4 @@
 /Banco/Banco.mdb
 *.log
 /Banco/Banco.zip
+/Banco/Ucanaccess_net.ucanaccess.jdbc.DBReference*

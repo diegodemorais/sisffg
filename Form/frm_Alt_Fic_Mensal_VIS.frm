@@ -6357,7 +6357,7 @@ Private Sub cmdComisCx_Click()
                     If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.2
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 150
                             wPercMeta = 100
                         'Else
@@ -6790,7 +6790,7 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.2
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 150
                             wPercMeta = 100
                         'Else
@@ -8087,7 +8087,7 @@ On Error Resume Next
                     If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.2
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 300
                             wPercMeta = 100
                         'Else
