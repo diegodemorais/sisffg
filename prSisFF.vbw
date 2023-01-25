@@ -1,5 +1,5 @@
 frm_Alt_Fic_Mensal = 0, 0, 0, 0, C, 308, 308, 2061, 1203, C
-de = 104, 104, 1201, 852, C, 604, 128, 1284, 921, C
+de = 104, 104, 1201, 852, C, 604, 128, 1284, 983, C
 Unit = 0, 0, 0, 0, C
 frm_Alt_Desc_Calc = 0, 0, 0, 0, C, 336, 336, 2089, 1231, C
 frm_Alt_TP_CONTA = 0, 0, 0, 0, C, 364, 364, 2117, 1259, C
@@ -60,7 +60,7 @@ frm_Emprest = 0, 0, 0, 0, C, 56, 56, 1809, 951, C
 frm_GRID_Meta = 0, 0, 0, 0, C, 84, 84, 1837, 979, C
 rptQtdeTipo = 0, 0, 0, 0, C, 252, 252, 1130, 865, C
 rptSalarioCxNOVO = 0, 0, 0, 0, C, 224, 224, 1334, 660, C
-frm_Alt_Fic_Mensal_VIS = 84, 84, 1837, 979, , 150, 47, 1903, 942, C
+frm_Alt_Fic_Mensal_VIS = 24, 31, 1777, 926, , 150, 47, 1903, 942, C
 rptRelVistoFixoZerados = 0, 0, 0, 0, C, 196, 196, 996, 793, C
 rptRelVistoTFixoZerados = 0, 0, 0, 0, C, 168, 168, 931, 716, C
 rptConfComPremioPiso = 0, 0, 0, 0, C, 140, 140, 1164, 905, C
