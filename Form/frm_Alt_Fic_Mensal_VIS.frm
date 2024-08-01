@@ -1945,7 +1945,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          AllowRowSizing  =   0   'False
          AllowSizing     =   0   'False
          BeginProperty Column00 
-            ColumnWidth     =   494,929
          EndProperty
          BeginProperty Column01 
             Object.Visible         =   0   'False
@@ -2005,7 +2004,6 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
             Object.Visible         =   0   'False
          EndProperty
          BeginProperty Column20 
-            ColumnWidth     =   2805,166
          EndProperty
          BeginProperty Column21 
             Object.Visible         =   0   'False
@@ -2057,14 +2055,12 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          EndProperty
          BeginProperty Column37 
             Object.Visible         =   -1  'True
-            ColumnWidth     =   299,906
          EndProperty
          BeginProperty Column38 
             Object.Visible         =   0   'False
          EndProperty
          BeginProperty Column39 
             Object.Visible         =   -1  'True
-            ColumnWidth     =   299,906
          EndProperty
          BeginProperty Column40 
             Object.Visible         =   0   'False
@@ -3421,7 +3417,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin rdActiveText.ActiveText TXT_DT_REG 
          DataField       =   "M_DT_REG"
@@ -3458,7 +3454,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin Skin_Button.ctr_Button btRptADM 
          Height          =   480
@@ -3577,7 +3573,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin Skin_Button.ctr_Button btRptDem 
          Height          =   480
@@ -3794,7 +3790,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin rdActiveText.ActiveText TXT_FERIAS_ULT_PG 
          DataField       =   "M_FERIAS_ULT_PG"
@@ -3831,7 +3827,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin rdActiveText.ActiveText TXT_13_PG 
          DataField       =   "M_13_PG"
@@ -3868,7 +3864,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin rdActiveText.ActiveText TXT_13_ULT_PG 
          DataField       =   "M_13_ULT_PG"
@@ -3905,7 +3901,7 @@ Begin VB.Form frm_Alt_Fic_Mensal_VIS
          Mask            =   "##/##/####"
          eAuto           =   1
          FontName        =   "MS Sans Serif"
-         FontSize        =   8,25
+         FontSize        =   8.25
       End
       Begin Skin_Button.ctr_Button btRptVctoFerias 
          Height          =   525
@@ -6363,7 +6359,7 @@ Private Sub cmdComisCx_Click()
                     If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 250
                             wPercMeta = 100
                         'Else
@@ -6796,7 +6792,7 @@ Dim w_ado_vendaAnt As ADODB.Recordset
                     'If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 200
                             wPercMeta = 100
                         'Else
@@ -8093,7 +8089,7 @@ On Error Resume Next
                     If (vrVenda >= vrMeta) Then
                         wFixoMeta = 0
                         'If (vrVenda >= vrMeta) Then
-                            vrMetaBonus = vrSalario * 0.05
+                            vrMetaBonus = vrSalario * 0.1
                             'vrMetaBonus = 350
                             wPercMeta = 100
                         'Else
