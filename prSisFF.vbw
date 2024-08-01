@@ -1,4 +1,4 @@
-frm_Alt_Fic_Mensal = 0, 0, 0, 0, C, 308, 308, 2061, 1203, C
+frm_Alt_Fic_Mensal = 0, 0, 0, 0, C, -482, 300, 1271, 1195, C
 de = 104, 104, 1201, 852, C, 513, 618, 1655, 1103, C
 Unit = 0, 0, 0, 0, C
 frm_Alt_Desc_Calc = 0, 0, 0, 0, C, 336, 336, 2089, 1231, C
@@ -46,7 +46,7 @@ mdiPrincipal = 0, 0, 0, 0, C, 112, 112, 1865, 1007, C
 frm_Gerar_Fichas = 0, 0, 0, 0, C, 140, 140, 1893, 1035, C
 rptFixosSaldos = 0, 0, 0, 0, C, 364, 364, 1081, 836, C
 rptEmprestimoAnalise = 0, 0, 0, 0, C, 336, 336, 1197, 938, C
-frmMenu = 140, 140, 1613, 1035, , 224, 224, 1977, 1119, C
+frmMenu = 42, 117, 1515, 1012, , 224, 224, 1977, 1119, C
 frm_Alt_Funcionario = 0, 0, 0, 0, C, 252, 252, 2005, 1147, C
 frm_Alt_FuncionarioDireto = 0, 0, 0, 0, C, 280, 280, 2033, 1175, C
 FRM_LIBERAR = 0, 0, 0, 0, C, 308, 308, 2061, 1203, C
