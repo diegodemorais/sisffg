@@ -6311,7 +6311,7 @@ Private Sub cmdComisCx_Click()
             '    Exit Sub
             'End If
             
-            If W_ADO_FICHA.Fields("M_LOGO") = "12" Or W_ADO_FICHA.Fields("M_LOGO") = "SA" Or W_ADO_FICHA.Fields("M_LOGO") = "JV" Or W_ADO_FICHA.Fields("M_LOGO") = "S2" Or W_ADO_FICHA.Fields("M_LOGO") = "CN" Or W_ADO_FICHA.Fields("M_LOGO") = "CA" Then
+            If W_ADO_FICHA.Fields("M_LOGO") = "12" Or W_ADO_FICHA.Fields("M_LOGO") = "PD" Or W_ADO_FICHA.Fields("M_LOGO") = "JH" Or W_ADO_FICHA.Fields("M_LOGO") = "SA" Or W_ADO_FICHA.Fields("M_LOGO") = "JV" Or W_ADO_FICHA.Fields("M_LOGO") = "S2" Or W_ADO_FICHA.Fields("M_LOGO") = "CN" Or W_ADO_FICHA.Fields("M_LOGO") = "CA" Then
                 percComis = 0.6
             Else
                 percComis = 0.45
